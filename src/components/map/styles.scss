@@ -1,0 +1,37 @@
+.c-map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  .overlays {
+    z-index: 0;
+    // pointer-events: none !important;
+  }
+}
+
+.c-main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.c-map-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.c-legend {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+
+  .vizzuality__c-legend-item {
+    h3 {
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin: 3px 0;
+    }
+  }
+}
