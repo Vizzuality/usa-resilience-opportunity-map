@@ -1,0 +1,19 @@
+.c-app {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+
+  .app-sidebar {
+    height: 100%;
+    // width: 40vw;
+    flex-grow: 4;
+    background-color: #ccc;
+  }
+
+  .map-wrapper {
+    height: 100%;
+    // width: 60vw;
+    flex-grow: 6;
+  }
+}
+

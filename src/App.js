@@ -1,11 +1,14 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Map from './components/map';
 
 function App() {
   return (
-    <div className="App">
-      <Map />
+    <div className="c-app">
+      <div className="app-sidebar"></div>
+      <div className="map-wrapper">
+        <Map />
+      </div>
     </div>
   );
 }

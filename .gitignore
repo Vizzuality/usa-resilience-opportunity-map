@@ -1,4 +1,31 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Mac OS
+.DS_Store
+
+# Text editors
+*.sublime*
+.sublime*
+.idea*
+.vscode
+
+# Vendors
 node_modules
+/.pnp
+.pnp.js
+
+# Logs
+*.log*
+
+# Compiled assets
+/dist
+/lib
 public
+build
 
-
+# Development
+.env.local
+.env.development.local
+.env.development
+.env.test.local
+.env.production.local

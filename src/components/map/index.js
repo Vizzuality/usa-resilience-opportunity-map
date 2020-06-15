@@ -15,7 +15,7 @@ function Map() {
       width="100%"
       height="100%"
       onLoad={() => setLoaded(true)}
-      mapboxApiAccessToken={''}
+      mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
     >
       {loaded && mapRef.current && (
         <LayerManager map={mapRef.current.getMap()} plugin={PluginMapboxGl}>
