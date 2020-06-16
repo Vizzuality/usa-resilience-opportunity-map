@@ -289,8 +289,7 @@ class Map extends Component {
         ref={r => {
           this.mapContainer = r;
         }}
-        className={classnames({
-          'c-map': true,
+        className={classnames('c-map', {
           [customClass]: !!customClass
         })}
       >
