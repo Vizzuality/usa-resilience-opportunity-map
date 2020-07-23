@@ -13,7 +13,9 @@ export default function Home() {
       </Head>
 
       <Main>
-        <h1>Home</h1>
+        <div className="col-xs-12">
+          <h1>Home</h1>
+        </div>
       </Main>
     </Page>
   );
