@@ -1,0 +1,6 @@
+# public
+/public
+/node_modules
+/cypress/support
+/cypress/plugins
+/pages/api/__coverage__.js

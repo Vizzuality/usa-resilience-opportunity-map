@@ -1,0 +1,83 @@
+// Colors
+$color-1: #4b5362;
+$color-2: #45bde1;
+$color-3: #caccd0;
+$color-4: rgba(255, 255, 255, 0.05);
+
+$color-white: #fff;
+$color-black: #000;
+$color-gray-1: #161616;
+$color-gray-2: #515153;
+$color-gray-3: #999;
+$color-gray-4: #d0d1d3;
+$color-gray-5: #fbfbfb;
+
+$color-social-twitter: #55acee;
+$color-social-facebook: #3b5998;
+
+// Typography
+$font-size-xs: 10px;
+$font-size-s: 12px;
+$font-size-d: 14px;
+$font-size-m: 16px;
+$font-size-l: 18px;
+$font-size-xl: 40px;
+
+$font-size-h1: 40px;
+$font-size-h2: 32px;
+$font-size-h3: 16px;
+$font-size-h4: 12px;
+
+// TODO: Get the NG font
+$font-family: "Basier Square", sans-serif;
+$font-family-2: "Argesta Display", serif;
+
+// Weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+// Space
+$space-1: 6px;
+
+// Paddings
+$box-padding: 40px 30px;
+
+// Z-index
+$z-index-1: 0;
+$z-index-2: 1;
+$z-index-3: 9;
+$z-index-4: 10;
+
+// Times
+$animation-time: 0.16s;
+$animation-time-2: 0.24s;
+$animation-time-3: 0.5s;
+$animation-time-4: 0.75s;
+
+// Eases
+$ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+$ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+$ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+$ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+// Flexbox grid
+$xs: 0;
+$s: 30rem;
+$m: 48rem;
+$l: 62rem;
+$xl: 80rem;
+
+$flexboxgrid-max-width: 1280px;
+$flexboxgrid-grid-columns: 12;
+$flexboxgrid-gutter-width: 1.5rem;
+$flexboxgrid-outer-margin: 1.5rem;
+$flexboxgrid-breakpoints: (
+  xs: $xs,
+  s: $s,
+  m: $m,
+  l: $l,
+  xl: $xl,
+);
