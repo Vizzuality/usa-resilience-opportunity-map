@@ -35,8 +35,8 @@ export default function Header() {
         <div className="col-m-6">
           <div className="row">
             {links.map((l) => (
-              <div className="col-xs header--list-item">
-                <Link key={l.href} href={l.href}>
+              <div key={l.href} className="col-xs header--list-item">
+                <Link href={l.href}>
                   <a
                     className={cx('header--list-link', {
                       '-active': pathname === l.href,

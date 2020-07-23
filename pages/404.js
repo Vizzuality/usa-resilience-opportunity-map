@@ -8,7 +8,7 @@ export default function Custom404() {
   return (
     <Page>
       <Head>
-        <title>ReFED - 404</title>
+        <title>USA Resilience - 404</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
