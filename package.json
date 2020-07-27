@@ -9,8 +9,14 @@
     "test": "eslint --ext .jsx --ext .js --fix . && stylelint --config .stylelintrc.json ."
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^9.3.6",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "ajv-keywords": "^3.5.1",
+    "autoprefixer": "^9.7.6",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
+    "d3-ease": "^1.0.6",
     "deck.gl": "7.3.6",
     "layer-manager": "^3.0.6",
     "lodash.isempty": "^4.4.0",
