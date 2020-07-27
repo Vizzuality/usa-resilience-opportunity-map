@@ -22,7 +22,6 @@ import {
 
 // Local imports
 import Map from './map';
-import './styles.scss';
 import DEFAULT_LAYERS from './activeLayers';
 
 export default function ExploreMap() {
