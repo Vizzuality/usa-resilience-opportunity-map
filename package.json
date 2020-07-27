@@ -44,6 +44,7 @@
     "lodash": "^4.17.15",
     "luma.gl": "7.3.2",
     "mapbox-gl": "^1.11.1",
+    "moment": "^2.27.0",
     "next": "9.4.4",
     "next-compose-plugins": "^2.2.0",
     "next-fonts": "^1.1.0",
@@ -71,6 +72,7 @@
     "seedrandom": "^3.0.5",
     "svg-sprite-loader": "^5.0.0",
     "viewport-mercator-project": "6.1.1",
+    "vizzuality-components": "^3.0.0-beta.9",
     "webp-loader": "^0.6.0",
     "webpack-filter-warnings-plugin": "^1.2.1"
   },

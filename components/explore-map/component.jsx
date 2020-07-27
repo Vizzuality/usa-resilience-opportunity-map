@@ -2,10 +2,10 @@ import React from "react";
 
 import { LayerManager, Layer } from 'layer-manager/dist/components';
 import { PluginMapboxGl } from 'layer-manager';
-// import "mapbox-gl/dist/mapbox-gl.css";
 
 import activeLayers from './activeLayers'
-import Map from "./map";
+import Map from './map';
+import Legend from './legend';
 
 
 export default function ExploreMap() {
@@ -26,6 +26,7 @@ export default function ExploreMap() {
           </LayerManager>
         )}
       </Map>
+      <Legend />
     </div>
   );
 }
