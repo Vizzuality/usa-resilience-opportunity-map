@@ -6,7 +6,9 @@ import { Provider } from 'react-redux';
 import { useStore } from 'store';
 
 // Components
+import Page from 'components/page';
 import Header from 'components/header';
+import Footer from 'components/footer';
 
 import 'styles/index.scss';
 
@@ -15,8 +17,11 @@ export default function App({ Component, pageProps }) {
 
   return (
     <Provider store={store}>
-      <Header />
-      <Component {...pageProps} />
+      <Page>
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+      </Page>
     </Provider>
   );
 }

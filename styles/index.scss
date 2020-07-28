@@ -1,5 +1,6 @@
 @import 'settings';
 @import 'mixins';
+@import 'utils';
 
 // Base / Grid / Layout
 @import 'reset';
@@ -8,6 +9,9 @@
 // @import 'fonts';
 @import 'animations';
 @import '~vizzuality-components/dist/bundle';
+
+// Pages
+@import 'pages/styles'; // Home
 
 /*
  * Component styles
@@ -19,3 +23,5 @@
 @import 'components/header/styles';
 @import 'components/explore-map/styles';
 @import 'components/explore-map/map/styles';
+@import 'components/footer/styles';
+@import 'components/button/styles';

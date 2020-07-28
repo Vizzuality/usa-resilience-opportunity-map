@@ -19,6 +19,8 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: $color-white;
   height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 b,

@@ -4,14 +4,143 @@
 
   .header--list {
     height: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .header-links,
+    .header-logo,
+    .header--list-item {
+      display: flex;
+      align-items: center;
+    }
 
     .header--list-item {
-      text-align: right;
+      height: 100%;
+      margin: 0 rem(28px);
       color: $color-1;
-      font-family: "Basier Square", sans-serif;
+      font-family: $font-family;
       font-size: 12px;
       font-weight: 500;
       line-height: 14px;
+      text-transform: uppercase;
+      border-top: 3px solid transparent;
+
+      &.--active {
+        border-top: 3px solid $color-2;
+      }
+    }
+  }
+
+  &.--dark {
+    background-color: $color-dark-bg;
+    color: $color-white;
+
+    .header--list {
+      border-bottom: 1px solid $color-white;
+
+      .header--list-item {
+        color: $color-white;
+      }
+    }
+  }
+}
+
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: $color-3;
+  height: 100vh;
+  text-align: left;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: $z-index-2;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+
+  &.--open {
+    transform: translateX(0%);
+  }
+
+  @media (max-width: 576px) {
+    width: 100%;
+  }
+
+  a {
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 2rem 0;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    color: $color-black;
+    text-decoration: none;
+    transition: color 0.3s linear;
+
+    @media (max-width: 576px) {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+}
+
+.header-burger {
+  position: absolute;
+  top: rem(25px);
+  right: rem(25px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+
+  &:focus {
+    outline: none;
+  }
+
+  div {
+    width: 2rem;
+    height: rem(3px);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+    background: $color-black;
+
+    &:first-child {
+      transform: rotate(0);
+    }
+
+    &:nth-child(2) {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    &:nth-child(3) {
+      transform: rotate(0);
+    }
+  }
+
+  &.--open div {
+    background: $color-black;
+
+    &:first-child {
+      transform: rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+
+    &:nth-child(3) {
+      transform: rotate(-45deg);
     }
   }
 }
