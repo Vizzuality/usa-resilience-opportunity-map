@@ -1,0 +1,15 @@
+.c-explore-map {
+  height: calc(100vh - 54px);
+}
+
+.c-legend {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+
+  .vizzuality__c-legend-item h3 {
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin: 3px 0;
+  }
+}

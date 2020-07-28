@@ -2,7 +2,10 @@ require('dotenv').config();
 
 const path = require('path');
 const withPlugins = require('next-compose-plugins');
-const optimizedImages = require('next-optimized-images');
+const optimizedImages = require('next-optimized-images')({
+  // https://github.com/cyrilwanner/next-optimized-images#optimization-packages
+  optimizeImages: false,
+});
 const withSass = require('@zeit/next-sass');
 const withFonts = require('next-fonts');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
@@ -31,7 +34,7 @@ const nextConfig = {
     config.plugins = [
       ...config.plugins,
       new Dotenv({
-        path: path.join(__dirname, '.env'),
+        path: path.join(__dirname, '.env.local'),
         systemvars: true,
       }),
     ];

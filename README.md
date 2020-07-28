@@ -15,6 +15,6 @@ yarn dev
 
 3. Go to [http://localhost:3000](http://localhost:3000) on your browser to see the result.
 
-## Deploy on Vercel
+## Deploy on Vercel (Only for development)
 
 [Next.js deployment documentation](https://nextjs.org/docs/deployment).
