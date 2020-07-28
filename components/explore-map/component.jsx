@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // Utils
-import isEmpty from 'lodash/isEmpty';
+import isEmpty from 'lodash.isempty';
 import { getParams } from 'utils/timeline';
 
 // Map tools
@@ -22,7 +22,6 @@ import {
 
 // Local imports
 import Map from './map';
-import './styles.scss';
 import DEFAULT_LAYERS from './activeLayers';
 
 export default function ExploreMap() {
@@ -147,7 +146,7 @@ export default function ExploreMap() {
     }
   };
 
-  const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN || '';
+  const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || '';
 
   return (
     <div className="c-explore-map">

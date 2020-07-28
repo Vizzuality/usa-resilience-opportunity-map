@@ -3,15 +3,13 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-import isEqual from 'lodash/isEqual';
-import isEmpty from 'lodash/isEmpty';
+import isEqual from 'lodash.isequal';
+import isEmpty from 'lodash.isempty';
 
 import ReactMapGL, { FlyToInterpolator, TRANSITION_EVENTS } from 'react-map-gl';
 import WebMercatorViewport from 'viewport-mercator-project';
 
 import { easeCubic } from 'd3-ease';
-
-import './styles.scss';
 
 const DEFAULT_VIEWPORT = {
   zoom: 2,

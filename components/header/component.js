@@ -5,8 +5,6 @@ import cx from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import './styles.scss';
-
 const links = [
   {
     name: 'Explore data',
