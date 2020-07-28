@@ -146,7 +146,7 @@ export default function ExploreMap() {
     }
   };
 
-  const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN || '';
+  const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || '';
 
   return (
     <div className="c-explore-map">
