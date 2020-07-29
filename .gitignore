@@ -20,6 +20,7 @@ cypress/screenshots
 
 # misc
 .DS_Store
+.vscode
 
 # debug
 npm-debug.log*

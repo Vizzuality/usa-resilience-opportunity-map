@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import Head from 'next/head';
 
 // Redux
 import { Provider } from 'react-redux';
@@ -17,6 +18,9 @@ export default function App({ Component, pageProps }) {
 
   return (
     <Provider store={store}>
+      <Head>
+        <title>USA Resilience Opportunity Map</title>
+      </Head>
       <Page>
         <Header />
         <Component {...pageProps} />

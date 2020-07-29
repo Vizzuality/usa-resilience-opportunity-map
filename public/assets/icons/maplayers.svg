@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="15px" viewBox="0 0 16 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>stack-glyph-16</title>
+    <g id="UI-Kit" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="USARESILIENCE_Home" transform="translate(-692.000000, -1751.000000)" fill="#4B5362" fill-rule="nonzero">
+            <g id="stack-glyph-16" transform="translate(692.000000, 1751.000000)">
+                <polygon id="Path" points="8 12.4 2.1 8.7 0 10 8 15 16 10 13.9 8.7"></polygon>
+                <polygon id="Path" points="0 5 8 0 16 5 8 10"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

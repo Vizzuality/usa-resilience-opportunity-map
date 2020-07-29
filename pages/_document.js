@@ -16,7 +16,6 @@ export default class MyDocument extends Document {
             content="width=device-width, initial-scale=1, maximum-scale=5"
           />
           <link rel="icon" href="/favicon.ico" />
-          <title>USA Resilience Opportunity Map</title>
         </Head>
         <body>
           <div dangerouslySetInnerHTML={{ __html: spriteContent }} />

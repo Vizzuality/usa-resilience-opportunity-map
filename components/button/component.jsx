@@ -30,7 +30,7 @@ export default function Button({ children, colors, className, link }) {
 }
 
 Button.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   colors: PropTypes.object,
   className: PropTypes.string,
   link: PropTypes.string,

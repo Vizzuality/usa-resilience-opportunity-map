@@ -14,23 +14,35 @@ export default function Home() {
     <Main>
       <div className="c-home">
         <div className="home-greeting">
-          <h2>Welcome to</h2>
-          <h1>USA Resilience Map</h1>
-          <div className="break-line" />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <Button
-            className="home-cta"
-            colors={{ border: '#4595e1', text: '#FFF' }}
-            link="/explore"
-          >
-            Explore data
-          </Button>
+          <div className="home-greeting--wrapper">
+            <h2>Welcome to</h2>
+            <h1>USA Resilience Map</h1>
+            <div className="break-line" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <Button
+              className="home-cta"
+              colors={{ border: '#4595e1', text: '#FFF' }}
+              link="/explore"
+            >
+              Explore data
+            </Button>
+          </div>
+          <div className="home-greeting--gradient" />
         </div>
         <div className="home-explore">
-          <img className="map-icon" src="assets/home-map.svg" alt="map-icon" />
+          <img
+            className="home-brush-stroke"
+            src="assets/images/home_brush_stroke.png"
+            alt="map-icon"
+          />
+          <img
+            className="map-icon"
+            src="assets/images/home-map.svg"
+            alt="map-icon"
+          />
           <h2>
             Explore the map, and select which state or county would you like to
             analyze?
@@ -46,6 +58,9 @@ export default function Home() {
                   ...provided,
                   color: '#000',
                   textAlign: 'left',
+                }),
+                indicatorsContainer: () => ({
+                  display: 'none',
                 }),
               }}
             />

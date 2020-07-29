@@ -1,5 +1,5 @@
 .c-button {
-  padding: rem(20px);
+  padding: rem(20px) rem(40px);
   border: 1px solid;
   color: $color-white;
   font-family: $font-family;
@@ -8,4 +8,5 @@
   line-height: 13px;
   text-align: center;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }

@@ -6,6 +6,7 @@
     height: 100%;
     display: flex;
     justify-content: space-between;
+    padding: 0;
 
     .header-links,
     .header-logo,
@@ -14,9 +15,12 @@
       align-items: center;
     }
 
+    .header--logo-image {
+      height: 20px;
+    }
+
     .header--list-item {
       height: 100%;
-      margin: 0 rem(28px);
       color: $color-1;
       font-family: $font-family;
       font-size: 12px;
@@ -28,6 +32,10 @@
       &.--active {
         border-top: 3px solid $color-blue;
       }
+    }
+
+    .header-links .header--list-item {
+      margin-left: rem(28px);
     }
   }
 

@@ -98,7 +98,13 @@ export default function Header() {
       <div className="wrapper header--list">
         <Link href="/">
           <a className="header-logo header--list-item">
-            <span className="">USA RESILIENCE MAP</span>
+            <img
+              className="header--logo-image"
+              src={`assets/logos/logo_${
+                pathname === '/' ? 'white' : 'dark'
+              }.svg`}
+              alt="USA Resilience Map"
+            />
           </a>
         </Link>
 
