@@ -59,7 +59,7 @@
   }
 
   .side-menu {
-    display: flex;
+    display: none;
     flex-direction: column;
     background: $color-white;
     height: 100vh;
@@ -72,16 +72,17 @@
     transition: transform 0.3s ease-in-out;
     transform: translateX(100%);
 
+    &.--open {
+      display: flex;
+      position: fixed;
+      transform: translateX(0%);
+    }
+
     .side-menu--links {
       display: flex;
       flex-direction: column;
       flex: 1;
       justify-content: center;
-    }
-
-    &.--open {
-      position: fixed;
-      transform: translateX(0%);
     }
 
     .menu-logo {
