@@ -9,6 +9,7 @@
     "test": "eslint --ext .jsx --ext .js --fix . && stylelint --config .stylelintrc.json ."
   },
   "dependencies": {
+    "@artsy/fresnel": "^1.2.0",
     "@next/bundle-analyzer": "^9.3.6",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",

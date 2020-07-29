@@ -10,7 +10,8 @@
 
     .header-links,
     .header-logo,
-    .header--list-item {
+    .header--list-item,
+    .fresnel-container {
       display: flex;
       align-items: center;
     }
@@ -50,105 +51,152 @@
         color: $color-white;
       }
     }
-  }
-}
 
-.side-menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: $color-3;
-  height: 100vh;
-  text-align: left;
-  padding: 2rem;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: $z-index-2;
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(100%);
-
-  &.--open {
-    transform: translateX(0%);
+    .header-burger div {
+      background: $color-white;
+    }
   }
 
-  @media (max-width: 576px) {
+  .side-menu {
+    display: flex;
+    flex-direction: column;
+    background: $color-white;
+    height: 100vh;
     width: 100%;
-  }
+    text-align: left;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: $z-index-3;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
 
-  a {
-    font-size: 2rem;
-    text-transform: uppercase;
-    padding: 2rem 0;
-    font-weight: bold;
-    letter-spacing: 0.5rem;
-    color: $color-black;
-    text-decoration: none;
-    transition: color 0.3s linear;
-
-    @media (max-width: 576px) {
-      font-size: 1.5rem;
-      text-align: center;
-    }
-  }
-}
-
-.header-burger {
-  position: absolute;
-  top: rem(25px);
-  right: rem(25px);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 10;
-
-  &:focus {
-    outline: none;
-  }
-
-  div {
-    width: 2rem;
-    height: rem(3px);
-    border-radius: 10px;
-    transition: all 0.3s linear;
-    position: relative;
-    transform-origin: 1px;
-    background: $color-black;
-
-    &:first-child {
-      transform: rotate(0);
+    .side-menu--links {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: center;
     }
 
-    &:nth-child(2) {
+    &.--open {
+      position: fixed;
+      transform: translateX(0%);
+    }
+
+    .menu-logo {
+      height: $header-size;
+      display: flex;
+      align-items: center;
+    }
+
+    .header--list-link {
+      font-size: rem(36px);
+      color: $color-1;
+      text-decoration: none;
+      transition: color 0.3s linear;
+      font-family: $font-family-2;
+      line-height: 60px;
+      opacity: 0.5;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      padding: 0 rem(37px);
+    }
+
+    .header--list-small-links {
+      display: flex;
+      flex-direction: column;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      padding: 0 rem(37px);
+
+      a {
+        opacity: 0.8;
+        color: $color-1;
+        font-family: $font-family;
+        font-size: 18px;
+        line-height: 60px;
+      }
+    }
+
+    .header--list-link.--active,
+    .header--list-small-links a.--active {
       opacity: 1;
-      transform: translateX(0);
+      border-left: 8px solid $color-blue;
     }
 
-    &:nth-child(3) {
-      transform: rotate(0);
+    .side-menu--separator {
+      padding: rem(60px) rem(45px) rem(38px);
+
+      div {
+        height: 1px;
+        width: 100%;
+        opacity: 0.2;
+        background-color: $color-1;
+      }
     }
   }
 
-  &.--open div {
-    background: $color-black;
+  .header-burger {
+    position: absolute;
+    top: rem(17px);
+    right: rem(25px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: rem(20px);
+    height: rem(20px);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
 
-    &:first-child {
-      transform: rotate(45deg);
+    &:focus {
+      outline: none;
     }
 
-    &:nth-child(2) {
-      opacity: 0;
-      transform: translateX(20px);
+    div {
+      width: rem(20px);
+      height: rem(2px);
+      border-radius: 10px;
+      transition: all 0.3s linear;
+      position: relative;
+      transform-origin: 0;
+      background: $color-black;
+
+      &:first-child {
+        transform: rotate(0);
+      }
+
+      &:nth-child(2) {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(0);
+      }
     }
 
-    &:nth-child(3) {
-      transform: rotate(-45deg);
+    &.--open {
+      position: fixed;
+
+      div {
+        background: $color-black;
+
+        &:first-child {
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+      }
     }
   }
 }

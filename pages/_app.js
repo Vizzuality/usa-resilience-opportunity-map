@@ -10,6 +10,7 @@ import { useStore } from 'store';
 import Page from 'components/page';
 import Header from 'components/header';
 import Footer from 'components/footer';
+import { mediaStyle } from 'components/media';
 
 import 'styles/index.scss';
 
@@ -20,6 +21,7 @@ export default function App({ Component, pageProps }) {
     <Provider store={store}>
       <Head>
         <title>USA Resilience Opportunity Map</title>
+        <style type="text/css">{mediaStyle}</style>
       </Head>
       <Page>
         <Header />

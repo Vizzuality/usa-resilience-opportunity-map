@@ -1,12 +1,12 @@
-import Select from 'react-select';
+import Select from "react-select";
 
-import Main from 'components/main';
-import Button from 'components/button';
+import Main from "components/main";
+import Button from "components/button";
 
 const options = [
-  { value: 'OR', label: 'Oregon' },
-  { value: 'CA', label: 'California' },
-  { value: 'NV', label: 'Nevada' },
+  { value: "OR", label: "Oregon" },
+  { value: "CA", label: "California" },
+  { value: "NV", label: "Nevada" },
 ];
 
 export default function Home() {
@@ -24,7 +24,7 @@ export default function Home() {
             </p>
             <Button
               className="home-cta"
-              colors={{ border: '#4595e1', text: '#FFF' }}
+              colors={{ border: "#4595e1", text: "#FFF" }}
               link="/explore"
             >
               Explore data
@@ -53,20 +53,20 @@ export default function Home() {
               options={options}
               placeholder="Enter a state, county name or ZIP code"
               styles={{
-                control: (provided) => ({ ...provided, height: '55px' }),
+                control: (provided) => ({ ...provided, height: "55px" }),
                 menu: (provided) => ({
                   ...provided,
-                  color: '#000',
-                  textAlign: 'left',
+                  color: "#000",
+                  textAlign: "left",
                 }),
                 indicatorsContainer: () => ({
-                  display: 'none',
+                  display: "none",
                 }),
               }}
             />
             <Button
               className="search-btn"
-              colors={{ border: '#FFF', text: '#FFF' }}
+              colors={{ border: "#FFF", text: "#FFF" }}
             >
               Search all states
             </Button>
