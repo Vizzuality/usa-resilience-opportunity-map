@@ -1,6 +1,6 @@
 import { createAction, createThunkAction } from 'store/redux';
 
-import { fetchGeometries } from 'services/Geometries';
+import { fetchGeometries } from 'services/geometries';
 
 export const setGeometries = createAction('setGeometries');
 export const setGeometriesLoading = createAction('setGeometriesLoading');
