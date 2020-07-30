@@ -1,26 +1,56 @@
 export const LAYERS = [
-  // // RASTER LAYER
-  // {
-  //   id: 'gain',
-  //   type: 'raster',
-  //   source: {
-  //     type: 'raster',
-  //     tiles: ['http://earthengine.google.org/static/hansen_2013/gain_alpha/{z}/{x}/{y}.png'],
-  //     minzoom: 3,
-  //     maxzoom: 12
-  //   },
-  //   render: {
-  //     layers: [
-  //       {
-  //         minzoom: 3, // https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#minzoom
-  //         maxzzom: 12, // https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#maxzoom
-  //         paint: {
-  //           'raster-saturation': -1
-  //         }
-  //       }
-  //     ]
-  //   }
-  // },
+  {
+    id: 'counties-and-states',
+    type: 'vector',
+    render: {
+      layers: [
+        {
+          filter: ['all', ['has', 'countyfp']],
+          'source-layer': 'layer0',
+          type: 'line',
+          paint: {
+            'line-color': '#000',
+            'line-opacity': 1,
+            'line-dasharray': [3, 3],
+          },
+        },
+        {
+          filter: ['all', ['has', 'countyfp']],
+          'source-layer': 'layer0',
+          type: 'fill',
+          paint: {
+            'fill-color': '#000',
+            'fill-opacity': 0,
+          },
+        },
+        {
+          filter: ['all', ['!', ['has', 'countyfp']]],
+          'source-layer': 'layer0',
+          type: 'line',
+          paint: {
+            'line-color': '#000',
+            'line-opacity': 1,
+            'line-width': 2,
+          },
+        },
+        {
+          filter: ['all', ['!', ['has', 'countyfp']]],
+          'source-layer': 'layer0',
+          type: 'fill',
+          paint: {
+            'fill-color': '#000',
+            'fill-opacity': 0,
+          },
+        },
+      ],
+    },
+    source: {
+      tiles: [
+        'https://api.us-resilience-map.vizzuality.com/api/v1/geometries/tiles/{z}/{x}/{y}',
+      ],
+      type: 'vector',
+    },
+  },
   // // DECODED RASTER LAYER
   // {
   //   id: 'loss',

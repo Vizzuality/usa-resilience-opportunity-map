@@ -151,7 +151,20 @@ export default function ExploreMap() {
   return (
     <div className="c-explore-map">
       <Icons />
-      <Map width="100%" height="100%" mapboxApiAccessToken={MAPBOX_TOKEN}>
+      <Map
+        width="100%"
+        height="100%"
+        bounds={{
+          bbox: [-171.791110603, 18.91619, -66.96466, 71.3577635769],
+          options: {
+            padding: 50,
+          },
+        }}
+        mapboxApiAccessToken={MAPBOX_TOKEN}
+        onClick={(e) => {
+          if (e && e.features) console.log(e.features);
+        }}
+      >
         {(map) => (
           <LayerManager map={map} plugin={PluginMapboxGl}>
             {layers.map((layer) => {
