@@ -21,7 +21,7 @@ import {
 } from 'vizzuality-components';
 
 // Local imports
-import Map from './map';
+import Map from 'components/map';
 import { LAYERS } from './constants';
 
 export default function ExploreMap() {
@@ -157,7 +157,7 @@ export default function ExploreMap() {
         bounds={{
           bbox: [-171.791110603, 18.91619, -66.96466, 71.3577635769],
           options: {
-            padding: 50,
+            padding: { top: 50, bottom: 50, left: 600, right: 50 },
           },
         }}
         mapboxApiAccessToken={MAPBOX_TOKEN}

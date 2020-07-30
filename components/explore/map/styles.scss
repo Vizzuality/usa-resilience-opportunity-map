@@ -1,11 +1,14 @@
 .c-explore-map {
+  position: relative;
   height: calc(100vh - 54px);
+  z-index: 0;
 }
 
 .c-legend {
   position: absolute;
+  z-index: 1;
   bottom: 24px;
-  left: 24px;
+  right: 24px;
 
   .vizzuality__c-legend-item h3 {
     font-size: 12px;

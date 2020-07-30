@@ -1,23 +1,41 @@
+import uniqBy from 'lodash.uniqby';
 import { createSelector, createStructuredSelector } from 'reselect';
 
 export const loading = (state) => state?.indicators?.loading;
 export const loaded = (state) => state?.indicators?.loaded;
 export const error = (state) => state?.indicators?.error;
 export const data = (state) => state?.indicators?.data || [];
+export const category = (state) => state?.indicators?.category;
+export const active = (state) => state?.indicators?.active || [];
 
-export const options = createSelector([data, loading], (_data, _loading) => {
+export const categories = createSelector([data, loading], (_data, _loading) => {
   if (!_data.length || _loading) return [];
 
-  return _data.map((d) => ({
-    label: d.name,
-    value: d.id,
-  }));
+  return uniqBy(
+    _data.map((d) => ({
+      id: d.category.id,
+      name: d.category.name,
+    })),
+    'id'
+  );
 });
+
+export const indicators = createSelector(
+  [data, loading, category],
+  (_data, _loading, _category) => {
+    if (!_data.length || _loading) return [];
+
+    return _data.filter((d) => d.category.id === _category);
+  }
+);
 
 export const selectIndicatorsProps = createStructuredSelector({
   data,
   loading,
   loaded,
   error,
-  options,
+  category,
+  active,
+  indicators,
+  categories,
 });

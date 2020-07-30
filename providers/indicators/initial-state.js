@@ -3,4 +3,6 @@ export default {
   loaded: false,
   error: false,
   data: [],
+  category: '1',
+  active: [],
 };
