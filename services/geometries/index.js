@@ -35,8 +35,7 @@ class GeometriesService {
     this.api = setup({
       // `axios` options
       // This doesn't work...
-      // baseURL: `${process.env.NEXT_PUBLIC_API}`,
-      baseURL: 'http://api.us-resilience-map.vizzuality.com/api/v1',
+      baseURL: `${process.env.NEXT_PUBLIC_API}`,
 
       // `axios-cache-adapter` options
       cache: {
