@@ -19,4 +19,23 @@ export default {
     loading: false,
     error: payload,
   }),
+  [actions.setIndicatorsCategory]: (state, { payload }) => ({
+    ...state,
+    category: payload,
+  }),
+  [actions.setIndicatorsActive]: (state, { payload }) => ({
+    ...state,
+    active: payload,
+  }),
+  [actions.toggleIndicatorsActive]: (state, { payload }) => {
+    const active = [...state.active];
+
+    return {
+      ...state,
+      active:
+        active.indexOf(payload) > -1
+          ? active.filter((e) => e !== payload)
+          : [payload, ...active],
+    };
+  },
 };

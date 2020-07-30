@@ -84,7 +84,7 @@ export const service = new IndicatorsService();
 
 // ROUTES
 export function fetchIndicators(params, options = {}) {
-  return service.request('/indicators', options);
+  return service.request('/layers?include=category', options);
 }
 
 export default service;

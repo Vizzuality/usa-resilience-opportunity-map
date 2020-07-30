@@ -6,6 +6,9 @@ export const setIndicators = createAction('setIndicators');
 export const setIndicatorsLoading = createAction('setIndicatorsLoading');
 export const setIndicatorsLoaded = createAction('setIndicatorsLoaded');
 export const setIndicatorsError = createAction('setIndicatorsError');
+export const setIndicatorsCategory = createAction('setIndicatorsCategory');
+export const setIndicatorsActive = createAction('setIndicatorsActive');
+export const toggleIndicatorsActive = createAction('toggleIndicatorsActive');
 
 export const getIndicators = createThunkAction(
   'getIndicators',

@@ -14,7 +14,7 @@ import { easeCubic } from 'd3-ease';
 const DEFAULT_VIEWPORT = {
   zoom: 2,
   lat: 0,
-  lng: 0
+  lng: 0,
 };
 
 class Map extends Component {
@@ -37,7 +37,7 @@ class Map extends Component {
     /** An object that defines the bounds */
     bounds: PropTypes.shape({
       bbox: PropTypes.array,
-      options: PropTypes.shape({})
+      options: PropTypes.shape({}),
     }),
 
     /** A boolean that allows panning */
@@ -71,7 +71,7 @@ class Map extends Component {
     onMouseLeave: PropTypes.func,
 
     /** A function that exposes the viewport */
-    getCursor: PropTypes.func
+    getCursor: PropTypes.func,
   };
 
   static defaultProps = {
@@ -88,16 +88,16 @@ class Map extends Component {
       if (isHovering) return 'pointer';
       if (isDragging) return 'grabbing';
       return 'grab';
-    }
+    },
   };
 
   state = {
     viewport: {
       ...DEFAULT_VIEWPORT,
-      ...this.props.viewport // eslint-disable-line
+      ...this.props.viewport, // eslint-disable-line
     },
     flying: false,
-    loaded: false
+    loaded: false,
   };
 
   componentDidUpdate(prevProps) {
@@ -106,11 +106,12 @@ class Map extends Component {
     const { viewport: stateViewport } = this.state;
 
     if (!isEqual(viewport, prevViewport)) {
-      this.setState({ // eslint-disable-line
+      // eslint-disable-next-line
+      this.setState({
         viewport: {
           ...stateViewport,
-          ...viewport
-        }
+          ...viewport,
+        },
       });
     }
 
@@ -129,7 +130,7 @@ class Map extends Component {
 
     onLoad({
       map: this.map,
-      mapContainer: this.mapContainer
+      mapContainer: this.mapContainer,
     });
   };
 
@@ -140,12 +141,12 @@ class Map extends Component {
     onViewportChange(v);
   };
 
-  onResize = v => {
+  onResize = (v) => {
     const { onViewportChange } = this.props;
     const { viewport } = this.state;
     const newViewport = {
       ...viewport,
-      ...v
+      ...v,
     };
 
     this.setState({ viewport: newViewport });
@@ -168,7 +169,7 @@ class Map extends Component {
         pitch,
         zoom,
         latitude: lat,
-        longitude: lng
+        longitude: lng,
       };
 
       // Publish new viewport and save it into the state
@@ -177,7 +178,7 @@ class Map extends Component {
     }
   };
 
-  onHover = e => {
+  onHover = (e) => {
     const { onHover } = this.props;
     const { features } = e;
     if (features && features.length) {
@@ -186,7 +187,7 @@ class Map extends Component {
       if (this.HOVER.id) {
         this.map.setFeatureState(
           {
-            ...this.HOVER
+            ...this.HOVER,
           },
           { hover: false }
         );
@@ -196,12 +197,12 @@ class Map extends Component {
         this.HOVER = {
           id,
           source,
-          ...(sourceLayer && { sourceLayer })
+          ...(sourceLayer && { sourceLayer }),
         };
 
         this.map.setFeatureState(
           {
-            ...this.HOVER
+            ...this.HOVER,
           },
           { hover: true }
         );
@@ -211,12 +212,12 @@ class Map extends Component {
     if (!!onHover) onHover(e);
   };
 
-  onMouseLeave = e => {
+  onMouseLeave = (e) => {
     const { onMouseLeave } = this.props;
     if (this.HOVER.id) {
       this.map.setFeatureState(
         {
-          ...this.HOVER
+          ...this.HOVER,
         },
         { hover: false }
       );
@@ -224,7 +225,7 @@ class Map extends Component {
 
     this.HOVER = {};
 
-    if(!!onMouseLeave) onMouseLeave(e);
+    if (!!onMouseLeave) onMouseLeave(e);
   };
 
   fitBounds = () => {
@@ -235,13 +236,13 @@ class Map extends Component {
     const v = {
       width: this.mapContainer.offsetWidth,
       height: this.mapContainer.offsetHeight,
-      ...viewport
+      ...viewport,
     };
 
     const { longitude, latitude, zoom } = new WebMercatorViewport(v).fitBounds(
       [
         [bbox[0], bbox[1]],
-        [bbox[2], bbox[3]]
+        [bbox[2], bbox[3]],
       ],
       options
     );
@@ -252,12 +253,12 @@ class Map extends Component {
       latitude,
       zoom,
       transitionDuration: 2500,
-      transitionInterruption: TRANSITION_EVENTS.UPDATE
+      transitionInterruption: TRANSITION_EVENTS.UPDATE,
     };
 
     this.setState({
       flying: true,
-      viewport: newViewport
+      viewport: newViewport,
     });
     onViewportChange(newViewport);
 
@@ -283,16 +284,16 @@ class Map extends Component {
 
     return (
       <div
-        ref={r => {
+        ref={(r) => {
           this.mapContainer = r;
         }}
         className={classnames({
           'c-map': true,
-          [customClass]: !!customClass
+          [customClass]: !!customClass,
         })}
       >
         <ReactMapGL
-          ref={map => {
+          ref={(map) => {
             this.map = map && map.getMap();
           }}
           // CUSTOM PROPS FROM REACT MAPBOX API
@@ -319,7 +320,10 @@ class Map extends Component {
           transitionInterpolator={new FlyToInterpolator()}
           transitionEasing={easeCubic}
         >
-          {loaded && !!this.map && typeof children === 'function' && children(this.map)}
+          {loaded &&
+            !!this.map &&
+            typeof children === 'function' &&
+            children(this.map)}
         </ReactMapGL>
       </div>
     );
