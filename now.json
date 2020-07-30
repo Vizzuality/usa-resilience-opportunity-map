@@ -1,9 +1,4 @@
 {
   "version": 2,
-  "name": "usa-resilience-opportunity-map",
-  "build": {
-    "env": {
-      "NEXT_PUBLIC_API": "http://api.us-resilience-map.vizzuality.com/api/v1"
-    }
-  }
+  "name": "usa-resilience-opportunity-map"
 }
