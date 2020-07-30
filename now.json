@@ -1,9 +1,4 @@
 {
   "version": 2,
-  "name": "usa-resilience-opportunity-map",
-  "build": {
-    "env": {
-      "API": ""
-    }
-  }
+  "name": "usa-resilience-opportunity-map"
 }

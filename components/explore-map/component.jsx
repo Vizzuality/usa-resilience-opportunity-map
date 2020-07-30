@@ -22,13 +22,13 @@ import {
 
 // Local imports
 import Map from './map';
-import DEFAULT_LAYERS from './activeLayers';
+import { LAYERS } from './constants';
 
 export default function ExploreMap() {
   const [
     layers,
     // setLayers
-  ] = useState(DEFAULT_LAYERS);
+  ] = useState(LAYERS);
   const [layersSettings, setLayersSettings] = useState({});
   const [layersInteractiveIds, setLayersInteractiveIds] = useState([]);
 

@@ -8,11 +8,11 @@ import reducerRegistry from 'store/registry';
 import * as actions from './actions';
 import reducers from './reducers';
 import initialState from './initial-state';
-import { selectStatesProps } from './selectors';
+import { selectGeometriesProps } from './selectors';
 
-class StatesProvider extends PureComponent {
+class GeometriesProvider extends PureComponent {
   static propTypes = {
-    getStates: PropTypes.func.isRequired,
+    getGeometries: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
@@ -20,12 +20,12 @@ class StatesProvider extends PureComponent {
   }
 
   fetch = () => {
-    const { getStates } = this.props;
+    const { getGeometries } = this.props;
 
     this.cancel();
     this.source = CancelToken.source();
 
-    getStates(this.source.token);
+    getGeometries(this.source.token);
   };
 
   cancel = () => {
@@ -39,10 +39,10 @@ class StatesProvider extends PureComponent {
   }
 }
 
-reducerRegistry.registerModule('states', {
+reducerRegistry.registerModule('geometries', {
   actions,
   reducers,
   initialState,
 });
 
-export default connect(selectStatesProps, actions)(StatesProvider);
+export default connect(selectGeometriesProps, actions)(GeometriesProvider);

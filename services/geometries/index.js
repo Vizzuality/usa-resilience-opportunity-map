@@ -4,10 +4,10 @@ import { setup } from 'axios-cache-adapter';
 import Jsona, { SwitchCaseJsonMapper, SwitchCaseModelMapper } from 'jsona';
 
 /**
- * States service class
+ * Geometries service class
  * It is a singleton for not instanciate Jsona on each request.
  */
-class StatesService {
+class GeometriesService {
   /**
    * Creates dataFormatter and add it to service.
    * @constructor
@@ -28,13 +28,14 @@ class StatesService {
       // List of drivers used
       driver: [localforage.INDEXEDDB, localforage.LOCALSTORAGE],
       // Prefix all storage keys to prevent conflicts
-      name: 'ng-states',
+      name: 'usa-geometries',
     });
 
     // Create `axios` instance with pre-configured `axios-cache-adapter` using a `localforage` store
     this.api = setup({
       // `axios` options
-      baseURL: `${process.env.API}`,
+      // This doesn't work...
+      baseURL: `${process.env.NEXT_PUBLIC_API}`,
 
       // `axios-cache-adapter` options
       cache: {
@@ -79,17 +80,14 @@ class StatesService {
   }
 }
 
-export const service = new StatesService();
+export const service = new GeometriesService();
 
 // ROUTES
-export function fetchStates(params, options = {}) {
-  const template = () => {};
-  // TODO: custom replace function
-  const url = template('/states', {
-    interpolate: /{{([\s\S]+?)}}/g,
-  });
-
-  return service.request(url(params), options);
+export function fetchGeometries(params, options = {}) {
+  return service.request(
+    '/geometries?fields[geometries]=name,location-type,parent-id&page[size]=9999',
+    options
+  );
 }
 
 export default service;

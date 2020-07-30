@@ -1,20 +1,20 @@
 import * as actions from './actions';
 
 export default {
-  [actions.setStates]: (state, { payload }) => ({
+  [actions.setGeometries]: (state, { payload }) => ({
     ...state,
     data: payload,
   }),
-  [actions.setStatesLoading]: (state, { payload }) => ({
+  [actions.setGeometriesLoading]: (state, { payload }) => ({
     ...state,
     loading: payload,
     error: false,
   }),
-  [actions.setStatesLoaded]: (state, { payload }) => ({
+  [actions.setGeometriesLoaded]: (state, { payload }) => ({
     ...state,
     loaded: payload,
   }),
-  [actions.setStatesError]: (state, { payload }) => ({
+  [actions.setGeometriesError]: (state, { payload }) => ({
     ...state,
     loading: false,
     error: payload,
