@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
 import { connect } from 'react-redux';
-import sortBy from 'lodash.sortby';
+import Fuse from 'fuse.js';
 
 import Main from 'components/main';
 import Button from 'components/button';
@@ -11,6 +11,9 @@ import GeometriesProvider from 'providers/geometries';
 import { selectGeometriesProps } from 'providers/geometries/selectors';
 
 function Home({ data }) {
+  const [inputValue, setInput] = useState('');
+  const [menuOpen, openMenu] = useState(false);
+
   const states = data
     .filter((d) => d.locationType === 'state')
     .reduce(
@@ -20,32 +23,44 @@ function Home({ data }) {
       }),
       {}
     );
-  const options = sortBy(
-    data.map((d) => ({
-      value: d.id,
-      label:
-        d.locationType === 'county'
-          ? `${d.name} (${states[d.parentId]})`
-          : d.name,
-    })),
-    'label'
-  );
-
-  const [inputValue, setInput] = useState('');
-  const [menuOpen, openMenu] = useState(false);
+  const locations = data.map((d) => ({
+    value: d.id,
+    label:
+      d.locationType === 'county'
+        ? `${d.name} (${states[d.parentId]})`
+        : d.name,
+  }));
+  const fuse = new Fuse(locations, {
+    keys: ['label'],
+  });
+  const options = fuse.search(inputValue).map((o) => o.item);
 
   const onInputChange = (payload, { action }) => {
+    console.log('inputChange', payload, action);
     switch (action) {
       case 'input-change':
         setInput(payload);
         openMenu(payload && payload !== '');
-        return;
+        break;
       case 'menu-close':
         openMenu(inputValue && inputValue !== '');
         break;
       default:
     }
   };
+
+  const onSelectChange = (payload, { action }) => {
+    console.log('selectChange', payload, action);
+    switch (action) {
+      case 'select-option':
+        setInput(payload.label);
+        openMenu(false);
+        break;
+      default:
+    }
+  };
+
+  console.log(inputValue);
 
   return (
     <Main>
@@ -91,6 +106,7 @@ function Home({ data }) {
               placeholder="Enter a state, county name or ZIP code"
               inputValue={inputValue}
               onInputChange={onInputChange}
+              onChange={onSelectChange}
               menuIsOpen={menuOpen}
               styles={{
                 control: (provided) => ({
@@ -105,8 +121,11 @@ function Home({ data }) {
                 }),
                 menuList: (provided) => ({
                   ...provided,
-                  cursor: 'pointer',
                   maxHeight: '240px',
+                }),
+                option: (provided) => ({
+                  ...provided,
+                  cursor: 'pointer',
                 }),
                 indicatorsContainer: () => ({
                   display: 'none',
