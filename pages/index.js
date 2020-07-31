@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
 import { connect } from 'react-redux';
@@ -30,6 +31,22 @@ function Home({ data }) {
     'label'
   );
 
+  const [inputValue, setInput] = useState('');
+  const [menuOpen, openMenu] = useState(false);
+
+  const onInputChange = (payload, { action }) => {
+    switch (action) {
+      case 'input-change':
+        setInput(payload);
+        openMenu(payload && payload !== '');
+        return;
+      case 'menu-close':
+        openMenu(inputValue && inputValue !== '');
+        break;
+      default:
+    }
+  };
+
   return (
     <Main>
       <div className="c-home">
@@ -44,7 +61,7 @@ function Home({ data }) {
             </p>
             <Button
               className="home-cta"
-              colors={{ border: '#4595e1', text: '#FFF' }}
+              colors={{ border: '#4595e1', text: '#fff' }}
               link="/explore"
             >
               Explore data
@@ -72,14 +89,24 @@ function Home({ data }) {
               className="home-search--select"
               options={options}
               placeholder="Enter a state, county name or ZIP code"
-              // inputValue="Al"
-              onInputChange={(val) => console.log(val)}
+              inputValue={inputValue}
+              onInputChange={onInputChange}
+              menuIsOpen={menuOpen}
               styles={{
-                control: (provided) => ({ ...provided, height: '55px' }),
+                control: (provided) => ({
+                  ...provided,
+                  height: '55px',
+                  cursor: 'text',
+                }),
                 menu: (provided) => ({
                   ...provided,
                   color: '#000',
                   textAlign: 'left',
+                }),
+                menuList: (provided) => ({
+                  ...provided,
+                  cursor: 'pointer',
+                  maxHeight: '240px',
                 }),
                 indicatorsContainer: () => ({
                   display: 'none',
@@ -88,7 +115,7 @@ function Home({ data }) {
             />
             <Button
               className="search-btn"
-              colors={{ border: '#FFF', text: '#FFF' }}
+              colors={{ border: '#fff', text: '#fff' }}
             >
               Search all states
             </Button>
