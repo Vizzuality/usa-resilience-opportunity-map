@@ -1,0 +1,233 @@
+.c-dropdown {
+  width: auto;
+  text-align: left;
+  margin-top: 3px;
+
+  .dropdown--label {
+    display: block;
+    font-size: $font-size-s;
+    font-weight: $font-weight-bold;
+    color: $color-gray-1;
+    margin-bottom: 4px;
+  }
+
+  &.-inline {
+    display: inline-block;
+  }
+}
+
+.c-dropdown-item {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  height: 0;
+  flex: 0;
+  transform: translate(25%, 0);
+  opacity: 0;
+  width: 100%;
+  transition: none;
+  overflow: hidden;
+  padding: $space-1 $space-1 * 2;
+  font-weight: $font-weight-regular;
+
+  &.-base {
+    transform: translate(-25%, 0);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &.-show {
+    height: auto;
+    transform: translate(0, 0);
+    flex: 1;
+    opacity: 1;
+    overflow: initial;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .dropdown-item--container {
+    width: 100%;
+
+    .infoButton {
+      margin-right: 10px;
+      width: 16px;
+      max-width: 16px;
+      min-width: 16px;
+      height: 16px;
+      max-height: 16px;
+    }
+
+    .groupIcon {
+      transform: rotate(-90deg);
+      position: absolute;
+      right: 10px;
+      fill: $color-gray-1;
+
+      &:hover {
+        fill: $color-1;
+      }
+
+      &.selected {
+        transform: rotate(90deg);
+        left: 10px;
+      }
+    }
+
+    .groupParent {
+      .item {
+        padding-right: 25px;
+        z-index: 5;
+      }
+
+      &.selected {
+        .item {
+          padding-right: 10px;
+          padding-left: 30px;
+        }
+      }
+
+      .groupIcon {
+        z-index: 6;
+      }
+    }
+
+    &.-indent {
+      padding-left: 20px;
+    }
+
+    .-highlight {
+      &:hover {
+        color: $color-1;
+      }
+    }
+  }
+}
+
+.c-dropdown-menu {
+  border: solid 1px $color-gray-4;
+  margin-top: -1px;
+  z-index: 1;
+  max-height: 300px;
+  overflow-y: scroll;
+  cursor: pointer;
+  color: $color-gray-1;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  background-color: $color-white;
+  font-size: $font-size-m;
+}
+
+.c-dropdown-selector {
+  position: relative;
+
+  .dropdown-selector--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border: solid 1px $color-gray-5;
+    border-radius: 0;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.09);
+    height: 45px;
+    padding: 0 10px;
+    cursor: pointer;
+    color: $color-3;
+    z-index: 0;
+    background: $color-gray-5;
+    font-weight: $font-weight-bold;
+
+    .dropdown-selector--value {
+      position: relative;
+      z-index: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+
+      &.-placeholder {
+        color: $color-3;
+      }
+
+      &.-clearable {
+        padding-right: 28px;
+      }
+    }
+
+    .dropdown-selector--arrowbtn {
+      position: relative;
+      top: 1px;
+      z-index: 3;
+      padding-left: $space-1;
+      cursor: pointer;
+      border: none;
+      outline: none;
+
+      svg {
+        max-width: 10px;
+        max-height: 10px;
+        fill: $color-1;
+      }
+    }
+
+    .dropdown-selector--clearbtn {
+      z-index: 3;
+      padding-left: $space-1;
+      cursor: pointer;
+      border: none;
+      outline: none;
+
+      svg {
+        max-width: 10px;
+        max-height: 10px;
+        fill: $color-gray-2;
+      }
+    }
+
+    input {
+      z-index: 1;
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: $color-gray-2;
+      }
+
+      &:read-only {
+        cursor: pointer;
+      }
+    }
+
+    &.-align-left {
+      justify-content: flex-start;
+
+      .dropdown-selector--value {
+        padding-left: 18px;
+        padding-right: 0;
+      }
+    }
+  }
+
+  &.-small {
+    .dropdown-selector--container {
+      height: 30px;
+    }
+  }
+
+  &.-medium {
+    .dropdown-selector--container {
+      height: 50px;
+    }
+  }
+}

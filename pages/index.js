@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Select from 'react-select';
 import { connect } from 'react-redux';
 import Fuse from 'fuse.js';
 
 import Main from 'components/main';
 import Button from 'components/button';
+import Dropdown from 'components/dropdown';
 
 import GeometriesProvider from 'providers/geometries';
 import { selectGeometriesProps } from 'providers/geometries/selectors';
 
 function Home({ data }) {
   const [inputValue, setInput] = useState('');
-  const [menuOpen, openMenu] = useState(false);
+  const [
+    menuOpen,
+    // openMenu
+  ] = useState(false);
 
   const states = data
     .filter((d) => d.locationType === 'state')
@@ -25,6 +28,7 @@ function Home({ data }) {
     );
   const locations = data.map((d) => ({
     value: d.id,
+    id: d.id,
     label:
       d.locationType === 'county'
         ? `${d.name} (${states[d.parentId]})`
@@ -35,29 +39,13 @@ function Home({ data }) {
   });
   const options = fuse.search(inputValue).map((o) => o.item);
 
-  const onInputChange = (payload, { action }) => {
-    console.log('inputChange', payload, action);
-    switch (action) {
-      case 'input-change':
-        setInput(payload);
-        openMenu(payload && payload !== '');
-        break;
-      case 'menu-close':
-        openMenu(inputValue && inputValue !== '');
-        break;
-      default:
-    }
-  };
-
-  const onSelectChange = (payload, { action }) => {
-    console.log('selectChange', payload, action);
-    switch (action) {
-      case 'select-option':
-        setInput(payload.label);
-        openMenu(false);
-        break;
-      default:
-    }
+  const buildInputProps = (getInputProps) => {
+    return getInputProps({
+      placeholder: 'Enter a state, county name or ZIP code',
+      onClick: (val) => console.log(val),
+      readOnly: !menuOpen,
+      onKeyDown: (e) => console.log(e),
+    });
   };
 
   console.log(inputValue);
@@ -100,37 +88,14 @@ function Home({ data }) {
             analyze?
           </h2>
           <div className="home-search">
-            <Select
+            <Dropdown
               className="home-search--select"
-              options={options}
+              options={options} // locations
+              onChange={(sel) => console.log(sel) || setInput(sel.label)}
+              defaultText={{ selected: inputValue }}
               placeholder="Enter a state, county name or ZIP code"
-              inputValue={inputValue}
-              onInputChange={onInputChange}
-              onChange={onSelectChange}
-              menuIsOpen={menuOpen}
-              styles={{
-                control: (provided) => ({
-                  ...provided,
-                  height: '55px',
-                  cursor: 'text',
-                }),
-                menu: (provided) => ({
-                  ...provided,
-                  color: '#000',
-                  textAlign: 'left',
-                }),
-                menuList: (provided) => ({
-                  ...provided,
-                  maxHeight: '240px',
-                }),
-                option: (provided) => ({
-                  ...provided,
-                  cursor: 'pointer',
-                }),
-                indicatorsContainer: () => ({
-                  display: 'none',
-                }),
-              }}
+              searchable
+              buildInputProps={buildInputProps}
             />
             <Button
               className="search-btn"
