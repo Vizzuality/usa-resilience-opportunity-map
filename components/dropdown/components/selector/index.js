@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 import cx from 'classnames';
 
-import CLOSE_SVG from 'svgs/ui/close.svg?sprite';
-import ARROW_DOWN__SVG from 'svgs/ui/arrow-down.svg?sprite';
+// import CLOSE_SVG from 'svgs/ui/close.svg?sprite';
+// import ARROW_DOWN__SVG from 'svgs/ui/arrow-down.svg?sprite';
 
-import Icon from 'components/icon';
+// import Icon from 'components/icon';
 
 const Selector = (props) => {
   const {
@@ -41,7 +41,7 @@ const Selector = (props) => {
       onClick={onSelectorClick}
       type="button"
     >
-      <Icon icon={ARROW_DOWN__SVG} />
+      {/* <Icon icon={ARROW_DOWN__SVG} /> */}
     </button>
   );
 
@@ -89,7 +89,7 @@ const Selector = (props) => {
             onClick={handleClearSelection}
             type="button"
           >
-            <Icon icon={CLOSE_SVG} />
+            {/* <Icon icon={CLOSE_SVG} /> */}
           </button>
         )}
         {showDownArrow && arrowDown}

@@ -1,22 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Fuse from 'fuse.js';
 
 import Main from 'components/main';
 import Button from 'components/button';
-import Dropdown from 'components/dropdown';
+import Autocomplete from 'components/autocomplete';
 
 import GeometriesProvider from 'providers/geometries';
 import { selectGeometriesProps } from 'providers/geometries/selectors';
 
 function Home({ data }) {
-  const [inputValue, setInput] = useState('');
-  const [
-    menuOpen,
-    // openMenu
-  ] = useState(false);
-
   const states = data
     .filter((d) => d.locationType === 'state')
     .reduce(
@@ -34,21 +27,12 @@ function Home({ data }) {
         ? `${d.name} (${states[d.parentId]})`
         : d.name,
   }));
-  const fuse = new Fuse(locations, {
-    keys: ['label'],
-  });
-  const options = fuse.search(inputValue).map((o) => o.item);
 
   const buildInputProps = (getInputProps) => {
     return getInputProps({
       placeholder: 'Enter a state, county name or ZIP code',
-      onClick: (val) => console.log(val),
-      readOnly: !menuOpen,
-      onKeyDown: (e) => console.log(e),
     });
   };
-
-  console.log(inputValue);
 
   return (
     <Main>
@@ -88,13 +72,12 @@ function Home({ data }) {
             analyze?
           </h2>
           <div className="home-search">
-            <Dropdown
+            <Autocomplete
               className="home-search--select"
-              options={options} // locations
-              onChange={(sel) => console.log(sel) || setInput(sel.label)}
-              defaultText={{ selected: inputValue }}
-              placeholder="Enter a state, county name or ZIP code"
-              searchable
+              options={locations}
+              onChange={(sel) =>
+                sel && console.log(`selected: ${sel.label} (id: ${sel.id})`)}
+              // TODO: onChange > navigate to explore/map?id
               buildInputProps={buildInputProps}
             />
             <Button
