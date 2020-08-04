@@ -1,0 +1,86 @@
+.c-autocomplete {
+  width: auto;
+  text-align: left;
+  margin-top: 3px;
+
+  &.-inline {
+    display: inline-block;
+  }
+}
+
+.c-autocomplete--select {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 rem(20px);
+  background-color: $color-white;
+  box-shadow: 0 15px 15px 0 rgba(75, 83, 98, 0.07);
+
+  .c-autocomplete--magnifier {
+    height: rem(21px);
+    margin-right: 17px;
+  }
+
+  .c-autocomplete--close {
+    height: rem(21px);
+  }
+
+  .c-autocomplete--input {
+    height: 100%;
+    width: 100%;
+    color: $color-1;
+    font-family: $font-family;
+    font-size: rem(22px);
+    line-height: 27px;
+
+    &.--placeholder {
+      opacity: 0.5;
+    }
+  }
+}
+
+.c-autocomplete--menu {
+  max-height: 250px;
+  overflow: auto;
+
+  .c-autocomplete--title {
+    display: flex;
+    align-items: flex-end;
+    padding-left: rem(34px);
+    padding-bottom: rem(8px);
+    background-color: $color-white;
+    color: $color-1;
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 30px;
+    height: 66px;
+    width: 100%;
+  }
+}
+
+.c-autocomplete--item {
+  padding-left: rem(34px);
+  background-color: $color-white;
+  color: $color-1;
+  font-family: $font-family;
+
+  &.--selected {
+    color: $color-white;
+    background-color: $select-blue;
+  }
+
+  &:hover {
+    color: $color-white;
+    background-color: $select-blue;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    height: 66px;
+    width: 100%;
+    font-size: rem(22px);
+    line-height: 27px;
+  }
+}

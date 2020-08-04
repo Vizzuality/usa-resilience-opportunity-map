@@ -99,6 +99,10 @@
       .home-search--select {
         height: 55px;
         width: 100%;
+
+        .c-dropdown-menu {
+          max-height: 240px;
+        }
       }
 
       .search-btn {
