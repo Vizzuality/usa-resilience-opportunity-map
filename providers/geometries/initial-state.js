@@ -3,4 +3,5 @@ export default {
   loaded: false,
   error: false,
   data: [],
+  id: null,
 };

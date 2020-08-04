@@ -9,12 +9,11 @@ import IndicatorsProvider from 'providers/indicators';
 import { initializeStore } from 'store';
 import { setGeometryId } from 'providers/geometries/actions';
 
-export const getServerSideProps = async (ctx) => {
+export async function getServerSideProps(ctx) {
   const rStore = initializeStore();
   const { dispatch } = rStore;
 
-  const { query } = ctx;
-  const { id } = query;
+  const id = ctx?.query?.id;
 
   if (id) {
     dispatch(setGeometryId(id));
@@ -25,7 +24,7 @@ export const getServerSideProps = async (ctx) => {
       initialReduxState: rStore.getState(),
     },
   };
-};
+}
 
 export default function Explore() {
   return (
