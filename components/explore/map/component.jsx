@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Utils
 import isEmpty from 'lodash.isempty';
@@ -22,6 +22,8 @@ import {
 
 // Local imports
 import Map from 'components/map';
+import MapControls from 'components/map/controls';
+import ZoomControl from 'components/map/controls/zoom';
 import { LAYERS } from './constants';
 
 export default function ExploreMap() {
@@ -31,6 +33,15 @@ export default function ExploreMap() {
   ] = useState(LAYERS);
   const [layersSettings, setLayersSettings] = useState({});
   const [layersInteractiveIds, setLayersInteractiveIds] = useState([]);
+  const [viewport, setViewport] = useState({
+    longitude: 0,
+    latitude: 0,
+    zoom: 2,
+    maxZoom: 12,
+    minZoom: 2,
+    bearing: 0,
+    pitch: 0,
+  });
 
   // LEGEND
   const layerGroups = layers.map((l) => {
@@ -146,6 +157,36 @@ export default function ExploreMap() {
     }
   };
 
+  const resize = () => {
+    setViewport({
+      ...viewport,
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', resize);
+    resize();
+
+    return function cleanup() {
+      window.removeEventListener('resize', resize);
+    };
+    // eslint-disable-next-line
+  }, []);
+
+  const onViewportChange = (vp) => {
+    setViewport(vp);
+  };
+
+  const onZoomChange = (zoom) => {
+    setViewport({
+      ...viewport,
+      zoom,
+      transitionDuration: 250,
+    });
+  };
+
   const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || '';
 
   return (
@@ -164,6 +205,8 @@ export default function ExploreMap() {
         onClick={(e) => {
           if (e && e.features) console.log(e.features);
         }}
+        viewport={viewport}
+        onViewportChange={onViewportChange}
       >
         {(map) => (
           <LayerManager map={map} plugin={PluginMapboxGl}>
@@ -211,6 +254,10 @@ export default function ExploreMap() {
           </LayerManager>
         )}
       </Map>
+
+      <MapControls>
+        <ZoomControl viewport={viewport} onZoomChange={onZoomChange} />
+      </MapControls>
 
       <div className="c-legend">
         <Legend

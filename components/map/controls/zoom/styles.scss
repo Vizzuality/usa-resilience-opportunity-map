@@ -1,0 +1,41 @@
+@import 'styles/settings';
+
+.c-zoom-control {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 95px;
+  width: 50px;
+  background-color: $color-white;
+  box-shadow: 0 8px 9px 0 rgba(75, 83, 98, 0.12);
+
+  .zoom-control--btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: $color-white;
+    height: rem(47px);
+
+    &:hover {
+      background: darken($color-white, 2.5);
+    }
+
+    &.-disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    .zoom-control--icon {
+      height: 14px;
+      width: 14px;
+    }
+
+    .zoom-control--separator {
+      box-sizing: border-box;
+      height: 1px;
+      width: 34px;
+      border: 0.5px solid $color-1;
+    }
+  }
+}
