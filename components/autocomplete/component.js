@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Fuse from 'fuse.js';
+import Link from 'next/link';
 
 import Downshift from 'downshift';
 import cx from 'classnames';
@@ -30,35 +31,46 @@ function Autocomplete({ className, options, onChange, buildInputProps }) {
           selectedItem,
           getRootProps,
           clearSelection,
-        }) => (
-          <>
-            <div
-              className="c-autocomplete--select"
-              {...getRootProps({}, { suppressRefError: true })}
-            >
-              <Icon icon={MAGNIFIER} className="c-autocomplete--magnifier" />
-              <input
-                {...buildInputProps(getInputProps)}
-                className={cx('c-autocomplete--input', {
-                  '--placeholder': !inputValue,
-                })}
-              />
-              <button
-                className="dropdown-selector--clearbtn"
-                onClick={() => clearSelection()}
-                type="button"
+        }) => {
+          const searchResults = fuse
+            .search(inputValue, { limit: 30 })
+            .map((o) => o.item);
+          const states = [];
+          const counties = [];
+          searchResults.forEach((r) =>
+            !r.parentId ? states.push(r) : counties.push(r)
+          );
+
+          return (
+            <>
+              <div
+                className="c-autocomplete--select"
+                {...getRootProps({}, { suppressRefError: true })}
               >
-                {!!selectedItem && (
-                  <Icon icon={CLOSE_SVG} className="c-autocomplete--close" />
-                )}
-              </button>
-            </div>
-            <ul {...getMenuProps()} className="c-autocomplete--menu">
-              {isOpen
-                ? fuse
-                    .search(inputValue, { limit: 30 })
-                    .map((o) => o.item)
-                    .map((item, index) => (
+                <Icon icon={MAGNIFIER} className="c-autocomplete--magnifier" />
+                <input
+                  {...buildInputProps(getInputProps)}
+                  className={cx('c-autocomplete--input', {
+                    '--placeholder': !inputValue,
+                  })}
+                />
+                <button
+                  className="dropdown-selector--clearbtn"
+                  onClick={() => clearSelection()}
+                  type="button"
+                >
+                  {!!selectedItem && (
+                    <Icon icon={CLOSE_SVG} className="c-autocomplete--close" />
+                  )}
+                </button>
+              </div>
+              <div {...getMenuProps()} className="c-autocomplete--menu">
+                {isOpen ? (
+                  <>
+                    {states.length ? (
+                      <h5 className="c-autocomplete--title">States</h5>
+                    ) : null}
+                    {states.map((item, index) => (
                       <li
                         {...getItemProps({
                           key: item.value,
@@ -69,13 +81,36 @@ function Autocomplete({ className, options, onChange, buildInputProps }) {
                           '--selected': selectedItem === item,
                         })}
                       >
-                        {item.label}
+                        <Link href={`/explore?id=${item.id}`}>
+                          <a>{item.label}</a>
+                        </Link>
                       </li>
-                    ))
-                : null}
-            </ul>
-          </>
-        )}
+                    ))}
+                    {counties.length ? (
+                      <h5 className="c-autocomplete--title">Counties</h5>
+                    ) : null}
+                    {counties.map((item, index) => (
+                      <li
+                        {...getItemProps({
+                          key: item.value,
+                          index,
+                          item,
+                        })}
+                        className={cx('c-autocomplete--item', {
+                          '--selected': selectedItem === item,
+                        })}
+                      >
+                        <Link href={`/explore?id=${item.id}`}>
+                          <a>{item.label}</a>
+                        </Link>
+                      </li>
+                    ))}
+                  </>
+                ) : null}
+              </div>
+            </>
+          );
+        }}
       </Downshift>
     </div>
   );

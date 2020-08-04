@@ -43,22 +43,44 @@
 .c-autocomplete--menu {
   max-height: 250px;
   overflow: auto;
+
+  .c-autocomplete--title {
+    display: flex;
+    align-items: flex-end;
+    padding-left: rem(34px);
+    padding-bottom: rem(8px);
+    background-color: $color-white;
+    color: $color-1;
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 30px;
+    height: 66px;
+    width: 100%;
+  }
 }
 
 .c-autocomplete--item {
-  display: flex;
-  align-items: center;
-  height: 66px;
   padding-left: rem(34px);
   background-color: $color-white;
   color: $color-1;
   font-family: $font-family;
-  font-size: rem(22px);
-  line-height: 27px;
-  cursor: pointer;
 
   &.--selected {
     color: $color-white;
     background-color: $select-blue;
+  }
+
+  &:hover {
+    color: $color-white;
+    background-color: $select-blue;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    height: 66px;
+    width: 100%;
+    font-size: rem(22px);
+    line-height: 27px;
   }
 }

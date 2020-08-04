@@ -22,6 +22,7 @@ function Home({ data }) {
   const locations = data.map((d) => ({
     value: d.id,
     id: d.id,
+    parentId: d.parentId,
     label:
       d.locationType === 'county'
         ? `${d.name} (${states[d.parentId]})`
