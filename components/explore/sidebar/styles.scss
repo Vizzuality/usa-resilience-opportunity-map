@@ -1,10 +1,10 @@
 .c-explore-sidebar {
   position: absolute;
-  top: 24px;
-  left: 24px;
+  top: rem(24px);
+  left: rem(24px);
   z-index: 1;
   background: $color-gray-5;
-  width: 550px;
+  width: rem(550px);
   height: calc(100% - 24px - 24px);
   padding: $space-1 * 2;
 
@@ -41,17 +41,77 @@
     margin: $space-1 * 2 0 0;
 
     .explore-sidebar--list-item {
+      height: rem(100px);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
       background: $color-white;
-      margin: $space-1 0 0;
+      margin: 0 0 calc(#{$space-1} / 2);
       padding: $space-1 * 2;
       padding-left: $space-1 * 4;
 
-      &.-active {
-        background: darken($color-white, 5);
+      .explore-sidebar--item-info {
+        color: $color-1;
+
+        .explore-sidebar--item-group {
+          display: flex;
+          align-items: center;
+          margin-bottom: rem(8px);
+
+          .item-icon {
+            height: 20px;
+            width: 20px;
+            margin-right: rem(12px);
+          }
+
+          span {
+            font-family: $font-family;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.71px;
+            line-height: 13px;
+            text-transform: uppercase;
+          }
+        }
+
+        .indicator-name {
+          display: inline-block;
+          max-width: 240px;
+          font-family: $font-family-2;
+          font-size: 18px;
+          line-height: 22px;
+        }
       }
 
-      &:first-child {
-        margin: 0;
+      .explore-sidebar--item-controls {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        button {
+          height: rem(28px);
+          width: (95px);
+          border: 1px solid adjust-color($color: $color-1, $alpha: -0.7);
+          margin-left: 4px;
+          color: $color-1;
+          font-family: $font-family;
+          font-size: 10px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.71px;
+          line-height: 13px;
+
+          &.active-layer {
+            color: $color-white;
+            border: 1px solid transparent;
+          }
+
+          &:disabled {
+            color: adjust-color($color: $color-1, $alpha: -0.7);
+            border: 1px solid adjust-color($color: $color-1, $alpha: -0.9);
+            cursor: not-allowed;
+          }
+        }
       }
     }
   }

@@ -32,6 +32,7 @@
     "lodash.isempty": "^4.4.0",
     "lodash.isequal": "^4.5.0",
     "lodash.remove": "^4.7.0",
+    "lodash.startcase": "^4.4.0",
     "lodash.uniqby": "^4.7.0",
     "luma.gl": "7.3.2",
     "mapbox-gl": "^1.11.1",
