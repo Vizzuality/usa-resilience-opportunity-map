@@ -19,4 +19,8 @@ export default {
     loading: false,
     error: payload,
   }),
+  [actions.setGeometryId]: (state, { payload }) => ({
+    ...state,
+    id: payload,
+  }),
 };

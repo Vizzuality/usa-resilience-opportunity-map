@@ -6,6 +6,7 @@ export const setGeometries = createAction('setGeometries');
 export const setGeometriesLoading = createAction('setGeometriesLoading');
 export const setGeometriesLoaded = createAction('setGeometriesLoaded');
 export const setGeometriesError = createAction('setGeometriesError');
+export const setGeometryId = createAction('setGeometryId');
 
 export const getGeometries = createThunkAction(
   'getGeometries',
