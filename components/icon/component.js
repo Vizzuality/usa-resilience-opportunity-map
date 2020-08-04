@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Icon = ({ icon, className }) => (
+const Icon = ({ icon, className, style }) => (
   <svg
     className={`c-icon ${className}`}
     viewBox={icon?.viewBox || '0 0 32 32'}
-    style={{ display: 'block' }}
+    style={{ display: 'block', ...style }}
   >
     <use xlinkHref={`#${icon?.id || icon}`} />
   </svg>
@@ -18,6 +18,7 @@ Icon.propTypes = {
     PropTypes.func,
   ]),
   className: PropTypes.string,
+  style: PropTypes.object,
 };
 
 Icon.defaultProps = {

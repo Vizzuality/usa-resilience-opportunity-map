@@ -25,12 +25,7 @@
       font-weight: $font-weight-medium;
 
       &.-active {
-        background: $color-1;
-        color: $color-3;
-
-        .explore-sidebar--tab-icon {
-          background: $color-3;
-        }
+        color: $color-white;
       }
     }
 
@@ -38,7 +33,6 @@
       width: 20px;
       height: 20px;
       margin: 0 auto $space-1;
-      background: $color-1;
     }
   }
 
