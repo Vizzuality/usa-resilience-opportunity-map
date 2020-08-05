@@ -14,7 +14,9 @@ export default function ExploreSidebar(props) {
     category,
     indicators,
     categories,
+    activeCategories,
     toggleIndicatorsActive,
+    toggleCategoriesActive,
     setIndicatorsCategory,
   } = props;
 
@@ -69,6 +71,12 @@ export default function ExploreSidebar(props) {
                 />
               </div>
               <div className="explore-sidebar--tab-name">{c.name}</div>
+              {activeCategories.includes(c.id) && (
+                <div
+                  className="explore-sidebar--tab-dot"
+                  style={{ backgroundColor: colors[c.name] }}
+                />
+              )}
             </button>
           </li>
         ))}
@@ -106,8 +114,13 @@ export default function ExploreSidebar(props) {
                     className={cx({ 'active-layer': isItemActive })}
                     onClick={() => {
                       toggleIndicatorsActive(d.id);
+                      toggleCategoriesActive(d.category.id);
                     }}
-                    disabled={active.length > 1 && !isItemActive}
+                    disabled={
+                      (active.length > 1 ||
+                        activeCategories.includes(d.category.id)) &&
+                      !isItemActive
+                    }
                     style={{
                       backgroundColor: isItemActive && colors[d.category.name],
                     }}
@@ -128,7 +141,9 @@ ExploreSidebar.propTypes = {
   active: PropTypes.array,
   category: PropTypes.string,
   categories: PropTypes.array,
+  activeCategories: PropTypes.array,
   indicators: PropTypes.array,
   toggleIndicatorsActive: PropTypes.func,
+  toggleCategoriesActive: PropTypes.func,
   setIndicatorsCategory: PropTypes.func,
 };

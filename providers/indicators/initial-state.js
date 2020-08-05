@@ -5,4 +5,5 @@ export default {
   data: [],
   category: '1',
   active: [],
+  activeCategories: [],
 };

@@ -7,6 +7,8 @@ export const error = (state) => state?.indicators?.error;
 export const data = (state) => state?.indicators?.data || [];
 export const category = (state) => state?.indicators?.category;
 export const active = (state) => state?.indicators?.active || [];
+export const activeCategories = (state) =>
+  state?.indicators?.activeCategories || [];
 
 export const categories = createSelector([data, loading], (_data, _loading) => {
   if (!_data.length || _loading) return [];
@@ -38,4 +40,5 @@ export const selectIndicatorsProps = createStructuredSelector({
   active,
   indicators,
   categories,
+  activeCategories,
 });

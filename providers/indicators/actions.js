@@ -9,6 +9,7 @@ export const setIndicatorsError = createAction('setIndicatorsError');
 export const setIndicatorsCategory = createAction('setIndicatorsCategory');
 export const setIndicatorsActive = createAction('setIndicatorsActive');
 export const toggleIndicatorsActive = createAction('toggleIndicatorsActive');
+export const toggleCategoriesActive = createAction('toggleCategoriesActive');
 
 export const getIndicators = createThunkAction(
   'getIndicators',

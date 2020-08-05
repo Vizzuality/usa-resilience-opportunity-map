@@ -38,4 +38,15 @@ export default {
           : [payload, ...active],
     };
   },
+  [actions.toggleCategoriesActive]: (state, { payload }) => {
+    const activeCategories = [...state.activeCategories];
+
+    return {
+      ...state,
+      activeCategories:
+        activeCategories.indexOf(payload) > -1
+          ? activeCategories.filter((e) => e !== payload)
+          : [payload, ...activeCategories],
+    };
+  },
 };

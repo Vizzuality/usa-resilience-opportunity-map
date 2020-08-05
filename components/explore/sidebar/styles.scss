@@ -13,17 +13,20 @@
   // TABS
   .explore-sidebar--tabs {
     display: flex;
+    height: 53px;
 
     .explore-sidebar--tab-item {
       width: 100%;
     }
 
     .explore-sidebar--tab-btn {
+      position: relative;
       width: 100%;
+      height: 53px;
       text-align: center;
       text-transform: uppercase;
       font-size: $font-size-xs;
-      padding: $space-1 * 2 0;
+      padding: $space-1 0;
       font-weight: $font-weight-medium;
       letter-spacing: 0.71px;
 
@@ -36,6 +39,17 @@
       width: 20px;
       height: 20px;
       margin: 0 auto $space-1;
+    }
+
+    .explore-sidebar--tab-dot {
+      position: absolute;
+      top: 5px;
+      right: 25%;
+      height: 11px;
+      width: 11px;
+      border: 2px solid $color-white;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14);
     }
   }
 
