@@ -14,10 +14,36 @@ export const options = createSelector([data, loading], (_data, _loading) => {
   }));
 });
 
+export const states = createSelector([data], (_data) => {
+  return _data
+    .filter((d) => d.locationType === 'state')
+    .reduce(
+      (obj, d) => ({
+        ...obj,
+        [d.id]: d.name,
+      }),
+      {}
+    );
+});
+
+export const locations = createSelector([data], (_data) => {
+  _data.map((d) => ({
+    value: d.id,
+    id: d.id,
+    parentId: d.parentId,
+    label:
+      d.locationType === 'county'
+        ? `${d.name} (${states[d.parentId]})`
+        : d.name,
+  }));
+});
+
 export const selectGeometriesProps = createStructuredSelector({
   data,
   loading,
   loaded,
   error,
   options,
+  locations,
+  states,
 });

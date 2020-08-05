@@ -9,26 +9,7 @@ import Autocomplete from 'components/autocomplete';
 import GeometriesProvider from 'providers/geometries';
 import { selectGeometriesProps } from 'providers/geometries/selectors';
 
-function Home({ data }) {
-  const states = data
-    .filter((d) => d.locationType === 'state')
-    .reduce(
-      (obj, d) => ({
-        ...obj,
-        [d.id]: d.name,
-      }),
-      {}
-    );
-  const locations = data.map((d) => ({
-    value: d.id,
-    id: d.id,
-    parentId: d.parentId,
-    label:
-      d.locationType === 'county'
-        ? `${d.name} (${states[d.parentId]})`
-        : d.name,
-  }));
-
+function Home({ locations }) {
   const buildInputProps = (getInputProps) => {
     return getInputProps({
       placeholder: 'Enter a state, county name or ZIP code',
@@ -86,7 +67,7 @@ function Home({ data }) {
 }
 
 Home.propTypes = {
-  data: PropTypes.array,
+  locations: PropTypes.array,
 };
 
 export default connect(selectGeometriesProps, null)(Home);

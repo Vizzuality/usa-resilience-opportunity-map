@@ -32,26 +32,8 @@ export async function getServerSideProps(ctx) {
   };
 }
 
-function Explore({ data }) {
+function Explore({ locations }) {
   // TODO: move to selectors
-  const states = data
-    .filter((d) => d.locationType === 'state')
-    .reduce(
-      (obj, d) => ({
-        ...obj,
-        [d.id]: d.name,
-      }),
-      {}
-    );
-  const locations = data.map((d) => ({
-    value: d.id,
-    id: d.id,
-    parentId: d.parentId,
-    label:
-      d.locationType === 'county'
-        ? `${d.name} (${states[d.parentId]})`
-        : d.name,
-  }));
 
   const buildInputProps = (getInputProps) => {
     return getInputProps({
@@ -84,7 +66,7 @@ function Explore({ data }) {
 }
 
 Explore.propTypes = {
-  data: PropTypes.array,
+  locations: PropTypes.array,
 };
 
 export default connect(selectGeometriesProps, null)(Explore);
