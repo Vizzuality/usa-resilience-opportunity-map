@@ -3,27 +3,15 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Link from 'next/link';
 
-export default function Button({ children, colors, className, link }) {
+export default function Button({ children, style, className, link }) {
   return link ? (
     <Link href={link}>
-      <a
-        className={cx('c-button', className)}
-        style={{
-          borderColor: colors ? colors.border : '#000',
-          color: colors ? colors.text : '#FFF',
-        }}
-      >
+      <a className={cx('c-button', className)} style={style}>
         {children}
       </a>
     </Link>
   ) : (
-    <button
-      className={cx('c-button', className)}
-      style={{
-        borderColor: colors ? colors.border : '#000',
-        color: colors ? colors.text : '#FFF',
-      }}
-    >
+    <button className={cx('c-button', className)} style={style}>
       {children}
     </button>
   );
@@ -31,7 +19,7 @@ export default function Button({ children, colors, className, link }) {
 
 Button.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
-  colors: PropTypes.object,
+  style: PropTypes.object,
   className: PropTypes.string,
   link: PropTypes.string,
 };

@@ -1,6 +1,6 @@
 .c-explore-map {
   position: relative;
-  height: calc(100vh - 54px);
+  height: calc(100vh - #{$header-size} - #{$footer-size} - #{$explore-search});
   z-index: 0;
 }
 

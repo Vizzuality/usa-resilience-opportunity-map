@@ -47,11 +47,7 @@ function Home({ data }) {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <Button
-              className="home-cta"
-              colors={{ border: '#4595e1', text: '#fff' }}
-              link="/explore"
-            >
+            <Button className="home-cta" link="/explore">
               Explore data
             </Button>
           </div>
@@ -76,15 +72,9 @@ function Home({ data }) {
             <Autocomplete
               className="home-search--select"
               options={locations}
-              onChange={(sel) =>
-                sel && console.log(`selected: ${sel.label} (id: ${sel.id})`)}
-              // TODO: onChange > navigate to explore/map?id
               buildInputProps={buildInputProps}
             />
-            <Button
-              className="search-btn"
-              colors={{ border: '#fff', text: '#fff' }}
-            >
+            <Button className="search-btn" link="/explore?id=0">
               Search all states
             </Button>
           </div>

@@ -1,49 +1,49 @@
-import React, { useState } from "react";
-import cx from "classnames";
-import PropTypes from "prop-types";
-import { MediaContextProvider, Media } from "components/media";
+import React, { useState } from 'react';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
+import { MediaContextProvider, Media } from 'components/media';
 
 // Next
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 function Menu({ open, setOpen, isDesktop }) {
   const { pathname } = useRouter();
   const links = [
     {
-      name: "Explore Data",
-      href: "/explore",
+      name: 'Explore Data',
+      href: '/explore',
     },
     {
-      name: "Discover Stories",
-      href: "/stories",
+      name: 'Discover Stories',
+      href: '/stories',
     },
     {
-      name: "About the Data",
-      href: "/about",
+      name: 'About the Data',
+      href: '/about',
     },
   ];
 
   const mobileLinks = [
     {
-      name: "Home",
-      href: "/",
+      name: 'Home',
+      href: '/',
     },
     ...links,
   ];
 
   const otherLinks = [
     {
-      name: "Privacy Policy",
-      href: "/privacy",
+      name: 'Privacy Policy',
+      href: '/privacy',
     },
     {
-      name: "Terms and Conditions of Use",
-      href: "/terms",
+      name: 'Terms and Conditions of Use',
+      href: '/terms',
     },
     {
-      name: "Contact Us",
-      href: "/contact",
+      name: 'Contact Us',
+      href: '/contact',
     },
   ];
 
@@ -52,8 +52,8 @@ function Menu({ open, setOpen, isDesktop }) {
       {links.map((l) => (
         <div
           key={l.href}
-          className={cx("header--list-item", {
-            "--active": pathname === l.href,
+          className={cx('header--list-item', {
+            '--active': pathname === l.href,
           })}
         >
           <Link href={l.href}>
@@ -70,22 +70,24 @@ function Menu({ open, setOpen, isDesktop }) {
       ))}
     </div>
   ) : (
-    <nav className={cx("side-menu", { "--open": open })}>
-      <Link href="/">
-        <a className="menu-logo">
-          <img
-            className="header--logo-image"
-            src="assets/logos/logo_dark.svg"
-            alt="USA Resilience Map"
-          />
-        </a>
-      </Link>
+    <nav className={cx('side-menu', { '--open': open })}>
+      <div className="wrapper">
+        <Link href="/">
+          <a className="menu-logo">
+            <img
+              className="header--logo-image"
+              src="assets/logos/logo_dark.svg"
+              alt="USA Resilience Map"
+            />
+          </a>
+        </Link>
+      </div>
       <div className="side-menu--links">
         {mobileLinks.map((l) => (
           <Link key={l.href} href={l.href}>
             <a
-              className={cx("header--list-link", {
-                "--active": pathname === l.href,
+              className={cx('header--list-link', {
+                '--active': pathname === l.href,
               })}
               onClick={() => setOpen(false)}
               role="button"
@@ -102,8 +104,8 @@ function Menu({ open, setOpen, isDesktop }) {
           {otherLinks.map((l) => (
             <Link key={l.href} href={l.href}>
               <a
-                className={cx("small-link", {
-                  "--active": pathname === l.href,
+                className={cx('small-link', {
+                  '--active': pathname === l.href,
                 })}
                 onClick={() => setOpen(false)}
                 role="button"
@@ -128,7 +130,7 @@ Menu.propTypes = {
 function BurgerMenu({ open, setOpen }) {
   return (
     <button
-      className={cx("header-burger", { "--open": open })}
+      className={cx('header-burger', { '--open': open })}
       onClick={() => setOpen(!open)}
     >
       <div />
@@ -148,14 +150,14 @@ export default function Header() {
   const { pathname } = useRouter();
 
   return (
-    <header className={cx("c-header", { "--dark": pathname === "/" })}>
+    <header className={cx('c-header', { '--dark': pathname === '/' })}>
       <div className="wrapper header--list">
         <Link href="/">
           <a className="header-logo header--list-item">
             <img
               className="header--logo-image"
               src={`assets/logos/logo_${
-                pathname === "/" ? "white" : "dark"
+                pathname === '/' ? 'white' : 'dark'
               }.svg`}
               alt="USA Resilience Map"
             />

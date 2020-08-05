@@ -1,4 +1,6 @@
 .c-explore-sidebar {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: rem(24px);
   left: rem(24px);
@@ -38,7 +40,9 @@
 
   // LIST
   .explore-sidebar--list {
+    flex: 1;
     margin: $space-1 * 2 0 0;
+    overflow-y: scroll;
 
     .explore-sidebar--list-item {
       height: rem(100px);

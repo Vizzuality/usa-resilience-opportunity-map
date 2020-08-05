@@ -1,7 +1,9 @@
 .c-button {
+  display: flex;
+  align-items: center;
   padding: rem(20px) rem(40px);
-  border: 1px solid;
-  color: $color-white;
+  border: 1px solid $color-black;
+  color: $color-black;
   font-family: $font-family;
   font-size: 10px;
   font-weight: 500;

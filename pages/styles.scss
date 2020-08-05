@@ -40,10 +40,6 @@
       line-height: 30px;
     }
 
-    .home-cta {
-      margin: rem(52px) auto rem(130px);
-    }
-
     .home-greeting--wrapper {
       position: relative;
       z-index: $z-index-2;
@@ -52,6 +48,12 @@
       align-items: center;
       text-align: center;
       color: $color-white;
+
+      .home-cta {
+        margin: rem(52px) auto rem(130px);
+        border-color: $color-blue;
+        color: $color-white;
+      }
     }
 
     .home-greeting--gradient {
@@ -108,7 +110,40 @@
       .search-btn {
         margin-left: rem(22px);
         min-width: 200px;
+        border-color: $color-white;
+        color: $color-white;
       }
     }
+  }
+}
+
+.c-explore {
+  background-color: $color-gray-5;
+
+  .explore-search {
+    height: $explore-search;
+    display: flex;
+    padding-top: rem(12px);
+    padding-bottom: rem(12px);
+    background-color: transparent;
+
+    .explore-search--select {
+      flex: 1;
+
+      .c-autocomplete--select {
+        background-color: transparent;
+        box-shadow: unset;
+      }
+    }
+
+    .search-btn {
+      background-color: $color-1;
+      border-color: $color-1;
+      color: $color-white;
+    }
+  }
+
+  .map-wrapper {
+    position: relative;
   }
 }
