@@ -28,7 +28,7 @@ export async function getServerSideProps(ctx) {
   return {
     props: {
       initialReduxState: rStore.getState(),
-      id,
+      id: id || null,
     },
   };
 }
