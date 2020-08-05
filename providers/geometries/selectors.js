@@ -15,6 +15,7 @@ export const options = createSelector([data, loading], (_data, _loading) => {
 });
 
 export const states = createSelector([data], (_data) => {
+  if (!_data.length) return [];
   return _data
     .filter((d) => d.locationType === 'state')
     .reduce(
@@ -26,14 +27,15 @@ export const states = createSelector([data], (_data) => {
     );
 });
 
-export const locations = createSelector([data], (_data) => {
-  _data.map((d) => ({
+export const locations = createSelector([data, states], (_data, _states) => {
+  if (!_data.length) return [];
+  return _data.map((d) => ({
     value: d.id,
     id: d.id,
     parentId: d.parentId,
     label:
       d.locationType === 'county'
-        ? `${d.name} (${states[d.parentId]})`
+        ? `${d.name} (${_states[d.parentId]})`
         : d.name,
   }));
 });
