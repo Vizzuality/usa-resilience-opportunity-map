@@ -28,13 +28,12 @@ export async function getServerSideProps(ctx) {
   return {
     props: {
       initialReduxState: rStore.getState(),
+      id,
     },
   };
 }
 
-function Explore({ locations }) {
-  // TODO: move to selectors
-
+function Explore({ locations, id }) {
   const buildInputProps = (getInputProps) => {
     return getInputProps({
       placeholder: 'Enter a state, county name or ZIP code',
@@ -50,6 +49,7 @@ function Explore({ locations }) {
           <Autocomplete
             className="explore-search--select"
             options={locations}
+            activeOption={id ? locations.find((l) => l.id === id) : null}
             buildInputProps={buildInputProps}
           />
           <Button className="search-btn" link="/explore?id=0">
@@ -67,6 +67,7 @@ function Explore({ locations }) {
 
 Explore.propTypes = {
   locations: PropTypes.array,
+  id: PropTypes.string,
 };
 
 export default connect(selectGeometriesProps, null)(Explore);

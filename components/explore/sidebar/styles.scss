@@ -43,7 +43,7 @@
   .explore-sidebar--list {
     flex: 1;
     margin: $space-1 * 2 0 0;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     .explore-sidebar--list-item {
       height: rem(100px);

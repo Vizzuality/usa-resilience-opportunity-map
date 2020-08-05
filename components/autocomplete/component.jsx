@@ -9,7 +9,13 @@ import Icon from 'components/icon';
 import CLOSE_SVG from 'svgs/close.svg?sprite';
 import MAGNIFIER from 'svgs/search.svg?sprite';
 
-function Autocomplete({ className, options, onChange, buildInputProps }) {
+function Autocomplete({
+  className,
+  options,
+  activeOption,
+  onChange,
+  buildInputProps,
+}) {
   const fuse = new Fuse(options, {
     keys: ['label'],
   });
@@ -19,6 +25,9 @@ function Autocomplete({ className, options, onChange, buildInputProps }) {
       <Downshift
         onChange={onChange}
         itemToString={(item) => (item ? item.label : '')}
+        initialInputValue={activeOption?.label}
+        initialSelectedItem={activeOption?.label}
+        key={activeOption?.label}
         // TODO: Fix onblur/onmouseleave label issue
         // https://github.com/downshift-js/downshift/issues/717
       >
@@ -119,6 +128,7 @@ function Autocomplete({ className, options, onChange, buildInputProps }) {
 Autocomplete.propTypes = {
   className: PropTypes.string,
   options: PropTypes.array,
+  activeOption: PropTypes.object,
   onChange: PropTypes.func,
   defaultText: PropTypes.string,
   placeholder: PropTypes.string,
