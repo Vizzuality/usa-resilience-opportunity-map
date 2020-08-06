@@ -34,11 +34,6 @@ export async function getServerSideProps(ctx) {
 }
 
 function Explore({ locations, id }) {
-  const buildInputProps = (getInputProps) => {
-    return getInputProps({
-      placeholder: 'Enter a state, county name or ZIP code',
-    });
-  };
   return (
     <Main>
       <GeometriesProvider />
@@ -50,7 +45,6 @@ function Explore({ locations, id }) {
             className="explore-search--select"
             options={locations}
             activeOption={id ? locations.find((l) => l.id === id) : null}
-            buildInputProps={buildInputProps}
           />
           <Button className="search-btn" link="/explore?id=0">
             All states view

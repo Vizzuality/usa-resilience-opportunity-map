@@ -10,12 +10,6 @@ import GeometriesProvider from 'providers/geometries';
 import { selectGeometriesProps } from 'providers/geometries/selectors';
 
 function Home({ locations }) {
-  const buildInputProps = (getInputProps) => {
-    return getInputProps({
-      placeholder: 'Enter a state, county name or ZIP code',
-    });
-  };
-
   return (
     <Main>
       <div className="c-home">
@@ -54,7 +48,6 @@ function Home({ locations }) {
               className="home-search--select"
               clearable
               options={locations}
-              buildInputProps={buildInputProps}
             />
             <Button className="search-btn" link="/explore?id=0">
               Search all states
