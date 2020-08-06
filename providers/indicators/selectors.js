@@ -124,7 +124,7 @@ export const countyLayer = createSelector(
                   paint: {
                     'fill-color': [
                       'match',
-                      ['get', 'pop_hazard'],
+                      ['get', `${ind.slug}_hazard`],
                       ...flatten(
                         colors.map((c) => {
                           return [c.value, c.color];
@@ -160,10 +160,10 @@ export const countyLayer = createSelector(
           },
           legendConfig: {
             type: 'basic',
-            items: [
-              { name: 'Test 1', color: '#456789' },
-              { name: 'Test 2', color: '#123345' },
-            ],
+            items: colors.map((c) => ({
+              name: c.value,
+              color: c.color,
+            })),
           },
         },
       ];

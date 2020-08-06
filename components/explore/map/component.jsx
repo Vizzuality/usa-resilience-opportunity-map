@@ -26,8 +26,6 @@ import MapControls from 'components/map/controls';
 import ZoomControl from 'components/map/controls/zoom';
 
 export default function ExploreMap({ layers }) {
-  console.log(layers);
-
   const [layersSettings, setLayersSettings] = useState({});
   const [layersInteractiveIds, setLayersInteractiveIds] = useState([]);
   const [viewport, setViewport] = useState({
