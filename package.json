@@ -28,6 +28,7 @@
     "layer-manager": "^3.0.6",
     "localforage": "^1.8.1",
     "lodash.castarray": "^4.4.0",
+    "lodash.flatten": "^4.4.0",
     "lodash.groupby": "^4.6.0",
     "lodash.isempty": "^4.4.0",
     "lodash.isequal": "^4.5.0",

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import PropTypes from 'prop-types';
 // Utils
 import isEmpty from 'lodash.isempty';
 import { getParams } from 'utils/timeline';
@@ -13,7 +13,7 @@ import {
   Icons,
   Legend,
   LegendListItem,
-  // LegendItemTypes,
+  LegendItemTypes,
   LegendItemTimeStep,
   LegendItemToolbar,
   LegendItemButtonOpacity,
@@ -24,13 +24,10 @@ import {
 import Map from 'components/map';
 import MapControls from 'components/map/controls';
 import ZoomControl from 'components/map/controls/zoom';
-import { LAYERS } from './constants';
 
-export default function ExploreMap() {
-  const [
-    layers,
-    // setLayers
-  ] = useState(LAYERS);
+export default function ExploreMap({ layers }) {
+  console.log(layers);
+
   const [layersSettings, setLayersSettings] = useState({});
   const [layersInteractiveIds, setLayersInteractiveIds] = useState([]);
   const [viewport, setViewport] = useState({
@@ -44,39 +41,48 @@ export default function ExploreMap() {
   });
 
   // LEGEND
-  const layerGroups = layers.map((l) => {
-    const { id, paramsConfig, sqlConfig, decodeConfig, timelineConfig } = l;
-    const lSettings = layersSettings[id] || {};
+  const layerGroups = layers
+    .filter((l) => {
+      return !!l.legendConfig;
+    })
+    .map((l) => {
+      const { id, paramsConfig, sqlConfig, decodeConfig, timelineConfig } = l;
+      const lSettings = layersSettings[id] || {};
 
-    const params = !!paramsConfig && getParams(paramsConfig, lSettings.params);
-    const sqlParams = !!sqlConfig && getParams(sqlConfig, lSettings.sqlParams);
-    const decodeParams =
-      !!decodeConfig &&
-      getParams(decodeConfig, { ...timelineConfig, ...lSettings.decodeParams });
-    const timelineParams = !!timelineConfig && {
-      ...timelineConfig,
-      ...getParams(paramsConfig, lSettings.params),
-      ...getParams(decodeConfig, lSettings.decodeParams),
-    };
+      const params =
+        !!paramsConfig && getParams(paramsConfig, lSettings.params);
+      const sqlParams =
+        !!sqlConfig && getParams(sqlConfig, lSettings.sqlParams);
+      const decodeParams =
+        !!decodeConfig &&
+        getParams(decodeConfig, {
+          ...timelineConfig,
+          ...lSettings.decodeParams,
+        });
+      const timelineParams = !!timelineConfig && {
+        ...timelineConfig,
+        ...getParams(paramsConfig, lSettings.params),
+        ...getParams(decodeConfig, lSettings.decodeParams),
+      };
 
-    return {
-      id,
-      slug: id,
-      dataset: id,
-      layers: [
-        {
-          active: true,
-          ...l,
-          ...lSettings,
-          params,
-          sqlParams,
-          decodeParams,
-          timelineParams,
-        },
-      ],
-      ...lSettings,
-    };
-  });
+      return {
+        id,
+        slug: id,
+        dataset: id,
+        layers: [
+          {
+            active: true,
+            ...l,
+            ...lSettings,
+            params,
+            sqlParams,
+            decodeParams,
+            timelineParams,
+          },
+        ],
+        ...lSettings,
+      };
+    });
 
   const onChangeOrder = (ids) => {
     console.log('onChangeOrder', ids);
@@ -288,7 +294,7 @@ export default function ExploreMap() {
                 onChangeVisibility={onChangeVisibility}
                 onChangeOpacity={onChangeOpacity}
               >
-                {/* <LegendItemTypes /> */}
+                <LegendItemTypes />
 
                 <LegendItemTimeStep
                   defaultStyles={{
@@ -312,3 +318,7 @@ export default function ExploreMap() {
     </div>
   );
 }
+
+ExploreMap.propTypes = {
+  layers: PropTypes.array,
+};

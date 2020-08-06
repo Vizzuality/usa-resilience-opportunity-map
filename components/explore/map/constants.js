@@ -1,54 +1,64 @@
 export const LAYERS = [
   {
     id: 'counties-and-states',
-    type: 'vector',
-    render: {
-      layers: [
-        {
-          filter: ['all', ['has', 'countyfp']],
-          'source-layer': 'layer0',
-          type: 'line',
-          paint: {
-            'line-color': '#000',
-            'line-opacity': 1,
-            'line-dasharray': [3, 3],
-          },
-        },
-        {
-          filter: ['all', ['has', 'countyfp']],
-          'source-layer': 'layer0',
-          type: 'fill',
-          paint: {
-            'fill-color': '#000',
-            'fill-opacity': 0,
-          },
-        },
-        {
-          filter: ['all', ['!', ['has', 'countyfp']]],
-          'source-layer': 'layer0',
-          type: 'line',
-          paint: {
-            'line-color': '#000',
-            'line-opacity': 1,
-            'line-width': 2,
-          },
-        },
-        {
-          filter: ['all', ['!', ['has', 'countyfp']]],
-          'source-layer': 'layer0',
-          type: 'fill',
-          paint: {
-            'fill-color': '#000',
-            'fill-opacity': 0,
-          },
-        },
-      ],
-    },
-    source: {
-      tiles: [
-        'https://api.us-resilience-map.vizzuality.com/api/v1/geometries/tiles/{z}/{x}/{y}',
-      ],
+    name: 'Testing',
+    config: {
       type: 'vector',
+      render: {
+        layers: [
+          {
+            filter: ['all', ['has', 'countyfp']],
+            'source-layer': 'layer0',
+            type: 'line',
+            paint: {
+              'line-color': '#000',
+              'line-opacity': 1,
+              'line-dasharray': [3, 3],
+            },
+          },
+          {
+            filter: ['all', ['has', 'countyfp']],
+            'source-layer': 'layer0',
+            type: 'fill',
+            paint: {
+              'fill-color': '#000',
+              'fill-opacity': 0,
+            },
+          },
+          {
+            filter: ['all', ['!', ['has', 'countyfp']]],
+            'source-layer': 'layer0',
+            type: 'line',
+            paint: {
+              'line-color': '#000',
+              'line-opacity': 1,
+              'line-width': 2,
+            },
+          },
+          {
+            filter: ['all', ['!', ['has', 'countyfp']]],
+            'source-layer': 'layer0',
+            type: 'fill',
+            paint: {
+              'fill-color': '#000',
+              'fill-opacity': 0,
+            },
+          },
+        ],
+      },
+      source: {
+        tiles: [
+          'https://api.us-resilience-map.vizzuality.com/api/v1/geometries/tiles/{z}/{x}/{y}',
+        ],
+        type: 'vector',
+      },
+    },
+    legendConfig: {
+      type: 'basic',
+      items: [
+        { name: 'Test 1', color: '#456789' },
+        { name: 'Test 2', color: '#123345' },
+      ],
     },
   },
   // // DECODED RASTER LAYER
