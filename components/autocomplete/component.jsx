@@ -41,7 +41,7 @@ function Autocomplete({ className, options, activeOption, clearable }) {
           clearSelection,
         }) => {
           const searchResults = fuse
-            .search(inputValue, { limit: 30 })
+            .search(inputValue || '', { limit: 30 })
             .map((o) => o.item);
           const states = [];
           const counties = [];

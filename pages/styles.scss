@@ -157,4 +157,28 @@
   .map-wrapper {
     position: relative;
   }
+
+  &.-mobile {
+    display: flex;
+    align-items: center;
+    height: calc(100vh - #{$header-size} - #{$footer-size});
+    background: $color-white url('../public/assets/images/pattern_mobile.png');
+
+    .laptop-icon {
+      height: 67px;
+      width: 108px;
+      margin: 0 auto 38px;
+    }
+
+    h2 {
+      max-width: 370px;
+      margin: 0 auto;
+      color: $color-1;
+      font-family: $font-family-2;
+      font-size: 28px;
+      font-weight: normal;
+      line-height: 34px;
+      text-align: center;
+    }
+  }
 }
