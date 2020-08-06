@@ -52,6 +52,7 @@ function Home({ locations }) {
           <div className="home-search">
             <Autocomplete
               className="home-search--select"
+              clearable
               options={locations}
               buildInputProps={buildInputProps}
             />

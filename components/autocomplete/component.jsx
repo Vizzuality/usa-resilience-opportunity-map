@@ -15,6 +15,7 @@ function Autocomplete({
   activeOption,
   onChange,
   buildInputProps,
+  clearable,
 }) {
   const fuse = new Fuse(options, {
     keys: ['label'],
@@ -68,7 +69,7 @@ function Autocomplete({
                   onClick={() => clearSelection()}
                   type="button"
                 >
-                  {!!selectedItem && (
+                  {!!selectedItem && clearable && (
                     <Icon icon={CLOSE_SVG} className="c-autocomplete--close" />
                   )}
                 </button>
@@ -127,6 +128,7 @@ function Autocomplete({
 
 Autocomplete.propTypes = {
   className: PropTypes.string,
+  clearable: PropTypes.bool,
   options: PropTypes.array,
   activeOption: PropTypes.object,
   onChange: PropTypes.func,
@@ -137,6 +139,7 @@ Autocomplete.propTypes = {
 
 Autocomplete.defaultProps = {
   className: '',
+  clearable: false,
   options: [],
   onChange: undefined,
   defaultText: '',
