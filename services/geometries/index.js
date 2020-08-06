@@ -85,7 +85,7 @@ export const service = new GeometriesService();
 // ROUTES
 export function fetchGeometries(params, options = {}) {
   return service.request(
-    '/geometries?fields[geometries]=name,location-type,parent-id&page[size]=9999',
+    '/geometries?fields[geometries]=name,location-type,parent-id,bbox&page[size]=9999',
     options
   );
 }

@@ -25,7 +25,9 @@ import Map from 'components/map';
 import MapControls from 'components/map/controls';
 import ZoomControl from 'components/map/controls/zoom';
 
-export default function ExploreMap({ layers }) {
+export default function ExploreMap({ indicators, geometries }) {
+  const { layers } = indicators;
+  const { bbox } = geometries;
   const [layersSettings, setLayersSettings] = useState({});
   const [layersInteractiveIds, setLayersInteractiveIds] = useState([]);
   const [viewport, setViewport] = useState({
@@ -199,12 +201,7 @@ export default function ExploreMap({ layers }) {
       <Map
         width="100%"
         height="100%"
-        bounds={{
-          bbox: [-171.791110603, 18.91619, -66.96466, 71.3577635769],
-          options: {
-            padding: { top: 50, bottom: 50, left: 600, right: 50 },
-          },
-        }}
+        bounds={bbox}
         mapboxApiAccessToken={MAPBOX_TOKEN}
         onClick={(e) => {
           if (e && e.features) console.log(e.features);
@@ -318,5 +315,10 @@ export default function ExploreMap({ layers }) {
 }
 
 ExploreMap.propTypes = {
-  layers: PropTypes.array,
+  indicators: PropTypes.shape({
+    layers: PropTypes.array,
+  }),
+  geometries: PropTypes.shape({
+    bbox: PropTypes.object,
+  }),
 };
