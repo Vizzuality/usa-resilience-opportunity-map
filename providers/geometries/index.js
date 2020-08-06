@@ -13,10 +13,18 @@ import { selectGeometriesProps } from './selectors';
 class GeometriesProvider extends PureComponent {
   static propTypes = {
     getGeometries: PropTypes.func.isRequired,
+    data: PropTypes.array,
   };
 
   componentDidMount() {
     this.fetch();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps?.data?.length && !this.props?.data?.length) {
+      // Need to fetch new data
+      this.fetch();
+    }
   }
 
   fetch = () => {

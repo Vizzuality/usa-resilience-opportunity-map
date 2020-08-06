@@ -9,14 +9,13 @@ import Icon from 'components/icon';
 import CLOSE_SVG from 'svgs/close.svg?sprite';
 import MAGNIFIER from 'svgs/search.svg?sprite';
 
-function Autocomplete({
-  className,
-  options,
-  activeOption,
-  onChange,
-  buildInputProps,
-  clearable,
-}) {
+function Autocomplete({ className, options, activeOption, clearable }) {
+  const buildInputProps = (getInputProps) => {
+    return getInputProps({
+      placeholder: 'Enter a state, county name or ZIP code',
+    });
+  };
+
   const fuse = new Fuse(options, {
     keys: ['label'],
   });
@@ -24,7 +23,6 @@ function Autocomplete({
   return (
     <div className={cx('c-autocomplete', className)}>
       <Downshift
-        onChange={onChange}
         itemToString={(item) => (item ? item.label : '')}
         initialInputValue={activeOption?.label}
         initialSelectedItem={activeOption?.label}
@@ -43,7 +41,7 @@ function Autocomplete({
           clearSelection,
         }) => {
           const searchResults = fuse
-            .search(inputValue, { limit: 30 })
+            .search(inputValue || '', { limit: 30 })
             .map((o) => o.item);
           const states = [];
           const counties = [];
@@ -103,7 +101,7 @@ function Autocomplete({
                       <li
                         {...getItemProps({
                           key: item.value,
-                          index,
+                          index: index + states.length,
                           item,
                         })}
                         className={cx('c-autocomplete--item', {
@@ -131,20 +129,16 @@ Autocomplete.propTypes = {
   clearable: PropTypes.bool,
   options: PropTypes.array,
   activeOption: PropTypes.object,
-  onChange: PropTypes.func,
   defaultText: PropTypes.string,
   placeholder: PropTypes.string,
-  buildInputProps: PropTypes.func,
 };
 
 Autocomplete.defaultProps = {
   className: '',
   clearable: false,
   options: [],
-  onChange: undefined,
   defaultText: '',
   placeholder: '',
-  buildInputProps: undefined,
 };
 
 export default Autocomplete;

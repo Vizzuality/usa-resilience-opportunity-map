@@ -13,10 +13,18 @@ import { selectIndicatorsProps } from './selectors';
 class IndicatorsProvider extends PureComponent {
   static propTypes = {
     getIndicators: PropTypes.func.isRequired,
+    data: PropTypes.array,
   };
 
   componentDidMount() {
     this.fetch();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps?.data?.length && !this.props?.data?.length) {
+      // Need to fetch new data
+      this.fetch();
+    }
   }
 
   fetch = () => {
