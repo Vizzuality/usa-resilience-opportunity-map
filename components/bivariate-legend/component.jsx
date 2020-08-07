@@ -48,8 +48,8 @@ export default function LegendTypeBivariate(props) {
       </div>
       <div className="indicators-row">
         <div className="indicators-wrapper">
-          <p>{`High ${variables[1]}`}</p>
-          <p>{`Low ${variables[0]}`}</p>
+          <p>{`High ${variables[0]}`}</p>
+          <p>{`Low ${variables[1]}`}</p>
         </div>
         <svg
           width="105"
@@ -89,8 +89,8 @@ export default function LegendTypeBivariate(props) {
           ))}
         </svg>
         <div className="indicators-wrapper">
-          <p>{`High ${variables[0]}`}</p>
-          <p>{`Low ${variables[1]}`}</p>
+          <p>{`High ${variables[1]}`}</p>
+          <p>{`Low ${variables[0]}`}</p>
         </div>
       </div>
       <div className="indicators-wrapper">
