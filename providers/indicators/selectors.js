@@ -98,7 +98,10 @@ export const stateLayer = createSelector(
 export const countyLayer = createSelector(
   [data, active, geometryId, geometriesData],
   (_data, _active, _geometryId, _geometriesData) => {
-    const inds = _active.map((i) => _data.find((d) => d.id === i));
+    const inds = _active
+      .map((i) => _data.find((d) => d.id === i))
+      .sort((a, b) => (a.category.id > b.category.id ? 1 : -1));
+
     const geo = _geometriesData.find((g) => g.id === _geometryId);
 
     if (_active.length === 1) {
@@ -117,7 +120,7 @@ export const countyLayer = createSelector(
                   filter: [
                     'all',
                     ['==', 'location_type', 1],
-                    ['==', 'parent_id', +geo.id],
+                    ['==', 'parent_id', +geo.parentId || +geo.id],
                   ],
                   'source-layer': 'layer0',
                   type: 'fill',
@@ -126,8 +129,8 @@ export const countyLayer = createSelector(
                       'match',
                       ['get', `${ind.slug}_hazard`],
                       ...flatten(
-                        colors.map((c) => {
-                          return [c.value, c.color];
+                        colors.map((c, i) => {
+                          return [i, c];
                         })
                       ),
                       '#DDD',
@@ -139,14 +142,14 @@ export const countyLayer = createSelector(
                   filter: [
                     'all',
                     ['==', 'location_type', 1],
-                    ['==', 'parent_id', +geo.id],
+                    ['==', 'parent_id', +geo.parentId || +geo.id],
                   ],
                   'source-layer': 'layer0',
                   type: 'line',
                   paint: {
-                    'line-color': '#000',
-                    'line-opacity': 1,
-                    'line-dasharray': [2, 1],
+                    'line-color': '#999',
+                    'line-opacity': 0.5,
+                    'line-width': 0.5,
                   },
                 },
               ],
@@ -160,9 +163,83 @@ export const countyLayer = createSelector(
           },
           legendConfig: {
             type: 'basic',
-            items: colors.map((c) => ({
-              name: c.value,
-              color: c.color,
+            items: colors.map((c, i) => ({
+              name: i,
+              color: c,
+            })),
+          },
+        },
+      ];
+    }
+
+    if (_active.length === 2) {
+      const ind1 = inds[0];
+      const ind2 = inds[1];
+
+      const colors = CATEGORIES[`${ind1.category.id}${ind2.category.id}`].ramp;
+
+      return [
+        {
+          id: 'counties',
+          name: 'Testing',
+          config: {
+            type: 'vector',
+            render: {
+              layers: [
+                {
+                  filter: [
+                    'all',
+                    ['==', 'location_type', 1],
+                    ['==', 'parent_id', +geo.parentId || +geo.id],
+                  ],
+                  'source-layer': 'layer0',
+                  type: 'fill',
+                  paint: {
+                    'fill-color': [
+                      'match',
+                      [
+                        'concat',
+                        ['get', `${ind1.slug}_hazard`],
+                        ['get', `${ind2.slug}_hazard`],
+                      ],
+                      ...flatten(
+                        colors.map((c, i) => {
+                          return [`${Math.floor((i / 5) % 5)}${i % 5}`, c];
+                        })
+                      ),
+                      '#DDD',
+                    ],
+                    'fill-opacity': 1,
+                  },
+                },
+                {
+                  filter: [
+                    'all',
+                    ['==', 'location_type', 1],
+                    ['==', 'parent_id', +geo.parentId || +geo.id],
+                  ],
+                  'source-layer': 'layer0',
+                  type: 'line',
+                  paint: {
+                    'line-color': '#999',
+                    'line-opacity': 0.5,
+                    'line-width': 0.5,
+                  },
+                },
+              ],
+            },
+            source: {
+              tiles: [
+                'https://api.us-resilience-map.vizzuality.com/api/v1/geometries/tiles/{z}/{x}/{y}',
+              ],
+              type: 'vector',
+            },
+          },
+          legendConfig: {
+            type: 'basic',
+            items: colors.map((c, i) => ({
+              name: `${Math.floor((i / 5) % 5)}${i % 5}`,
+              color: c,
             })),
           },
         },
