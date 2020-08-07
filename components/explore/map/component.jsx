@@ -14,16 +14,15 @@ import {
   Legend,
   LegendListItem,
   LegendItemTypes,
+  LegendItemTypeBasic,
   LegendItemTimeStep,
-  LegendItemToolbar,
-  LegendItemButtonOpacity,
-  LegendItemButtonVisibility,
 } from 'vizzuality-components';
 
 // Local imports
 import Map from 'components/map';
 import MapControls from 'components/map/controls';
 import ZoomControl from 'components/map/controls/zoom';
+import LegendItemTypeBivariate from 'components/bivariate-legend';
 
 export default function ExploreMap({ indicators, geometries }) {
   const { layers } = indicators;
@@ -273,23 +272,13 @@ export default function ExploreMap({ indicators, geometries }) {
                 index={i}
                 key={layerGroup.slug}
                 layerGroup={layerGroup}
-                toolbar={(
-                  <LegendItemToolbar>
-                    <LegendItemButtonOpacity
-                      trackStyle={{
-                        background: '#FFCC00',
-                      }}
-                      handleStyle={{
-                        background: '#FFCC00',
-                      }}
-                    />
-                    <LegendItemButtonVisibility />
-                  </LegendItemToolbar>
-                )}
                 onChangeVisibility={onChangeVisibility}
                 onChangeOpacity={onChangeOpacity}
               >
-                <LegendItemTypes />
+                <LegendItemTypes>
+                  <LegendItemTypeBasic />
+                  <LegendItemTypeBivariate />
+                </LegendItemTypes>
 
                 <LegendItemTimeStep
                   defaultStyles={{

@@ -1,0 +1,26 @@
+.c-legend-type-bivariate {
+  display: flex;
+  flex-direction: column;
+  // legend-header height + legend types margin
+  margin-top: -14px;
+
+  p {
+    color: $color-1;
+    font-family: $font-family-2;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    margin: rem(3px) 0 0;
+  }
+
+  .indicators-row {
+    display: flex;
+    align-items: center;
+    margin: rem(10px) 0;
+
+    p {
+      max-width: 100px;
+      margin: rem(10px) 0 0;
+    }
+  }
+}

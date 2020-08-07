@@ -1,5 +1,6 @@
 import uniqBy from 'lodash.uniqby';
 import flatten from 'lodash.flatten';
+import startCase from 'lodash.startcase';
 
 import { createSelector, createStructuredSelector } from 'reselect';
 
@@ -111,7 +112,7 @@ export const countyLayer = createSelector(
       return [
         {
           id: 'counties',
-          name: 'Testing',
+          name: startCase(ind?.name),
           config: {
             type: 'vector',
             render: {
@@ -181,7 +182,7 @@ export const countyLayer = createSelector(
       return [
         {
           id: 'counties',
-          name: 'Testing',
+          name: '',
           config: {
             type: 'vector',
             render: {
@@ -236,11 +237,12 @@ export const countyLayer = createSelector(
             },
           },
           legendConfig: {
-            type: 'basic',
+            type: 'bivariate',
             items: colors.map((c, i) => ({
               name: `${Math.floor((i / 5) % 5)}${i % 5}`,
               color: c,
             })),
+            indicators: [ind1, ind2],
           },
         },
       ];
