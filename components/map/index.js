@@ -229,6 +229,8 @@ class Map extends Component {
   };
 
   fitBounds = () => {
+    if (!this.mapContainer) return null;
+
     const { viewport } = this.state;
     const { bounds, onViewportChange } = this.props;
     const { bbox, options } = bounds;
@@ -265,6 +267,8 @@ class Map extends Component {
     setTimeout(() => {
       this.setState({ flying: false });
     }, 2500);
+
+    return true;
   };
 
   render() {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import PropTypes from 'prop-types';
 // Utils
 import isEmpty from 'lodash.isempty';
 import { getParams } from 'utils/timeline';
@@ -13,24 +13,20 @@ import {
   Icons,
   Legend,
   LegendListItem,
-  // LegendItemTypes,
+  LegendItemTypes,
+  LegendItemTypeBasic,
   LegendItemTimeStep,
-  LegendItemToolbar,
-  LegendItemButtonOpacity,
-  LegendItemButtonVisibility,
 } from 'vizzuality-components';
 
 // Local imports
 import Map from 'components/map';
 import MapControls from 'components/map/controls';
 import ZoomControl from 'components/map/controls/zoom';
-import { LAYERS } from './constants';
+import LegendItemTypeBivariate from 'components/bivariate-legend';
 
-export default function ExploreMap() {
-  const [
-    layers,
-    // setLayers
-  ] = useState(LAYERS);
+export default function ExploreMap({ indicators, geometries }) {
+  const { layers } = indicators;
+  const { bbox } = geometries;
   const [layersSettings, setLayersSettings] = useState({});
   const [layersInteractiveIds, setLayersInteractiveIds] = useState([]);
   const [viewport, setViewport] = useState({
@@ -44,39 +40,48 @@ export default function ExploreMap() {
   });
 
   // LEGEND
-  const layerGroups = layers.map((l) => {
-    const { id, paramsConfig, sqlConfig, decodeConfig, timelineConfig } = l;
-    const lSettings = layersSettings[id] || {};
+  const layerGroups = layers
+    .filter((l) => {
+      return !!l.legendConfig;
+    })
+    .map((l) => {
+      const { id, paramsConfig, sqlConfig, decodeConfig, timelineConfig } = l;
+      const lSettings = layersSettings[id] || {};
 
-    const params = !!paramsConfig && getParams(paramsConfig, lSettings.params);
-    const sqlParams = !!sqlConfig && getParams(sqlConfig, lSettings.sqlParams);
-    const decodeParams =
-      !!decodeConfig &&
-      getParams(decodeConfig, { ...timelineConfig, ...lSettings.decodeParams });
-    const timelineParams = !!timelineConfig && {
-      ...timelineConfig,
-      ...getParams(paramsConfig, lSettings.params),
-      ...getParams(decodeConfig, lSettings.decodeParams),
-    };
+      const params =
+        !!paramsConfig && getParams(paramsConfig, lSettings.params);
+      const sqlParams =
+        !!sqlConfig && getParams(sqlConfig, lSettings.sqlParams);
+      const decodeParams =
+        !!decodeConfig &&
+        getParams(decodeConfig, {
+          ...timelineConfig,
+          ...lSettings.decodeParams,
+        });
+      const timelineParams = !!timelineConfig && {
+        ...timelineConfig,
+        ...getParams(paramsConfig, lSettings.params),
+        ...getParams(decodeConfig, lSettings.decodeParams),
+      };
 
-    return {
-      id,
-      slug: id,
-      dataset: id,
-      layers: [
-        {
-          active: true,
-          ...l,
-          ...lSettings,
-          params,
-          sqlParams,
-          decodeParams,
-          timelineParams,
-        },
-      ],
-      ...lSettings,
-    };
-  });
+      return {
+        id,
+        slug: id,
+        dataset: id,
+        layers: [
+          {
+            active: true,
+            ...l,
+            ...lSettings,
+            params,
+            sqlParams,
+            decodeParams,
+            timelineParams,
+          },
+        ],
+        ...lSettings,
+      };
+    });
 
   const onChangeOrder = (ids) => {
     console.log('onChangeOrder', ids);
@@ -195,12 +200,7 @@ export default function ExploreMap() {
       <Map
         width="100%"
         height="100%"
-        bounds={{
-          bbox: [-171.791110603, 18.91619, -66.96466, 71.3577635769],
-          options: {
-            padding: { top: 50, bottom: 50, left: 600, right: 50 },
-          },
-        }}
+        bounds={bbox}
         mapboxApiAccessToken={MAPBOX_TOKEN}
         onClick={(e) => {
           if (e && e.features) console.log(e.features);
@@ -272,23 +272,13 @@ export default function ExploreMap() {
                 index={i}
                 key={layerGroup.slug}
                 layerGroup={layerGroup}
-                toolbar={(
-                  <LegendItemToolbar>
-                    <LegendItemButtonOpacity
-                      trackStyle={{
-                        background: '#FFCC00',
-                      }}
-                      handleStyle={{
-                        background: '#FFCC00',
-                      }}
-                    />
-                    <LegendItemButtonVisibility />
-                  </LegendItemToolbar>
-                )}
                 onChangeVisibility={onChangeVisibility}
                 onChangeOpacity={onChangeOpacity}
               >
-                {/* <LegendItemTypes /> */}
+                <LegendItemTypes>
+                  <LegendItemTypeBasic />
+                  <LegendItemTypeBivariate />
+                </LegendItemTypes>
 
                 <LegendItemTimeStep
                   defaultStyles={{
@@ -312,3 +302,12 @@ export default function ExploreMap() {
     </div>
   );
 }
+
+ExploreMap.propTypes = {
+  indicators: PropTypes.shape({
+    layers: PropTypes.array,
+  }),
+  geometries: PropTypes.shape({
+    bbox: PropTypes.object,
+  }),
+};
