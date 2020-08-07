@@ -118,6 +118,25 @@
       }
     }
   }
+
+  &.--mobile {
+    .home-greeting {
+      margin-bottom: rem(100px);
+    }
+
+    .home-explore {
+      img {
+        margin: rem(20px) auto 0;
+      }
+
+      h2 {
+        max-width: 384px;
+        font-size: 28px;
+        line-height: 34px;
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 .c-explore {
