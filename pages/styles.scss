@@ -1,11 +1,12 @@
 .c-home {
+  margin-top: -$header-size;
   background-color: $color-dark-bg;
   height: 100%;
   overflow: auto;
 
   .home-greeting {
     position: relative;
-    margin-top: rem(30px);
+    margin-top: calc(#{$header-size} + #{rem(30px)});
     overflow: auto;
     background: $color-dark-bg url('../public/assets/images/home-map-bg.png');
     background-blend-mode: multiply;
@@ -201,6 +202,61 @@
       font-weight: normal;
       line-height: 34px;
       text-align: center;
+    }
+  }
+}
+
+.c-about {
+  .about-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -$header-size;
+    z-index: -1;
+    height: 462px;
+    background-color: rgba(50, 56, 66, 0.7);
+
+    .about-line {
+      height: 3px;
+      width: 94px;
+      background-color: $color-blue;
+      margin-bottom: rem(25px);
+    }
+
+    h1 {
+      color: $color-white;
+      font-family: $font-family-2;
+      font-size: 80px;
+      font-weight: 400;
+      line-height: 96px;
+      text-align: center;
+    }
+  }
+
+  .about-text {
+    position: relative;
+    top: -48px;
+    max-width: calc(#{$flexboxgrid-max-width} + #{rem(76px)});
+    padding: 78px 128px;
+    background-color: $color-white;
+
+    .about-shadow {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      z-index: -1;
+      height: 150px;
+      width: 100%;
+      box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    p {
+      color: $color-1;
+      font-family: $font-family;
+      font-size: 18px;
+      line-height: 30px;
     }
   }
 }

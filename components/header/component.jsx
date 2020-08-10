@@ -148,17 +148,16 @@ BurgerMenu.propTypes = {
 export default function Header() {
   const [isMenuOpen, openMenu] = useState(false);
   const { pathname } = useRouter();
+  const isDarkHeader = pathname === '/' || pathname === '/about';
 
   return (
-    <header className={cx('c-header', { '--dark': pathname === '/' })}>
+    <header className={cx('c-header', { '--dark': isDarkHeader })}>
       <div className="wrapper header--list">
         <Link href="/">
           <a className="header-logo header--list-item">
             <img
               className="header--logo-image"
-              src={`assets/logos/logo_${
-                pathname === '/' ? 'white' : 'dark'
-              }.svg`}
+              src={`assets/logos/logo_${isDarkHeader ? 'white' : 'dark'}.svg`}
               alt="USA Resilience Map"
             />
           </a>
