@@ -207,13 +207,14 @@
 }
 
 .c-about {
+  position: relative;
+  top: -$header-size;
+
   .about-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    top: -$header-size;
     z-index: -1;
     height: 462px;
     background-color: rgba(50, 56, 66, 0.7);
