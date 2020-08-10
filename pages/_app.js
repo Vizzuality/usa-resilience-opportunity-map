@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 // Redux
 import { Provider } from 'react-redux';
@@ -16,6 +17,8 @@ import 'styles/index.scss';
 
 export default function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState);
+  const router = useRouter();
+  const isEmbed = router.pathname === '/explore/embed';
 
   return (
     <Provider store={store}>
@@ -23,11 +26,17 @@ export default function App({ Component, pageProps }) {
         <title>USA Resilience Opportunity Map</title>
         <style type="text/css">{mediaStyle}</style>
       </Head>
-      <Page>
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
-      </Page>
+      {isEmbed ? (
+        <Page>
+          <Component {...pageProps} />
+        </Page>
+      ) : (
+        <Page>
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+        </Page>
+      )}
     </Provider>
   );
 }

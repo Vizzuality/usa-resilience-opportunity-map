@@ -2,6 +2,10 @@
   position: relative;
   height: calc(100vh - #{$header-size} - #{$footer-size} - #{$explore-search});
   z-index: 0;
+
+  &.--embed {
+    height: 100vh;
+  }
 }
 
 .c-legend {

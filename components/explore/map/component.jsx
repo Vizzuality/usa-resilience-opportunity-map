@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 // Utils
 import isEmpty from 'lodash.isempty';
 import { getParams } from 'utils/timeline';
@@ -24,7 +25,7 @@ import MapControls from 'components/map/controls';
 import ZoomControl from 'components/map/controls/zoom';
 import LegendItemTypeBivariate from 'components/bivariate-legend';
 
-export default function ExploreMap({ indicators, geometries }) {
+export default function ExploreMap({ indicators, geometries, className }) {
   const { layers } = indicators;
   const { bbox } = geometries;
   const [layersSettings, setLayersSettings] = useState({});
@@ -195,7 +196,7 @@ export default function ExploreMap({ indicators, geometries }) {
   const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || '';
 
   return (
-    <div className="c-explore-map">
+    <div className={cx('c-explore-map', className)}>
       <Icons />
       <Map
         width="100%"
@@ -310,4 +311,5 @@ ExploreMap.propTypes = {
   geometries: PropTypes.shape({
     bbox: PropTypes.object,
   }),
+  className: PropTypes.string,
 };
