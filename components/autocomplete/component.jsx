@@ -27,6 +27,7 @@ function Autocomplete({ className, options, activeOption, clearable }) {
         initialInputValue={activeOption?.label}
         initialSelectedItem={activeOption?.label}
         key={activeOption?.label}
+        id="autocomplete"
         // TODO: Fix onblur/onmouseleave label issue
         // https://github.com/downshift-js/downshift/issues/717
       >

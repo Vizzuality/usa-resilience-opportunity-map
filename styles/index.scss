@@ -18,15 +18,16 @@
  * TODO: move to CSS modules?
  * Reference: https://nextjs.org/docs/basic-features/built-in-css-support#adding-a-global-stylesheet
 */
-@import 'components/page/styles';
-@import 'components/main/styles';
-@import 'components/header/styles';
-@import 'components/map/styles';
-@import 'components/explore/map/styles';
-@import 'components/map/controls/styles';
-@import 'components/map/controls/zoom/styles';
-@import 'components/explore/sidebar/styles';
-@import 'components/footer/styles';
-@import 'components/button/styles';
 @import 'components/autocomplete/styles';
 @import 'components/bivariate-legend/styles';
+@import 'components/button/styles';
+@import 'components/explore/map/styles';
+@import 'components/explore/sidebar/styles';
+@import 'components/footer/styles';
+@import 'components/header/styles';
+@import 'components/loader/styles';
+@import 'components/main/styles';
+@import 'components/map/styles';
+@import 'components/map/controls/styles';
+@import 'components/map/controls/zoom/styles';
+@import 'components/page/styles';

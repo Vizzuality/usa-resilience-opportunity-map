@@ -8,6 +8,7 @@ import ExploreMap from 'components/explore/map';
 import ExploreSidebar from 'components/explore/sidebar';
 import Autocomplete from 'components/autocomplete';
 import Button from 'components/button';
+import Loader from 'components/loader';
 import Icon from 'components/icon';
 import LAPTOP_SVG from 'public/assets/images/laptop_picto01.svg?sprite';
 
@@ -36,7 +37,7 @@ export async function getServerSideProps(ctx) {
   };
 }
 
-function Explore({ locations, id }) {
+function Explore({ locations, id, loaded, loading }) {
   return (
     <Main>
       <GeometriesProvider />
@@ -55,22 +56,25 @@ function Explore({ locations, id }) {
           </div>
         </Media>
         <Media greaterThanOrEqual="small">
-          <div className="c-explore">
-            <div className="explore-search wrapper">
-              <Autocomplete
-                className="explore-search--select"
-                options={locations}
-                activeOption={id ? locations.find((l) => l.id === id) : null}
-              />
-              <Button className="search-btn" link="/explore?id=0">
-                All states view
-              </Button>
+          {loading && !loaded && <Loader />}
+          {loaded && !loading && (
+            <div className="c-explore">
+              <div className="explore-search wrapper">
+                <Autocomplete
+                  className="explore-search--select"
+                  options={locations}
+                  activeOption={id ? locations.find((l) => l.id === id) : null}
+                />
+                <Button className="search-btn" link="/explore?id=0">
+                  All states view
+                </Button>
+              </div>
+              <div className="map-wrapper">
+                <ExploreSidebar />
+                <ExploreMap />
+              </div>
             </div>
-            <div className="map-wrapper">
-              <ExploreSidebar />
-              <ExploreMap />
-            </div>
-          </div>
+          )}
         </Media>
       </MediaContextProvider>
     </Main>
@@ -80,6 +84,8 @@ function Explore({ locations, id }) {
 Explore.propTypes = {
   locations: PropTypes.array,
   id: PropTypes.string,
+  loaded: PropTypes.bool,
+  loading: PropTypes.bool,
 };
 
 export default connect(selectGeometriesProps, null)(Explore);
