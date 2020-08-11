@@ -85,7 +85,7 @@ export default function LegendTypeBivariate(props) {
             />
           </g>
           {legendConfig.items.map(({ color }, i) => (
-            <path d={squares[i]} fill={color} />
+            <path key={i} d={squares[i]} fill={color} />
           ))}
         </svg>
         <div className="indicators-wrapper">

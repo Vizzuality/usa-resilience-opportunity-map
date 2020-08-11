@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import startCase from 'lodash.startcase';
+import { useRouter } from 'next/router';
 
 import Icon from 'components/icon';
 import HumanImpact from 'svgs/human_impact.svg?sprite';
@@ -13,12 +14,48 @@ export default function ExploreSidebar(props) {
     active,
     category,
     indicators,
+    data,
     categories,
     activeCategories,
     toggleIndicatorsActive,
     toggleCategoriesActive,
     setIndicatorsCategory,
   } = props;
+
+  const router = useRouter();
+
+  useEffect(() => {
+    /* If active (indicators) change, push the to the URL */
+    // TODO: URL serializer
+    // router.push(`${router.pathname}?indicator=10`, undefined, { shallow: true })
+  }, [active]);
+
+  useEffect(() => {
+    /* If the url has indicators, change the state */
+    if (router.query.indicator) {
+      if (Array.isArray(router.query.indicator)) {
+        // bivariate
+        router.query.indicator.forEach((id) => {
+          const ind = data.find((i) => i.id === id);
+          console.log(
+            'toggling indicator',
+            ind?.id,
+            'with category',
+            ind?.category.id
+          );
+          // toggleIndicatorsActive(ind.id);
+          // TODO: fix 'cyclic object value' in toggleIndicatorsActive
+          // when dispatch(setGeometriesLoaded(true));
+          // toggleCategoriesActive(ind.category.id);
+        });
+      } else {
+        const ind = data.find((i) => i.id === router.query.indicator);
+        toggleIndicatorsActive(ind.id);
+        toggleCategoriesActive(ind.category.id);
+        setIndicatorsCategory(ind.category.id);
+      }
+    }
+  }, [router.query.indicator]);
 
   const icons = {
     'human impact': HumanImpact,
@@ -143,6 +180,7 @@ ExploreSidebar.propTypes = {
   categories: PropTypes.array,
   activeCategories: PropTypes.array,
   indicators: PropTypes.array,
+  data: PropTypes.array,
   toggleIndicatorsActive: PropTypes.func,
   toggleCategoriesActive: PropTypes.func,
   setIndicatorsCategory: PropTypes.func,

@@ -19,6 +19,7 @@ export const geometryId = (state) => state?.geometries?.id;
 export const geometriesData = (state) => state?.geometries?.data;
 
 export const categories = createSelector([data, loading], (_data, _loading) => {
+  // All categories
   if (!_data.length || _loading) return [];
 
   return uniqBy(
@@ -33,6 +34,7 @@ export const categories = createSelector([data, loading], (_data, _loading) => {
 export const indicators = createSelector(
   [data, loading, category],
   (_data, _loading, _category) => {
+    // All the indicators in the selected category
     if (!_data.length || _loading) return [];
 
     return _data.filter((d) => d.category.id === _category);
