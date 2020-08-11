@@ -217,7 +217,10 @@
     justify-content: center;
     z-index: -1;
     height: 462px;
-    background-color: rgba(50, 56, 66, 0.7);
+    background: rgba(50, 56, 66, 0.7) url('../public/assets/images/aboutbg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     .about-line {
       height: 3px;
