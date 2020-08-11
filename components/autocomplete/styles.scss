@@ -29,7 +29,7 @@
     height: 100%;
     width: 100%;
     color: $color-1;
-    font-family: $font-family;
+    font-family: $font-sans;
     font-size: rem(22px);
     line-height: 27px;
 
@@ -53,7 +53,7 @@
     padding-bottom: rem(8px);
     background-color: $color-white;
     color: $color-1;
-    font-family: $font-family;
+    font-family: $font-sans;
     font-size: 14px;
     line-height: 30px;
     height: 66px;
@@ -65,7 +65,7 @@
   padding-left: rem(34px);
   background-color: $color-white;
   color: $color-1;
-  font-family: $font-family;
+  font-family: $font-sans;
   list-style-type: none;
 
   &.--selected {

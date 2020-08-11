@@ -6,6 +6,10 @@ $color-4: rgba(255, 255, 255, 0.05);
 $color-blue: #4595e1;
 $select-blue: #317cc3;
 // TODO: CHECK SHADES OF BLUE
+$blue-hover: #65a8e8;
+$blue-pressed: #317cc3;
+$grey-hover:  rgba(69, 149, 225, 0.1);
+$grey-pressed: rgba(69, 149, 225, 0.3);
 
 $color-white: #fff;
 $color-black: #000;
@@ -32,8 +36,8 @@ $font-size-h2: 32px;
 $font-size-h3: 16px;
 $font-size-h4: 12px;
 
-$font-family: "Basier Square", sans-serif;
-$font-family-2: "Argesta Display", serif;
+$font-sans: "Basier Square", sans-serif;
+$font-serif: "Argesta Display", serif;
 
 // Weights
 $font-weight-light: 300;
