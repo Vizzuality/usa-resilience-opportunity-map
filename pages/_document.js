@@ -1,11 +1,8 @@
 import React from 'react';
 import Document, { Main, NextScript, Head } from 'next/document';
-import sprite from 'svg-sprite-loader/runtime/sprite.build';
 
 export default class MyDocument extends Document {
   render() {
-    const spriteContent = sprite.stringify();
-
     return (
       <html lang="en">
         <Head>
@@ -18,7 +15,6 @@ export default class MyDocument extends Document {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
-          <div dangerouslySetInnerHTML={{ __html: spriteContent }} />
           <Main />
           <NextScript />
         </body>

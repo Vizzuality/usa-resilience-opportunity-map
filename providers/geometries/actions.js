@@ -16,7 +16,7 @@ export const getGeometries = createThunkAction(
       dispatch(setGeometriesLoading(true));
     }, 250);
 
-    return fetchGeometries(null, { cancelToken })
+    fetchGeometries(null, { cancelToken })
       .then((data) => {
         clearTimeout(loading);
         dispatch(setGeometries(data));

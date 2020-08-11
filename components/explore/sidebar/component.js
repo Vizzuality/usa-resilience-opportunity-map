@@ -26,30 +26,35 @@ export default function ExploreSidebar(props) {
 
   useEffect(() => {
     /* If active (indicators) change, push the to the URL */
-    // TODO: URL serializer
-    // router.push(`${router.pathname}?indicator=10`, undefined, { shallow: true })
+    // TODO: write proper serializer
+    router.push(
+      `${router.pathname}${Object.keys(router.query).length ? '?' : ''}${
+        router.query.id ? `id=${router.query.id}` : ''
+      }${active[0] ? `&indicator=${active[0]}` : ''}${
+        active[1] ? `&indicator=${active[1]}` : ''
+      }`,
+      undefined,
+      { shallow: true }
+    );
   }, [active]);
 
   useEffect(() => {
+    const { indicator } = router.query;
     /* If the url has indicators, change the state */
-    if (router.query.indicator) {
-      if (Array.isArray(router.query.indicator)) {
-        // bivariate
-        router.query.indicator.forEach((id) => {
-          const ind = data.find((i) => i.id === id);
-          console.log(
-            'toggling indicator',
-            ind?.id,
-            'with category',
-            ind?.category.id
-          );
-          // toggleIndicatorsActive(ind.id);
-          // TODO: fix 'cyclic object value' in toggleIndicatorsActive
-          // when dispatch(setGeometriesLoaded(true));
-          // toggleCategoriesActive(ind.category.id);
-        });
-      } else {
-        const ind = data.find((i) => i.id === router.query.indicator);
+    if (indicator) {
+      if (Array.isArray(indicator) && indicator.length > active.length) {
+        // Indicator array = bivariate (max 2 indicators)
+        const id1 = indicator[0];
+        const id2 = indicator[1];
+        const ind1 = data.find((i) => i.id === id1);
+        const ind2 = data.find((i) => i.id === id2);
+
+        toggleIndicatorsActive(ind1?.id);
+        toggleCategoriesActive(ind1?.category?.id);
+        toggleIndicatorsActive(ind2?.id);
+        toggleCategoriesActive(ind2?.category?.id);
+      } else if (active.length === 0) {
+        const ind = data.find((i) => i.id === indicator);
         toggleIndicatorsActive(ind.id);
         toggleCategoriesActive(ind.category.id);
         setIndicatorsCategory(ind.category.id);
