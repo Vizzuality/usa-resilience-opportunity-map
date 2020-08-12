@@ -1,32 +1,33 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import startCase from 'lodash.startcase';
 import { useRouter } from 'next/router';
 
 import Icon from 'components/icon';
+import Modal from 'components/modal';
 import HumanImpact from 'svgs/human_impact.svg?sprite';
 import ClimateRisk from 'svgs/climate_risk.svg?sprite';
 import Vulnerability from 'svgs/vulnerability.svg?sprite';
 
-export default function ExploreSidebar(props) {
-  const {
-    active,
-    category,
-    indicators,
-    data,
-    categories,
-    activeCategories,
-    toggleIndicatorsActive,
-    toggleCategoriesActive,
-    setIndicatorsCategory,
-  } = props;
-
+export default function ExploreSidebar({
+  active,
+  category,
+  indicators,
+  data,
+  categories,
+  activeCategories,
+  toggleIndicatorsActive,
+  toggleCategoriesActive,
+  setIndicatorsCategory,
+}) {
   const router = useRouter();
+  const [isModalOpen, openModal] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
+  console.log(modalContent);
 
   useEffect(() => {
     /* If active (indicators) change, push the to the URL */
-    // TODO: write proper serializer
     router.push(
       `${router.pathname}${Object.keys(router.query).length ? '?' : ''}${
         router.query.id ? `id=${router.query.id}` : ''
@@ -151,7 +152,14 @@ export default function ExploreSidebar(props) {
               <div className="explore-sidebar--item-controls">
                 <div>{/* Hazard level */}</div>
                 <div className="explore-sidebar--item-buttons">
-                  <button onClick={() => {}}>More Info</button>
+                  <button
+                    onClick={() => {
+                      openModal(true);
+                      setModalContent(d);
+                    }}
+                  >
+                    More Info
+                  </button>
                   <button
                     className={cx({ 'active-layer': isItemActive })}
                     onClick={() => {
@@ -175,6 +183,17 @@ export default function ExploreSidebar(props) {
           );
         })}
       </ul>
+      <Modal
+        isOpen={isModalOpen}
+        contentLabel="Attributions"
+        onRequestClose={() => openModal(false)}
+        title={startCase(modalContent?.name)}
+        className="c-modal-attributions"
+      >
+        <div className="modal-attributions-content">
+          {`More info here. Indicator belongs to ${modalContent?.category?.name} category.`}
+        </div>
+      </Modal>
     </div>
   );
 }
