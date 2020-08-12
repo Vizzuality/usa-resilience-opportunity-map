@@ -4,7 +4,7 @@ import { MediaContextProvider, Media } from 'components/media';
 
 function FooterWrapper({ children }) {
   FooterWrapper.propTypes = {
-    children: PropTypes.array,
+    children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   };
 
   return (
