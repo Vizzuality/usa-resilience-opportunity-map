@@ -1,8 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { MediaContextProvider, Media } from 'components/media';
+
+function FooterWrapper({ children }) {
+  FooterWrapper.propTypes = {
+    children: PropTypes.array,
+  };
+
+  return (
+    <MediaContextProvider>
+      <Media lessThan="small">
+        <footer className="c-footer --mobile">{children}</footer>
+      </Media>
+      <Media greaterThanOrEqual="small">
+        <footer className="c-footer">{children}</footer>
+      </Media>
+    </MediaContextProvider>
+  );
+}
 
 export default function Footer() {
   return (
-    <footer className="c-footer">
+    <FooterWrapper>
       <div className="wrapper">
         <div className="footer-links">
           <a>Privacy policy</a>
@@ -15,6 +34,6 @@ export default function Footer() {
           alt="atlantic council"
         />
       </div>
-    </footer>
+    </FooterWrapper>
   );
 }

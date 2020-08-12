@@ -45,7 +45,7 @@ function Explore({ locations, id, loaded, loading }) {
 
       <MediaContextProvider>
         <Media lessThan="small">
-          <div className="c-explore -mobile">
+          <div className="c-explore --mobile">
             <div className="wrapper">
               <Icon icon={LAPTOP_SVG} className="laptop-icon" />
               <h2>

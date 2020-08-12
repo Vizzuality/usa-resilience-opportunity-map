@@ -148,30 +148,51 @@ BurgerMenu.propTypes = {
 export default function Header() {
   const [isMenuOpen, openMenu] = useState(false);
   const { pathname } = useRouter();
-  const isDarkHeader = pathname === '/' || pathname === '/about';
+  const isDarkHeader = {
+    desktop: pathname === '/' || pathname === '/about',
+    mobile: pathname === '/',
+  };
 
   return (
-    <header className={cx('c-header', { '--dark': isDarkHeader })}>
-      <div className="wrapper header--list">
-        <Link href="/">
-          <a className="header-logo header--list-item">
-            <img
-              className="header--logo-image"
-              src={`assets/logos/logo_${isDarkHeader ? 'white' : 'dark'}.svg`}
-              alt="USA Resilience Map"
-            />
-          </a>
-        </Link>
-        <MediaContextProvider>
-          <Media lessThan="small">
+    <MediaContextProvider>
+      <Media lessThan="small">
+        <header className={cx('c-header', { '--dark': isDarkHeader.mobile })}>
+          <div className="wrapper header--list">
+            <Link href="/">
+              <a className="header-logo header--list-item">
+                <img
+                  className="header--logo-image"
+                  src={`assets/logos/logo_${
+                    isDarkHeader.mobile ? 'white' : 'dark'
+                  }.svg`}
+                  alt="USA Resilience Map"
+                />
+              </a>
+            </Link>
             <BurgerMenu open={isMenuOpen} setOpen={openMenu} />
             <Menu open={isMenuOpen} setOpen={openMenu} isDesktop={false} />
-          </Media>
-          <Media greaterThanOrEqual="small">
+          </div>
+        </header>
+      </Media>
+
+      <Media greaterThanOrEqual="small">
+        <header className={cx('c-header', { '--dark': isDarkHeader.desktop })}>
+          <div className="wrapper header--list">
+            <Link href="/">
+              <a className="header-logo header--list-item">
+                <img
+                  className="header--logo-image"
+                  src={`assets/logos/logo_${
+                    isDarkHeader.desktop ? 'white' : 'dark'
+                  }.svg`}
+                  alt="USA Resilience Map"
+                />
+              </a>
+            </Link>
             <Menu open={isMenuOpen} setOpen={openMenu} isDesktop />
-          </Media>
-        </MediaContextProvider>
-      </div>
-    </header>
+          </div>
+        </header>
+      </Media>
+    </MediaContextProvider>
   );
 }

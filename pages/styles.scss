@@ -145,6 +145,14 @@
   &.--mobile {
     .home-greeting {
       margin-bottom: rem(100px);
+      margin-top: $header-size;
+      background-size: cover;
+
+      h1 {
+        font-size: 66px;
+        line-height: 69px;
+        margin-top: 60px;
+      }
     }
 
     .home-explore {
@@ -200,10 +208,10 @@
     position: relative;
   }
 
-  &.-mobile {
+  &.--mobile {
     display: flex;
     align-items: center;
-    height: calc(100vh - #{$header-size} - #{$footer-size});
+    height: calc(100vh - #{$header-size} - #{$footer-size-mobile});
     background: $color-white url('../public/assets/images/pattern_mobile.png');
 
     .laptop-icon {
@@ -228,6 +236,7 @@
 .c-about {
   position: relative;
   top: -$header-size;
+  height: calc(100vh - #{$header-size} - #{$footer-size});
 
   .about-title {
     display: flex;
@@ -280,6 +289,32 @@
       font-family: $font-sans;
       font-size: 18px;
       line-height: 30px;
+    }
+  }
+
+  &.--mobile {
+    top: 0;
+    height: auto;
+
+    .about-title {
+      height: 225px;
+
+      .about-line {
+        width: 35px;
+        margin-bottom: rem(18px);
+      }
+
+      h1 {
+        font-size: 44px;
+        font-weight: 300;
+        letter-spacing: 0;
+        line-height: 54px;
+      }
+    }
+
+    .about-text {
+      top: 0;
+      padding: rem(35px) rem(40px);
     }
   }
 }
