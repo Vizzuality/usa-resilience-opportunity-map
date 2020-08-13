@@ -29,7 +29,7 @@ export default function ExploreSidebar({
     /* If active (indicators) change, push the to the URL */
     router.push(
       `${router.pathname}${Object.keys(router.query).length ? '?' : ''}${
-        router.query.id ? `id=${router.query.id}` : ''
+        router.query.id ? `id=${router.query?.id}` : ''
       }${active[0] ? `&indicator=${active[0]}` : ''}${
         active[1] ? `&indicator=${active[1]}` : ''
       }`,
