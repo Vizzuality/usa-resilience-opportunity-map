@@ -24,7 +24,6 @@ export default function ExploreSidebar({
   const router = useRouter();
   const [isModalOpen, openModal] = useState(false);
   const [modalContent, setModalContent] = useState(null);
-  console.log(modalContent);
 
   useEffect(() => {
     /* If active (indicators) change, push the to the URL */

@@ -15,6 +15,13 @@ import { mediaStyle } from 'components/media';
 
 import 'styles/index.scss';
 
+export function reportWebVitals(metric) {
+  if (process.env.NODE_ENV === 'development') {
+    const { name, value, label } = metric;
+    console.table({ name, 'value (ms)': value, label });
+  }
+}
+
 export default function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState);
   const router = useRouter();
@@ -23,7 +30,7 @@ export default function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <Head>
-        <title>USA Resilience Opportunity Map</title>
+        <title>USA Resilience Map</title>
         <style type="text/css">{mediaStyle}</style>
       </Head>
       {isEmbed ? (
