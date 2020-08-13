@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -32,7 +32,21 @@ function HomeWrapper({ children }) {
 }
 
 function Home({ locations }) {
-  return (
+  const [supported, useSupport] = useState(false);
+
+  useEffect(() => {
+    const ua = window?.navigator.userAgent;
+    const msie = ua.indexOf('MSIE ');
+
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv:11\./)) {
+      // eslint-disable-next-line no-console
+      console.log('Your browser is not supported');
+    } else {
+      useSupport(true);
+    }
+  }, []);
+
+  return supported ? (
     <HomeWrapper>
       <div className="home-greeting">
         <div className="home-greeting--wrapper">
@@ -109,6 +123,10 @@ function Home({ locations }) {
       </div>
       <GeometriesProvider />
     </HomeWrapper>
+  ) : (
+    <div className="c-404">
+      <h1>Your browser is not supported.</h1>
+    </div>
   );
 }
 

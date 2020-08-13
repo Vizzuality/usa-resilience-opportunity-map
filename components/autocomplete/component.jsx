@@ -54,26 +54,35 @@ function Autocomplete({ className, options, activeOption, clearable }) {
             <>
               <div
                 className="c-autocomplete--select"
+                aria-label="autocomplete searchbox"
                 {...getRootProps({}, { suppressRefError: true })}
               >
                 <Icon icon={MAGNIFIER} className="c-autocomplete--magnifier" />
-                <input
-                  {...buildInputProps(getInputProps)}
-                  className={cx('c-autocomplete--input', {
-                    '--placeholder': !inputValue,
-                  })}
-                />
+                <label htmlFor="autocomplete" className="c-autocomplete--label">
+                  <input
+                    {...buildInputProps(getInputProps)}
+                    className={cx('c-autocomplete--input', {
+                      '--placeholder': !inputValue,
+                    })}
+                    aria-label="Enter a location"
+                  />
+                </label>
                 <button
                   className="dropdown-selector--clearbtn"
                   onClick={() => clearSelection()}
                   type="button"
+                  aria-label="clear"
                 >
                   {!!selectedItem && clearable && (
                     <Icon icon={CLOSE_SVG} className="c-autocomplete--close" />
                   )}
                 </button>
               </div>
-              <div {...getMenuProps()} className="c-autocomplete--menu">
+              <div
+                {...getMenuProps()}
+                className="c-autocomplete--menu"
+                aria-label="locations list"
+              >
                 {isOpen ? (
                   <>
                     {states.length ? (
