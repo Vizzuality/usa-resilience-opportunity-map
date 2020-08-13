@@ -18,6 +18,7 @@ import 'styles/index.scss';
 export function reportWebVitals(metric) {
   if (process.env.NODE_ENV === 'development') {
     const { name, value, label } = metric;
+    // eslint-disable-next-line no-console
     console.table({ name, 'value (ms)': value, label });
   }
 }

@@ -236,7 +236,7 @@
 .c-about {
   position: relative;
   top: -$header-size;
-  height: calc(100vh - #{$header-size} - #{$footer-size});
+  min-height: calc(100vh - #{$header-size} - #{$footer-size});
 
   .about-title {
     display: flex;
@@ -316,5 +316,22 @@
       top: 0;
       padding: rem(35px) rem(40px);
     }
+  }
+}
+
+.c-404 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - #{$header-size} - #{$footer-size});
+  width: 100%;
+
+  h1 {
+    text-align: center;
+    color: $color-1;
+    font-family: $font-serif;
+    font-weight: 300;
+    font-size: 44px;
+    line-height: 54px;
   }
 }

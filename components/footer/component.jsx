@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 import { MediaContextProvider, Media } from 'components/media';
 
 function FooterWrapper({ children }) {
@@ -24,15 +25,21 @@ export default function Footer() {
     <FooterWrapper>
       <div className="wrapper">
         <div className="footer-links">
-          <a>Privacy policy</a>
+          <Link href="/privacy">
+            <a>Privacy policy</a>
+          </Link>
           <div className="footer-links--separator" />
-          <a>Contact us</a>
+          <Link href="/privacy">
+            <a>Contact us</a>
+          </Link>
         </div>
-        <img
-          className="footer-logo"
-          src="assets/logos/atlantic_council_logo.svg"
-          alt="atlantic council"
-        />
+        <a href="https://www.atlanticcouncil.org/">
+          <img
+            className="footer-logo"
+            src="assets/logos/atlantic_council_logo.svg"
+            alt="atlantic council"
+          />
+        </a>
       </div>
     </FooterWrapper>
   );
