@@ -8,6 +8,7 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="Description" content="USA Resilience Opportunity Map" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=5"

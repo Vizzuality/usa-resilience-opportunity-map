@@ -49,7 +49,11 @@ function Home({ locations }) {
           </p>
           <MediaContextProvider>
             <Media greaterThanOrEqual="small">
-              <Button className="home-cta" link="/explore">
+              <Button
+                className="home-cta"
+                link="/explore"
+                aria-label="explore data"
+              >
                 Explore data
               </Button>
             </Media>
@@ -92,7 +96,11 @@ function Home({ locations }) {
                 clearable
                 options={locations}
               />
-              <Button className="search-btn" link="/explore?id=0">
+              <Button
+                className="search-btn"
+                link="/explore?id=0"
+                aria-label="search all states"
+              >
                 Search all states
               </Button>
             </div>

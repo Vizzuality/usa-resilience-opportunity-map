@@ -12,6 +12,10 @@ html {
   height: 100%;
 }
 
+#maincontent {
+  width: 100%;
+}
+
 body {
   font-family: $font-sans;
   font-size: $font-size-d;
@@ -19,7 +23,7 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: $color-white;
   height: 100%;
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
 }
 
