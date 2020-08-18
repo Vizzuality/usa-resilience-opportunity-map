@@ -61,7 +61,7 @@ export const stateLayer = createSelector(
                 filter: [
                   'all',
                   ['==', 'location_type', 2],
-                  ['==', 'id', +geo.parentId || +geo.id],
+                  ...(geo ? [['==', 'id', +geo.parentId || +geo.id]] : []),
                 ],
                 'source-layer': 'layer0',
                 type: 'line',
@@ -75,7 +75,7 @@ export const stateLayer = createSelector(
                 filter: [
                   'all',
                   ['==', 'location_type', 2],
-                  ['==', 'id', +geo.parentId || +geo.id],
+                  ...(geo ? [['==', 'id', +geo.parentId || +geo.id]] : []),
                 ],
                 'source-layer': 'layer0',
                 type: 'fill',
@@ -123,7 +123,9 @@ export const countyLayer = createSelector(
                   filter: [
                     'all',
                     ['==', 'location_type', 1],
-                    ['==', 'parent_id', +geo.parentId || +geo.id],
+                    ...(geo
+                      ? [['==', 'parent_id', +geo.parentId || +geo.id]]
+                      : []),
                   ],
                   'source-layer': 'layer0',
                   type: 'fill',
@@ -145,7 +147,9 @@ export const countyLayer = createSelector(
                   filter: [
                     'all',
                     ['==', 'location_type', 1],
-                    ['==', 'parent_id', +geo.parentId || +geo.id],
+                    ...(geo
+                      ? [['==', 'parent_id', +geo.parentId || +geo.id]]
+                      : []),
                   ],
                   'source-layer': 'layer0',
                   type: 'line',
@@ -193,7 +197,9 @@ export const countyLayer = createSelector(
                   filter: [
                     'all',
                     ['==', 'location_type', 1],
-                    ['==', 'parent_id', +geo.parentId || +geo.id],
+                    ...(geo
+                      ? [['==', 'parent_id', +geo.parentId || +geo.id]]
+                      : []),
                   ],
                   'source-layer': 'layer0',
                   type: 'fill',
@@ -219,7 +225,9 @@ export const countyLayer = createSelector(
                   filter: [
                     'all',
                     ['==', 'location_type', 1],
-                    ['==', 'parent_id', +geo.parentId || +geo.id],
+                    ...(geo
+                      ? [['==', 'parent_id', +geo.parentId || +geo.id]]
+                      : []),
                   ],
                   'source-layer': 'layer0',
                   type: 'line',
