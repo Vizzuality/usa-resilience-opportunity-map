@@ -12,11 +12,20 @@ export const error = (state) => state?.indicators?.error;
 export const data = (state) => state?.indicators?.data || [];
 export const category = (state) => state?.indicators?.category;
 export const active = (state) => state?.indicators?.active || [];
-export const activeCategories = (state) =>
-  state?.indicators?.activeCategories || [];
 
 export const geometryId = (state) => state?.geometries?.id;
 export const geometriesData = (state) => state?.geometries?.data;
+
+export const activeCategories = createSelector(
+  [data, loading, active],
+  (_data, _loading, _active) => {
+    if (!_data.length || _loading) return [];
+
+    return _active.map(
+      (id) => _data.find((ind) => ind.id === id)?.category?.id
+    );
+  }
+);
 
 export const categories = createSelector([data, loading], (_data, _loading) => {
   // All categories
@@ -272,7 +281,7 @@ export const layers = createSelector(
 );
 
 export const selectExploreUrlParams = createSelector(
-  [geometryId, active],
+  [geometryId, active, activeCategories],
   (_location, _indicators) => {
     return {
       id: _location,

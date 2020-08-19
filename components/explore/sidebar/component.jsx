@@ -16,7 +16,6 @@ export default function ExploreSidebar({
   categories,
   activeCategories,
   toggleIndicatorsActive,
-  toggleCategoriesActive,
   setIndicatorsCategory,
 }) {
   const [isModalOpen, openModal] = useState(false);
@@ -123,7 +122,6 @@ export default function ExploreSidebar({
                     className={cx({ 'active-layer': isItemActive })}
                     onClick={() => {
                       toggleIndicatorsActive(d.id);
-                      toggleCategoriesActive(d.category.id);
                     }}
                     disabled={
                       (active.length > 1 ||
@@ -164,6 +162,5 @@ ExploreSidebar.propTypes = {
   activeCategories: PropTypes.array,
   indicators: PropTypes.array,
   toggleIndicatorsActive: PropTypes.func,
-  toggleCategoriesActive: PropTypes.func,
   setIndicatorsCategory: PropTypes.func,
 };

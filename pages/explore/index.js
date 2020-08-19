@@ -1,62 +1,54 @@
 import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import qs from 'query-string';
 
 import { MediaContextProvider, Media } from 'components/media';
 import Main from 'components/main';
+import Url from 'components/url';
 import Loader from 'components/loader';
 import Icon from 'components/icon';
 import LAPTOP_SVG from 'public/assets/images/laptop_picto01.svg?sprite';
 
+import { initializeStore } from 'store';
 import GeometriesProvider from 'providers/geometries';
 import IndicatorsProvider from 'providers/indicators';
-
-import { initializeStore } from 'store';
 import { setGeometryId } from 'providers/geometries/actions';
 import { selectGeometriesProps } from 'providers/geometries/selectors';
-import {
-  toggleIndicatorsActive,
-  // toggleCategoriesActive,
-  // setIndicatorsCategory,
-} from 'providers/indicators/actions';
-// import { selectIndicatorsProps } from 'providers/indicators/selectors';
+import { selectExploreUrlParams } from 'providers/indicators/selectors';
+import { setIndicatorsActive } from 'providers/indicators/actions';
 
 export async function getServerSideProps(ctx) {
   const rStore = initializeStore();
   const { dispatch } = rStore;
 
-  const { id, indicator } = ctx?.query;
-
-  if (indicator) {
-    const [id1, id2] = indicator.split(',');
-    // const ind1 = data.find((i) => i.id === id1);
-    // const ind1 = data.find((i) => i.id === id2);
-
-    dispatch(toggleIndicatorsActive(id1));
-    // dispatch(toggleCategoriesActive(ind1?.category?.id));
-    if (id2) {
-      // dispatch(toggleIndicatorsActive(id2));
-      // dispatch(toggleCategoriesActive(ind2?.category?.id));
-      // dispatch(toggleCategoriesActive(ind.category.id));
-    } else {
-      // dispatch(setIndicatorsCategory(ind.category.id));
-    }
-  }
+  const options = { arrayFormat: 'comma' };
+  const { id, indicator } = qs.parse(
+    Object.keys(ctx?.query)
+      .map((q) => `${q}=${ctx?.query[q]}`)
+      .join('&'),
+    options
+  );
 
   if (id) {
     dispatch(setGeometryId(id));
   }
 
+  if (indicator) {
+    dispatch(
+      setIndicatorsActive(Array.isArray(indicator) ? indicator : [indicator])
+    );
+    // TODO: dispatch(setIndicatorsCategory(ind.category.id));
+  }
+
   return {
     props: {
       initialReduxState: rStore.getState(),
-      id: id || null,
-      indicator: indicator.split(',') || null,
     },
   };
 }
 
-function ExplorePage({ locations, id, loaded, loading }) {
+function ExplorePage({ locations, id, loaded, loading, urlParams }) {
   const Explore = lazy(() => import('components/explore'));
   return (
     <Main>
@@ -84,6 +76,7 @@ function ExplorePage({ locations, id, loaded, loading }) {
           )}
         </Media>
       </MediaContextProvider>
+      <Url queryParams={urlParams} />
     </Main>
   );
 }
@@ -93,6 +86,13 @@ ExplorePage.propTypes = {
   id: PropTypes.string,
   loaded: PropTypes.bool,
   loading: PropTypes.bool,
+  urlParams: PropTypes.shape({}),
 };
 
-export default connect(selectGeometriesProps, null)(ExplorePage);
+export default connect(
+  (state) => ({
+    ...selectGeometriesProps(state),
+    urlParams: selectExploreUrlParams(state),
+  }),
+  null
+)(ExplorePage);
