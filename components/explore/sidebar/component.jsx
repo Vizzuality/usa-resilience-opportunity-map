@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import startCase from 'lodash.startcase';
-import { useRouter } from 'next/router';
 
 import Icon from 'components/icon';
 import Modal from 'components/modal';
@@ -14,53 +13,14 @@ export default function ExploreSidebar({
   active,
   category,
   indicators,
-  data,
   categories,
   activeCategories,
   toggleIndicatorsActive,
   toggleCategoriesActive,
   setIndicatorsCategory,
 }) {
-  const router = useRouter();
   const [isModalOpen, openModal] = useState(false);
   const [modalContent, setModalContent] = useState(null);
-
-  useEffect(() => {
-    /* If active (indicators) change, push the to the URL */
-    router.push(
-      `${router.pathname}${Object.keys(router.query).length ? '?' : ''}${
-        router.query.id ? `id=${router.query?.id}` : ''
-      }${active[0] ? `&indicator=${active[0]}` : ''}${
-        active[1] ? `&indicator=${active[1]}` : ''
-      }`,
-      undefined,
-      { shallow: true }
-    );
-  }, [active]);
-
-  useEffect(() => {
-    const { indicator } = router.query;
-    /* If the url has indicators, change the state */
-    if (indicator) {
-      if (Array.isArray(indicator) && indicator.length > active.length) {
-        // Indicator array = bivariate (max 2 indicators)
-        const id1 = indicator[0];
-        const id2 = indicator[1];
-        const ind1 = data.find((i) => i.id === id1);
-        const ind2 = data.find((i) => i.id === id2);
-
-        toggleIndicatorsActive(ind1?.id);
-        toggleCategoriesActive(ind1?.category?.id);
-        toggleIndicatorsActive(ind2?.id);
-        toggleCategoriesActive(ind2?.category?.id);
-      } else if (active.length === 0) {
-        const ind = data.find((i) => i.id === indicator);
-        toggleIndicatorsActive(ind.id);
-        toggleCategoriesActive(ind.category.id);
-        setIndicatorsCategory(ind.category.id);
-      }
-    }
-  }, [router.query.indicator]);
 
   const icons = {
     'human impact': HumanImpact,
@@ -203,7 +163,6 @@ ExploreSidebar.propTypes = {
   categories: PropTypes.array,
   activeCategories: PropTypes.array,
   indicators: PropTypes.array,
-  data: PropTypes.array,
   toggleIndicatorsActive: PropTypes.func,
   toggleCategoriesActive: PropTypes.func,
   setIndicatorsCategory: PropTypes.func,

@@ -1,12 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Url from 'components/url';
 
 export default function Main(props) {
-  const { children } = props;
+  Main.propTypes = {
+    urlParams: PropTypes.shape({}),
+    children: PropTypes.node.isRequired,
+  };
+  const { children, urlParams } = props;
 
-  return <main className="c-main">{children}</main>;
+  return (
+    <main className="c-main">
+      {children}
+      <Url queryParams={urlParams} />
+    </main>
+  );
 }
-
-Main.propTypes = {
-  children: PropTypes.node.isRequired,
-};

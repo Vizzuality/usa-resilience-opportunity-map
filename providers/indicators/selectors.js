@@ -44,7 +44,7 @@ export const indicators = createSelector(
 export const stateLayer = createSelector(
   [geometryId, geometriesData],
   (_id, _data) => {
-    if (!_data.length) return [];
+    if (!_data || !_data.length) return [];
     const geo = _data.find((g) => g.id === _id);
 
     if (!geo) return [];
@@ -101,6 +101,8 @@ export const stateLayer = createSelector(
 export const countyLayer = createSelector(
   [data, active, geometryId, geometriesData],
   (_data, _active, _geometryId, _geometriesData) => {
+    if (!_data || !_data.length || !_geometriesData || !_geometriesData.length)
+      return [];
     const inds = _active
       .map((i) => _data.find((d) => d.id === i))
       .sort((a, b) => (a.category.id > b.category.id ? 1 : -1));
@@ -266,6 +268,16 @@ export const layers = createSelector(
   [stateLayer, countyLayer],
   (_stateLayer, _countyLayer) => {
     return [..._stateLayer, ..._countyLayer];
+  }
+);
+
+export const selectExploreUrlParams = createSelector(
+  [geometryId, active],
+  (_location, _indicators) => {
+    return {
+      id: _location,
+      indicator: _indicators,
+    };
   }
 );
 

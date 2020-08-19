@@ -14,12 +14,34 @@ import IndicatorsProvider from 'providers/indicators';
 import { initializeStore } from 'store';
 import { setGeometryId } from 'providers/geometries/actions';
 import { selectGeometriesProps } from 'providers/geometries/selectors';
+import {
+  toggleIndicatorsActive,
+  // toggleCategoriesActive,
+  // setIndicatorsCategory,
+} from 'providers/indicators/actions';
+// import { selectIndicatorsProps } from 'providers/indicators/selectors';
 
 export async function getServerSideProps(ctx) {
   const rStore = initializeStore();
   const { dispatch } = rStore;
 
-  const id = ctx?.query?.id;
+  const { id, indicator } = ctx?.query;
+
+  if (indicator) {
+    const [id1, id2] = indicator.split(',');
+    // const ind1 = data.find((i) => i.id === id1);
+    // const ind1 = data.find((i) => i.id === id2);
+
+    dispatch(toggleIndicatorsActive(id1));
+    // dispatch(toggleCategoriesActive(ind1?.category?.id));
+    if (id2) {
+      // dispatch(toggleIndicatorsActive(id2));
+      // dispatch(toggleCategoriesActive(ind2?.category?.id));
+      // dispatch(toggleCategoriesActive(ind.category.id));
+    } else {
+      // dispatch(setIndicatorsCategory(ind.category.id));
+    }
+  }
 
   if (id) {
     dispatch(setGeometryId(id));
@@ -29,6 +51,7 @@ export async function getServerSideProps(ctx) {
     props: {
       initialReduxState: rStore.getState(),
       id: id || null,
+      indicator: indicator.split(',') || null,
     },
   };
 }
@@ -55,7 +78,7 @@ function ExplorePage({ locations, id, loaded, loading }) {
         <Media greaterThanOrEqual="small">
           {loading && !loaded && <Loader />}
           {loaded && !loading && (
-            <Suspense fallback={Loader}>
+            <Suspense fallback={<Loader />}>
               <Explore locations={locations} activeLocationId={id} />
             </Suspense>
           )}

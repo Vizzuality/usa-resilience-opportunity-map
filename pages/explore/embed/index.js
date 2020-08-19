@@ -1,39 +1,22 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { MediaContextProvider, Media } from 'components/media';
 import Main from 'components/main';
-import ExploreMap from 'components/explore/map';
-import ExploreSidebar from 'components/explore/sidebar';
+import Loader from 'components/loader';
 import Icon from 'components/icon';
 import LAPTOP_SVG from 'public/assets/images/laptop_picto01.svg?sprite';
 
 import GeometriesProvider from 'providers/geometries';
 import IndicatorsProvider from 'providers/indicators';
 
-import { initializeStore } from 'store';
-import { setGeometryId } from 'providers/geometries/actions';
 import { selectGeometriesProps } from 'providers/geometries/selectors';
 
-export async function getServerSideProps(ctx) {
-  const rStore = initializeStore();
-  const { dispatch } = rStore;
+export { getServerSideProps } from '..';
 
-  const id = ctx?.query?.id;
-
-  if (id) {
-    dispatch(setGeometryId(id));
-  }
-
-  return {
-    props: {
-      initialReduxState: rStore.getState(),
-      id: id || null,
-    },
-  };
-}
-
-function ExploreEmbed() {
+function ExploreEmbed({ locations, id, loaded, loading }) {
+  const Explore = lazy(() => import('components/explore'));
   return (
     <Main>
       <GeometriesProvider />
@@ -41,7 +24,7 @@ function ExploreEmbed() {
 
       <MediaContextProvider>
         <Media lessThan="small">
-          <div className="c-explore -mobile">
+          <div className="c-explore --mobile">
             <div className="wrapper">
               <Icon icon={LAPTOP_SVG} className="laptop-icon" />
               <h2>
@@ -52,16 +35,23 @@ function ExploreEmbed() {
           </div>
         </Media>
         <Media greaterThanOrEqual="small">
-          <div className="c-explore">
-            <div className="map-wrapper">
-              <ExploreSidebar />
-              <ExploreMap className="--embed" />
-            </div>
-          </div>
+          {loading && !loaded && <Loader />}
+          {loaded && !loading && (
+            <Suspense fallback={<Loader />}>
+              <Explore locations={locations} activeLocationId={id} embed />
+            </Suspense>
+          )}
         </Media>
       </MediaContextProvider>
     </Main>
   );
 }
+
+ExploreEmbed.propTypes = {
+  locations: PropTypes.array,
+  id: PropTypes.string,
+  loaded: PropTypes.bool,
+  loading: PropTypes.bool,
+};
 
 export default connect(selectGeometriesProps, null)(ExploreEmbed);

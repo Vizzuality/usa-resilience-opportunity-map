@@ -5,28 +5,31 @@ import ExploreSidebar from 'components/explore/sidebar';
 import Autocomplete from 'components/autocomplete';
 import Button from 'components/button';
 
-export default function Explore({ locations, activeLocationId }) {
+export default function Explore({ locations, activeLocationId, embed }) {
   Explore.propTypes = {
     locations: PropTypes.array,
     activeLocationId: PropTypes.string,
+    embed: PropTypes.bool,
   };
 
   return (
     <div className="c-explore">
-      <div className="explore-search wrapper">
-        <Autocomplete
-          className="explore-search--select"
-          options={locations}
-          activeOption={
-            activeLocationId
-              ? locations.find((l) => l.id === activeLocationId)
-              : null
-          }
-        />
-        <Button className="search-btn" link="/explore?id=0">
-          All states view
-        </Button>
-      </div>
+      {!embed && (
+        <div className="explore-search wrapper">
+          <Autocomplete
+            className="explore-search--select"
+            options={locations}
+            activeOption={
+              activeLocationId
+                ? locations.find((l) => l.id === activeLocationId)
+                : null
+            }
+          />
+          <Button className="search-btn" link="/explore?id=0">
+            All states view
+          </Button>
+        </div>
+      )}
       <div className="map-wrapper">
         <ExploreSidebar />
         <ExploreMap />
