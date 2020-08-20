@@ -56,8 +56,6 @@ export const stateLayer = createSelector(
     if (!_data || !_data.length) return [];
     const geo = _data.find((g) => g.id === _id);
 
-    if (!geo) return [];
-
     return [
       {
         id: 'state',
@@ -70,21 +68,50 @@ export const stateLayer = createSelector(
                 filter: [
                   'all',
                   ['==', 'location_type', 2],
-                  ...(geo ? [['==', 'id', +geo.parentId || +geo.id]] : []),
+                  ...(geo
+                    ? [['!=', 'id', +geo.parentId || +geo.id]]
+                    : []),
                 ],
                 'source-layer': 'layer0',
                 type: 'line',
                 paint: {
-                  'line-color': '#000',
+                  'line-color': [
+                    'case',
+                    ['boolean', ['feature-state', 'hover'], false],
+                    '#000',
+                    '#F00'
+                  ],
                   'line-opacity': 1,
-                  'line-width': 2,
+                  'line-width': [
+                    'case',
+                    ['boolean', ['feature-state', 'hover'], false],
+                    4,
+                    1
+                  ],
                 },
               },
+
+              ...geo ? [
+                {
+                  filter: [
+                    'all',
+                    ['==', 'location_type', 2],
+                    ['==', 'id', +geo.parentId || +geo.id],
+                  ],
+                  'source-layer': 'layer0',
+                  type: 'line',
+                  paint: {
+                    'line-color': '#000',
+                    'line-opacity': 1,
+                    'line-width': 2,
+                  },
+                }
+              ] : [],
+
               {
                 filter: [
                   'all',
-                  ['==', 'location_type', 2],
-                  ...(geo ? [['==', 'id', +geo.parentId || +geo.id]] : []),
+                  ['==', 'location_type', 2]
                 ],
                 'source-layer': 'layer0',
                 type: 'fill',
