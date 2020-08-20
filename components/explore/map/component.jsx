@@ -26,7 +26,12 @@ import ZoomControl from 'components/map/controls/zoom';
 import LegendItemTypeBivariate from 'components/bivariate-legend';
 import MapTooltip from 'components/explore/tooltip';
 
-export default function ExploreMap({ indicators, geometries, className }) {
+export default function ExploreMap({
+  indicators,
+  geometries,
+  className,
+  setGeometryId,
+}) {
   const { layers } = indicators;
   const { bbox } = geometries;
   const [layersSettings, setLayersSettings] = useState({});
@@ -209,17 +214,24 @@ export default function ExploreMap({ indicators, geometries, className }) {
         onViewportChange={onViewportChange}
         onClick={(e) => {
           if (e && e.features) {
-            const interactions = e.features.reduce((acc, f) => {
-              return {
-                ...acc,
-                [f.source]: {
-                  id: f.id,
-                  data: f.properties,
-                },
-              };
-            }, {});
+            const interactions = e.features
+              .filter((int) => ['state', 'counties'].includes(int.source))
+              .reduce((acc, f) => {
+                return {
+                  ...acc,
+                  [f.source]: {
+                    id: f.id,
+                    data: f.properties,
+                  },
+                };
+              }, {});
 
-            console.log(interactions);
+            if (interactions.counties || interactions.state)
+              setGeometryId(
+                interactions.counties
+                  ? interactions.counties.id?.toString()
+                  : interactions.state.id?.toString()
+              );
           }
         }}
         onHover={(e) => {
@@ -348,4 +360,5 @@ ExploreMap.propTypes = {
     bbox: PropTypes.object,
   }),
   className: PropTypes.string,
+  setGeometryId: PropTypes.func,
 };
