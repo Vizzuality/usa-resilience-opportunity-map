@@ -25,7 +25,7 @@ export default function Explore({ locations, activeLocationId, embed }) {
                 : null
             }
           />
-          <Button className="search-btn" link="/explore?id=0">
+          <Button className="search-btn" link="/explore">
             All states view
           </Button>
         </div>
