@@ -24,8 +24,7 @@ import Map from 'components/map';
 import MapControls from 'components/map/controls';
 import ZoomControl from 'components/map/controls/zoom';
 import LegendItemTypeBivariate from 'components/bivariate-legend';
-
-import { Popup } from 'react-map-gl';
+import MapTooltip from 'components/explore/tooltip';
 
 export default function ExploreMap({ indicators, geometries, className }) {
   const { layers } = indicators;
@@ -215,15 +214,14 @@ export default function ExploreMap({ indicators, geometries, className }) {
                 ...acc,
                 [f.source]: {
                   id: f.id,
-                  data: f.properties
-                }
-              }
+                  data: f.properties,
+                },
+              };
             }, {});
 
             console.log(interactions);
           }
         }}
-
         onHover={(e) => {
           if (e && e.features) {
             const { lngLat, features } = e;
@@ -232,18 +230,17 @@ export default function ExploreMap({ indicators, geometries, className }) {
                 ...acc,
                 [f.source]: {
                   id: f.id,
-                  data: f.properties
-                }
-              }
+                  data: f.properties,
+                },
+              };
             }, {});
 
             setLayersHover({
               lngLat,
-              interactions
+              interactions,
             });
           }
         }}
-
       >
         {(map) => (
           <>
@@ -290,8 +287,7 @@ export default function ExploreMap({ indicators, geometries, className }) {
                 );
               })}
             </LayerManager>
-
-            {/* <CountyPopup layersHover={layersHover} /> */}
+            <MapTooltip layersHover={layersHover} />
           </>
         )}
       </Map>

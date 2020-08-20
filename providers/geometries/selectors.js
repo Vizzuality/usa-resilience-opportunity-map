@@ -51,7 +51,7 @@ export const bbox = createSelector([data, id], (_data, _id) => {
     }
 
     return {
-      bbox: geo.bbox,
+      bbox: geo?.bbox,
       options: {
         padding: { top: 50, bottom: 50, left: 600, right: 50 },
       },
@@ -67,6 +67,7 @@ export const bbox = createSelector([data, id], (_data, _id) => {
 });
 
 export const selectGeometriesProps = createStructuredSelector({
+  id,
   data,
   loading,
   loaded,
