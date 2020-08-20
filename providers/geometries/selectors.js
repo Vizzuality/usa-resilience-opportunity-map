@@ -50,8 +50,10 @@ export const bbox = createSelector([data, id], (_data, _id) => {
       geo = _data.find((d) => +d.id === +geo.parentId);
     }
 
+    if (!geo) return null;
+
     return {
-      bbox: geo?.bbox,
+      bbox: geo.bbox,
       options: {
         padding: { top: 50, bottom: 50, left: 600, right: 50 },
       },

@@ -107,6 +107,9 @@ export const stateLayer = createSelector(
             type: 'vector',
           },
         },
+        interactionConfig: {
+          enable: true,
+        },
       },
     ];
   }
@@ -209,6 +212,9 @@ export const countyLayer = createSelector(
               type: 'vector',
             },
           },
+          interactionConfig: {
+            enable: true,
+          },
           legendConfig: {
             type: 'basic',
             items: colors.map((c, i) => ({
@@ -287,6 +293,9 @@ export const countyLayer = createSelector(
               type: 'vector',
             },
           },
+          interactionConfig: {
+            enable: true,
+          },
           legendConfig: {
             type: 'bivariate',
             items: colors.map((c, i) => ({
@@ -306,7 +315,7 @@ export const countyLayer = createSelector(
 export const layers = createSelector(
   [stateLayer, countyLayer],
   (_stateLayer, _countyLayer) => {
-    return [..._stateLayer, ..._countyLayer];
+    return [..._countyLayer, ..._stateLayer];
   }
 );
 

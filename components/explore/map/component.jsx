@@ -212,6 +212,7 @@ export default function ExploreMap({
         mapboxApiAccessToken={MAPBOX_TOKEN}
         viewport={viewport}
         onViewportChange={onViewportChange}
+        interactiveLayerIds={layersInteractiveIds}
         onClick={(e) => {
           if (e && e.features) {
             const interactions = e.features
