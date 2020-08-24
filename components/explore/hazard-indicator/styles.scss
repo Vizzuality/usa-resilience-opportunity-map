@@ -1,0 +1,22 @@
+.c-hazard-indicator {
+  display: flex;
+  align-items: center;
+  height: 30px;
+
+  .hazard-text {
+    display: flex;
+    flex-direction: column;
+    color: $color-1;
+    font-family: $font-sans;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.71px;
+    line-height: 13px;
+    text-align: right;
+    text-transform: uppercase;
+  }
+
+  .hazard-chart {
+    margin-left: 11px;
+  }
+}

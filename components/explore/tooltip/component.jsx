@@ -1,6 +1,7 @@
 import { Popup } from 'react-map-gl';
 import PropTypes from 'prop-types';
 import startCase from 'lodash.startcase';
+import HazardIndicator from 'components/explore/hazard-indicator';
 
 export default function MapTooltip({ layersHover, indicators, geometries }) {
   const { lngLat, interactions } = layersHover;
@@ -21,15 +22,17 @@ export default function MapTooltip({ layersHover, indicators, geometries }) {
           longitude={lngLat && lngLat[0]}
           latitude={lngLat && lngLat[1]}
           anchor="top"
+          closeButton={false}
         >
           <div>
             <h3>{`${county?.name} (${state?.name})`}</h3>
-            <p>Hazard level</p>
             {activeIndicators.map((act) => (
               <div key={act.slug}>
                 <span>{startCase(countyValues[act.slug])}</span>
                 {': '}
-                <span>{hazards[countyValues[`${act.slug}_hazard`]]}</span>
+                <HazardIndicator
+                  hazardLevel={countyValues[`${act.slug}_hazard`]}
+                />
               </div>
             ))}
           </div>
@@ -42,10 +45,11 @@ export default function MapTooltip({ layersHover, indicators, geometries }) {
         longitude={lngLat && lngLat[0]}
         latitude={lngLat && lngLat[1]}
         anchor="top"
+        closeButton={false}
       >
         <div>
           <h3>{state.name}</h3>
-          <p>Hazard level</p>
+          {activeIndicators.length > 0 && <p>Hazard level</p>}
           {activeIndicators.map((act) => (
             <div key={act.slug}>
               <span>{startCase(stateValues[act.slug])}</span>
