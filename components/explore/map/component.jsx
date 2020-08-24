@@ -24,12 +24,19 @@ import Map from 'components/map';
 import MapControls from 'components/map/controls';
 import ZoomControl from 'components/map/controls/zoom';
 import LegendItemTypeBivariate from 'components/bivariate-legend';
+import MapTooltip from 'components/explore/tooltip';
 
-export default function ExploreMap({ indicators, geometries, className }) {
+export default function ExploreMap({
+  indicators,
+  geometries,
+  className,
+  setGeometryId,
+}) {
   const { layers } = indicators;
   const { bbox } = geometries;
   const [layersSettings, setLayersSettings] = useState({});
   const [layersInteractiveIds, setLayersInteractiveIds] = useState([]);
+  const [layersHover, setLayersHover] = useState({});
   const [viewport, setViewport] = useState({
     longitude: 0,
     latitude: 0,
@@ -203,56 +210,98 @@ export default function ExploreMap({ indicators, geometries, className }) {
         height="100%"
         bounds={bbox}
         mapboxApiAccessToken={MAPBOX_TOKEN}
-        onClick={(e) => {
-          if (e && e.features) console.log(e.features);
-        }}
         viewport={viewport}
         onViewportChange={onViewportChange}
+        interactiveLayerIds={layersInteractiveIds}
+        onClick={(e) => {
+          if (e && e.features) {
+            const interactions = e.features
+              .filter((int) => ['state', 'counties'].includes(int.source))
+              .reduce((acc, f) => {
+                return {
+                  ...acc,
+                  [f.source]: {
+                    id: f.id,
+                    data: f.properties,
+                  },
+                };
+              }, {});
+
+            if (interactions.counties || interactions.state)
+              setGeometryId(
+                interactions.counties
+                  ? interactions.counties.id?.toString()
+                  : interactions.state.id?.toString()
+              );
+          }
+        }}
+        onHover={(e) => {
+          if (e && e.features) {
+            const { lngLat, features } = e;
+            const interactions = features.reduce((acc, f) => {
+              return {
+                ...acc,
+                [f.source]: {
+                  id: f.id,
+                  data: f.properties,
+                },
+              };
+            }, {});
+
+            setLayersHover({
+              lngLat,
+              interactions,
+            });
+          }
+        }}
       >
         {(map) => (
-          <LayerManager map={map} plugin={PluginMapboxGl}>
-            {layers.map((layer) => {
-              const {
-                id,
-                paramsConfig,
-                sqlConfig,
-                decodeConfig,
-                timelineConfig,
-                decodeFunction,
-              } = layer;
-
-              const lSettings = layersSettings[id] || {};
-
-              const l = {
-                ...layer,
-                ...layer.config,
-                ...lSettings,
-                ...(!!paramsConfig && {
-                  params: getParams(paramsConfig, { ...lSettings.params }),
-                }),
-
-                ...(!!sqlConfig && {
-                  sqlParams: getParams(sqlConfig, { ...lSettings.sqlParams }),
-                }),
-
-                ...(!!decodeConfig && {
-                  decodeParams: getParams(decodeConfig, {
-                    ...timelineConfig,
-                    ...lSettings.decodeParams,
-                  }),
+          <>
+            <LayerManager map={map} plugin={PluginMapboxGl}>
+              {layers.map((layer) => {
+                const {
+                  id,
+                  paramsConfig,
+                  sqlConfig,
+                  decodeConfig,
+                  timelineConfig,
                   decodeFunction,
-                }),
-              };
-              return (
-                <Layer
-                  key={l.id}
-                  {...l}
-                  onAfterAdd={onAfterAdd}
-                  onAfterRemove={onAfterRemove}
-                />
-              );
-            })}
-          </LayerManager>
+                } = layer;
+
+                const lSettings = layersSettings[id] || {};
+
+                const l = {
+                  ...layer,
+                  ...layer.config,
+                  ...lSettings,
+                  ...(!!paramsConfig && {
+                    params: getParams(paramsConfig, { ...lSettings.params }),
+                  }),
+
+                  ...(!!sqlConfig && {
+                    sqlParams: getParams(sqlConfig, { ...lSettings.sqlParams }),
+                  }),
+
+                  ...(!!decodeConfig && {
+                    decodeParams: getParams(decodeConfig, {
+                      ...timelineConfig,
+                      ...lSettings.decodeParams,
+                    }),
+                    decodeFunction,
+                  }),
+                };
+                return (
+                  <Layer
+                    key={l.id}
+                    {...l}
+                    onAfterAdd={onAfterAdd}
+                    onAfterRemove={onAfterRemove}
+                  />
+                );
+              })}
+            </LayerManager>
+            <MapTooltip layersHover={layersHover} />
+          </>
         )}
       </Map>
 
@@ -312,4 +361,5 @@ ExploreMap.propTypes = {
     bbox: PropTypes.object,
   }),
   className: PropTypes.string,
+  setGeometryId: PropTypes.func,
 };

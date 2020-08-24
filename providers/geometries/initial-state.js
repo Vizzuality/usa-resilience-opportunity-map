@@ -3,5 +3,6 @@ export default {
   loaded: false,
   error: false,
   data: [],
+  geometryValues: [],
   id: null,
 };

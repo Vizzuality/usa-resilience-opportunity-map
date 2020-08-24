@@ -1,8 +1,9 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import qs from 'query-string';
 
+import Explore from 'components/explore';
 import { MediaContextProvider, Media } from 'components/media';
 import Main from 'components/main';
 import Url from 'components/url';
@@ -49,7 +50,6 @@ export async function getServerSideProps(ctx) {
 }
 
 function ExplorePage({ locations, id, loaded, loading, urlParams }) {
-  const Explore = lazy(() => import('components/explore'));
   return (
     <Main>
       <GeometriesProvider />
@@ -70,9 +70,7 @@ function ExplorePage({ locations, id, loaded, loading, urlParams }) {
         <Media greaterThanOrEqual="small">
           {loading && !loaded && <Loader />}
           {loaded && !loading && (
-            <Suspense fallback={<Loader />}>
-              <Explore locations={locations} activeLocationId={id} />
-            </Suspense>
+            <Explore locations={locations} activeLocationId={id} />
           )}
         </Media>
       </MediaContextProvider>

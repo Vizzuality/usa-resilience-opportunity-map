@@ -90,4 +90,13 @@ export function fetchGeometries(params, options = {}) {
   );
 }
 
+export function fetchGeometryValues(params, options = {}) {
+  // Indicator values for a given geom id
+  const { id } = params;
+  return service.request(
+    `/geometries/${id}?include=indicator-data.indicator`,
+    options
+  );
+}
+
 export default service;

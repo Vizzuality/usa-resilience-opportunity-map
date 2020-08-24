@@ -1,0 +1,37 @@
+.c-hazard-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+
+  .c-hazard--text {
+    display: flex;
+    flex-direction: column;
+    color: $color-1;
+    font-family: $font-sans;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.71px;
+    line-height: 13px;
+    text-align: right;
+    text-transform: uppercase;
+
+    .c-hazard--title {
+      font-weight: 500;
+    }
+  }
+
+  .c-hazard--chart {
+    margin-left: 11px;
+  }
+
+  &.--dark {
+    .c-hazard--text {
+      color: $color-white;
+
+      .c-hazard--title {
+        opacity: 0.5;
+      }
+    }
+  }
+}

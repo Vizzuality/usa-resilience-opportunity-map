@@ -5,6 +5,7 @@ import startCase from 'lodash.startcase';
 
 import Icon from 'components/icon';
 import Modal from 'components/modal';
+import HazardIndicator from 'components/explore/hazard-indicator';
 import HumanImpact from 'svgs/human_impact.svg?sprite';
 import ClimateRisk from 'svgs/climate_risk.svg?sprite';
 import Vulnerability from 'svgs/vulnerability.svg?sprite';
@@ -17,6 +18,7 @@ export default function ExploreSidebar({
   activeCategories,
   toggleIndicatorsActive,
   setIndicatorsCategory,
+  geometryValues,
 }) {
   const [isModalOpen, openModal] = useState(false);
   const [modalContent, setModalContent] = useState(null);
@@ -87,6 +89,9 @@ export default function ExploreSidebar({
       <ul className="explore-sidebar--list">
         {indicators.map((d) => {
           const isItemActive = !!active.find((a) => a === d.id);
+          const indicatorValues = geometryValues.find(
+            (v) => v.indicator?.id === d.id
+          );
           return (
             <li
               className={cx({
@@ -108,7 +113,12 @@ export default function ExploreSidebar({
               </div>
 
               <div className="explore-sidebar--item-controls">
-                <div>{/* Hazard level */}</div>
+                <HazardIndicator
+                  hazardLevel={
+                    indicatorValues ? indicatorValues.hazardValue : 5
+                  }
+                  className="explore-sidebar--hazard"
+                />
                 <div className="explore-sidebar--item-buttons">
                   <button
                     onClick={() => {
@@ -163,4 +173,5 @@ ExploreSidebar.propTypes = {
   indicators: PropTypes.array,
   toggleIndicatorsActive: PropTypes.func,
   setIndicatorsCategory: PropTypes.func,
+  geometryValues: PropTypes.array,
 };

@@ -5,6 +5,10 @@ export default {
     ...state,
     data: payload,
   }),
+  [actions.setGeometryValues]: (state, { payload }) => ({
+    ...state,
+    geometryValues: payload,
+  }),
   [actions.setGeometriesLoading]: (state, { payload }) => ({
     ...state,
     loading: payload,

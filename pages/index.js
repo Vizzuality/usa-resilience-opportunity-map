@@ -112,7 +112,7 @@ function Home({ locations }) {
               />
               <Button
                 className="search-btn"
-                link="/explore?id=0"
+                link="/explore"
                 aria-label="search all states"
               >
                 Search all states

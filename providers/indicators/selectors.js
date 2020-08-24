@@ -56,8 +56,6 @@ export const stateLayer = createSelector(
     if (!_data || !_data.length) return [];
     const geo = _data.find((g) => g.id === _id);
 
-    if (!geo) return [];
-
     return [
       {
         id: 'state',
@@ -69,23 +67,30 @@ export const stateLayer = createSelector(
               {
                 filter: [
                   'all',
-                  ['==', 'location_type', 2],
-                  ...(geo ? [['==', 'id', +geo.parentId || +geo.id]] : []),
+                  ['==', 'location_type', 2], // states
+                  ...(geo ? [['!=', 'id', +geo.parentId || +geo.id]] : []),
                 ],
                 'source-layer': 'layer0',
                 type: 'line',
                 paint: {
-                  'line-color': '#000',
+                  'line-color': [
+                    'case',
+                    ['boolean', ['feature-state', 'hover'], false],
+                    '#000',
+                    'transparent',
+                  ],
                   'line-opacity': 1,
-                  'line-width': 2,
+                  'line-width': [
+                    'case',
+                    ['boolean', ['feature-state', 'hover'], false],
+                    2,
+                    1,
+                  ],
                 },
               },
+
               {
-                filter: [
-                  'all',
-                  ['==', 'location_type', 2],
-                  ...(geo ? [['==', 'id', +geo.parentId || +geo.id]] : []),
-                ],
+                filter: ['all', ['==', 'location_type', 2]],
                 'source-layer': 'layer0',
                 type: 'fill',
                 paint: {
@@ -102,6 +107,9 @@ export const stateLayer = createSelector(
             type: 'vector',
           },
         },
+        interactionConfig: {
+          enable: true,
+        },
       },
     ];
   }
@@ -112,14 +120,14 @@ export const countyLayer = createSelector(
   (_data, _active, _geometryId, _geometriesData) => {
     if (!_data || !_data.length || !_geometriesData || !_geometriesData.length)
       return [];
-    const inds = _active
+    const _indicators = _active
       .map((i) => _data.find((d) => d.id === i))
       .sort((a, b) => (a.category.id > b.category.id ? 1 : -1));
 
     const geo = _geometriesData.find((g) => g.id === _geometryId);
 
     if (_active.length === 1) {
-      const ind = inds[0];
+      const ind = _indicators[0];
       const colors = CATEGORIES[ind.category.id].ramp;
 
       return [
@@ -154,6 +162,31 @@ export const countyLayer = createSelector(
                     'fill-opacity': 1,
                   },
                 },
+
+                {
+                  filter: [
+                    'all',
+                    ['==', 'location_type', 1], // counties
+                  ],
+                  'source-layer': 'layer0',
+                  type: 'line',
+                  paint: {
+                    'line-color': [
+                      'case',
+                      ['boolean', ['feature-state', 'hover'], false],
+                      '#000',
+                      'transparent',
+                    ],
+                    'line-opacity': 1,
+                    'line-width': [
+                      'case',
+                      ['boolean', ['feature-state', 'hover'], false],
+                      2,
+                      1,
+                    ],
+                  },
+                },
+
                 {
                   filter: [
                     'all',
@@ -179,6 +212,9 @@ export const countyLayer = createSelector(
               type: 'vector',
             },
           },
+          interactionConfig: {
+            enable: true,
+          },
           legendConfig: {
             type: 'basic',
             items: colors.map((c, i) => ({
@@ -191,8 +227,8 @@ export const countyLayer = createSelector(
     }
 
     if (_active.length === 2) {
-      const ind1 = inds[0];
-      const ind2 = inds[1];
+      const ind1 = _indicators[0];
+      const ind2 = _indicators[1];
 
       const colors = CATEGORIES[`${ind1.category.id}${ind2.category.id}`].ramp;
 
@@ -257,6 +293,9 @@ export const countyLayer = createSelector(
               type: 'vector',
             },
           },
+          interactionConfig: {
+            enable: true,
+          },
           legendConfig: {
             type: 'bivariate',
             items: colors.map((c, i) => ({
@@ -276,7 +315,7 @@ export const countyLayer = createSelector(
 export const layers = createSelector(
   [stateLayer, countyLayer],
   (_stateLayer, _countyLayer) => {
-    return [..._stateLayer, ..._countyLayer];
+    return [..._countyLayer, ..._stateLayer];
   }
 );
 
