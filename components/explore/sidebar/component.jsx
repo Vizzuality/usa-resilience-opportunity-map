@@ -113,13 +113,12 @@ export default function ExploreSidebar({
               </div>
 
               <div className="explore-sidebar--item-controls">
-                <div>
-                  <HazardIndicator
-                    hazardLevel={
-                      indicatorValues ? indicatorValues.hazardValue : 5
-                    }
-                  />
-                </div>
+                <HazardIndicator
+                  hazardLevel={
+                    indicatorValues ? indicatorValues.hazardValue : 5
+                  }
+                  className="explore-sidebar--hazard"
+                />
                 <div className="explore-sidebar--item-buttons">
                   <button
                     onClick={() => {

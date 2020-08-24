@@ -107,6 +107,11 @@
         flex-direction: column;
         justify-content: space-between;
 
+        .explore-sidebar--hazard {
+          width: 140px;
+          margin: 0 auto;
+        }
+
         button {
           height: rem(28px);
           width: (95px);

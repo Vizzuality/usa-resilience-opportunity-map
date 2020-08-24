@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-export default function MapTooltip({ hazardLevel }) {
+export default function MapTooltip({ hazardLevel, dark, className }) {
   MapTooltip.propTypes = {
+    className: PropTypes.string,
+    dark: PropTypes.bool,
     hazardLevel: PropTypes.number,
   };
 
@@ -18,19 +21,19 @@ export default function MapTooltip({ hazardLevel }) {
     '#FDAE61',
     '#F46D43',
     '#F44543',
-    '#F44543',
+    '#BF2826',
     '#F1F1F1',
   ];
   // Opacity 30% on inactive bars
 
   return (
-    <div className="c-hazard-indicator">
-      <div className="hazard-text">
-        <span>Hazard level</span>
-        <span>{hazards[hazardLevel]}</span>
+    <div className={cx('c-hazard-indicator', className, { '--dark': dark })}>
+      <div className="c-hazard--text">
+        <span className="c-hazard--title">Hazard level</span>
+        <span className="c-hazard--value">{hazards[hazardLevel]}</span>
       </div>
       <svg
-        className="hazard-chart"
+        className="c-hazard--chart"
         width="39"
         height="20"
         viewBox="0 0 39 20"

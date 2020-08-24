@@ -7,38 +7,17 @@ export default function MapTooltip({ layersHover, indicators, geometries }) {
   const { lngLat, interactions } = layersHover;
   const countyValues = interactions?.counties?.data;
   const stateValues = interactions?.state?.data;
-  const hazards = ['Low', 'Low-medium', 'Medium', 'Medium-high', 'High'];
 
   if (lngLat && stateValues) {
     const state = geometries.data?.find((g) => +g.id === +stateValues.id);
     const activeIndicators = indicators.active?.map((id) =>
       indicators.data?.find((i) => i.id === id)
     );
-
-    if (countyValues) {
-      const county = geometries.data?.find((g) => +g.id === +countyValues.id);
-      return (
-        <Popup
-          longitude={lngLat && lngLat[0]}
-          latitude={lngLat && lngLat[1]}
-          anchor="top"
-          closeButton={false}
-        >
-          <div>
-            <h3>{`${county?.name} (${state?.name})`}</h3>
-            {activeIndicators.map((act) => (
-              <div key={act.slug}>
-                <span>{startCase(countyValues[act.slug])}</span>
-                {': '}
-                <HazardIndicator
-                  hazardLevel={countyValues[`${act.slug}_hazard`]}
-                />
-              </div>
-            ))}
-          </div>
-        </Popup>
-      );
-    }
+    const isCounty = !!countyValues;
+    const county = isCounty
+      ? geometries.data?.find((g) => +g.id === +countyValues.id)
+      : null;
+    const refArray = countyValues || stateValues;
 
     return (
       <Popup
@@ -47,14 +26,20 @@ export default function MapTooltip({ layersHover, indicators, geometries }) {
         anchor="top"
         closeButton={false}
       >
-        <div>
-          <h3>{state.name}</h3>
-          {activeIndicators.length > 0 && <p>Hazard level</p>}
+        <div className="c-map-tooltip">
+          <h5 className="c-tooltip--location">
+            {isCounty ? county?.name : state.name}
+          </h5>
           {activeIndicators.map((act) => (
-            <div key={act.slug}>
-              <span>{startCase(stateValues[act.slug])}</span>
-              {': '}
-              <span>{hazards[stateValues[`${act.slug}_hazard`]]}</span>
+            <div key={act.slug} className="c-tooltip--indicator">
+              <span className="c-tooltip--indicator-label">
+                {startCase(refArray[act.slug])}
+              </span>
+              <HazardIndicator
+                dark
+                hazardLevel={refArray[`${act.slug}_hazard`]}
+                className="c-tooltip--hazard"
+              />
             </div>
           ))}
         </div>
