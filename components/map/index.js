@@ -70,6 +70,9 @@ class Map extends Component {
     /** A function that exposes mouseleave from features. */
     onMouseLeave: PropTypes.func,
 
+    /** A function that exposes mouseleave from features. */
+    onMouseOut: PropTypes.func,
+
     /** A function that exposes the viewport */
     getCursor: PropTypes.func,
   };
@@ -228,6 +231,22 @@ class Map extends Component {
     if (!!onMouseLeave) onMouseLeave(e);
   };
 
+  onMouseOut = (e) => {
+    const { onMouseOut } = this.props;
+    if (this.HOVER.id) {
+      this.map.setFeatureState(
+        {
+          ...this.HOVER,
+        },
+        { hover: false }
+      );
+    }
+
+    this.HOVER = {};
+
+    if (!!onMouseOut) onMouseOut(e);
+  };
+
   fitBounds = () => {
     if (!this.mapContainer) return null;
 
@@ -321,6 +340,7 @@ class Map extends Component {
 
           onHover={this.onHover}
           onMouseLeave={this.onMouseLeave}
+          onMouseOut={this.onMouseOut}
           transitionInterpolator={new FlyToInterpolator()}
           transitionEasing={easeCubic}
         >

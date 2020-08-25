@@ -178,32 +178,20 @@ export const countyLayer = createSelector(
                       'case',
                       ['boolean', ['feature-state', 'hover'], false],
                       '#000',
-                      'transparent',
+                      '#999',
                     ],
-                    'line-opacity': 1,
+                    'line-opacity': [
+                      'case',
+                      ['boolean', ['feature-state', 'hover'], false],
+                      1,
+                      0.5,
+                    ],
                     'line-width': [
                       'case',
                       ['boolean', ['feature-state', 'hover'], false],
                       2,
                       1,
                     ],
-                  },
-                },
-
-                {
-                  filter: [
-                    'all',
-                    ['==', 'location_type', 1],
-                    ...(geo
-                      ? [['==', 'parent_id', +geo.parentId || +geo.id]]
-                      : []),
-                  ],
-                  'source-layer': 'layer0',
-                  type: 'line',
-                  paint: {
-                    'line-color': '#999',
-                    'line-opacity': 0.5,
-                    'line-width': 0.5,
                   },
                 },
               ],
@@ -286,31 +274,20 @@ export const countyLayer = createSelector(
                       'case',
                       ['boolean', ['feature-state', 'hover'], false],
                       '#000',
-                      'transparent',
+                      '#999',
                     ],
-                    'line-opacity': 1,
+                    'line-opacity': [
+                      'case',
+                      ['boolean', ['feature-state', 'hover'], false],
+                      1,
+                      0.5,
+                    ],
                     'line-width': [
                       'case',
                       ['boolean', ['feature-state', 'hover'], false],
                       2,
                       1,
                     ],
-                  },
-                },
-                {
-                  filter: [
-                    'all',
-                    ['==', 'location_type', 1],
-                    ...(geo
-                      ? [['==', 'parent_id', +geo.parentId || +geo.id]]
-                      : []),
-                  ],
-                  'source-layer': 'layer0',
-                  type: 'line',
-                  paint: {
-                    'line-color': '#999',
-                    'line-opacity': 0.5,
-                    'line-width': 0.5,
                   },
                 },
               ],

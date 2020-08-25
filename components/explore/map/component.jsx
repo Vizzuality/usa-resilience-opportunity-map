@@ -254,6 +254,12 @@ export default function ExploreMap({
             });
           }
         }}
+        onMouseOut={() => {
+          setLayersHover({
+            lngLat: null,
+            interactions: {},
+          });
+        }}
       >
         {(map) => (
           <>
