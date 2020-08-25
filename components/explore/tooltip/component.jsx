@@ -23,7 +23,7 @@ export default function MapTooltip({ layersHover, indicators, geometries }) {
       <Popup
         longitude={lngLat && lngLat[0]}
         latitude={lngLat && lngLat[1]}
-        anchor="top"
+        anchor="bottom"
         closeButton={false}
       >
         <div className="c-map-tooltip">
