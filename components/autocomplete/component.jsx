@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Fuse from 'fuse.js';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import Downshift from 'downshift';
 import cx from 'classnames';
@@ -9,12 +10,20 @@ import Icon from 'components/icon';
 import CLOSE_SVG from 'svgs/close.svg?sprite';
 import MAGNIFIER from 'svgs/search.svg?sprite';
 
-function Autocomplete({ className, options, activeOption, clearable }) {
+function Autocomplete({
+  className,
+  options,
+  activeOption,
+  clearable,
+  setGeometryId,
+}) {
   const buildInputProps = (getInputProps) => {
     return getInputProps({
       placeholder: 'Enter a state, county name or ZIP code',
     });
   };
+  const { pathname } = useRouter();
+  const isExplore = pathname === '/explore';
 
   const fuse = new Fuse(options, {
     keys: ['label'],
@@ -99,9 +108,20 @@ function Autocomplete({ className, options, activeOption, clearable }) {
                           '--selected': selectedItem === item,
                         })}
                       >
-                        <Link href={`/explore?id=${item.id}`}>
-                          <a>{item.label}</a>
-                        </Link>
+                        {isExplore ? (
+                          <a
+                            role="button"
+                            tabIndex="0"
+                            onClick={() => setGeometryId(item.id)}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            {item.label}
+                          </a>
+                        ) : (
+                          <Link href={`/explore?id=${item.id}`}>
+                            <a>{item.label}</a>
+                          </Link>
+                        )}
                       </li>
                     ))}
                     {counties.length ? (
@@ -118,9 +138,20 @@ function Autocomplete({ className, options, activeOption, clearable }) {
                           '--selected': selectedItem === item,
                         })}
                       >
-                        <Link href={`/explore?id=${item.id}`}>
-                          <a>{item.label}</a>
-                        </Link>
+                        {isExplore ? (
+                          <a
+                            role="button"
+                            tabIndex="0"
+                            onClick={() => setGeometryId(item.id)}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            {item.label}
+                          </a>
+                        ) : (
+                          <Link href={`/explore?id=${item.id}`}>
+                            <a>{item.label}</a>
+                          </Link>
+                        )}
                       </li>
                     ))}
                   </>
@@ -141,6 +172,7 @@ Autocomplete.propTypes = {
   activeOption: PropTypes.object,
   defaultText: PropTypes.string,
   placeholder: PropTypes.string,
+  setGeometryId: PropTypes.func,
 };
 
 Autocomplete.defaultProps = {
