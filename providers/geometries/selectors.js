@@ -57,7 +57,7 @@ export const bbox = createSelector([data, id], (_data, _id) => {
     return {
       bbox: geo.bbox,
       options: {
-        padding: { top: 50, bottom: 50, left: 600, right: 50 },
+        padding: { top: 50, bottom: 50, left: 800, right: 50 },
       },
     };
   }
@@ -65,7 +65,7 @@ export const bbox = createSelector([data, id], (_data, _id) => {
   return {
     bbox: [-171.791110603, 18.91619, -66.96466, 71.3577635769],
     options: {
-      padding: { top: 50, bottom: 50, left: 600, right: 50 },
+      padding: { top: 50, bottom: 50, left: 800, right: 50 },
     },
   };
 });

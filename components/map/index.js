@@ -7,7 +7,7 @@ import isEqual from 'lodash.isequal';
 import isEmpty from 'lodash.isempty';
 
 import ReactMapGL, { FlyToInterpolator, TRANSITION_EVENTS } from 'react-map-gl';
-import WebMercatorViewport from 'viewport-mercator-project';
+import { fitBounds } from '@math.gl/web-mercator'; // eslint-disable-line
 
 import { easeCubic } from 'd3-ease';
 
@@ -250,23 +250,18 @@ class Map extends Component {
   fitBounds = () => {
     if (!this.mapContainer) return null;
 
-    const { viewport } = this.state;
     const { bounds, onViewportChange } = this.props;
     const { bbox, options } = bounds;
 
-    const v = {
+    const { longitude, latitude, zoom } = fitBounds({
       width: this.mapContainer.offsetWidth,
       height: this.mapContainer.offsetHeight,
-      ...viewport,
-    };
-
-    const { longitude, latitude, zoom } = new WebMercatorViewport(v).fitBounds(
-      [
+      bounds: [
         [bbox[0], bbox[1]],
         [bbox[2], bbox[3]],
       ],
-      options
-    );
+      ...options,
+    });
 
     const newViewport = {
       ...this.state.viewport,

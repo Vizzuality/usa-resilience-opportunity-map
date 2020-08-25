@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 // Utils
@@ -91,10 +91,6 @@ export default function ExploreMap({
       };
     });
 
-  const onChangeOrder = (ids) => {
-    console.log('onChangeOrder', ids);
-  };
-
   const onChangeVisibility = (l, visibility) => {
     setLayersSettings({
       ...layersSettings,
@@ -169,24 +165,6 @@ export default function ExploreMap({
       });
     }
   };
-
-  const resize = () => {
-    setViewport({
-      ...viewport,
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', resize);
-    resize();
-
-    return function cleanup() {
-      window.removeEventListener('resize', resize);
-    };
-    // eslint-disable-next-line
-  }, []);
 
   const onViewportChange = (vp) => {
     setViewport(vp);
@@ -316,12 +294,7 @@ export default function ExploreMap({
       </MapControls>
 
       <div className="c-legend">
-        <Legend
-          maxHeight="65vh"
-          collapsable={false}
-          sortable={false}
-          onChangeOrder={onChangeOrder}
-        >
+        <Legend maxHeight="65vh" collapsable={false} sortable={false}>
           {layerGroups.map((layerGroup, i) => {
             return (
               <LegendListItem
