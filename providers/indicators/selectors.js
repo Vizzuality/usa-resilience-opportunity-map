@@ -57,7 +57,10 @@ export const mostRelevantIndicators = createSelector(
       .map((c) => {
         const indicatorsWithValue = c
           .filter((ind) => !!valuesPerIndicator[ind.id]) // removing indicators with no data
-          .map((ind) => ({ ...ind, sortValue: valuesPerIndicator[ind.id] }));
+          .map((ind) => ({
+            ...ind,
+            sortValue: valuesPerIndicator[ind.id]?.normalizedValue,
+          }));
         const sorted = sortBy(indicatorsWithValue, 'sortValue');
         return sorted.slice(0, 2); // top 2 indicators per category
       })
