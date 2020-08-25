@@ -9,12 +9,13 @@ import HazardIndicator from 'components/explore/hazard-indicator';
 import HumanImpact from 'svgs/human_impact.svg?sprite';
 import ClimateRisk from 'svgs/climate_risk.svg?sprite';
 import Vulnerability from 'svgs/vulnerability.svg?sprite';
+import MostRelevant from 'svgs/all_icn.svg?sprite';
 
 export default function ExploreSidebar({
   active,
   category,
   indicators,
-  categories,
+  categories: serverCategories,
   activeCategories,
   toggleIndicatorsActive,
   setIndicatorsCategory,
@@ -24,12 +25,14 @@ export default function ExploreSidebar({
   const [modalContent, setModalContent] = useState(null);
 
   const icons = {
+    'most relevant': MostRelevant,
     'human impact': HumanImpact,
     'climate risk': ClimateRisk,
     vulnerability: Vulnerability,
   };
 
   const colors = {
+    'most relevant': '#4B5362',
     'human impact': '#795DF3',
     'climate risk': '#3BB3BA',
     vulnerability: '#F0685B',
@@ -37,6 +40,7 @@ export default function ExploreSidebar({
 
   const styles = (selected, indicator) => {
     switch (indicator) {
+      case 'most relevant':
       case 'human impact':
       case 'climate risk':
         return {
@@ -50,6 +54,11 @@ export default function ExploreSidebar({
         return null;
     }
   };
+
+  const categories = [
+    { id: '9999', name: 'most relevant' },
+    ...serverCategories,
+  ];
 
   return (
     <div className="c-explore-sidebar">

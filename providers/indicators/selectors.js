@@ -1,6 +1,7 @@
 import uniqBy from 'lodash.uniqby';
 import flatten from 'lodash.flatten';
 import startCase from 'lodash.startcase';
+import sortBy from 'lodash.sortby';
 
 import { createSelector, createStructuredSelector } from 'reselect';
 
@@ -13,8 +14,10 @@ export const data = (state) => state?.indicators?.data || [];
 export const category = (state) => state?.indicators?.category;
 export const active = (state) => state?.indicators?.active || [];
 
-export const geometryId = (state) => state?.geometries?.id;
-export const geometriesData = (state) => state?.geometries?.data;
+// Geometries selectors
+const geometryId = (state) => state?.geometries?.id;
+const geometriesData = (state) => state?.geometries?.data;
+const geometryValues = (state) => state?.geometries?.geometryValues;
 
 export const activeCategories = createSelector(
   [data, loading, active],
@@ -40,12 +43,37 @@ export const categories = createSelector([data, loading], (_data, _loading) => {
   );
 });
 
+export const mostRelevantIndicators = createSelector(
+  [data, categories, geometryValues],
+  (_data, _categories, _values) => {
+    const valuesPerIndicator = _values
+      .map((val) => ({ ...val, rel: val.indicator.id }))
+      .reduce((acc, val) => ({ ...acc, [val.rel]: val }), {});
+
+    const indicatorsPerCategory = _categories.map((c) =>
+      _data.filter((d) => d.category.id === c.id)
+    );
+    const relevantIndicators = indicatorsPerCategory
+      .map((c) => {
+        const indicatorsWithValue = c
+          .filter((ind) => !!valuesPerIndicator[ind.id]) // removing indicators with no data
+          .map((ind) => ({ ...ind, sortValue: valuesPerIndicator[ind.id] }));
+        const sorted = sortBy(indicatorsWithValue, 'sortValue');
+        return sorted.slice(0, 2); // top 2 indicators per category
+      })
+      .flat();
+
+    return relevantIndicators;
+  }
+);
+
 export const indicators = createSelector(
-  [data, loading, category],
-  (_data, _loading, _category) => {
+  [data, loading, category, mostRelevantIndicators],
+  (_data, _loading, _category, _relevant) => {
     // All the indicators in the selected category
     if (!_data.length || _loading) return [];
 
+    if (_category === '9999') return _relevant;
     return _data.filter((d) => d.category.id === _category);
   }
 );
