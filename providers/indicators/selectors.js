@@ -166,7 +166,10 @@ export const countyLayer = createSelector(
                 {
                   filter: [
                     'all',
-                    ['==', 'location_type', 1], // counties
+                    ['==', 'location_type', 1],
+                    ...(geo
+                      ? [['==', 'parent_id', +geo.parentId || +geo.id]]
+                      : []),
                   ],
                   'source-layer': 'layer0',
                   type: 'line',
@@ -266,6 +269,32 @@ export const countyLayer = createSelector(
                       '#DDD',
                     ],
                     'fill-opacity': 1,
+                  },
+                },
+                {
+                  filter: [
+                    'all',
+                    ['==', 'location_type', 1],
+                    ...(geo
+                      ? [['==', 'parent_id', +geo.parentId || +geo.id]]
+                      : []),
+                  ],
+                  'source-layer': 'layer0',
+                  type: 'line',
+                  paint: {
+                    'line-color': [
+                      'case',
+                      ['boolean', ['feature-state', 'hover'], false],
+                      '#000',
+                      'transparent',
+                    ],
+                    'line-opacity': 1,
+                    'line-width': [
+                      'case',
+                      ['boolean', ['feature-state', 'hover'], false],
+                      2,
+                      1,
+                    ],
                   },
                 },
                 {
