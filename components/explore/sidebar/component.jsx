@@ -101,6 +101,10 @@ export default function ExploreSidebar({
           const indicatorValues = geometryValues.find(
             (v) => v.indicator?.id === d.id
           );
+          const showBtnDisabled =
+            (active.length > 1 || activeCategories.includes(d.category.id)) &&
+            !isItemActive;
+
           return (
             <li
               className={cx({
@@ -134,6 +138,12 @@ export default function ExploreSidebar({
                       openModal(true);
                       setModalContent(d);
                     }}
+                    disabled={!d.description}
+                    title={
+                      d.description
+                        ? 'MORE INFORMATION ABOUT THIS INDICATOR'
+                        : "THERE'S NO AVAILABLE INFORMATION"
+                    }
                   >
                     More Info
                   </button>
@@ -142,10 +152,11 @@ export default function ExploreSidebar({
                     onClick={() => {
                       toggleIndicatorsActive(d.id);
                     }}
-                    disabled={
-                      (active.length > 1 ||
-                        activeCategories.includes(d.category.id)) &&
-                      !isItemActive
+                    disabled={showBtnDisabled}
+                    title={
+                      showBtnDisabled
+                        ? 'YOU CAN CHOOSE UP TO TWO LAYERS'
+                        : 'SEE THIS INDICATOR ON THE MAP'
                     }
                     style={{
                       backgroundColor: isItemActive && colors[d.category.name],
@@ -159,17 +170,18 @@ export default function ExploreSidebar({
           );
         })}
       </ul>
-      <Modal
-        isOpen={isModalOpen}
-        contentLabel="Attributions"
-        onRequestClose={() => openModal(false)}
-        title={startCase(modalContent?.name)}
-        className="c-modal-attributions"
-      >
-        <div className="modal-attributions-content">
-          {`More info here. Indicator belongs to ${modalContent?.category?.name} category.`}
-        </div>
-      </Modal>
+      {modalContent?.description && (
+        <Modal
+          isOpen={isModalOpen}
+          contentLabel="Metadata"
+          onRequestClose={() => openModal(false)}
+          title={startCase(modalContent?.name)}
+        >
+          <div className="modal-attributions-content">
+            {modalContent.description}
+          </div>
+        </Modal>
+      )}
     </div>
   );
 }
