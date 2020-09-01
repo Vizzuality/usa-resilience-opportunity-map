@@ -15,13 +15,15 @@ import { mediaStyle } from 'components/media';
 
 import 'styles/index.scss';
 
-// export function reportWebVitals(metric) {
-//   if (process.env.NODE_ENV === 'development') {
-//     const { name, value, label } = metric;
-//     // eslint-disable-next-line no-console
-//     console.log({ name, 'value (ms)': value, label });
-//   }
-// }
+/* METRICS ON DEVELOPMENT
+export function reportWebVitals(metric) {
+  if (process.env.NODE_ENV === 'development') {
+    const { name, value, label } = metric;
+    // eslint-disable-next-line no-console
+    console.table({ name, 'value (ms)': value, label });
+  }
+}
+*/
 
 export default function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState);

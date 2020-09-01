@@ -32,9 +32,8 @@ class GeometriesProvider extends PureComponent {
     }
 
     if (
-      this.props?.id &&
-      prevProps?.geometryValues?.length &&
-      !this.props?.geometryValues?.length
+      (this.props?.id && prevProps.id !== this.props.id) || // location change
+      (prevProps?.geometryValues?.length && !this.props?.geometryValues?.length) // geometry values reset
     ) {
       this.fetchGeometryValues();
     }
