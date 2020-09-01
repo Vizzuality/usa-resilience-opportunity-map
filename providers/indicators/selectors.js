@@ -160,6 +160,25 @@ export const countyLayer = createSelector(
     if (_active.length === 1) {
       const ind = _indicators[0];
       const colors = CATEGORIES[ind.category.id].ramp;
+      const legends = geo.parentId ? ind.legendCountries : ind.legendStates;
+      // Sometimes the legend will include 'Data not available' as an option.
+      const canHaveNoData = legends.some((l) => l.includes('Data'));
+      const legendsWithColor = legends
+        .filter((l) => !l.includes('Data'))
+        .map((l, i) => ({
+          name: l,
+          color: colors[i],
+        }));
+
+      const legendItems = canHaveNoData
+        ? [
+            ...legendsWithColor,
+            {
+              name: 'Data not available',
+              color: '#F1F1F1',
+            },
+          ]
+        : legendsWithColor;
 
       return [
         {
@@ -188,7 +207,7 @@ export const countyLayer = createSelector(
                           return [i, c];
                         })
                       ),
-                      '#DDD',
+                      '#F1F1F1', // no data
                     ],
                     'fill-opacity': 1,
                   },
@@ -239,10 +258,7 @@ export const countyLayer = createSelector(
           },
           legendConfig: {
             type: 'basic',
-            items: colors.map((c, i) => ({
-              name: i,
-              color: c,
-            })),
+            items: legendItems,
           },
         },
       ];
