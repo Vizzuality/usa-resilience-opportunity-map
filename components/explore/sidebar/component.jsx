@@ -65,11 +65,9 @@ export default function ExploreSidebar({
 
   useEffect(() => {
     if (!geometryValues.length) {
-      setIndicatorsCategory('1');
+      setIndicatorsCategory(activeCategories[0] || '1');
     } else if (!activeCategories.length) {
       setIndicatorsCategory('9999');
-    } else {
-      setIndicatorsCategory(activeCategories[0]);
     }
   }, [geometryValues, activeCategories]);
 
