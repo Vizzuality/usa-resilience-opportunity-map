@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-export default function MapTooltip({ hazardLevel, dark, className }) {
-  MapTooltip.propTypes = {
+export default function HazardIndicator({ hazardLevel, dark, className }) {
+  HazardIndicator.propTypes = {
     className: PropTypes.string,
     dark: PropTypes.bool,
     hazardLevel: PropTypes.number,

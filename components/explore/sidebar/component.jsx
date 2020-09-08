@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import startCase from 'lodash.startcase';
@@ -55,10 +55,23 @@ export default function ExploreSidebar({
     }
   };
 
-  const categories = [
-    { id: '9999', name: 'most relevant' },
-    ...serverCategories,
-  ];
+  // If there isn't any geometry data (probably "All states view),
+  // don't show the "Most relevant" category and
+  // update the active category to '1' (by default, "Climate risk").
+  const categories =
+    geometryValues.length > 0
+      ? [{ id: '9999', name: 'most relevant' }, ...serverCategories]
+      : serverCategories;
+
+  useEffect(() => {
+    if (!geometryValues.length) {
+      setIndicatorsCategory('1');
+    } else if (!activeCategories.length) {
+      setIndicatorsCategory('9999');
+    } else {
+      setIndicatorsCategory(activeCategories[0]);
+    }
+  }, [geometryValues, activeCategories]);
 
   return (
     <div className="c-explore-sidebar">
@@ -126,12 +139,6 @@ export default function ExploreSidebar({
               </div>
 
               <div className="explore-sidebar--item-controls">
-                <HazardIndicator
-                  hazardLevel={
-                    indicatorValues ? indicatorValues.hazardValue : 5
-                  }
-                  className="explore-sidebar--hazard"
-                />
                 <div className="explore-sidebar--item-buttons">
                   <button
                     onClick={() => {
@@ -165,6 +172,14 @@ export default function ExploreSidebar({
                     {isItemActive ? 'Hide Layer' : 'Show layer'}
                   </button>
                 </div>
+                {geometryValues.length > 0 && (
+                  <HazardIndicator
+                    hazardLevel={
+                      indicatorValues ? indicatorValues.hazardValue : 5
+                    }
+                    className="explore-sidebar--hazard"
+                  />
+                )}
               </div>
             </li>
           );

@@ -38,7 +38,7 @@ export const locations = createSelector([data, states], (_data, _states) => {
     parentId: d.parentId,
     label:
       d.locationType === 'county'
-        ? `${d.name} (${_states[d.parentId]})`
+        ? `${d.name}, ${_states[d.parentId]}`
         : d.name,
   }));
 });

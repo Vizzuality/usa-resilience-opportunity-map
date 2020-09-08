@@ -160,7 +160,8 @@ export const countyLayer = createSelector(
     if (_active.length === 1) {
       const ind = _indicators[0];
       const colors = CATEGORIES[ind.category.id].ramp;
-      const legends = geo.parentId ? ind.legendCountries : ind.legendStates;
+      const legends =
+        geo && geo.parentId ? ind.legendCountries : ind.legendStates;
       // Sometimes the legend will include 'Data not available' as an option.
       const canHaveNoData = legends.some((l) => l.includes('Data'));
       const legendsWithColor = legends

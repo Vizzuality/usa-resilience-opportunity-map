@@ -4,16 +4,28 @@ import ExploreMap from 'components/explore/map';
 import ExploreSidebar from 'components/explore/sidebar';
 import Autocomplete from 'components/autocomplete';
 import Button from 'components/button';
+import Url from 'components/url';
 
-export default function Explore({ locations, activeLocationId, embed }) {
+export default function Explore({
+  locations,
+  activeLocationId,
+  embed,
+  urlParams,
+  setGeometryId,
+  setGeometryValues,
+}) {
   Explore.propTypes = {
     locations: PropTypes.array,
     activeLocationId: PropTypes.string,
     embed: PropTypes.bool,
+    urlParams: PropTypes.object,
+    setGeometryId: PropTypes.func,
+    setGeometryValues: PropTypes.func,
   };
 
   return (
     <div className="c-explore">
+      <Url queryParams={urlParams} />
       {!embed && (
         <div className="explore-search wrapper">
           <Autocomplete
@@ -25,7 +37,13 @@ export default function Explore({ locations, activeLocationId, embed }) {
                 : null
             }
           />
-          <Button className="search-btn" link="/explore">
+          <Button
+            className="search-btn"
+            onClick={() => {
+              setGeometryId(null);
+              setGeometryValues([]);
+            }}
+          >
             All states view
           </Button>
         </div>
