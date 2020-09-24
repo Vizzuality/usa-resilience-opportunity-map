@@ -38,23 +38,6 @@ export default function ExploreSidebar({
     vulnerability: '#F0685B',
   };
 
-  const styles = (selected, indicator) => {
-    switch (indicator) {
-      case 'most relevant':
-      case 'human impact':
-      case 'climate risk':
-        return {
-          fill: selected ? '#fff' : colors[indicator],
-        };
-      case 'vulnerability':
-        return {
-          stroke: selected ? '#fff' : colors[indicator],
-        };
-      default:
-        return null;
-    }
-  };
-
   // If there isn't any geometry data (probably "All states view),
   // don't show the "Most relevant" category and
   // update the active category to '1' (by default, "Climate risk").
@@ -90,7 +73,7 @@ export default function ExploreSidebar({
               <div className="explore-sidebar--tab-icon">
                 <Icon
                   icon={icons[c.name]}
-                  style={styles(c.id === category, c.name)}
+                  style={{ fill: c.id === category ? '#fff' : colors[c.name] }}
                 />
               </div>
               <div className="explore-sidebar--tab-name">{c.name}</div>
@@ -129,7 +112,7 @@ export default function ExploreSidebar({
                   <Icon
                     className="item-icon"
                     icon={icons[d.category.name]}
-                    style={styles(false, d.category.name)}
+                    style={{ fill: colors[d.category.name] }}
                   />
                   <span>{d.category.name}</span>
                 </div>

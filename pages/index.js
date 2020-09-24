@@ -68,7 +68,7 @@ function Home({ locations }) {
                 link="/explore"
                 aria-label="explore data"
               >
-                Explore data
+                Explore the map
               </Button>
             </Media>
           </MediaContextProvider>
