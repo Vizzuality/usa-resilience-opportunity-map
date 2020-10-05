@@ -207,9 +207,9 @@ export default function ExploreMap({
 
             if (interactions.counties || interactions.state)
               setGeometryId(
-                interactions.counties
-                  ? interactions.counties.id?.toString()
-                  : interactions.state.id?.toString()
+                interactions.state
+                  ? interactions.state.id?.toString()
+                  : interactions.counties.id?.toString()
               );
           }
         }}

@@ -45,12 +45,7 @@ export const locations = createSelector([data, states], (_data, _states) => {
 
 export const bbox = createSelector([data, id], (_data, _id) => {
   if (_data.length && _id) {
-    let geo = {};
-    geo = _data.find((d) => +d.id === +_id);
-
-    if (geo.parentId) {
-      geo = _data.find((d) => +d.id === +geo.parentId);
-    }
+    const geo = _data.find((d) => +d.id === +_id);
 
     if (!geo) return null;
 

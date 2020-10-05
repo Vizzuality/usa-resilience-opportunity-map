@@ -8,16 +8,23 @@ export default function MapTooltip({ layersHover, indicators, geometries }) {
   const countyValues = interactions?.counties?.data;
   const stateValues = interactions?.state?.data;
 
-  if (lngLat && stateValues) {
-    const state = geometries.data?.find((g) => +g.id === +stateValues.id);
+  if (lngLat && (stateValues || countyValues)) {
     const activeIndicators = indicators.active?.map((id) =>
       indicators.data?.find((i) => i.id === id)
     );
-    const isCounty = !!countyValues;
-    const county = isCounty
-      ? geometries.data?.find((g) => +g.id === +countyValues.id)
-      : null;
-    const refArray = countyValues || stateValues;
+    let values;
+    let locationName;
+
+    if (!stateValues) {
+      // hovering on current state or county, not outside
+      const county = geometries.data?.find((g) => +g.id === +countyValues.id);
+      locationName = county.name;
+      values = countyValues;
+    } else {
+      const state = geometries.data?.find((g) => +g.id === +stateValues.id);
+      locationName = state.name;
+      values = stateValues;
+    }
 
     return (
       <Popup
@@ -27,17 +34,15 @@ export default function MapTooltip({ layersHover, indicators, geometries }) {
         closeButton={false}
       >
         <div className="c-map-tooltip">
-          <h5 className="c-tooltip--location">
-            {isCounty ? county?.name : state.name}
-          </h5>
+          <h5 className="c-tooltip--location">{locationName}</h5>
           {activeIndicators.map((act) => (
             <div key={act.slug} className="c-tooltip--indicator">
               <span className="c-tooltip--indicator-label">
-                {startCase(refArray[act.slug])}
+                {startCase(values[act.slug])}
               </span>
               <HazardIndicator
                 dark
-                hazardLevel={refArray[`${act.slug}_hazard`]}
+                hazardLevel={values[`${act.slug}_hazard`]}
                 className="c-tooltip--hazard"
               />
             </div>
