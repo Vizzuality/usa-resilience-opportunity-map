@@ -130,7 +130,12 @@ export const stateLayer = createSelector(
                 type: 'fill',
                 paint: {
                   'fill-color': '#000',
-                  'fill-opacity': 0.5,
+                  'fill-opacity': [
+                    'case',
+                    ['boolean', ['==', !!geo && !!geo.id, true], false],
+                    0.5,
+                    0,
+                  ],
                 },
               },
             ],
