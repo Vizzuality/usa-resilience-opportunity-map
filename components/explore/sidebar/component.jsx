@@ -5,19 +5,17 @@ import startCase from 'lodash.startcase';
 
 import Icon from 'components/icon';
 import Modal from 'components/modal';
-import HazardIndicator from 'components/explore/hazard-indicator';
 import HumanImpact from 'svgs/human_impact.svg?sprite';
 import ClimateRisk from 'svgs/climate_risk.svg?sprite';
 import Vulnerability from 'svgs/vulnerability.svg?sprite';
 import MostRelevant from 'svgs/all_icn.svg?sprite';
+import SidebarCard from './sidebar-card';
 
 export default function ExploreSidebar({
-  active,
   category,
   indicators,
   categories: serverCategories,
   activeCategories,
-  toggleIndicatorsActive,
   setIndicatorsCategory,
   geometryValues,
 }) {
@@ -90,81 +88,15 @@ export default function ExploreSidebar({
 
       {/* LIST */}
       <ul className="explore-sidebar--list">
-        {indicators.map((d) => {
-          const isItemActive = !!active.find((a) => a === d.id);
-          const indicatorValues = geometryValues.find(
-            (v) => v.indicator?.id === d.id
-          );
-          const showBtnDisabled =
-            (active.length > 1 || activeCategories.includes(d.category.id)) &&
-            !isItemActive;
-
-          return (
-            <li
-              className={cx({
-                'explore-sidebar--list-item': true,
-                '-active': isItemActive,
-              })}
-              key={d.id}
-            >
-              <div className="explore-sidebar--item-info">
-                <div className="explore-sidebar--item-group">
-                  <Icon
-                    className="item-icon"
-                    icon={icons[d.category.name]}
-                    style={{ fill: colors[d.category.name] }}
-                  />
-                  <span>{d.category.name}</span>
-                </div>
-                <span className="indicator-name">{startCase(d.name)}</span>
-              </div>
-
-              <div className="explore-sidebar--item-controls">
-                <div className="explore-sidebar--item-buttons">
-                  <button
-                    onClick={() => {
-                      openModal(true);
-                      setModalContent(d);
-                    }}
-                    disabled={!d.description}
-                    title={
-                      d.description
-                        ? 'MORE INFORMATION ABOUT THIS INDICATOR'
-                        : "THERE'S NO AVAILABLE INFORMATION"
-                    }
-                  >
-                    More Info
-                  </button>
-                  <button
-                    className={cx({ 'active-layer': isItemActive })}
-                    onClick={() => {
-                      toggleIndicatorsActive(d.id);
-                    }}
-                    disabled={showBtnDisabled}
-                    title={
-                      showBtnDisabled
-                        ? 'YOU CAN CHOOSE UP TO TWO LAYERS'
-                        : 'SEE THIS INDICATOR ON THE MAP'
-                    }
-                    style={{
-                      backgroundColor: isItemActive && colors[d.category.name],
-                    }}
-                  >
-                    {isItemActive ? 'Hide Layer' : 'Show layer'}
-                  </button>
-                </div>
-                {geometryValues.length > 0 && (
-                  <HazardIndicator
-                    hazardLevel={
-                      indicatorValues ? indicatorValues.hazardValue : 5
-                    }
-                    className="explore-sidebar--hazard"
-                  />
-                )}
-              </div>
-            </li>
-          );
-        })}
+        {indicators.map((d) => (
+          <SidebarCard
+            item={d}
+            key={d.id}
+            modalFunctions={{ openModal, setModalContent }}
+            icons={icons}
+            colors={colors}
+          />
+        ))}
       </ul>
       {modalContent?.description && (
         <Modal
@@ -183,12 +115,10 @@ export default function ExploreSidebar({
 }
 
 ExploreSidebar.propTypes = {
-  active: PropTypes.array,
   category: PropTypes.string,
   categories: PropTypes.array,
   activeCategories: PropTypes.array,
   indicators: PropTypes.array,
-  toggleIndicatorsActive: PropTypes.func,
   setIndicatorsCategory: PropTypes.func,
   geometryValues: PropTypes.array,
 };
