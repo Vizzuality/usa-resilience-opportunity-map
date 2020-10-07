@@ -108,7 +108,7 @@ export default function sidebarCard({
           </div>
         </div>
       </div>
-      {chartVisible && (
+      {chartVisible && chartData && (
         <div>
           {`${currentLocation.label} ${startCase(
             item.name
