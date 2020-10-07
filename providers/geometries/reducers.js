@@ -9,6 +9,10 @@ export default {
     ...state,
     geometryValues: payload,
   }),
+  [actions.setGeometryChildren]: (state, { payload }) => ({
+    ...state,
+    geometryChildren: payload,
+  }),
   [actions.setGeometriesLoading]: (state, { payload }) => ({
     ...state,
     loading: payload,

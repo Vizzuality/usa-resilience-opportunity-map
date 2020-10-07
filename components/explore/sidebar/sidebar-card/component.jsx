@@ -4,6 +4,7 @@ import startCase from 'lodash.startcase';
 import Icon from 'components/icon';
 import HazardIndicator from 'components/explore/hazard-indicator';
 import ArrowUp from 'svgs/arrow_up.svg?sprite';
+import { CATEGORIES } from 'providers/indicators/constants';
 
 export default function sidebarCard({
   item,
@@ -13,6 +14,9 @@ export default function sidebarCard({
   active,
   activeCategories,
   geometryValues,
+  geometryChildren,
+  currentLocation,
+  childrenDistribution,
   toggleIndicatorsActive,
 }) {
   const { openModal, setModalContent } = modalFunctions;
@@ -25,6 +29,17 @@ export default function sidebarCard({
     !isItemActive;
 
   const [chartVisible, showChart] = useState(false);
+
+  const indicatorDistribution = childrenDistribution
+    ? childrenDistribution[item.id]
+    : null;
+  const chartRamp = CATEGORIES[item.category.id].ramp;
+  const chartData = indicatorDistribution
+    ? Object.keys(indicatorDistribution).reduce((acc, key) => {
+        acc[key] = indicatorDistribution[key].length || 0;
+        return acc;
+      }, {})
+    : null;
 
   return (
     <li className="c-sidebar-card">
@@ -43,12 +58,14 @@ export default function sidebarCard({
 
         <div className="explore-sidebar--item-controls">
           <div className="explore-sidebar--item-charts">
-            <button
-              className={cx('toggle-chart-btn', { '--active': chartVisible })}
-              onClick={() => showChart(!chartVisible)}
-            >
-              <Icon icon={ArrowUp} />
-            </button>
+            {chartData && (
+              <button
+                className={cx('toggle-chart-btn', { '--active': chartVisible })}
+                onClick={() => showChart(!chartVisible)}
+              >
+                <Icon icon={ArrowUp} />
+              </button>
+            )}
             {geometryValues.length > 0 && (
               <HazardIndicator
                 hazardLevel={indicatorValues ? indicatorValues.hazardValue : 5}
@@ -91,7 +108,26 @@ export default function sidebarCard({
           </div>
         </div>
       </div>
-      {chartVisible && <div>Hello there!</div>}
+      {chartVisible && (
+        <div>
+          {`${currentLocation.label} ${startCase(
+            item.name
+          )} Distribution by county:`}
+          <div className="explore-sidebar--item-chart">
+            {chartData &&
+              Object.entries(chartData).map(([hazardLevel, count]) => (
+                // <div>{`${hazardLevel}: ${count/geometryChildren.length * 100} (${count} out of ${geometryChildren.length})`}</div>
+                <div
+                  style={{
+                    height: '100%',
+                    width: `${(count / geometryChildren.length) * 100}%`,
+                    backgroundColor: chartRamp[hazardLevel],
+                  }}
+                />
+              ))}
+          </div>
+        </div>
+      )}
     </li>
   );
 }
