@@ -6,6 +6,8 @@ import HazardIndicator from 'components/explore/hazard-indicator';
 import ArrowUp from 'svgs/arrow_up.svg?sprite';
 import { CATEGORIES } from 'providers/indicators/constants';
 
+import styles from './styles.module.scss';
+
 export default function sidebarCard({
   item,
   modalFunctions,
@@ -28,12 +30,12 @@ export default function sidebarCard({
     (active.length > 1 || activeCategories.includes(item.category.id)) &&
     !isItemActive;
 
+  // CHART DATA
   const [chartVisible, showChart] = useState(false);
-
+  const chartRamp = CATEGORIES[item.category.id].ramp;
   const indicatorDistribution = childrenDistribution
     ? childrenDistribution[item.id]
     : null;
-  const chartRamp = CATEGORIES[item.category.id].ramp;
   const chartData = indicatorDistribution
     ? Object.keys(indicatorDistribution).reduce((acc, key) => {
         acc[key] = indicatorDistribution[key].length || 0;
@@ -41,79 +43,56 @@ export default function sidebarCard({
       }, {})
     : null;
 
+  // CHART LEGEND
+  const hazards = ['Low', 'Low-medium', 'Medium', 'Medium-high', 'High'];
+  const hazardLevels = Object.keys(chartData);
+  const chartLegendValues = {
+    low: hazardLevels ? hazards[hazardLevels[0]] : null,
+    high: hazardLevels ? hazards[hazardLevels[hazardLevels.length - 1]] : null,
+  };
+
   return (
-    <li className="c-sidebar-card">
-      <div className="explore-sidebar--list-item">
-        <div className="explore-sidebar--item-info">
-          <div className="explore-sidebar--item-group">
+    <li className={styles.sidebarCard}>
+      <div className={styles.cardHeader}>
+        <div className={styles.cardTitle}>
+          <div className={styles.category}>
             <Icon
-              className="item-icon"
+              className={styles.categoryIcon}
               icon={icons[item.category.name]}
               style={{ fill: colors[item.category.name] }}
             />
-            <span>{item.category.name}</span>
+            <span className={styles.categoryName}>{item.category.name}</span>
           </div>
-          <span className="indicator-name">{startCase(item.name)}</span>
+          <span className={styles.indicatorName}>{startCase(item.name)}</span>
         </div>
 
-        <div className="explore-sidebar--item-controls">
-          <div className="explore-sidebar--item-charts">
-            {chartData && (
-              <button
-                className={cx('toggle-chart-btn', { '--active': chartVisible })}
-                onClick={() => showChart(!chartVisible)}
-              >
-                <Icon icon={ArrowUp} />
-              </button>
-            )}
-            {geometryValues.length > 0 && (
-              <HazardIndicator
-                hazardLevel={indicatorValues ? indicatorValues.hazardValue : 5}
-                className="explore-sidebar--hazard"
-              />
-            )}
-          </div>
-          <div className="explore-sidebar--item-buttons">
+        <div className={styles.topControls}>
+          {chartData && (
             <button
-              onClick={() => {
-                openModal(true);
-                setModalContent(item);
-              }}
-              disabled={!item.description}
-              title={
-                item.description
-                  ? 'MORE INFORMATION ABOUT THIS INDICATOR'
-                  : "THERE'S NO AVAILABLE INFORMATION"
-              }
+              className={styles.toggleChart}
+              onClick={() => showChart(!chartVisible)}
+              style={{ transform: `rotate(${chartVisible ? 0 : 180}deg)` }}
             >
-              More Info
+              <Icon icon={ArrowUp} />
             </button>
-            <button
-              className={cx({ 'active-layer': isItemActive })}
-              onClick={() => {
-                toggleIndicatorsActive(item.id);
-              }}
-              disabled={showBtnDisabled}
-              title={
-                showBtnDisabled
-                  ? 'YOU CAN CHOOSE UP TO TWO LAYERS'
-                  : 'SEE THIS INDICATOR ON THE MAP'
-              }
-              style={{
-                backgroundColor: isItemActive && colors[item.category.name],
-              }}
-            >
-              {isItemActive ? 'Hide Layer' : 'Show layer'}
-            </button>
-          </div>
+          )}
+          {geometryValues.length > 0 && (
+            <HazardIndicator
+              hazardLevel={indicatorValues ? indicatorValues.hazardValue : 5}
+              className={styles.hazard}
+            />
+          )}
         </div>
       </div>
+
       {chartVisible && chartData && (
-        <div>
-          {`${currentLocation.label} ${startCase(
-            item.name
-          )} Distribution by county:`}
-          <div className="explore-sidebar--item-chart">
+        <div className={styles.chartModule}>
+          <p className={styles.chartText}>
+            {`${currentLocation.label} ${startCase(
+              item.name
+            )} Distribution by county:`}
+          </p>
+          <div className={styles.chartWrapper}>
             {chartData &&
               Object.entries(chartData).map(([hazardLevel, count]) => (
                 // <div>{`${hazardLevel}: ${count/geometryChildren.length * 100} (${count} out of ${geometryChildren.length})`}</div>
@@ -126,8 +105,51 @@ export default function sidebarCard({
                 />
               ))}
           </div>
+          <div className={styles.chartLegend}>
+            <span>{chartLegendValues.low}</span>
+            <span>{chartLegendValues.high}</span>
+          </div>
         </div>
       )}
+
+      <div className={styles.cardFooterControls}>
+        <div>
+          <button
+            className={styles.controlButton}
+            onClick={() => {
+              openModal(true);
+              setModalContent(item);
+            }}
+            disabled={!item.description}
+            title={
+              item.description
+                ? 'MORE INFORMATION ABOUT THIS INDICATOR'
+                : "THERE'S NO AVAILABLE INFORMATION"
+            }
+          >
+            More Info
+          </button>
+          <button
+            className={cx(styles.controlButton, {
+              [styles['--active']]: isItemActive,
+            })}
+            onClick={() => {
+              toggleIndicatorsActive(item.id);
+            }}
+            disabled={showBtnDisabled}
+            title={
+              showBtnDisabled
+                ? 'YOU CAN CHOOSE UP TO TWO LAYERS'
+                : 'SEE THIS INDICATOR ON THE MAP'
+            }
+            style={{
+              backgroundColor: isItemActive && colors[item.category.name],
+            }}
+          >
+            {isItemActive ? 'Hide Layer' : 'Show layer'}
+          </button>
+        </div>
+      </div>
     </li>
   );
 }
