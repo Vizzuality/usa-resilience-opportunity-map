@@ -45,7 +45,7 @@ export default function sidebarCard({
 
   // CHART LEGEND
   const hazards = ['Low', 'Low-medium', 'Medium', 'Medium-high', 'High'];
-  const hazardLevels = Object.keys(chartData);
+  const hazardLevels = chartData ? Object.keys(chartData) : null;
   const chartLegendValues = {
     low: hazardLevels ? hazards[hazardLevels[0]] : null,
     high: hazardLevels ? hazards[hazardLevels[hazardLevels.length - 1]] : null,
