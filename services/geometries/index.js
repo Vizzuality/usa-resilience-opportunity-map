@@ -94,7 +94,7 @@ export function fetchGeometryValues(params, options = {}) {
   // Indicator values for a given geom id
   const { id } = params;
   return service.request(
-    `/geometries/${id}?include=indicator-data.indicator`,
+    `/geometries/${id}?include=indicator-data.indicator,children.indicator-data`,
     options
   );
 }

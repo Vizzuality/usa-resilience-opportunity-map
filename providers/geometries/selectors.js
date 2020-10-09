@@ -1,4 +1,5 @@
 import { createSelector, createStructuredSelector } from 'reselect';
+import groupBy from 'lodash.groupby';
 
 export const loading = (state) => state?.geometries?.loading;
 export const loaded = (state) => state?.geometries?.loaded;
@@ -6,6 +7,8 @@ export const error = (state) => state?.geometries?.error;
 export const data = (state) => state?.geometries?.data || [];
 export const geometryValues = (state) =>
   state?.geometries?.geometryValues || [];
+export const geometryChildren = (state) =>
+  state?.geometries?.geometryChildren || [];
 export const id = (state) => state?.geometries?.id;
 
 export const options = createSelector([data, loading], (_data, _loading) => {
@@ -43,6 +46,29 @@ export const locations = createSelector([data, states], (_data, _states) => {
   }));
 });
 
+export const currentLocation = createSelector(
+  [locations, id],
+  (_locations, _id) => {
+    if (!_locations.length) return null;
+    return _locations.find((l) => l.id === _id);
+  }
+);
+
+export const childrenDistribution = createSelector(
+  [geometryChildren],
+  (children) => {
+    const indicatorValues = children.reduce(
+      (acc, n) => [...acc, ...n.indicatorData],
+      []
+    );
+    const groupedByIndicator = groupBy(indicatorValues, 'indicatorId');
+    return Object.keys(groupedByIndicator).reduce((acc, key) => {
+      acc[key] = groupBy(groupedByIndicator[key], 'hazardValue');
+      return acc;
+    }, {});
+  }
+);
+
 export const bbox = createSelector([data, id], (_data, _id) => {
   if (_data.length && _id) {
     const geo = _data.find((d) => +d.id === +_id);
@@ -74,6 +100,7 @@ export const selectGeometriesProps = createStructuredSelector({
   error,
   options,
   locations,
+  currentLocation,
   states,
   bbox,
 });

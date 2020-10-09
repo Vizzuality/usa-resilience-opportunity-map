@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import {
-  toggleIndicatorsActive,
   toggleCategoriesActive,
   setIndicatorsCategory,
 } from 'providers/indicators/actions';
@@ -15,7 +14,6 @@ export default connect(
     geometryValues: geometryValues(state),
   }),
   {
-    toggleIndicatorsActive,
     toggleCategoriesActive,
     setIndicatorsCategory,
   }

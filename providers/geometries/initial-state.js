@@ -4,5 +4,6 @@ export default {
   error: false,
   data: [],
   geometryValues: [],
+  geometryChildren: [],
   id: null,
 };
