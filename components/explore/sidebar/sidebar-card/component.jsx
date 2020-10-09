@@ -95,7 +95,6 @@ export default function sidebarCard({
           <div className={styles.chartWrapper}>
             {chartData &&
               Object.entries(chartData).map(([hazardLevel, count]) => (
-                // <div>{`${hazardLevel}: ${count/geometryChildren.length * 100} (${count} out of ${geometryChildren.length})`}</div>
                 <div
                   style={{
                     height: '100%',
