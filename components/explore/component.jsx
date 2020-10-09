@@ -4,13 +4,11 @@ import ExploreMap from 'components/explore/map';
 import ExploreSidebar from 'components/explore/sidebar';
 import Autocomplete from 'components/autocomplete';
 import Button from 'components/button';
-import Url from 'components/url';
 
 export default function Explore({
   locations,
   activeLocationId,
   embed,
-  urlParams,
   setGeometryId,
   setGeometryValues,
 }) {
@@ -18,14 +16,12 @@ export default function Explore({
     locations: PropTypes.array,
     activeLocationId: PropTypes.string,
     embed: PropTypes.bool,
-    urlParams: PropTypes.object,
     setGeometryId: PropTypes.func,
     setGeometryValues: PropTypes.func,
   };
 
   return (
     <div className="c-explore">
-      <Url queryParams={urlParams} />
       {!embed && (
         <div className="explore-search wrapper">
           <Autocomplete
