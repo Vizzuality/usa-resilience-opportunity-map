@@ -36,7 +36,6 @@ export default function URL({
     if (isMounted.current && !isEmpty(query)) {
       const queryKeys = Object.keys(queryParams);
       const changedKeys = Object.keys(diff(query, prevQuery.current));
-      console.log(changedKeys, query, prevQuery.current);
 
       queryKeys.forEach((k) => {
         if (queryFunction && changedKeys.includes(k)) {
