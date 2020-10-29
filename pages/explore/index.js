@@ -39,7 +39,6 @@ export async function getServerSideProps(ctx) {
     dispatch(
       setIndicatorsActive(Array.isArray(indicator) ? indicator : [indicator])
     );
-    // TODO: dispatch(setIndicatorsCategory(ind.category.id));
   }
 
   return {
@@ -49,7 +48,14 @@ export async function getServerSideProps(ctx) {
   };
 }
 
-function ExplorePage({ locations, id, loaded, loading, urlParams }) {
+function ExplorePage({
+  locations,
+  id,
+  loaded,
+  loading,
+  urlParams,
+  queryFunction,
+}) {
   return (
     <Main>
       <GeometriesProvider />
@@ -74,7 +80,7 @@ function ExplorePage({ locations, id, loaded, loading, urlParams }) {
           )}
         </Media>
       </MediaContextProvider>
-      <Url queryParams={urlParams} />
+      <Url queryParams={urlParams} queryFunction={queryFunction} />
     </Main>
   );
 }
@@ -85,6 +91,7 @@ ExplorePage.propTypes = {
   loaded: PropTypes.bool,
   loading: PropTypes.bool,
   urlParams: PropTypes.shape({}),
+  queryFunction: PropTypes.func,
 };
 
 export default connect(
@@ -92,5 +99,26 @@ export default connect(
     ...selectGeometriesProps(state),
     urlParams: selectExploreUrlParams(state),
   }),
-  null
+  (dispatch) => ({
+    queryFunction: (param) => {
+      if (param.key === 'id') {
+        dispatch(setGeometryId(param.value || null));
+      }
+
+      if (param.key === 'indicator') {
+        if (!param.value) {
+          dispatch(setIndicatorsActive([]));
+        } else {
+          const { indicator } = qs.parse(`${param.key}=${param.value}`, {
+            arrayFormat: 'comma',
+          });
+          dispatch(
+            setIndicatorsActive(
+              Array.isArray(indicator) ? indicator : [indicator]
+            )
+          );
+        }
+      }
+    },
+  })
 )(ExplorePage);

@@ -77,7 +77,18 @@ export const indicators = createSelector(
     if (!_data.length || _loading) return [];
 
     if (_category === '9999') return _relevant;
-    return _data.filter((d) => d.category.id === _category);
+    const indicatorsFromCategory = _data.filter(
+      (d) => d.category.id === _category
+    );
+    const parentIndicators = indicatorsFromCategory
+      .filter((ind) => !ind.parentId)
+      .map((parent) => ({
+        ...parent,
+        children: indicatorsFromCategory.filter(
+          (child) => +child.parentId === +parent.id
+        ),
+      }));
+    return parentIndicators;
   }
 );
 
