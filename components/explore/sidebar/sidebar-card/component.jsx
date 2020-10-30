@@ -7,8 +7,6 @@ import HazardIndicator from 'components/explore/hazard-indicator';
 import ArrowUp from 'svgs/arrow_up.svg?sprite';
 import { CATEGORIES } from 'providers/indicators/constants';
 
-// eslint-disable-next-line import/no-cycle
-import Card from './index';
 import styles from './styles.module.scss';
 
 function SidebarCard({
@@ -23,17 +21,37 @@ function SidebarCard({
   currentLocation,
   childrenDistribution,
   toggleIndicatorsActive,
+  // indicators,
   isChildrenCard,
+  parentIndicator,
 }) {
   const { openModal, setModalContent } = modalFunctions;
   const isItemActive = !!active.find((a) => a === item.id);
   const indicatorValues = geometryValues.find(
     (v) => v.indicator?.id === item.id
   );
+
+  const isParentActive =
+    item.parentId && active.includes(item.parentId.toString());
+  const activeSiblingId =
+    isChildrenCard &&
+    active.length &&
+    active.find((a) =>
+      parentIndicator.children
+        .filter((c) => c.id !== item.id)
+        .map((c) => +c.id)
+        .includes(+a)
+    );
+
   const showBtnDisabled =
     (active.length > 1 || activeCategories.includes(item.category.id)) &&
+    !isParentActive &&
+    !activeSiblingId &&
     !isItemActive;
-  const [subLayersVisible, showSubLayers] = useState(false);
+  const [subLayersVisible, showSubLayers] = useState(
+    item.children &&
+      item.children.some((c) => !!active.find((a) => +a === +c.id))
+  );
 
   // CHART DATA
   const [chartVisible, showChart] = useState(false);
@@ -162,7 +180,12 @@ function SidebarCard({
                 [styles['--active']]: isItemActive,
               })}
               onClick={() => {
-                toggleIndicatorsActive(item.id);
+                if (isParentActive) {
+                  toggleIndicatorsActive(item.parentId.toString());
+                } else if (activeSiblingId) {
+                  toggleIndicatorsActive(activeSiblingId.toString());
+                }
+                toggleIndicatorsActive(item.id.toString());
               }}
               disabled={showBtnDisabled}
               title={
@@ -180,19 +203,28 @@ function SidebarCard({
         </div>
       </div>
 
-      {subLayersVisible &&
-        item.children &&
-        item.children.map((d) => (
-          // recursive SidebarCard
-          <Card
-            item={d}
-            key={d.id}
-            modalFunctions={modalFunctions}
-            icons={icons}
-            colors={colors}
-            isChildrenCard
-          />
-        ))}
+      {subLayersVisible && item.children && (
+        <ul>
+          {item.children.map((d) => (
+            <SidebarCard
+              item={d}
+              key={d.id}
+              modalFunctions={modalFunctions}
+              icons={icons}
+              colors={colors}
+              parentIndicator={item}
+              isChildrenCard
+              active={active}
+              activeCategories={activeCategories}
+              geometryValues={geometryValues}
+              geometryChildren={geometryChildren}
+              currentLocation={currentLocation}
+              childrenDistribution={childrenDistribution}
+              toggleIndicatorsActive={toggleIndicatorsActive}
+            />
+          ))}
+        </ul>
+      )}
     </li>
   );
 }
@@ -200,8 +232,8 @@ function SidebarCard({
 SidebarCard.propTypes = {
   item: PropTypes.object,
   modalFunctions: PropTypes.object,
-  icons: PropTypes.array,
-  colors: PropTypes.array,
+  icons: PropTypes.object,
+  colors: PropTypes.object,
   active: PropTypes.array, // active indicators
   activeCategories: PropTypes.array,
   geometryValues: PropTypes.array,
@@ -210,6 +242,7 @@ SidebarCard.propTypes = {
   childrenDistribution: PropTypes.object,
   toggleIndicatorsActive: PropTypes.func,
   isChildrenCard: PropTypes.bool,
+  parentIndicator: PropTypes.object,
 };
 
 export default SidebarCard;

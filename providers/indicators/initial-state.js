@@ -3,7 +3,7 @@ export default {
   loaded: false,
   error: false,
   data: [],
-  category: '9999',
+  category: '1',
   active: [],
   activeCategories: [],
 };

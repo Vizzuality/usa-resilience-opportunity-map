@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import startCase from 'lodash.startcase';
@@ -21,6 +21,7 @@ export default function ExploreSidebar({
 }) {
   const [isModalOpen, openModal] = useState(false);
   const [modalContent, setModalContent] = useState(null);
+  const ref = useRef(null);
 
   const icons = {
     'most relevant': MostRelevant,
@@ -45,11 +46,19 @@ export default function ExploreSidebar({
       : serverCategories;
 
   useEffect(() => {
-    if (!geometryValues.length) {
-      setIndicatorsCategory(activeCategories[0] || '1');
-    } else if (!activeCategories.length) {
-      setIndicatorsCategory('9999');
+    let tab;
+
+    if (activeCategories.length) {
+      tab =
+        activeCategories[0] !== ref.current ? activeCategories[0] : ref.current;
+    } else if (geometryValues.length) {
+      tab = ref.current || '9999';
+    } else {
+      tab = ref.current || categories[0].id;
     }
+
+    setIndicatorsCategory(tab);
+    if (ref.current !== tab) ref.current = tab;
   }, [geometryValues, activeCategories]);
 
   return (

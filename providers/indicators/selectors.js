@@ -153,7 +153,7 @@ export const stateLayer = createSelector(
           },
           source: {
             tiles: [
-              'https://api.us-resilience-map.vizzuality.com/api/v1/geometries/tiles/{z}/{x}/{y}',
+              'https://api.us-resilience-map.vizzuality.com/api/v1/geometries/tiles/{z}/{x}/{y}?level=1',
             ],
             type: 'vector',
           },
@@ -260,7 +260,7 @@ export const countyLayer = createSelector(
             },
             source: {
               tiles: [
-                'https://api.us-resilience-map.vizzuality.com/api/v1/geometries/tiles/{z}/{x}/{y}',
+                'https://api.us-resilience-map.vizzuality.com/api/v1/geometries/tiles/{z}/{x}/{y}?level=2',
               ],
               type: 'vector',
             },
@@ -268,7 +268,7 @@ export const countyLayer = createSelector(
           interactionConfig: {
             enable: true,
           },
-          legendConfig: {
+          legendConfig: (!geo || !geo.parentId) && {
             type: 'basic',
             items: legendItems,
           },
@@ -341,7 +341,208 @@ export const countyLayer = createSelector(
             },
             source: {
               tiles: [
-                'https://api.us-resilience-map.vizzuality.com/api/v1/geometries/tiles/{z}/{x}/{y}',
+                'https://api.us-resilience-map.vizzuality.com/api/v1/geometries/tiles/{z}/{x}/{y}?level=2',
+              ],
+              type: 'vector',
+            },
+          },
+          interactionConfig: {
+            enable: true,
+          },
+          legendConfig: (!geo || !geo.parentId) && {
+            type: 'bivariate',
+            items: colors.map((c, i) => ({
+              name: `${Math.floor((i / 5) % 5)}${i % 5}`,
+              color: c,
+            })),
+            indicators: [ind1, ind2],
+          },
+        },
+      ];
+    }
+
+    return [];
+  }
+);
+
+export const censusLayer = createSelector(
+  [data, active, geometryId, geometriesData],
+  (_data, _active, _geometryId, _geometriesData) => {
+    if (!_data || !_data.length || !_geometriesData || !_geometriesData.length)
+      return [];
+    const _indicators = _active
+      .map((i) => _data.find((d) => d.id === i))
+      .sort((a, b) => (a.category.id > b.category.id ? 1 : -1));
+
+    const geo = _geometriesData.find((g) => g.id === _geometryId);
+    if (!geo || !geo.parentId) return [];
+
+    if (_active.length === 1) {
+      const ind = _indicators[0];
+      const colors = CATEGORIES[ind.category.id].ramp;
+      const legends =
+        geo && geo.parentId ? ind.legendCountries : ind.legendStates;
+      // Sometimes the legend will include 'Data not available' as an option.
+      const canHaveNoData = legends.some((l) => l.includes('Data'));
+      const legendsWithColor = legends
+        .filter((l) => !l.includes('Data'))
+        .map((l, i) => ({
+          name: l,
+          color: colors[i],
+        }));
+
+      const legendItems = canHaveNoData
+        ? [
+            ...legendsWithColor,
+            {
+              name: 'Data not available',
+              color: '#F1F1F1',
+            },
+          ]
+        : legendsWithColor;
+
+      return [
+        {
+          id: 'census',
+          name: startCase(ind?.name),
+          config: {
+            type: 'vector',
+            render: {
+              layers: [
+                {
+                  // filter: ['all', ['==', 'location_type', 3]],
+                  'source-layer': 'layer0',
+                  type: 'fill',
+                  paint: {
+                    'fill-color': [
+                      'match',
+                      ['get', `${ind.slug}_hazard`],
+                      ...flatten(
+                        colors.map((c, i) => {
+                          return [i, c];
+                        })
+                      ),
+                      '#F1F1F1', // no data
+                    ],
+                    'fill-opacity': 1,
+                  },
+                },
+
+                {
+                  // filter: ['all', ['==', 'location_type', 3]],
+                  'source-layer': 'layer0',
+                  type: 'line',
+                  paint: {
+                    'line-color': [
+                      'case',
+                      ['boolean', ['feature-state', 'hover'], false],
+                      '#000',
+                      '#999',
+                    ],
+                    'line-opacity': [
+                      'case',
+                      ['boolean', ['feature-state', 'hover'], false],
+                      1,
+                      0.5,
+                    ],
+                    'line-width': [
+                      'case',
+                      ['boolean', ['feature-state', 'hover'], false],
+                      2,
+                      1,
+                    ],
+                  },
+                },
+              ],
+            },
+            source: {
+              tiles: [
+                // /api/v1/geometries/tiles/1/0/0?level=3&parent-id=22456
+                // level 1: states
+                // level 2: counties
+                // level 3: census
+                `https://api.us-resilience-map.vizzuality.com/api/v1/geometries/tiles/{z}/{x}/{y}?level=3&parent-id=${geo.id}`,
+              ],
+              type: 'vector',
+            },
+          },
+          interactionConfig: {
+            enable: true,
+          },
+          legendConfig: {
+            type: 'basic',
+            items: legendItems,
+          },
+        },
+      ];
+    }
+
+    if (_active.length === 2) {
+      const ind1 = _indicators[0];
+      const ind2 = _indicators[1];
+
+      const colors = CATEGORIES[`${ind1.category.id}${ind2.category.id}`].ramp;
+
+      return [
+        {
+          id: 'census',
+          name: '',
+          config: {
+            type: 'vector',
+            render: {
+              layers: [
+                {
+                  filter: ['all', ['==', 'location_type', 1]],
+                  'source-layer': 'layer0',
+                  type: 'fill',
+                  paint: {
+                    'fill-color': [
+                      'match',
+                      [
+                        'concat',
+                        ['get', `${ind1.slug}_hazard`],
+                        ['get', `${ind2.slug}_hazard`],
+                      ],
+                      ...flatten(
+                        colors.map((c, i) => {
+                          return [`${Math.floor((i / 5) % 5)}${i % 5}`, c];
+                        })
+                      ),
+                      '#DDD',
+                    ],
+                    'fill-opacity': 1,
+                  },
+                },
+                {
+                  filter: ['all', ['==', 'location_type', 1]],
+                  'source-layer': 'layer0',
+                  type: 'line',
+                  paint: {
+                    'line-color': [
+                      'case',
+                      ['boolean', ['feature-state', 'hover'], false],
+                      '#000',
+                      '#999',
+                    ],
+                    'line-opacity': [
+                      'case',
+                      ['boolean', ['feature-state', 'hover'], false],
+                      1,
+                      0.5,
+                    ],
+                    'line-width': [
+                      'case',
+                      ['boolean', ['feature-state', 'hover'], false],
+                      2,
+                      1,
+                    ],
+                  },
+                },
+              ],
+            },
+            source: {
+              tiles: [
+                `https://api.us-resilience-map.vizzuality.com/api/v1/geometries/tiles/{z}/{x}/{y}?level=3&parent-id=${geo.id}`,
               ],
               type: 'vector',
             },
@@ -366,9 +567,9 @@ export const countyLayer = createSelector(
 );
 
 export const layers = createSelector(
-  [stateLayer, countyLayer],
-  (_stateLayer, _countyLayer) => {
-    return [..._stateLayer, ..._countyLayer];
+  [stateLayer, countyLayer, censusLayer],
+  (_stateLayer, _countyLayer, _censusLayer) => {
+    return [..._stateLayer, ..._censusLayer, ..._countyLayer];
   }
 );
 
