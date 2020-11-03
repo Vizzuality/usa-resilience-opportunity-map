@@ -54,7 +54,7 @@ export default function ExploreSidebar({
     } else if (geometryValues.length) {
       tab = ref.current || '9999';
     } else {
-      tab = ref.current || categories[0].id;
+      tab = ref.current || categories[0] ? categories[0].id : '1';
     }
 
     setIndicatorsCategory(tab);
