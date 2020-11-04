@@ -13,6 +13,10 @@ export default {
     ...state,
     geometryChildren: payload,
   }),
+  [actions.setCensusGeometries]: (state, { payload }) => ({
+    ...state,
+    censusGeometries: payload,
+  }),
   [actions.setGeometriesLoading]: (state, { payload }) => ({
     ...state,
     loading: payload,

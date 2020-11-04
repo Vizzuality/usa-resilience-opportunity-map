@@ -7,15 +7,23 @@ export default function MapTooltip({ layersHover, indicators, geometries }) {
   const { lngLat, interactions } = layersHover;
   const countyValues = interactions?.counties?.data;
   const stateValues = interactions?.state?.data;
+  const censusValues = interactions?.census?.data;
 
-  if (lngLat && (stateValues || countyValues)) {
+  if (lngLat && (stateValues || countyValues || censusValues)) {
     const activeIndicators = indicators.active?.map((id) =>
       indicators.data?.find((i) => i.id === id)
     );
     let values;
     let locationName;
 
-    if (!stateValues) {
+    if (censusValues) {
+      // hovering on census geometries
+      const census = geometries.censusGeometries?.find(
+        (g) => +g.id === +censusValues.id
+      );
+      locationName = `Census Tract ${census?.name}`;
+      values = censusValues;
+    } else if (!stateValues) {
       // hovering on current state or county, not outside
       const county = geometries.data?.find((g) => +g.id === +countyValues.id);
       locationName = county.name;

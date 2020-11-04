@@ -7,6 +7,8 @@ export const error = (state) => state?.geometries?.error;
 export const data = (state) => state?.geometries?.data || [];
 export const geometryValues = (state) =>
   state?.geometries?.geometryValues || [];
+export const censusGeometries = (state) =>
+  state?.geometries?.censusGeometries || [];
 export const geometryChildren = (state) =>
   state?.geometries?.geometryChildren || [];
 export const id = (state) => state?.geometries?.id;
@@ -95,6 +97,7 @@ export const selectGeometriesProps = createStructuredSelector({
   id,
   data,
   geometryValues,
+  censusGeometries,
   loading,
   loaded,
   error,

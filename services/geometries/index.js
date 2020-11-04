@@ -90,6 +90,13 @@ export function fetchGeometries(params, options = {}) {
   );
 }
 
+export function fetchCensusByCounty(params, options = {}) {
+  return service.request(
+    `/geometries?fields[geometries]=name,location-type,parent-id,bbox&page[size]=9999&filter[location-type]=census&filter[parent-id]=${params.id}`,
+    options
+  );
+}
+
 export function fetchGeometryValues(params, options = {}) {
   // Indicator values for a given geom id
   const { id } = params;

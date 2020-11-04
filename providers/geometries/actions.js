@@ -1,10 +1,15 @@
 import { createAction, createThunkAction } from 'store/redux';
 
-import { fetchGeometries, fetchGeometryValues } from 'services/geometries';
+import {
+  fetchGeometries,
+  fetchGeometryValues,
+  fetchCensusByCounty,
+} from 'services/geometries';
 
 export const setGeometries = createAction('setGeometries');
 export const setGeometryValues = createAction('setGeometryValues');
 export const setGeometryChildren = createAction('setGeometryChildren');
+export const setCensusGeometries = createAction('setCensusGeometries');
 export const setGeometriesLoading = createAction('setGeometriesLoading');
 export const setGeometriesLoaded = createAction('setGeometriesLoaded');
 export const setGeometriesError = createAction('setGeometriesError');
@@ -42,6 +47,21 @@ export const getGeometryValues = createThunkAction(
       .then((data) => {
         dispatch(setGeometryValues(data?.indicatorData));
         dispatch(setGeometryChildren(data?.children));
+      })
+      .catch((error) => {
+        if (error && error.message === 'Abort') return;
+        dispatch(setGeometriesError(true));
+      });
+  }
+);
+
+export const getCensusGeometries = createThunkAction(
+  'getCensusGeometries',
+  (params) => (dispatch) => {
+    const { cancelToken, id } = params;
+    fetchCensusByCounty({ id }, { cancelToken })
+      .then((data) => {
+        dispatch(setCensusGeometries(data));
       })
       .catch((error) => {
         if (error && error.message === 'Abort') return;

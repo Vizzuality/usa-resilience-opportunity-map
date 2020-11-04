@@ -6,4 +6,5 @@ export default {
   geometryValues: [],
   geometryChildren: [],
   id: null,
+  censusGeos: [],
 };

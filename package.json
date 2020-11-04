@@ -87,6 +87,9 @@
       "pre-commit": "lint-staged"
     }
   },
+  "prettier": {
+    "singleQuote": true
+  },
   "lint-staged": {
     "*.scss": "stylelint --config .stylelintrc.json",
     "*.{js,jsx}": [

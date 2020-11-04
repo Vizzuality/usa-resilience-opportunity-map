@@ -14,9 +14,11 @@ class GeometriesProvider extends PureComponent {
   static propTypes = {
     getGeometries: PropTypes.func.isRequired,
     getGeometryValues: PropTypes.func.isRequired,
+    getCensusGeometries: PropTypes.func.isRequired,
     data: PropTypes.array,
     geometryValues: PropTypes.array,
     id: PropTypes.string,
+    currentLocation: PropTypes.object,
   };
 
   componentDidMount() {
@@ -29,6 +31,11 @@ class GeometriesProvider extends PureComponent {
     if (prevProps?.data?.length && !this.props?.data?.length) {
       // Need to fetch new data
       this.fetchGeometries();
+    }
+
+    if (this.props?.currentLocation?.parentId) {
+      // county selected
+      this.fetchCensusGeometries();
     }
 
     if (
@@ -51,6 +58,11 @@ class GeometriesProvider extends PureComponent {
   fetchGeometryValues = () => {
     const { id, getGeometryValues } = this.props;
     getGeometryValues({ cancelToken: this.source.token, id });
+  };
+
+  fetchCensusGeometries = () => {
+    const { id, getCensusGeometries } = this.props;
+    getCensusGeometries({ cancelToken: this.source.token, id });
   };
 
   cancel = () => {

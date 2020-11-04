@@ -457,7 +457,6 @@ export const censusLayer = createSelector(
             },
             source: {
               tiles: [
-                // /api/v1/geometries/tiles/1/0/0?level=3&parent-id=22456
                 // level 1: states
                 // level 2: counties
                 // level 3: census
