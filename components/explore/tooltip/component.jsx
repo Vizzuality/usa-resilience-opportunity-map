@@ -21,7 +21,7 @@ export default function MapTooltip({ layersHover, indicators, geometries }) {
       const census = geometries.censusGeometries?.find(
         (g) => +g.id === +censusValues.id
       );
-      locationName = `Census Tract ${census?.name}`;
+      locationName = `Census Tract ${census?.name || 'Unknown'}`;
       values = censusValues;
     } else if (!stateValues) {
       // hovering on current state or county, not outside

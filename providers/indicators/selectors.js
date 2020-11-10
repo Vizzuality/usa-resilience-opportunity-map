@@ -410,7 +410,6 @@ export const censusLayer = createSelector(
             render: {
               layers: [
                 {
-                  // filter: ['all', ['==', 'location_type', 3]],
                   'source-layer': 'layer0',
                   type: 'fill',
                   paint: {
@@ -429,7 +428,6 @@ export const censusLayer = createSelector(
                 },
 
                 {
-                  // filter: ['all', ['==', 'location_type', 3]],
                   'source-layer': 'layer0',
                   type: 'line',
                   paint: {
@@ -491,7 +489,6 @@ export const censusLayer = createSelector(
             render: {
               layers: [
                 {
-                  filter: ['all', ['==', 'location_type', 1]],
                   'source-layer': 'layer0',
                   type: 'fill',
                   paint: {
@@ -513,7 +510,6 @@ export const censusLayer = createSelector(
                   },
                 },
                 {
-                  filter: ['all', ['==', 'location_type', 1]],
                   'source-layer': 'layer0',
                   type: 'line',
                   paint: {
