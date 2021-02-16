@@ -77,7 +77,7 @@ function Menu({ open, setOpen, isDesktop }) {
             <img
               className="header--logo-image"
               src="assets/logos/logo_dark.svg"
-              alt="USA Resilience Map"
+              alt="US Resilience Opportunity Map"
             />
           </a>
         </Link>
@@ -165,7 +165,7 @@ export default function Header() {
                   src={`assets/logos/logo_${
                     isDarkHeader.mobile ? 'white' : 'dark'
                   }.svg`}
-                  alt="USA Resilience Map"
+                  alt="US Resilience Opportunity Map"
                 />
               </a>
             </Link>
@@ -185,7 +185,7 @@ export default function Header() {
                   src={`assets/logos/logo_${
                     isDarkHeader.desktop ? 'white' : 'dark'
                   }.svg`}
-                  alt="USA Resilience Map"
+                  alt="US Resilience Opportunity Map"
                 />
               </a>
             </Link>

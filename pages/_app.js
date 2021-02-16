@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <Head>
-        <title>USA Resilience Map</title>
+        <title>US Resilience Opportunity Map</title>
         <style type="text/css">{mediaStyle}</style>
       </Head>
       {isEmbed ? (
