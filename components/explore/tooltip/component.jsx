@@ -52,6 +52,7 @@ export default function MapTooltip({ layersHover, indicators, geometries }) {
                 dark
                 hazardLevel={values[`${act.slug}_hazard`]}
                 className="c-tooltip--hazard"
+                type={act.category?.name}
               />
             </div>
           ))}
