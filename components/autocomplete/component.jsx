@@ -19,7 +19,8 @@ function Autocomplete({
 }) {
   const buildInputProps = (getInputProps) => {
     return getInputProps({
-      placeholder: 'Enter a state, county name or ZIP code',
+      placeholder:
+        'Explore the map. Which state or county would you like to analyze?',
     });
   };
   const { pathname } = useRouter();
