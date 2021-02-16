@@ -19,7 +19,7 @@ function Menu({ open, setOpen, isDesktop }) {
       href: '/stories',
     },
     {
-      name: 'About the Data',
+      name: 'About the Map',
       href: '/about',
     },
   ];
