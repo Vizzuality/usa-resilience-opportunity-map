@@ -14,7 +14,7 @@ export const dateDiffInDays = (startDate, endDate) => {
 };
 
 export const getDayRange = (params = {}) => {
-  const { startDate, endDate, minDate, maxDate } = params || {};
+  const { startDate, endDate, minDate, maxDate } = params;
 
   if (!startDate || !endDate || !minDate || !maxDate) return null;
 
@@ -25,7 +25,8 @@ export const getDayRange = (params = {}) => {
   // timeline or hover effect active range
   const startDateTime = new Date(startDate);
   const endDateTime = new Date(endDate);
-  const activeStartDay = numberOfDays - dateDiffInDays(maxDateTime, startDateTime);
+  const activeStartDay =
+    numberOfDays - dateDiffInDays(maxDateTime, startDateTime);
   const activeEndDay = numberOfDays - dateDiffInDays(maxDateTime, endDateTime);
 
   // get start and end day
@@ -35,24 +36,24 @@ export const getDayRange = (params = {}) => {
   return {
     startDayIndex,
     endDayIndex,
-    numberOfDays
+    numberOfDays,
   };
 };
 
 export const getParams = (config = [], params = {}) => {
   const defaultParams = config.reduce((acc, v) => {
-    const {key} = v;
+    const { key } = v;
     const value = v.default;
 
     return {
       ...acc,
-      [key]: value
+      [key]: value,
     };
   }, {});
 
   const newParams = {
     ...defaultParams,
-    ...params
+    ...params,
   };
 
   const { startDate, endDate, trimEndDate, maxAbsoluteDate } = newParams;
@@ -66,18 +67,18 @@ export const getParams = (config = [], params = {}) => {
     ...(!!start && {
       startYear: moment(start).year(),
       startMonth: moment(start).month(),
-      startDay: moment(start).dayOfYear()
+      startDay: moment(start).dayOfYear(),
     }),
     ...(!!endDate && {
       endYear: moment(end).year(),
       endMonth: moment(end).month(),
-      endDay: moment(end).dayOfYear()
+      endDay: moment(end).dayOfYear(),
     }),
     ...(!!trimEndDate && {
       trimEndYear: moment(trim).year(),
       trimEndMonth: moment(trim).month(),
-      trimEndDay: moment(trim).dayOfYear()
+      trimEndDay: moment(trim).dayOfYear(),
     }),
-    ...getDayRange(newParams)
+    ...getDayRange(newParams),
   };
 };
