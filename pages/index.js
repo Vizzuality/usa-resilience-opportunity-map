@@ -66,7 +66,7 @@ function Home({ locations }) {
               <Button
                 className="home-cta"
                 link="/explore"
-                aria-label="explore data"
+                aria-label="explore the map"
               >
                 Explore the map
               </Button>

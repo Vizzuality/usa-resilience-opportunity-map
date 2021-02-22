@@ -191,7 +191,7 @@
         .c-autocomplete--input {
           font-family: $font-serif;
           font-weight: $font-weight-medium;
-          font-size: 34px;
+          font-size: rem(32px);
           letter-spacing: 0;
           line-height: 41px;
         }

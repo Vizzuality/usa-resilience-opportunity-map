@@ -35,6 +35,10 @@
       &.--active {
         border-top: 3px solid $color-blue;
       }
+
+      .header--list-link {
+        outline: transparent;
+      }
     }
 
     .header-links .header--list-item {

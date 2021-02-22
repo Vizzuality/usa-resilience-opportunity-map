@@ -11,7 +11,7 @@ function Menu({ open, setOpen, isDesktop }) {
   const { pathname } = useRouter();
   const links = [
     {
-      name: 'Explore Data',
+      name: 'Explore the Map',
       href: '/explore',
     },
     {
