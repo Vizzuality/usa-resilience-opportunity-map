@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import qs from 'query-string';
@@ -16,7 +16,10 @@ import GeometriesProvider from 'providers/geometries';
 import IndicatorsProvider from 'providers/indicators';
 import { setGeometryId } from 'providers/geometries/actions';
 import { selectGeometriesProps } from 'providers/geometries/selectors';
-import { selectExploreUrlParams } from 'providers/indicators/selectors';
+import {
+  selectExploreUrlParams,
+  selectIndicatorsProps,
+} from 'providers/indicators/selectors';
 import { setIndicatorsActive } from 'providers/indicators/actions';
 
 export async function getServerSideProps(ctx) {
@@ -55,7 +58,16 @@ function ExplorePage({
   loading,
   urlParams,
   queryFunction,
+  data, // indicators
+  active, // active indicators,
+  setInitialIndicator,
 }) {
+  useEffect(() => {
+    if (!active.length && data.length) {
+      setInitialIndicator([data[0]?.id?.toString()]);
+    }
+  }, [data]);
+
   return (
     <Main>
       <GeometriesProvider />
@@ -91,12 +103,16 @@ ExplorePage.propTypes = {
   loaded: PropTypes.bool,
   loading: PropTypes.bool,
   urlParams: PropTypes.shape({}),
+  data: PropTypes.array,
+  active: PropTypes.array,
   queryFunction: PropTypes.func,
+  setInitialIndicator: PropTypes.func,
 };
 
 export default connect(
   (state) => ({
     ...selectGeometriesProps(state),
+    ...selectIndicatorsProps(state),
     urlParams: selectExploreUrlParams(state),
   }),
   (dispatch) => ({
@@ -120,5 +136,6 @@ export default connect(
         }
       }
     },
+    setInitialIndicator: (id) => dispatch(setIndicatorsActive(id)),
   })
 )(ExplorePage);
