@@ -47,10 +47,10 @@ export default function ExploreSidebar({
 
   useEffect(() => {
     let tab;
-
+    // Tab selection on first load, indicator toggle, etc
     if (activeCategories.length) {
-      tab =
-        activeCategories[0] !== ref.current ? activeCategories[0] : ref.current;
+      // tab = activeCategories[0] !== ref.current ? activeCategories[0] : ref.current;
+      tab = category;
     } else if (geometryValues.length) {
       tab = ref.current || '9999';
     } else {
