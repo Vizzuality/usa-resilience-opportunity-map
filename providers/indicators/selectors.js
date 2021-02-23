@@ -62,7 +62,7 @@ export const mostRelevantIndicators = createSelector(
             sortValue: valuesPerIndicator[ind.id]?.normalizedValue,
           }));
         const sorted = sortBy(indicatorsWithValue, 'sortValue');
-        return sorted.slice(0, 2); // top 2 indicators per category
+        return sorted.reverse().slice(0, 2); // top 2 indicators per category
       })
       .flat();
 
