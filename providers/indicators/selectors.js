@@ -62,7 +62,7 @@ export const mostRelevantIndicators = createSelector(
             sortValue: valuesPerIndicator[ind.id]?.normalizedValue,
           }));
         const sorted = sortBy(indicatorsWithValue, 'sortValue');
-        return sorted.slice(0, 2); // top 2 indicators per category
+        return sorted.reverse().slice(0, 2); // top 2 indicators per category
       })
       .flat();
 
@@ -380,8 +380,7 @@ export const censusLayer = createSelector(
     if (_active.length === 1) {
       const ind = _indicators[0];
       const colors = CATEGORIES[ind.category.id].ramp;
-      const legends =
-        geo && geo.parentId ? ind.legendCountries : ind.legendStates;
+      const legends = geo && geo.parentId ? ind.legendStates : ind.legendTracts;
       // Sometimes the legend will include 'Data not available' as an option.
       const canHaveNoData = legends.some((l) => l.includes('Data'));
       const legendsWithColor = legends

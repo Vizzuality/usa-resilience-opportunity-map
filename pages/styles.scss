@@ -68,6 +68,18 @@
           background-color: $grey-pressed;
         }
       }
+
+      .scroll-wrapper {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: rem(80px);
+
+        .scroll-img {
+          float: right;
+        }
+      }
     }
 
     .home-greeting--gradient {
@@ -187,11 +199,12 @@
       .c-autocomplete--select {
         background-color: transparent;
         box-shadow: unset;
+        padding-left: 0;
 
         .c-autocomplete--input {
           font-family: $font-serif;
           font-weight: $font-weight-medium;
-          font-size: 34px;
+          font-size: rem(32px);
           letter-spacing: 0;
           line-height: 41px;
         }

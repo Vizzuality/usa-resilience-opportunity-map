@@ -86,7 +86,7 @@ export const bbox = createSelector([data, id], (_data, _id) => {
   }
 
   return {
-    bbox: [-171.791110603, 18.91619, -66.96466, 71.3577635769],
+    bbox: [-124.763068, 24.523096, -66.949895, 49.384358],
     options: {
       padding: { top: 50, bottom: 50, left: 800, right: 50 },
     },

@@ -55,7 +55,7 @@ function Home({ locations }) {
               <h2>Welcome to</h2>
             </Media>
           </MediaContextProvider>
-          <h1>USA Resilience Map</h1>
+          <h1>US Resilience Opportunity Map</h1>
           <div className="break-line" />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -66,10 +66,18 @@ function Home({ locations }) {
               <Button
                 className="home-cta"
                 link="/explore"
-                aria-label="explore data"
+                aria-label="explore the map"
               >
                 Explore the map
               </Button>
+              <div className="scroll-wrapper wrapper">
+                <img
+                  className="scroll-img"
+                  src="assets/images/scroll.png"
+                  srcSet="assets/images/scroll.png 1x, assets/images/scroll@2x.png 2x"
+                  alt="Scroll to see more"
+                />
+              </div>
             </Media>
           </MediaContextProvider>
         </div>

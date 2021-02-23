@@ -111,6 +111,7 @@ function SidebarCard({
               <HazardIndicator
                 hazardLevel={indicatorValues ? indicatorValues.hazardValue : 5}
                 className={styles.hazard}
+                type={item?.category?.name}
               />
             )}
           </div>
