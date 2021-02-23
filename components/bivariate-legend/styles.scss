@@ -28,4 +28,15 @@
       text-align: right;
     }
   }
+
+  .c-legend--info {
+    position: absolute;
+    bottom: 11px;
+    right: 11px;
+
+    .info-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
 }

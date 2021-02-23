@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import startCase from 'lodash.startcase';
+
+import Modal from 'components/modal';
+import Icon from 'components/icon';
+import INFO_SVG from 'svgs/info.svg?sprite';
 
 export default function LegendTypeBivariate(props) {
   const { activeLayer } = props;
@@ -40,8 +44,46 @@ export default function LegendTypeBivariate(props) {
 
   const variables = legendConfig.indicators.map((i) => startCase(i.name));
 
+  const [isModalOpen, openModal] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
+
   return (
     <div className="c-legend-type-bivariate">
+      <button
+        className="c-legend--info"
+        onClick={() => {
+          // TODO: change description to final text on bivariate layers
+          const description = legendConfig.indicators.map(
+            (ind) => ind.description
+          );
+          const name = legendConfig.indicators
+            .map((ind) => ind.legendTitle)
+            .join(' and ');
+          // similar code at /components/explore/sidebar/sidebar-card/component.jsx#L150
+          // TODO: make it more abstract
+          openModal(true);
+          setModalContent({
+            name,
+            description,
+          });
+        }}
+      >
+        <Icon icon={INFO_SVG} className="info-icon" />
+      </button>
+      {modalContent?.description && (
+        <Modal
+          isOpen={isModalOpen}
+          contentLabel="Metadata"
+          onRequestClose={() => openModal(false)}
+          title={modalContent?.name}
+        >
+          <div className="modal-attributions-content">
+            {modalContent.description?.map((desc) => (
+              <p>{desc}</p>
+            ))}
+          </div>
+        </Modal>
+      )}
       <div className="indicators-wrapper">
         <p>{`High ${variables[0]}`}</p>
         <p>{`High ${variables[1]}`}</p>
