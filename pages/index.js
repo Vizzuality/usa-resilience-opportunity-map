@@ -70,6 +70,14 @@ function Home({ locations }) {
               >
                 Explore the map
               </Button>
+              <div className="scroll-wrapper wrapper">
+                <img
+                  className="scroll-img"
+                  src="assets/images/scroll.png"
+                  srcSet="assets/images/scroll.png 1x, assets/images/scroll@2x.png 2x"
+                  alt="Scroll to see more"
+                />
+              </div>
             </Media>
           </MediaContextProvider>
         </div>
