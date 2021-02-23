@@ -19,8 +19,11 @@ function Autocomplete({
 }) {
   const buildInputProps = (getInputProps) => {
     return getInputProps({
-      placeholder:
-        'Explore the map. Which state or county would you like to analyze?',
+      placeholder: `${
+        className.includes('explore-search')
+          ? 'Explore the map. Which state or county would you like to analyze?'
+          : 'Enter a state, county name or ZIP code.'
+      }`,
     });
   };
   const { pathname } = useRouter();
