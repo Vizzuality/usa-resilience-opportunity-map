@@ -7,7 +7,7 @@ $brand-blue: #5db1b7;
 $text-light-on-gray: #c5cad0;
 
 $columns-mq-medium: 800px;
-$container-max-width: 1200px;
+$container-max-width: 1240px;
 
 .underlineRed {
   border-bottom: 8px solid $brand-red;
@@ -84,6 +84,7 @@ $container-max-width: 1200px;
   p {
     font-family: "Oxygen", sans-serif;
     font-size: 1.1rem;
+    line-height: 1.5;
     margin: 1rem 0;
 
     @media screen and (min-width: 600px) {
@@ -452,14 +453,18 @@ $container-max-width: 1200px;
 
   @media screen and (min-width: 1400px) {
     background-size: auto 100%;
-    padding-top: 4rem;
+    padding-top: 5rem;
   }
 
   .section8Wrapper {
     @media screen and (min-width: 1000px) {
       position: relative;
-      left: 50%;
-      max-width: 50%;
+      left: 57%;
+      max-width: 43%;
+    }
+
+    @media screen and (min-width: 1400px) {
+      top: 1rem;
     }
   }
 }
