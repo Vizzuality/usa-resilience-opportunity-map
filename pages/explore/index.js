@@ -5,7 +5,7 @@ import qs from 'query-string';
 
 import Explore from 'components/explore';
 import { MediaContextProvider, Media } from 'components/media';
-import Main from 'components/main';
+import Main from 'layouts/main';
 import Url from 'components/url';
 import Loader from 'components/loader';
 import Icon from 'components/icon';
