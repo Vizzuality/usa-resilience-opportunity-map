@@ -12,6 +12,7 @@
 
 // Pages
 @import 'pages/styles'; // Home
+@import 'pages/stories/styles'; // Stories
 
 /*
  * Component styles
@@ -34,3 +35,7 @@
 @import 'components/map/controls/zoom/styles';
 @import 'components/modal/styles';
 @import 'components/page/styles';
+
+:root {
+  --bosta: red;
+}
