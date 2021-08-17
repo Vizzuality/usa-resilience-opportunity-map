@@ -167,7 +167,6 @@ const Stories = () => {
           position: 'relative',
           display: 'flex',
           flex: '1 0 auto',
-          flexDirection: 'column',
         }}
       >
         <StoriesMain>
