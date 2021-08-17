@@ -15,7 +15,6 @@ import { mediaStyle } from 'components/media';
 
 import 'styles/index.scss';
 import '@egjs/react-flicking/dist/flicking.css';
-import '@egjs/flicking-plugins/dist/arrow.css';
 
 /* METRICS ON DEVELOPMENT
 export function reportWebVitals(metric) {
