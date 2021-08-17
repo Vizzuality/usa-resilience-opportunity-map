@@ -1130,26 +1130,23 @@
     "@egjs/component" "^2.2.2"
     "@egjs/hammerjs" "^2.0.15"
 
-"@egjs/children-differ@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@egjs/children-differ/-/children-differ-1.0.1.tgz#5465fa80671d5ca3564ebe912f48b05b3e8a14fd"
-  integrity sha512-DRvyqMf+CPCOzAopQKHtW+X8iN6Hy6SFol+/7zCUiE5y4P/OB8JP8FtU4NxtZwtafvSL4faD5KoQYPj3JHzPFQ==
-  dependencies:
-    "@egjs/list-differ" "^1.0.0"
-
 "@egjs/component@^2.2.2":
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/@egjs/component/-/component-2.2.2.tgz#b8208ea4ca05f6562a51d58f1e6f9979aad8a9d9"
   integrity sha512-2m6nu6/Mbs6VnoT4IHFGUBX6V82Zp01zDmlWpIJ3fMatHpe7BB1qUYFgMmSWGY0uOvOl4plvflwbCRUAGMfwWQ==
 
-"@egjs/flicking@^3.8.4":
-  version "3.8.4"
-  resolved "https://registry.yarnpkg.com/@egjs/flicking/-/flicking-3.8.4.tgz#ac304acd08081aeb7e6da818326faecd60a4a5fa"
-  integrity sha512-Bx4m2EhgEhnUnhpAt3gzFxrjVPhfQ6i7dLZTDpfGg8n2vQF3VE3OiYJdl+2tVv6XHRtGZ6J2LGadWh2BQLS1qQ==
+"@egjs/component@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@egjs/component/-/component-3.0.1.tgz#4bf122b5f81fd01126646c63f4fd7aa200a5a057"
+  integrity sha512-Hus9GMXOVfHBzyumyeRL1TkN60LhGen+e9FpqXqbS9jA9hDYEE1AH3ulahbBGhRdMs4uXYl3hRnB5kGZRb9n7Q==
+
+"@egjs/flicking@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@egjs/flicking/-/flicking-4.2.1.tgz#099ab80e2c5d0ba7c337c008f976aeb012ebbf6e"
+  integrity sha512-kc8fnECqS09sRjOXGFCS8mtpxM/BM2cmBmDNQvyXa5ql+Lnptq8Tj4ZilAXI5yPK1d2ZleqcNr7TNvw2n8vy0g==
   dependencies:
     "@egjs/axes" "^2.8.0"
-    "@egjs/component" "^2.2.2"
-    "@egjs/imready" "^1.1.2"
+    "@egjs/component" "^3.0.1"
     "@egjs/list-differ" "^1.0.0"
 
 "@egjs/hammerjs@^2.0.15":
@@ -1159,26 +1156,19 @@
   dependencies:
     "@types/hammerjs" "^2.0.36"
 
-"@egjs/imready@^1.1.2":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@egjs/imready/-/imready-1.1.3.tgz#6c7890e4357df11f22208fef95972bedc00f980d"
-  integrity sha512-9jbF0RZZdgzZqpfOb3IlpgStlkid2Wb6hMw06ln5kmGwUbkgbYCW/hWDeoRX2bVWCf9SAoAZK7dcMnK0U8+FHw==
-  dependencies:
-    "@egjs/component" "^2.2.2"
-
 "@egjs/list-differ@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@egjs/list-differ/-/list-differ-1.0.0.tgz#2277aff52e3e4bd9318d5c30ffc3ba3b6216f05e"
   integrity sha512-HsbMKc0ZAQH+EUeCmI/2PvTYSybmkaWwakU8QGDYYgMVIg9BQ5sM0A0Nnombjxo2+JzXHxmH+jw//yGX+y6GYw==
 
-"@egjs/react-flicking@^3.7.3":
-  version "3.7.3"
-  resolved "https://registry.yarnpkg.com/@egjs/react-flicking/-/react-flicking-3.7.3.tgz#fc909588264b405624d5be5c01ae9f89013eefc2"
-  integrity sha512-ynQr5cPx1Abo7CT0gD85iwTGB+j583Sz5YnOEe+VBz7hqCHPUg506a9cwgGn3vLZk0hQK9m1X1IlJskGwHRZ2g==
+"@egjs/react-flicking@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@egjs/react-flicking/-/react-flicking-4.2.1.tgz#74f90bbf4031f8a0807afee282c912285641fa5c"
+  integrity sha512-LUgz83LQD6d8LgapHTxSGR2W/8yZ56Ncr4ih6fPCNJ0etoV1Dd9va2wFr4SUoKVbrp4yCtk2lPeNWukzVxtdFg==
   dependencies:
-    "@egjs/children-differ" "^1.0.1"
-    "@egjs/flicking" "^3.8.4"
+    "@egjs/flicking" "^4.2.1"
     "@egjs/list-differ" "^1.0.0"
+    react-is "^17.0.2"
 
 "@loaders.gl/3d-tiles@^1.3.4":
   version "1.3.7"
@@ -7913,6 +7903,11 @@ react-is@16.13.1, react-is@^16.12.0, react-is@^16.13.1, react-is@^16.7.0, react-
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-is@^17.0.2:
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
+  integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
+
 react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
@@ -7955,6 +7950,11 @@ react-refresh@0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
+
+react-scroll-wheel-handler@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-scroll-wheel-handler/-/react-scroll-wheel-handler-2.1.0.tgz#a175a48fdd8e45e0148e6b80f3f67df380e0b596"
+  integrity sha512-pZPg+BJ7jlDNzQfQ2BFFhvBYkiNT8yDUKarLwzLcuEMgvqWlsJmickl2nBIAUn9iLzeZomaPY8AmVrra4SHuFg==
 
 react-sortable-hoc@^1.9.1:
   version "1.11.0"
