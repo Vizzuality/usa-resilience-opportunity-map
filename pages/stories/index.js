@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-// import PropTypes from 'prop-types';
+import Link from 'next/link';
 import Flicking from '@egjs/react-flicking';
 import ReactScrollWheelHandler from 'react-scroll-wheel-handler';
 import { MediaContextProvider, Media } from 'components/media';
@@ -193,26 +193,28 @@ const Stories = () => {
                   <div className={styles.StoryDescription}>
                     {story.description}
                   </div>
-                  <a href={story.href} className={styles.StoryCta}>
-                    <span className={styles.StoryCtaText}>
-                      {story.buttonText}
-                    </span>
-                    <span className={styles.StoryCtaIcon}>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="3"
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        />
-                      </svg>
-                    </span>
-                  </a>
+                  <Link href={story.href}>
+                    <a className={styles.StoryCta}>
+                      <span className={styles.StoryCtaText}>
+                        {story.buttonText}
+                      </span>
+                      <span className={styles.StoryCtaIcon}>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="3"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          />
+                        </svg>
+                      </span>
+                    </a>
+                  </Link>
                 </div>
               </div>
             ))}
