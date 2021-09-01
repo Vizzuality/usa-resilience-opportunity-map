@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { MediaContextProvider, Media } from 'components/media';
-import Main from 'components/main';
+import Main from 'layouts/main';
 import Loader from 'components/loader';
 import Icon from 'components/icon';
 import LAPTOP_SVG from 'public/assets/images/laptop_picto01.svg?sprite';

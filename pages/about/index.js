@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Main from 'components/main';
+import Main from 'layouts/main';
 import { MediaContextProvider, Media } from 'components/media';
 
 function AboutWrapper({ children }) {
