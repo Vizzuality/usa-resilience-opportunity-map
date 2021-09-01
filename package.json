@@ -41,7 +41,7 @@
     "mapbox-gl": "^1.11.1",
     "math.gl": "^3.2.2",
     "moment": "^2.27.0",
-    "next": "9.4.4",
+    "next": "11.1.0",
     "next-compose-plugins": "^2.2.0",
     "next-fonts": "^1.4.0",
     "next-optimized-images": "^2.6.1",
