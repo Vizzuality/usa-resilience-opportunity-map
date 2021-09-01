@@ -14,6 +14,7 @@ import Footer from 'components/footer';
 import { mediaStyle } from 'components/media';
 
 import 'styles/index.scss';
+import '@egjs/react-flicking/dist/flicking.css';
 
 /* METRICS ON DEVELOPMENT
 export function reportWebVitals(metric) {

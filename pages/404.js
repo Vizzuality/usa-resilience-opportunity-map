@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 // Components
-import Main from 'components/main';
+import Main from 'layouts/main';
 
 export default function Custom404() {
   return (

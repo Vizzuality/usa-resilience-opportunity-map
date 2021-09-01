@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import Main from 'components/main';
+import Main from 'layouts/main';
 import Button from 'components/button';
 import Autocomplete from 'components/autocomplete';
 import { MediaContextProvider, Media } from 'components/media';
