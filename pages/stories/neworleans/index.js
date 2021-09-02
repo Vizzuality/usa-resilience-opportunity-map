@@ -78,12 +78,12 @@ const Section3 = () => {
         </div>
         <div className={cx(styles.col, styles.colRight)}>
           <img
-            src="/assets/images/neworleans/section3-image1.png"
+            src="/assets/images/neworleans/section_3_image_1.png"
             className={styles.section3Img1}
             alt=""
           />
           <img
-            src="/assets/images/neworleans/section3-image2.png"
+            src="/assets/images/neworleans/section_3_image_2.png"
             className={styles.section3Img2}
             alt=""
           />
@@ -118,12 +118,12 @@ const Section4 = () => {
       <div className={styles.section4Bg}>
         <img
           className={styles.section4Img1}
-          src="/assets/images/neworleans/section4-image1.png"
+          src="/assets/images/neworleans/section_4_image_1.png"
           alt=""
         />
         <img
           className={styles.section4Img2}
-          src="/assets/images/neworleans/section4-image2.png"
+          src="/assets/images/neworleans/section_4_image_2.png"
           alt=""
         />
       </div>
@@ -133,10 +133,10 @@ const Section4 = () => {
 
 const Section5 = () => {
   return (
-    <div className={cx(styles.bgRed, styles.section5)}>
+    <div className={cx(styles.bgPrimary, styles.section5)}>
       <Quote
         text="I always think in the context of: what would happen if every citizen or parcel in New Orleans had some sort of stormwater management on their property? Imagine what would happen if we did that."
-        image="/assets/images/neworleans/people-brendabreaux.jpg"
+        image="/assets/images/neworleans/people_brenda_breaux.jpg"
         authorName="Brenda Breaux"
         authorPosition="Executive Director"
         authorCompany="New Orleans Redevelopment Authority (NOLA)"
@@ -189,7 +189,7 @@ const Section6 = () => {
 
 const Section7 = () => {
   return (
-    <div className={cx(styles.section7, styles.textWhite, styles.bgBlue)}>
+    <div className={cx(styles.section7, styles.textWhite, styles.bgSecondary)}>
       <div className={cx(styles.container)}>
         <div className={cx(styles.section7Wrapper)}>
           <p className={cx(styles.bold, styles.fontUbuntu)}>
@@ -260,7 +260,7 @@ const Section9 = () => {
       <div className={styles.container}>
         <div className={styles.contentRight}>
           <img
-            src="/assets/images/neworleans/section9-image.png"
+            src="/assets/images/neworleans/section_9_image.png"
             className={styles.section9Img}
             alt=""
           />
@@ -330,12 +330,12 @@ const Section10 = () => {
         </div>
         <div className={styles.contentLeft}>
           <img
-            src="/assets/images/neworleans/section10-image1.png"
+            src="/assets/images/neworleans/section_10_image_1.png"
             className={styles.section10Img1}
             alt=""
           />
           <img
-            src="/assets/images/neworleans/section10-image2.png"
+            src="/assets/images/neworleans/section_10_image_2.png"
             className={styles.section10Img2}
             alt=""
           />
@@ -362,7 +362,7 @@ const Section11 = () => {
 
 const Section12 = () => {
   return (
-    <div className={cx(styles.section12, styles.textWhite, styles.bgRed)}>
+    <div className={cx(styles.section12, styles.textWhite, styles.bgPrimary)}>
       <div className={cx(styles.container)}>
         <div className={cx(styles.section12Wrapper)}>
           <p>
@@ -437,7 +437,7 @@ const Section13 = () => {
 
 const Section14 = () => {
   return (
-    <div className={cx(styles.section14, styles.textWhite, styles.bgBlue)}>
+    <div className={cx(styles.section14, styles.textWhite, styles.bgSecondary)}>
       <div className={cx(styles.container)}>
         <div className={cx(styles.section14Wrapper)}>
           <p>
@@ -473,10 +473,10 @@ const Section14 = () => {
 
 const Section15 = () => {
   return (
-    <div className={cx(styles.bgRed, styles.section15)}>
+    <div className={cx(styles.bgPrimary, styles.section15)}>
       <Quote
         text="Embrace the opportunity that you might gain from looking at where you can mitigate risks like stormwater flooding. But also, ask yourself – how will you empower your residents to take action to mitigate those same risks. It might be challenging. But this is an opportunity."
-        image="/assets/images/neworleans/people-brendabreaux.jpg"
+        image="/assets/images/neworleans/people_brenda_breaux.jpg"
         authorName="Brenda Breaux"
         authorPosition="Executive Director"
         authorCompany="New Orleans Redevelopment Authority (NOLA)"

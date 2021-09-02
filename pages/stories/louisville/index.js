@@ -11,12 +11,6 @@ const Section1 = () => {
   return (
     <div className={styles.section1}>
       <div className={styles.container}>
-        <div className={styles.treeLeafCollage}>
-          <img
-            alt="riverside-collage"
-            src="/assets/images/louisville/section1-collage.png"
-          />
-        </div>
         <div className={styles.section1Title}>
           <span>
             In Louisville, trees
@@ -104,12 +98,12 @@ const Section3 = () => {
 
 const Section4 = () => {
   return (
-    <div className={cx(styles.bgGray, styles.section4)}>
+    <div className={cx(styles.bgGray, styles.quoteContainer)}>
       <Quote
         text="Extreme heat is really experienced by more vulnerable populations.
         The biggest health issue was not the day temperatures, but the night temperatures.
         When night is terribly hot, that’s when there's major health risks of heat stroke or death."
-        image="/assets/images/louisville/people-juliedonna.jpg"
+        image="/assets/images/louisville/people_julie_donna.jpg"
         authorName="Julie Donna"
         authorPosition="Sustainability Coordinator"
         authorCompany="Office of Advanced Planning & Sustainability, Louisville Metro Government"
@@ -268,10 +262,12 @@ const Section8 = () => {
 
 const Section9 = () => {
   return (
-    <div className={cx(styles.bgRed, styles.section9)}>
+    <div
+      className={cx(styles.bgPrimary, styles.section9, styles.quoteContainer)}
+    >
       <Quote
         text="Look at the data. It’s how you can determine where tree canopy improvement is needed the most."
-        image="/assets/images/louisville/people-cindisullivan.jpeg"
+        image="/assets/images/louisville/people_cindi_sullivan.jpeg"
         authorName="Cindi Sullivan"
         authorPosition="Executive Director"
         authorCompany="Trees Louisville"
@@ -325,6 +321,75 @@ const Section10 = () => {
   );
 };
 
+const Section11 = () => {
+  return (
+    <div className={cx(styles.section11, styles.textWhite, styles.bgGray)}>
+      <div className={cx(styles.container)}>
+        <div className={cx(styles.section11Wrapper)}>
+          <h5 className={cx(styles.sectionTitle)}>
+            “We all know that plant person connection”
+          </h5>
+          <p>
+            Two methods ensured the success of Louisville’s extreme heat
+            intervention.
+          </p>
+          <p>
+            Data: The Urban Tree Canopy Assessment gave the city the data to
+            identify which communities were lacking tree cover, so they could
+            target the solution to those who needed it most. They are now
+            targeting commercial property owners.
+          </p>
+          <p>
+            Community engagement: For Parkland Plaza in particular, members of
+            the Parkland Association talk about the initiative with their
+            customers, neighbors, and friends, encouraging community buy-in and
+            participation through word of mouth.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Section12 = () => {
+  return (
+    <div className={styles.section12}>
+      <div>
+        <div className={cx(styles.col, styles.colRight)} />
+        <div className={cx(styles.col, styles.colLeft)}>
+          <p>
+            Since the initiative started, Trees Louisville and Louisville Grows
+            have planted upwards of 13,000 trees. A city ordinance has been
+            passed protecting trees on private land and setting requirements for
+            the minimum percentage of tree canopy cover in certain public
+            spaces.
+          </p>
+          <p>
+            Each additional square meter of tree canopy or grass added across
+            Louisville was found to yield temperature reductions 1.2 times
+            greater than each square meter of other interventions, such as
+            reflective roofing or paving.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Section13 = () => {
+  return (
+    <div className={cx(styles.bgSecondary, styles.quoteContainer)}>
+      <Quote
+        text="Trees and green infrastructure aren’t a luxury. They’re an invaluable asset to this community."
+        image="/assets/images/louisville/people_cindi_sullivan.jpeg"
+        authorName="Cindi Sullivan"
+        authorPosition="Executive Director"
+        authorCompany="Trees Louisville"
+      />
+    </div>
+  );
+};
+
 const Louisville = () => {
   return (
     <div className={styles.stories}>
@@ -338,6 +403,9 @@ const Louisville = () => {
       <Section8 />
       <Section9 />
       <Section10 />
+      <Section11 />
+      <Section12 />
+      <Section13 />
     </div>
   );
 };
