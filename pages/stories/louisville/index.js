@@ -2,9 +2,10 @@ import React from 'react';
 
 import cx from 'classnames';
 
-import styles from './styles.module.scss';
+import Quote from 'layouts/stories/quote';
+import VideoPlayer from 'layouts/stories/video-player';
 
-import Quote from './Quote';
+import styles from './styles.module.scss';
 
 const Section1 = () => {
   return (
@@ -56,15 +57,7 @@ const Section1 = () => {
 const Section2 = () => {
   return (
     <div className={styles.section2}>
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/Iwd_ei8e150"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
+      <VideoPlayer url="https://www.youtube.com/embed/Iwd_ei8e150" />
     </div>
   );
 };
@@ -111,7 +104,7 @@ const Section3 = () => {
 
 const Section4 = () => {
   return (
-    <div className={styles.bgGray}>
+    <div className={cx(styles.bgGray, styles.section4)}>
       <Quote
         text="Extreme heat is really experienced by more vulnerable populations.
         The biggest health issue was not the day temperatures, but the night temperatures.

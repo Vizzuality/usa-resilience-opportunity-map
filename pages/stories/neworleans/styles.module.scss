@@ -364,6 +364,13 @@ $container-max-width: 1240px;
   }
 }
 
+// Section 5
+
+.section5 {
+  color: white;
+  padding: 1rem var(--padding-quote);
+}
+
 // Section 6
 
 .section6 {
@@ -858,4 +865,10 @@ $container-max-width: 1240px;
       max-width: 50%;
     }
   }
+}
+
+// Section 15
+.section15 {
+  color: white;
+  padding: 1rem var(--padding-quote);
 }

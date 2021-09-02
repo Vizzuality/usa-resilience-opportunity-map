@@ -240,6 +240,12 @@ $container-max-width: 1240px;
   }
 }
 
+// Section 4
+.section4 {
+  color: white;
+  padding: 1rem var(--padding-quote);
+}
+
 // Section 5
 .section5 {
   background-image: url("/assets/images/louisville/section5-bg.png");
@@ -395,13 +401,14 @@ $container-max-width: 1240px;
 
 // Section 9
 .section9 {
+  color: white;
   position: relative;
   padding: 3rem 0;
   text-align: center;
   z-index: 1;
 
   @media screen and (min-width: 800px) {
-    padding: 0;
+    padding: 1rem var(--padding-quote);
   }
 
   &::before {

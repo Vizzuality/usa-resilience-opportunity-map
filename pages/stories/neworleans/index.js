@@ -2,9 +2,10 @@ import React from 'react';
 
 import cx from 'classnames';
 
-import styles from './styles.module.scss';
+import Quote from 'layouts/stories/quote';
+import VideoPlayer from 'layouts/stories/video-player';
 
-import Quote from './Quote';
+import styles from './styles.module.scss';
 
 const Section1 = () => {
   return (
@@ -42,15 +43,7 @@ const Section1 = () => {
 const Section2 = () => {
   return (
     <div className={styles.section2}>
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/Iwd_ei8e150"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
+      <VideoPlayer url="https://www.youtube.com/embed/Iwd_ei8e150" />
     </div>
   );
 };
@@ -140,13 +133,15 @@ const Section4 = () => {
 
 const Section5 = () => {
   return (
-    <Quote
-      text="I always think in the context of: what would happen if every citizen or parcel in New Orleans had some sort of stormwater management on their property? Imagine what would happen if we did that."
-      image="/assets/images/neworleans/people-brendabreaux.jpg"
-      authorName="Brenda Breaux"
-      authorPosition="Executive Director"
-      authorCompany="New Orleans Redevelopment Authority (NOLA)"
-    />
+    <div className={cx(styles.bgRed, styles.section5)}>
+      <Quote
+        text="I always think in the context of: what would happen if every citizen or parcel in New Orleans had some sort of stormwater management on their property? Imagine what would happen if we did that."
+        image="/assets/images/neworleans/people-brendabreaux.jpg"
+        authorName="Brenda Breaux"
+        authorPosition="Executive Director"
+        authorCompany="New Orleans Redevelopment Authority (NOLA)"
+      />
+    </div>
   );
 };
 
@@ -478,13 +473,15 @@ const Section14 = () => {
 
 const Section15 = () => {
   return (
-    <Quote
-      text="Embrace the opportunity that you might gain from looking at where you can mitigate risks like stormwater flooding. But also, ask yourself – how will you empower your residents to take action to mitigate those same risks. It might be challenging. But this is an opportunity."
-      image="/assets/images/neworleans/people-brendabreaux.jpg"
-      authorName="Brenda Breaux"
-      authorPosition="Executive Director"
-      authorCompany="New Orleans Redevelopment Authority (NOLA)"
-    />
+    <div className={cx(styles.bgRed, styles.section15)}>
+      <Quote
+        text="Embrace the opportunity that you might gain from looking at where you can mitigate risks like stormwater flooding. But also, ask yourself – how will you empower your residents to take action to mitigate those same risks. It might be challenging. But this is an opportunity."
+        image="/assets/images/neworleans/people-brendabreaux.jpg"
+        authorName="Brenda Breaux"
+        authorPosition="Executive Director"
+        authorCompany="New Orleans Redevelopment Authority (NOLA)"
+      />
+    </div>
   );
 };
 
