@@ -18,6 +18,10 @@
   --columns-mq-medium: 800px;
   --container-max-width: 1240px;
 
+  @media screen and (min-width: 600px) {
+    --container-padding: 2rem;
+  }
+
   @media screen and (min-width: 800px) {
     --container-padding: 3rem;
     --padding-quote: 8rem;
