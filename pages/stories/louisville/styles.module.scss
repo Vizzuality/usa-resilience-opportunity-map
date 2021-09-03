@@ -518,29 +518,38 @@
 
 // Section 11
 .section11 {
-  background-image: url("/assets/images/louisville/section_11_bg.png");
-  background-position: top left;
-  background-size: auto 90vw;
-  background-repeat: no-repeat;
   padding-bottom: 1rem;
   padding-top: 100vw;
   position: relative;
 
-  @media screen and (min-width: 1000px) {
-    background-size: auto 70vw;
-    padding-top: 70vw;
+  &::after {
+    background-image: url("/assets/images/louisville/section_11_bg.png");
+    background-size: contain;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    top: 0;
+    content: '';
+    height: 43%;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    z-index: 3;
+
+    @media screen and (min-width: 1000px) {
+      bottom: -1.3rem;
+      height: 103%;
+    }
   }
 
   @media screen and (min-width: 1000px) {
     background-size: auto 60vw;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0;
   }
 
   @media screen and (min-width: 1400px) {
     background-size: auto 100%;
     padding-bottom: 4rem;
-    padding-top: 4rem;
   }
 
   .listItem {
@@ -583,12 +592,12 @@
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
       margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
-      padding: 0;
+      padding: 3rem var(--container-padding);
     }
   }
 
   .colRight {
-    min-height: 20rem;
+    min-height: 50rem;
     overflow: hidden;
     position: relative;
 
