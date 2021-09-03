@@ -34,7 +34,10 @@ const Section1 = () => {
         </div>
       </div>
       <div className={styles.section1Image}>
-        <img src="/assets/images/neworleans/section1-image.png" alt="" />
+        <img
+          src="/assets/images/stories/neworleans/section_1_image.png"
+          alt=""
+        />
       </div>
     </div>
   );
@@ -78,12 +81,12 @@ const Section3 = () => {
         </div>
         <div className={cx(styles.col, styles.colRight)}>
           <img
-            src="/assets/images/neworleans/section_3_image_1.png"
+            src="/assets/images/stories/neworleans/section_3_image_1.png"
             className={styles.section3Img1}
             alt=""
           />
           <img
-            src="/assets/images/neworleans/section_3_image_2.png"
+            src="/assets/images/stories/neworleans/section_3_image_2.png"
             className={styles.section3Img2}
             alt=""
           />
@@ -118,12 +121,12 @@ const Section4 = () => {
       <div className={styles.section4Bg}>
         <img
           className={styles.section4Img1}
-          src="/assets/images/neworleans/section_4_image_1.png"
+          src="/assets/images/stories/neworleans/section_4_image_1.png"
           alt=""
         />
         <img
           className={styles.section4Img2}
-          src="/assets/images/neworleans/section_4_image_2.png"
+          src="/assets/images/stories/neworleans/section_4_image_2.png"
           alt=""
         />
       </div>
@@ -136,7 +139,7 @@ const Section5 = () => {
     <div className={cx(styles.bgPrimary, styles.section5)}>
       <Quote
         text="I always think in the context of: what would happen if every citizen or parcel in New Orleans had some sort of stormwater management on their property? Imagine what would happen if we did that."
-        image="/assets/images/neworleans/people_brenda_breaux.jpg"
+        image="/assets/images/stories/neworleans/people_brenda_breaux.jpg"
         authorName="Brenda Breaux"
         authorPosition="Executive Director"
         authorCompany="New Orleans Redevelopment Authority (NOLA)"
@@ -260,7 +263,7 @@ const Section9 = () => {
       <div className={styles.container}>
         <div className={styles.contentRight}>
           <img
-            src="/assets/images/neworleans/section_9_image.png"
+            src="/assets/images/stories/neworleans/section_9_image.png"
             className={styles.section9Img}
             alt=""
           />
@@ -330,12 +333,12 @@ const Section10 = () => {
         </div>
         <div className={styles.contentLeft}>
           <img
-            src="/assets/images/neworleans/section_10_image_1.png"
+            src="/assets/images/stories/neworleans/section_10_image_1.png"
             className={styles.section10Img1}
             alt=""
           />
           <img
-            src="/assets/images/neworleans/section_10_image_2.png"
+            src="/assets/images/stories/neworleans/section_10_image_2.png"
             className={styles.section10Img2}
             alt=""
           />
@@ -476,7 +479,7 @@ const Section15 = () => {
     <div className={cx(styles.bgPrimary, styles.section15)}>
       <Quote
         text="Embrace the opportunity that you might gain from looking at where you can mitigate risks like stormwater flooding. But also, ask yourself – how will you empower your residents to take action to mitigate those same risks. It might be challenging. But this is an opportunity."
-        image="/assets/images/neworleans/people_brenda_breaux.jpg"
+        image="/assets/images/stories/neworleans/people_brenda_breaux.jpg"
         authorName="Brenda Breaux"
         authorPosition="Executive Director"
         authorCompany="New Orleans Redevelopment Authority (NOLA)"

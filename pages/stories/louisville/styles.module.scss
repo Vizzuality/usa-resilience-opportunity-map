@@ -115,14 +115,14 @@
 // Section1
 .section1 {
   $section1-cols: 1000px;
-  background: url("/assets/images/louisville/section_1_image.png");
+  background: url("/assets/images/stories/louisville/section_1_image.png");
   background-size: cover;
   background-position: center;
   padding-bottom: 4rem;
   position: relative;
 
   &::after {
-    background-image: url("/assets/images/louisville/section_1_collage.png");
+    background-image: url("/assets/images/stories/louisville/section_1_collage.png");
     background-size: contain;
     background-position: bottom right;
     background-repeat: no-repeat;
@@ -245,7 +245,7 @@
     }
 
     &::after {
-      background-image: url("/assets/images/louisville/section_3_bg.png");
+      background-image: url("/assets/images/stories/louisville/section_3_bg.png");
       background-size: cover;
       background-position: center;
       content: '';
@@ -265,7 +265,7 @@
 
 // Section 5
 .section5 {
-  background-image: url("/assets/images/louisville/section_5_bg.png");
+  background-image: url("/assets/images/stories/louisville/section_5_bg.png");
   background-position: bottom right;
   background-size: 100vw auto;
   background-repeat: no-repeat;
@@ -292,7 +292,7 @@
 
 // Section 6
 .section6 {
-  background-image: url("/assets/images/louisville/section_6_bg.png");
+  background-image: url("/assets/images/stories/louisville/section_6_bg.png");
   background-position: bottom -0.7rem left;
   background-size: 100vw auto;
   background-repeat: no-repeat;
@@ -357,7 +357,7 @@
     }
 
     &::after {
-      background-image: url("/assets/images/louisville/section_7_bg.png");
+      background-image: url("/assets/images/stories/louisville/section_7_bg.png");
       background-size: cover;
       background-position: center;
       content: '';
@@ -377,7 +377,7 @@
 
 // Section 8
 .section8 {
-  background-image: url("/assets/images/louisville/section_8_bg.png");
+  background-image: url("/assets/images/stories/louisville/section_8_bg.png");
   background-position: top left;
   background-size: auto 90vw;
   background-repeat: no-repeat;
@@ -497,7 +497,7 @@
     }
 
     &::after {
-      background-image: url("/assets/images/louisville/section_10_bg.png");
+      background-image: url("/assets/images/stories/louisville/section_10_bg.png");
       background-size: cover;
       background-position: center;
       content: '';
@@ -523,7 +523,7 @@
   position: relative;
 
   &::after {
-    background-image: url("/assets/images/louisville/section_11_bg.png");
+    background-image: url("/assets/images/stories/louisville/section_11_bg.png");
     background-size: contain;
     background-position: bottom left;
     background-repeat: no-repeat;
@@ -610,7 +610,7 @@
     }
 
     &::after {
-      background-image: url("/assets/images/louisville/section_12_bg.png");
+      background-image: url("/assets/images/stories/louisville/section_12_bg.png");
       background-size: cover;
       background-position: center;
       content: '';

@@ -103,7 +103,7 @@ const Section4 = () => {
         text="Extreme heat is really experienced by more vulnerable populations.
         The biggest health issue was not the day temperatures, but the night temperatures.
         When night is terribly hot, that’s when there's major health risks of heat stroke or death."
-        image="/assets/images/louisville/people_julie_donna.jpg"
+        image="/assets/images/stories/louisville/people_julie_donna.jpg"
         authorName="Julie Donna"
         authorPosition="Sustainability Coordinator"
         authorCompany="Office of Advanced Planning & Sustainability, Louisville Metro Government"
@@ -267,7 +267,7 @@ const Section9 = () => {
     >
       <Quote
         text="Look at the data. It’s how you can determine where tree canopy improvement is needed the most."
-        image="/assets/images/louisville/people_cindi_sullivan.jpeg"
+        image="/assets/images/stories/louisville/people_cindi_sullivan.jpeg"
         authorName="Cindi Sullivan"
         authorPosition="Executive Director"
         authorCompany="Trees Louisville"
@@ -381,7 +381,7 @@ const Section13 = () => {
     <div className={cx(styles.bgSecondary, styles.quoteContainer)}>
       <Quote
         text="Trees and green infrastructure aren’t a luxury. They’re an invaluable asset to this community."
-        image="/assets/images/louisville/people_cindi_sullivan.jpeg"
+        image="/assets/images/stories/louisville/people_cindi_sullivan.jpeg"
         authorName="Cindi Sullivan"
         authorPosition="Executive Director"
         authorCompany="Trees Louisville"
