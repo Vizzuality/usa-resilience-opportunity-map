@@ -136,7 +136,7 @@
     z-index: 5;
 
     @media screen and (min-width: $section1-cols) {
-      bottom: -3%;
+      bottom: 0;
       display: initial;
       height: 100%;
       right: 0;
@@ -225,7 +225,7 @@
   position: relative;
 
   .colRight {
-    padding: 5rem var(--container-padding);
+    padding: 4rem var(--container-padding);
 
     @media screen and (min-width: $section3-cols) {
       display: inline-block;
@@ -269,6 +269,7 @@
 
 // Section 4
 .section4 {
+  padding: 0 0 4rem 0;
   position: relative;
   overflow: hidden;
 
@@ -324,25 +325,19 @@
   }
 
   .contentRight {
+    margin: 4rem 0;
     position: relative;
-    max-width: 40rem;
-    margin-left: 55%;
+    width: 100%;
 
     @media screen and (min-width: 900px) {
-      width: 60%;
+      max-width: 40rem;
+      margin-left: 55%;
     }
-  }
 
-  ul {
-    margin-left: 1rem;
-
-    li {
-      list-style-type: disc;
-      margin: 1rem 0;
-
-      @media screen and (min-width: 900px) {
-        margin: 2rem 0;
-      }
+    .listItem {
+      list-style-position: inside;
+      list-style-type: initial;
+      margin-bottom: 0.8rem;
     }
   }
 
@@ -412,7 +407,7 @@
   background-position: bottom right;
   background-size: 100vw auto;
   background-repeat: no-repeat;
-  padding-top: 1rem;
+  padding-top: 4rem;
   padding-bottom: calc(100vw - 70px);
 
   @media screen and (min-width: 1000px) {
@@ -437,10 +432,10 @@
 .section9 {
   background-image: url("/assets/images/stories/boulder/bo_section_9_bg.png");
   background-position: top left;
-  background-size: auto 90vw;
+  background-size: auto 100vw;
   background-repeat: no-repeat;
-  padding-bottom: 1rem;
-  padding-top: 85vw;
+  padding-bottom: 0;
+  padding-top: 90vw;
 
   .listItem {
     list-style-position: inside;
@@ -477,23 +472,12 @@
 
 // Section 10
 .section10 {
-  background-image: url("/assets/images/stories/boulder/bo_section_10_bg.png");
-  background-position: bottom right;
-  background-size: 100vw auto;
-  background-repeat: no-repeat;
-  padding-top: 1rem;
-  padding-bottom: calc(100vw - 70px);
-  z-index: 5;
+  position: relative;
+  padding-bottom: 26rem;
+  padding-top: 4rem;
 
   @media screen and (min-width: 1000px) {
-    background-size: 61% auto;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-
-  @media screen and (min-width: 1400px) {
-    background-size: auto 100%;
-    padding-top: 4rem;
+    padding: 3rem var(--container-padding);
   }
 
   .section10Wrapper {
@@ -501,12 +485,34 @@
       max-width: 50%;
     }
   }
+  
+  &::before {
+    background-image: url("/assets/images/stories/boulder/bo_section_10_bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right -3rem bottom;
+    content: '';
+    height: 100vh;
+    max-width: 115vw;
+    max-height: 94.2vh;
+    position: absolute;
+    right: 0;
+    bottom: -7rem;
+    width: 115vw;
+    z-index: 9;
+    
+    @media screen and (min-width: 1000px) {
+      background-position: right -4.5rem bottom;
+      max-width: 50vw;
+      width: 50vw;
+    }
+  }
 }
 
 // Section 11
 .section11 {
   position: relative;
-  padding-top: 10vw;
+  padding-top: 6rem;
   padding-bottom: 24vw;
 
   @media screen and (min-width: 1000px) {
@@ -551,35 +557,27 @@
     }
   }
 
-  &::before {
-    background-image: url("/assets/images/stories/corsage_1.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right top;
-    content: '';
-    height: 22vw;
-    max-width: 260px;
-    max-height: 260px;
-    position: absolute;
-    right: 0;
-    top: -1.5vw;
-    width: 22vw;
-  }
-
   &::after {
     background-image: url("/assets/images/stories/corsage_2.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right top;
-    bottom: -2vw;
+    bottom: -10vw;
     content: '';
-    height: 22vw;
-    left: -1vw;
+    height: 32vw;
+    left: -2vw;
     max-width: 260px;
     max-height: 260px;
     position: absolute;
     transform: rotate(-20deg);
-    width: 22vw;
+    width: 32vw;
+
+    @media screen and (min-width: 500px) {
+      bottom: -2vw;
+      height: 22vw;
+      left: -1vw;
+      width: 22vw;
+    }
   }
 }
 
@@ -592,7 +590,7 @@
   position: relative;
 
   .colLeft {
-    padding: 1rem var(--container-padding);
+    padding: 4rem var(--container-padding);
 
     .listItem {
       list-style-position: inside;
@@ -634,7 +632,7 @@
       z-index: 0;
 
       @media screen and (min-width: $section13-cols) {
-        width: 50vw;
+        width: 35vw;
       }
     }
   }
@@ -678,13 +676,10 @@
 
 // Section15
 .section15 {
+  padding: 6rem var(--padding-quote);
   position: relative;
   text-align: center;
   z-index: 1;
-
-  @media screen and (min-width: 800px) {
-    padding: 6rem var(--padding-quote);
-  }
 
   .title {
     color: var(--text-gray);
@@ -701,15 +696,23 @@
     background-image: url("/assets/images/stories/boulder/bo_section_15_image_2.png");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: right top;
+    background-position: right -2rem top;
     content: '';
-    height: 22vw;
+    height: 36vw;
     max-width: 260px;
     max-height: 260px;
     position: absolute;
-    right: -4rem;
-    top: -5vw;
-    width: 22vw;
+    right: 0;
+    top: -10vw;
+    width: 36vw;
+    z-index: 9;
+
+    @media screen and (min-width: 1000px) {
+      background-position: right -3rem top;
+      height: 22vw;
+      top: -5vw;
+      width: 22vw;
+    }
   }
 
   &::after {
@@ -717,14 +720,20 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right top;
-    bottom: -5.4vw;
+    bottom: -18vw;
     content: '';
-    height: 22vw;
+    height: 46vw;
     left: 0;
     max-width: 260px;
     max-height: 260px;
     position: absolute;
-    width: 22vw;
+    width: 46vw;
+
+    @media screen and (min-width: 1000px) {
+      bottom: -5.4vw;
+      height: 22vw;
+      width: 22vw;
+    }
   }
 }
 
@@ -737,7 +746,7 @@
   position: relative;
 
   .colLeft {
-    padding: 1rem var(--container-padding);
+    padding: 4rem var(--container-padding);
 
     .listItem {
       list-style-position: inside;
@@ -792,7 +801,7 @@
   background-size: auto 60%;
   background-repeat: no-repeat;
   padding-bottom: 1rem;
-  padding-top: 60vw;
+  padding-top: 70vw;
 
   @media screen and (min-width: 1000px) {
     background-position: top left;
@@ -803,7 +812,7 @@
 
   @media screen and (min-width: 1400px) {
     background-size: auto 100%;
-    padding-top: 10rem;
+    padding-top: 0;
   }
 
   .section17Wrapper {
@@ -812,7 +821,7 @@
     @media screen and (min-width: 1000px) {
       left: 57%;
       max-width: 43%;
-      padding: 1rem 0;
+      padding: 3rem 0;
       position: relative;
     }
 
@@ -821,7 +830,7 @@
     }
 
     .text {
-      margin-top: 10rem;
+      margin-top: 16rem;
 
       @media screen and (min-width: 1000px) {
         margin-top: 0;

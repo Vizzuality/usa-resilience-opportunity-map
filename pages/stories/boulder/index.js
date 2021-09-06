@@ -17,7 +17,8 @@ const Section1 = () => {
             <br />
             help themselves in the
             <br />
-            face of
+            face of 
+            {' '}
             <span className={styles.underline}>wildfire risk</span>
           </span>
         </div>
@@ -116,19 +117,23 @@ const Section5 = () => {
         </div>
         <div className={styles.contentRight}>
           <p>The impact of wildfires on Boulder’s residents ranges from:</p>
-          <ul className={styles.section4List}>
-            <li>Millions of dollars worth of property damage.</li>
-            <li>Destruction of homes.</li>
-            <li>
+          <ul>
+            <li className={cx(styles.listItem)}>
+              Millions of dollars worth of property damage.
+            </li>
+            <li className={cx(styles.listItem)}>Destruction of homes.</li>
+            <li className={cx(styles.listItem)}>
               Resourcing issues – firefighters deployed to fight wildfires away
               from their own districts
             </li>
-            <li>
+            <li className={cx(styles.listItem)}>
               Deteriorating air quality exacerbating respiratory conditions like
               asthma
             </li>
-            <li>Anxiety, depression and emotional distress</li>
-            <li>Death</li>
+            <li className={cx(styles.listItem)}>
+              Anxiety, depression and emotional distress
+            </li>
+            <li className={cx(styles.listItem)}>Death</li>
           </ul>
         </div>
       </div>
