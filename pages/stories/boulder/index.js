@@ -107,35 +107,33 @@ const Section4 = () => {
 const Section5 = () => {
   return (
     <div className={cx(styles.section5, styles.bgWhite, styles.textGray)}>
-      <div className={styles.container}>
-        <div className={styles.contentLeft}>
-          <img
-            src="/assets/images/stories/boulder/bo_section_5_image.png"
-            className={styles.section5Img}
-            alt=""
-          />
-        </div>
-        <div className={styles.contentRight}>
-          <p>The impact of wildfires on Boulder’s residents ranges from:</p>
-          <ul>
-            <li className={cx(styles.listItem)}>
-              Millions of dollars worth of property damage.
-            </li>
-            <li className={cx(styles.listItem)}>Destruction of homes.</li>
-            <li className={cx(styles.listItem)}>
-              Resourcing issues – firefighters deployed to fight wildfires away
-              from their own districts
-            </li>
-            <li className={cx(styles.listItem)}>
-              Deteriorating air quality exacerbating respiratory conditions like
-              asthma
-            </li>
-            <li className={cx(styles.listItem)}>
-              Anxiety, depression and emotional distress
-            </li>
-            <li className={cx(styles.listItem)}>Death</li>
-          </ul>
-        </div>
+      <div className={styles.contentLeft}>
+        <img
+          src="/assets/images/stories/boulder/bo_section_5_image.png"
+          className={styles.section5Img}
+          alt=""
+        />
+      </div>
+      <div className={cx(styles.contentRight, styles.container)}>
+        <p>The impact of wildfires on Boulder’s residents ranges from:</p>
+        <ul>
+          <li className={cx(styles.listItem)}>
+            Millions of dollars worth of property damage.
+          </li>
+          <li className={cx(styles.listItem)}>Destruction of homes.</li>
+          <li className={cx(styles.listItem)}>
+            Resourcing issues – firefighters deployed to fight wildfires away
+            from their own districts
+          </li>
+          <li className={cx(styles.listItem)}>
+            Deteriorating air quality exacerbating respiratory conditions like
+            asthma
+          </li>
+          <li className={cx(styles.listItem)}>
+            Anxiety, depression and emotional distress
+          </li>
+          <li className={cx(styles.listItem)}>Death</li>
+        </ul>
       </div>
     </div>
   );
