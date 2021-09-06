@@ -75,24 +75,27 @@ const Section3 = () => {
   );
 };
 
-// FALTA
 const Section4 = () => {
   return (
-    <div className={cx(styles.section6, styles.textGray, styles.bgWhite)}>
-      <div className={cx(styles.container)}>
-        <div className={cx(styles.section6Wrapper)}>
+    <div className={cx(styles.section4, styles.bgWhite, styles.textGray)}>
+      <div className={styles.container}>
+        <div className={styles.contentRight}>
+          <img
+            src="/assets/images/stories/boulder/bo_section_4_image.png"
+            className={styles.section4Img}
+            alt=""
+          />
+        </div>
+        <div className={styles.contentLeft}>
+          <h5 className={cx(styles.sectionTitle)}>
+            &quot;We needed a more professional organization&quot;
+          </h5>
           <p>
-            Expansion of tree canopy in Downtown Louisville by 15% to 33 % was
-            associated with reductions in estimated heat-related mortality
-            between 5% and 28%.
-          </p>
-          <p>
-            Louisville Metro&apos;s response to becoming the fastest growing
-            urban heat island was to invest in building the tree canopy, a
-            nature-based solution to rising temperatures. In response to the
-            Urban Tree Cover Assessment, they set up a nonprofit organization
-            that would be responsible solely for improving the urban tree
-            canopy: Trees Louisville.
+            Wildfires were once confined to the summer season but have become
+            more common in recent years. In 2020, firefighters in Boulder were
+            deployed to fight wildfires in December – a month typically free
+            from risk. Peak fire season had always been July, August and
+            September, not mid-winter.
           </p>
         </div>
       </div>
@@ -102,9 +105,42 @@ const Section4 = () => {
 
 const Section5 = () => {
   return (
-    <div className={cx(styles.section5, styles.textGray, styles.bgWhite)}>
+    <div className={cx(styles.section5, styles.bgWhite, styles.textGray)}>
+      <div className={styles.container}>
+        <div className={styles.contentLeft}>
+          <img
+            src="/assets/images/stories/boulder/bo_section_5_image.png"
+            className={styles.section5Img}
+            alt=""
+          />
+        </div>
+        <div className={styles.contentRight}>
+          <p>The impact of wildfires on Boulder’s residents ranges from:</p>
+          <ul className={styles.section4List}>
+            <li>Millions of dollars worth of property damage.</li>
+            <li>Destruction of homes.</li>
+            <li>
+              Resourcing issues – firefighters deployed to fight wildfires away
+              from their own districts
+            </li>
+            <li>
+              Deteriorating air quality exacerbating respiratory conditions like
+              asthma
+            </li>
+            <li>Anxiety, depression and emotional distress</li>
+            <li>Death</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Section6 = () => {
+  return (
+    <div className={cx(styles.section6, styles.textGray, styles.bgWhite)}>
       <div className={cx(styles.container)}>
-        <div className={cx(styles.section5Wrapper)}>
+        <div className={cx(styles.section6Wrapper)}>
           <p>
             Homes on the edges of the city are the worst impacted. These
             neighborhoods tend to be demographically diverse with higher
@@ -135,7 +171,7 @@ const Section5 = () => {
   );
 };
 
-const Section6 = () => {
+const Section7 = () => {
   return (
     <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
       <Quote
@@ -149,11 +185,11 @@ const Section6 = () => {
   );
 };
 
-const Section7 = () => {
+const Section8 = () => {
   return (
-    <div className={cx(styles.section7, styles.textGray, styles.bgWhite)}>
+    <div className={cx(styles.section8, styles.textGray, styles.bgWhite)}>
       <div className={cx(styles.container)}>
-        <div className={cx(styles.section7Wrapper)}>
+        <div className={cx(styles.section8Wrapper)}>
           <h5 className={cx(styles.sectionTitle)}>Wildfire Partners</h5>
           <p>
             The Wildfire Partners program brings together the private and public
@@ -172,11 +208,11 @@ const Section7 = () => {
   );
 };
 
-const Section8 = () => {
+const Section9 = () => {
   return (
-    <div className={cx(styles.section8, styles.textWhite, styles.bgGray)}>
+    <div className={cx(styles.section9, styles.textWhite, styles.bgGray)}>
       <div className={cx(styles.container)}>
-        <div className={cx(styles.section8Wrapper)}>
+        <div className={cx(styles.section9Wrapper)}>
           <p>
             Once the assessment is complete, the specialist, together with the
             homeowner, develops a customized checklist of adaptations to
@@ -206,11 +242,11 @@ const Section8 = () => {
   );
 };
 
-const Section9 = () => {
+const Section10 = () => {
   return (
-    <div className={cx(styles.section9, styles.textGray, styles.bgWhite)}>
+    <div className={cx(styles.section10, styles.textGray, styles.bgWhite)}>
       <div className={cx(styles.container)}>
-        <div className={cx(styles.section9Wrapper)}>
+        <div className={cx(styles.section10Wrapper)}>
           <p>
             If the property is located in a forest, Boulder County funds grants
             of up to $2000 to support tree thinning activity.
@@ -233,15 +269,15 @@ const Section9 = () => {
   );
 };
 
-const Section10 = () => {
+const Section11 = () => {
   return (
-    <div className={cx(styles.section10, styles.bgLightBlue, styles.textGray)}>
+    <div className={cx(styles.section11, styles.bgLightBlue, styles.textGray)}>
       <div className={cx(styles.container)}>
-        <div className={cx(styles.section10Aside)}>
+        <div className={cx(styles.section11Aside)}>
           It has worked with 2500 households and now brings between 400-500 new
           residents onboard each year.
         </div>
-        <div className={cx(styles.section10Wrapper)}>
+        <div className={cx(styles.section11Wrapper)}>
           <p>
             Perhaps the most important form of communication, however, is
             community interaction. Homeowners that have had a positive program
@@ -259,7 +295,7 @@ const Section10 = () => {
   );
 };
 
-const Section11 = () => {
+const Section12 = () => {
   return (
     <div className={cx(styles.bgSecondary, styles.quoteContainer)}>
       <Quote
@@ -275,9 +311,9 @@ const Section11 = () => {
   );
 };
 
-const Section12 = () => {
+const Section13 = () => {
   return (
-    <div className={styles.section12}>
+    <div className={styles.section13}>
       <div>
         <div className={cx(styles.col, styles.colRight)} />
         <div className={cx(styles.col, styles.colLeft)}>
@@ -314,12 +350,91 @@ const Section12 = () => {
   );
 };
 
+const Section14 = () => {
+  return (
+    <div className={cx(styles.section14, styles.textWhite, styles.bgGray)}>
+      <div className={cx(styles.container)}>
+        <div className={cx(styles.section14Wrapper)}>
+          <p>
+            From the curbside assessment, the Department color codes a home’s
+            risk to wildfire. The data collected is then used to populate a
+            digital map illustrating areas at higher risk.
+          </p>
+          <p>
+            Through community interaction, online webinars and information on
+            the Fire Department website, residents can view the map to determine
+            if their home is located in an at-risk area. They can use this
+            information to request a detailed wildfire home assessment.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Section15 = () => {
+  return (
+    <div className={cx(styles.bgWhite, styles.section15)}>
+      <h5 className={cx(styles.title)}>Golden Advice</h5>
+      <p className={cx(styles.text)}>
+        Both the Wildfire Partners program and the Wildfire Home
+        <br />
+        Assessment Project recognize the importance of working in
+        <br />
+        partnership with other agencies to create more resilient communities.
+      </p>
+    </div>
+  );
+};
+
 const Section16 = () => {
   return (
-    <div className={cx(styles.section16, styles.textGray, styles.bgWhite)}>
-      <div className={cx(styles.container)}>
-        <div className={cx(styles.section16Wrapper)}>
+    <div className={cx(styles.section16, styles.bgLightBlue)}>
+      <div>
+        <div className={cx(styles.col, styles.colRight)} />
+        <div className={cx(styles.col, styles.colLeft)}>
           <p>
+            With the invitation of the homeowner, the Boulder Fire Department
+            then takes a more detailed survey. This additional survey is
+            available to anyone who assesses their risk on the map and requests
+            more information. It is designed to move the homeowner from
+            awareness that they are at risk – the map’s purpose – to action.
+          </p>
+          <p>
+            It provides specific, tailored recommendations in a written report
+            that allow the homeowner to take interventions that mitigate their
+            fire risk. These include:
+          </p>
+          <ul>
+            <li className={cx(styles.listItem)}>
+              Removing debris in the garden/driveway.
+            </li>
+            <li className={cx(styles.listItem)}>Removing flammable fuels.</li>
+            <li className={cx(styles.listItem)}>Cleaning up guttering.</li>
+            <li className={cx(styles.listItem)}>Keeping lawns watered.</li>
+          </ul>
+          <p>
+            On occasion, larger interventions are required, such as tree removal
+            or driveway modifications to improve access. These home improvements
+            ensure risk reduction and wildfire prevention.
+          </p>
+          <p>
+            The curbside assessments also provide an opportunity to educate the
+            local community about fire risk through conversations with local
+            residents that are curious to see what’s happening in their area.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Section17 = () => {
+  return (
+    <div className={cx(styles.section17, styles.textGray, styles.bgWhite)}>
+      <div className={cx(styles.container)}>
+        <div className={cx(styles.section17Wrapper)}>
+          <p className={cx(styles.text)}>
             Following the assessment, the homeowner can contact the Fire
             Department with any follow-up queries or concerns by contacting
             their hotline. The Fire Department is active on social media, has a
@@ -333,9 +448,9 @@ const Section16 = () => {
   );
 };
 
-const Section17 = () => {
+const Section18 = () => {
   return (
-    <div className={cx(styles.bgSecondary, styles.quoteContainer)}>
+    <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
       <Quote
         text="Don't do it in a vacuum. Involve all your partners. The Fire
           Department, city management, insurance companies, homeowners
@@ -367,8 +482,12 @@ const Boulder = () => {
       <Section10 />
       <Section11 />
       <Section12 />
+      <Section13 />
+      <Section14 />
+      <Section15 />
       <Section16 />
       <Section17 />
+      <Section18 />
     </div>
   );
 };
