@@ -9,10 +9,6 @@
   margin: 0 auto;
   padding: 0 var(--container-padding);
   z-index: 5;
-
-  @media screen and (min-width: 900px) {
-    padding: 0;
-  }
 }
 
 .cols {
@@ -330,7 +326,11 @@
     width: 100%;
 
     @media screen and (min-width: 900px) {
-      max-width: 40rem;
+      max-width: 35rem;
+      margin-left: 45%;
+    }
+
+    @media screen and (min-width: 1200px) {
       margin-left: 55%;
     }
 
@@ -432,10 +432,10 @@
 .section9 {
   background-image: url("/assets/images/stories/boulder/bo_section_9_bg.png");
   background-position: top left;
-  background-size: auto 100vw;
+  background-size: auto 80vw;
   background-repeat: no-repeat;
   padding-bottom: 0;
-  padding-top: 90vw;
+  padding-top: 80vw;
 
   .listItem {
     list-style-position: inside;
@@ -473,11 +473,11 @@
 // Section 10
 .section10 {
   position: relative;
-  padding-bottom: 28rem;
+  padding-bottom: 36rem;
   padding-top: 4rem;
 
   @media screen and (min-width: 500px) {
-    padding-bottom: 60rem;
+    padding-bottom: 45rem;
   }
 
   @media screen and (min-width: 1000px) {
@@ -495,7 +495,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right -5rem bottom;
-    bottom: -6rem;
+    bottom: -7rem;
     content: '';
     height: 120.7%;
     right: 0;
@@ -504,13 +504,13 @@
     z-index: 5;
 
     @media screen and (min-width: 500px) {
-      background-position: right -10rem bottom;
-      bottom: -12rem;
+      background-position: right -7rem bottom;
+      bottom: -8rem;
     }
   
     @media screen and (min-width: 1000px) {
-      bottom: -6.9rem;
-      background-position: right -4rem top;
+      bottom: -7.3rem;
+      background-position: right -5rem top;
       width: 65vw;
     }
   }
