@@ -114,7 +114,7 @@ const Section4 = () => {
 
 const Section5 = () => {
   return (
-    <div className={cx(styles.section5, styles.textGray, styles.bgWite)}>
+    <div className={cx(styles.section5, styles.textGray, styles.bgWhite)}>
       <div className={cx(styles.container)}>
         <div className={cx(styles.section5Wrapper)}>
           <p>
@@ -146,7 +146,7 @@ const Section5 = () => {
 
 const Section6 = () => {
   return (
-    <div className={cx(styles.section6, styles.textGray, styles.bgWite)}>
+    <div className={cx(styles.section6, styles.textGray, styles.bgWhite)}>
       <div className={cx(styles.container)}>
         <div className={cx(styles.section6Wrapper)}>
           <p>
