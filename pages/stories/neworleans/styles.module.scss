@@ -1,34 +1,19 @@
-// Helpers
-
-$brand-red: #df6d60;
-$brand-gray: #4e5462;
-$brand-blue: #5db1b7;
-
-$text-light-on-gray: #c5cad0;
-
-$columns-mq-medium: 800px;
-$container-max-width: 1240px;
-
 .underlineRed {
-  border-bottom: 8px solid $brand-red;
+  border-bottom: 8px solid var(--brand-primary);
 }
 
 .container {
-  max-width: $container-max-width;
+  max-width: var(--container-max-width);
   padding: 0 var(--container-padding);
   margin: 0 auto;
   z-index: 5;
-
-  // @media screen and (min-width: 900px) {
-  //   padding: 0 var(--container-padding);
-  // }
 }
 
 .cols {
   display: flex;
   flex-direction: column;
 
-  @media screen and (min-width: $columns-mq-medium) {
+  @media screen and (min-width: var(--columns-mq-medium)) {
     flex-direction: row;
   }
 }
@@ -38,37 +23,37 @@ $container-max-width: 1240px;
   flex: 1;
   width: 100%;
 
-  @media screen and (min-width: $columns-mq-medium) {
+  @media screen and (min-width: var(--columns-mq-medium)) {
     width: 50%;
   }
 }
 
 .textWhite {
-  color: white;
+  color: var(--color-white);
 }
 
 .textGray {
-  color: $brand-gray;
+  color: var(--brand-gray);
 }
 
 .textRed {
-  color: $brand-red;
+  color: var(--brand-primary);
 }
 
 .bgWhite {
-  background-color: white;
+  background-color: var(--color-white);
 }
 
 .bgGray {
-  background-color: $brand-gray;
+  background-color: var(--brand-gray);
 }
 
-.bgRed {
-  background-color: $brand-red;
+.bgPrimary {
+  background-color: var(--brand-primary);
 }
 
-.bgBlue {
-  background-color: $brand-blue;
+.bgSecondary {
+  background-color: var(--brand-secondary);
 }
 
 .bold {
@@ -114,7 +99,7 @@ $container-max-width: 1240px;
 
 .section1 {
   position: relative;
-  background: url("/assets/images/neworleans/section1-bg.jpg");
+  background: url("/assets/images/stories/neworleans/no_section_1_bg.jpg");
   background-size: cover;
   background-position: center;
   padding: 2.8rem 0;
@@ -163,7 +148,7 @@ $container-max-width: 1240px;
       left: -2rem;
       width: #{$width}rem;
       height: #{($width*667)/1000}rem;
-      background-image: url("/assets/images/neworleans/section1-title-bg.png");
+      background-image: url("/assets/images/stories/wet_tree_leaf.png");
       background-size: cover;
       z-index: 1;
       transform: rotate(-17deg);
@@ -230,16 +215,16 @@ $container-max-width: 1240px;
 
   overflow: hidden;
   position: relative;
-  background: $brand-gray;
-  color: $text-light-on-gray;
+  background: var(--brand-gray);
+  color: var(--text-light-on-gray);
 
   .colLeft {
     padding: 1rem var(--container-padding);
 
     @media screen and (min-width: $section3-cols) {
       display: inline-block;
-      max-width: calc(#{$container-max-width} / 2);
-      margin-left: max(calc(calc(100% - #{$container-max-width}) / 2), 1px);
+      max-width: calc(var(--container-max-width) / 2);
+      margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
       padding: 3rem var(--container-padding);
     }
   }
@@ -263,7 +248,7 @@ $container-max-width: 1240px;
       left: 0;
       width: 100vw;
       height: 100%;
-      background-image: url("/assets/images/neworleans/section3-bg.jpg");
+      background-image: url("/assets/images/stories/neworleans/no_section_3_bg.jpg");
       background-size: cover;
       background-position: center;
       z-index: 0;
@@ -364,6 +349,13 @@ $container-max-width: 1240px;
   }
 }
 
+// Section 5
+
+.section5 {
+  color: white;
+  padding: 1rem var(--padding-quote);
+}
+
 // Section 6
 
 .section6 {
@@ -391,7 +383,7 @@ $container-max-width: 1240px;
       left: 0;
       width: 100vw;
       height: 100%;
-      background-image: url("/assets/images/neworleans/section6-bg.png");
+      background-image: url("/assets/images/stories/neworleans/no_section_6_bg.png");
       background-size: cover;
       background-position: bottom;
       z-index: 0;
@@ -407,7 +399,7 @@ $container-max-width: 1240px;
 
     @media screen and (min-width: $section6-cols) {
       display: inline-block;
-      max-width: calc(#{$container-max-width} / 2);
+      max-width: calc(var(--container-max-width) / 2);
       margin-left: 50vw;
       padding: 3rem var(--container-padding);
     }
@@ -417,7 +409,7 @@ $container-max-width: 1240px;
 // Section 7
 
 .section7 {
-  background-image: url("/assets/images/neworleans/section7-bg.png");
+  background-image: url("/assets/images/stories/neworleans/no_section_7_bg.png");
   background-position: bottom right;
   background-size: 100vw auto;
   background-repeat: no-repeat;
@@ -445,7 +437,7 @@ $container-max-width: 1240px;
 // Section 8
 
 .section8 {
-  background-image: url("/assets/images/neworleans/section8-bg.png");
+  background-image: url("/assets/images/stories/neworleans/no_section_8_bg.png");
   background-position: top left;
   background-size: auto 70vw;
   background-repeat: no-repeat;
@@ -646,7 +638,7 @@ $container-max-width: 1240px;
     height: 22vw;
     max-width: 260px;
     max-height: 260px;
-    background-image: url("/assets/images/neworleans/section11-image1.png");
+    background-image: url("/assets/images/stories/corsage_1.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right top;
@@ -661,7 +653,7 @@ $container-max-width: 1240px;
     height: 22vw;
     max-width: 260px;
     max-height: 260px;
-    background-image: url("/assets/images/neworleans/section11-image2.png");
+    background-image: url("/assets/images/stories/corsage_2.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right top;
@@ -671,7 +663,7 @@ $container-max-width: 1240px;
     font-family: "Ubuntu", sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
-    color: $brand-gray;
+    color: var(--brand-gray);
 
     @media screen and (min-width: 800px) {
       font-size: 2.2rem;
@@ -682,7 +674,7 @@ $container-max-width: 1240px;
     font-family: "Big Caslon", serif;
     font-size: 2rem;
     line-height: 1.2;
-    color: $brand-red;
+    color: var(--brand-primary);
     margin: 2rem auto 1rem;
     max-width: 35rem;
 
@@ -708,7 +700,7 @@ $container-max-width: 1240px;
     width: 100vw;
     height: 100%;
     max-width: 820px;
-    background-image: url("/assets/images/neworleans/section12-image1.png");
+    background-image: url("/assets/images/stories/neworleans/no_section_12_image_1.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right bottom;
@@ -722,7 +714,7 @@ $container-max-width: 1240px;
     right: 0;
     width: 26vw;
     height: 100%;
-    background-image: url("/assets/images/neworleans/section12-image2.png");
+    background-image: url("/assets/images/stories/neworleans/no_section_12_image_2.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right top;
@@ -775,7 +767,7 @@ $container-max-width: 1240px;
 // Section 13
 
 .section13 {
-  background-image: url("/assets/images/neworleans/section13-image1.png");
+  background-image: url("/assets/images/stories/neworleans/no_section_13_image_1.png");
   background-position: bottom left;
   background-size: auto 70vw;
   background-repeat: no-repeat;
@@ -818,7 +810,7 @@ $container-max-width: 1240px;
     width: 100vw;
     height: 100%;
     max-width: 400px;
-    background-image: url("/assets/images/neworleans/section14-bg.png");
+    background-image: url("/assets/images/stories/neworleans/no_section_14_bg.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right bottom;
@@ -858,4 +850,10 @@ $container-max-width: 1240px;
       max-width: 50%;
     }
   }
+}
+
+// Section 15
+.section15 {
+  color: white;
+  padding: 1rem var(--padding-quote);
 }
