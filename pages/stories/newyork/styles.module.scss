@@ -275,10 +275,12 @@
   .contentLeft {
     position: relative;
     z-index: 2;
+    margin-top: 4rem;
     max-width: 40rem;
 
     @media screen and (min-width: 900px) {
       margin-bottom: 4rem;
+      margin-top: 0;
       width: 60%;
     }
 
@@ -387,9 +389,10 @@
 
   .contentLeft {
     position: relative;
-    z-index: 2;
+    margin-top: 4rem;
     max-width: 40rem;
-
+    z-index: 2;
+   
     @media screen and (min-width: 900px) {
       margin-bottom: 4rem;
       width: 60%;
@@ -506,10 +509,12 @@
   .contentLeft {
     position: relative;
     z-index: 2;
-    max-width: 40rem;
+    margin-top: 4rem;
+    max-width: 50rem;
 
     @media screen and (min-width: 900px) {
       margin-bottom: 4rem;
+      margin-top: 0;
       width: 60%;
     }
   }
@@ -517,8 +522,8 @@
   .contentRight {
     position: relative;
     z-index: 1;
-    margin-right: -1rem;
-
+    width: 100vw;
+  
     @media screen and (min-width: 900px) {
       position: absolute;
       display: flex;
@@ -553,12 +558,14 @@
   }
 
   .contentLeft {
+    margin-top: 4rem;
+    max-width: 40rem;
     position: relative;
     z-index: 2;
-    max-width: 40rem;
 
     @media screen and (min-width: 900px) {
       margin-bottom: 4rem;
+      margin-top: 0;
       width: 60%;
     }
   }
@@ -647,7 +654,7 @@
 // Section 14
 .section14 {
   position: relative;
-  padding-bottom: 36rem;
+  padding-bottom: 28rem;
   padding-top: 4rem;
 
   @media screen and (min-width: 500px) {
@@ -673,18 +680,19 @@
     background-image: url("/assets/images/stories/newyork/ny_section_14_bg.png");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: right -5rem bottom;
-    bottom: -7rem;
+    background-position: right bottom 0;
+    bottom: -0.8rem;
     content: '';
-    height: 120.7%;
+    height: 110vh;
     right: 0;
     position: absolute;
-    width: 120vw;
+    width: 100vw;
     z-index: 5;
 
     @media screen and (min-width: 500px) {
       background-position: right bottom 0;
       bottom: 0;
+      width: 120vw;
     }
   
     @media screen and (min-width: 1000px) {
@@ -732,6 +740,7 @@
     background-repeat: no-repeat;
     background-position: right top -3vw;
     content: '';
+    display: none;
     height: 22vw;
     max-height: 360px;
     max-width: 360px;
@@ -739,6 +748,10 @@
     right: 0;
     top: 0;
     width: 22vw;
+
+    @media screen and (min-width: 500px) {
+      display: initial;
+    }
   }
 
   &::after {
@@ -748,30 +761,42 @@
     background-position: left -3vh bottom 0;
     bottom: -4.85rem;
     content: '';
+    display: none;
     height: 80vh;
     left: 0;
     max-height: 360px;
     max-width: 360px;
     position: absolute;
     width: 22vw;
+
+    @media screen and (min-width: 500px) {
+      display: initial;
+    }
   }
 
   .section16Wrapper {
-    margin-left: 6rem;
     text-align: left;
+
     @media screen and (min-width: 1000px) {
+      margin-left: 3rem;
+    }
+    
+    @media screen and (min-width: 1000px) {
+      margin-left: 6rem;
       max-width: 50%;
     }
   }
 
   .section16Aside {
-    position: relative;
     font-family: "Big Caslon", serif;
     font-size: 2rem;
     line-height: 1.2;
+    margin-bottom: 4rem;
+    position: relative;
     text-align: left;
 
     @media screen and (min-width: 500px) {
+      margin-bottom: 0;
       max-width: 80vw;
     }
 
@@ -784,11 +809,11 @@
     .quoteAuthor {
       display: flex;
       font-family: "Oxygen", sans-serif;
-      margin: 3rem auto 0;
+      margin: 3rem auto;
       max-width: 18rem;
-      left: 20%;
+      left: 10%;
       position: relative;
-      width: 70%;
+      width: 90%;
 
       @media screen and (min-width: 800px) {
         margin: 4rem 0 0 0;

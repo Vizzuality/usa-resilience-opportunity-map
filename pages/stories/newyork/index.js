@@ -252,14 +252,14 @@ const Section9 = () => {
 const Section10 = () => {
   return (
     <div className={cx(styles.section10, styles.bgWhite, styles.textGray)}>
+      <div className={styles.contentRight}>
+        <img
+          src="/assets/images/stories/newyork/ny_section_10_bg.png"
+          className={styles.section10Img}
+          alt=""
+        />
+      </div>
       <div className={styles.container}>
-        <div className={styles.contentRight}>
-          <img
-            src="/assets/images/stories/newyork/ny_section_10_bg.png"
-            className={styles.section10Img}
-            alt=""
-          />
-        </div>
         <div className={styles.contentLeft}>
           <p>
             Buddies are trained on the impact of extreme heat. They also run
@@ -302,14 +302,14 @@ const Section11 = () => {
 const Section12 = () => {
   return (
     <div className={cx(styles.section12, styles.bgWhite, styles.textGray)}>
+      <div className={styles.contentRight}>
+        <img
+          src="/assets/images/stories/newyork/ny_section_12_bg.png"
+          className={styles.section12Img}
+          alt=""
+        />
+      </div>
       <div className={styles.container}>
-        <div className={styles.contentRight}>
-          <img
-            src="/assets/images/stories/newyork/ny_section_12_bg.png"
-            className={styles.section12Img}
-            alt=""
-          />
-        </div>
         <div className={styles.contentLeft}>
           <h5 className={cx(styles.sectionTitle)}>Tree Cover</h5>
           <p>
