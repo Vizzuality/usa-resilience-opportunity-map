@@ -355,12 +355,51 @@ const Section13 = () => {
           do not need to apply for the intervention – the city comes to them.
         </p>
         <p>
-          Because the heat vulnerability index is used to identify spaces for
-          the intervention, the city proactively reaches out to building owners
-          and residents to see if they are interested in the program. As the
-          program is focused on social housing and community properties, tenants
-          do not need to apply for the intervention – the city comes to them.
+          Critical social infrastructure is prioritized, and the city funds the
+          intervention. Working with the New York City Small Business Service,
+          NYC CoolRoofs Program also trains unemployed and under-employed people
+          through the HOPE Program on how to deliver the intervention, providing
+          new green industry job opportunities. The program recruits between
+          50-70 people annually.
         </p>
+      </div>
+    </div>
+  );
+};
+
+const Section14 = () => {
+  return (
+    <div className={cx(styles.section14, styles.textGray, styles.bgLightBlue)}>
+      <div className={cx(styles.container)}>
+        <div className={cx(styles.section14Wrapper)}>
+          <div>
+            <h5 className={cx(styles.sectionTitle)}>Cooling Centers</h5>
+            <p>
+              Every year, New York operates 100 cooling centers where residents
+              struggling with extreme heat can find relief in a cool space. This
+              might be in a community center with air-conditioning, or simply a
+              shaded area with running water such as a fountain.
+            </p>
+            <p>
+              The Mayor’s office has worked to improve signage to the cooling
+              centers in partnership with New York City Emergency Management to
+              inform community members about places they can cool down during
+              heatwaves. The city is also working with Emergency Management to
+              deliver training on heat preparedness.
+            </p>
+          </div>
+          <div className={cx(styles.paragraph)}>
+            <h5 className={cx(styles.sectionTitle)}>Get Cool NYC</h5>
+            <p>
+              The coronavirus crisis meant more vulnerable people were trapped
+              indoors, often in housing not designed for extreme heat. In
+              response, the city ran an air conditioning program, providing air
+              conditioners to 74,000 low-income seniors in 2020. The Mayor’s
+              office worked with local community groups to identify those
+              individuals most in need.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -452,6 +491,7 @@ const NewYork = () => {
       <Section11 />
       <Section12 />
       <Section13 />
+      <Section14 />
       <Section15 />
       <Section16 />
       <Section17 />

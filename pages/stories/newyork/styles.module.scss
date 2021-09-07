@@ -632,6 +632,57 @@
   }
 }
 
+// Section 14
+.section14 {
+  position: relative;
+  padding-bottom: 36rem;
+  padding-top: 4rem;
+
+  @media screen and (min-width: 500px) {
+    padding-bottom: 45rem;
+  }
+
+  @media screen and (min-width: 1000px) {
+    padding: 3rem var(--container-padding);
+  }
+
+  .section14Wrapper {
+    padding-top: 1rem;
+    @media screen and (min-width: 1000px) {
+      max-width: 50%;
+    }
+
+    .paragraph {
+      padding-top: 2rem;
+    }
+  }
+  
+  &::before {
+    background-image: url("/assets/images/stories/newyork/ny_section_14_bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right -5rem bottom;
+    bottom: -7rem;
+    content: '';
+    height: 120.7%;
+    right: 0;
+    position: absolute;
+    width: 120vw;
+    z-index: 5;
+
+    @media screen and (min-width: 500px) {
+      background-position: right bottom 0;
+      bottom: 0;
+    }
+  
+    @media screen and (min-width: 1000px) {
+      background-position: right bottom;
+      bottom: -4vh;
+      height: 103.6%;
+    }
+  }
+}
+
 // Section16
 .section16 {
   padding: 6rem var(--padding-quote);
