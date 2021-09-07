@@ -363,7 +363,13 @@
 
     .section5Img {
       @media screen and (min-width: 900px) {
-        height: 100%;
+        align-self: flex-end;
+        height: 80%;
+      }
+
+      @media screen and (min-width: 1400px) {
+        align-self: flex-end;
+        height: 90%;
       }
     }
   }
@@ -418,7 +424,11 @@
 
     .section7Img {
       @media screen and (min-width: 900px) {
-        height: 100%;
+        align-self: flex-start;
+      }
+
+      @media screen and (min-width: 1400px) {
+        height: 80%;
       }
     }
   }
@@ -428,10 +438,6 @@
 .section8 {
   position: relative;
   overflow: hidden;
-
-  @media screen and (min-width: 900px) {
-    padding: 4rem 0 0 0;
-  }
 
   .contentRight {
     margin: 4rem 0;
@@ -462,11 +468,10 @@
     @media screen and (min-width: 900px) {
       position: absolute;
       display: flex;
-      top: 0;
+      bottom: 0;
       left: 0;
-      width: 40%;
+      width: 45%;
       justify-content: flex-end;
-      margin-left: 0;
     }
 
     @media screen and (min-width: 1240px) {
@@ -476,7 +481,13 @@
 
     .section8Img {
       @media screen and (min-width: 900px) {
-        height: 100%;
+        align-self: flex-end;
+        height: 40vh;
+      }
+
+      @media screen and (min-width: 1200px) {
+        align-self: flex-end;
+        height: 65vh;
       }
     }
   }
@@ -626,7 +637,8 @@
 
     .section13Img {
       @media screen and (min-width: 900px) {
-        height: 100%;
+        align-self: flex-end;
+        height: 90vh;
       }
     }
   }
@@ -679,6 +691,12 @@
       background-position: right bottom;
       bottom: -4vh;
       height: 103.6%;
+    }
+
+    @media screen and (min-width: 1400px) {
+      background-position: right bottom;
+      bottom: -3.5vh;
+      height: 103.2%;
     }
   }
 }
