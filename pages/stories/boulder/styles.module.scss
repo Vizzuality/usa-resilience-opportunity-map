@@ -88,9 +88,14 @@
     line-height: 1.5;
     margin: 1rem 0;
 
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 500px) {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    @media screen and (min-width: 1200px) {
       font-size: 1.3rem;
-      margin: 2rem 0;
+      line-height: 1.5;
     }
   }
 
@@ -99,8 +104,14 @@
       font-family: "Oxygen", sans-serif;
       font-size: 1.1rem;
 
-      @media screen and (min-width: 600px) {
+      @media screen and (min-width: 500px) {
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      @media screen and (min-width: 1200px) {
         font-size: 1.3rem;
+        line-height: 1.5;
       }
     }
   }
@@ -386,13 +397,12 @@
 
   @media screen and (min-width: 1000px) {
     background-size: 61% auto;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem 0;
   }
 
   @media screen and (min-width: 1400px) {
     background-size: auto 100%;
-    padding-top: 4rem;
+    padding: 4rem 0;
   }
 
   .section6Wrapper {
@@ -424,6 +434,10 @@
 
   .section8Wrapper {
     @media screen and (min-width: 1000px) {
+      max-width: 40%;
+    }
+
+    @media screen and (min-width: 1400px) {
       max-width: 50%;
     }
   }
@@ -445,14 +459,14 @@
   }
 
   @media screen and (min-width: 1000px) {
-    background-size: auto 60vw;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    background-size: auto 40vw;
+    background-position: bottom left;
+    padding: 2rem 0;
   }
 
   @media screen and (min-width: 1400px) {
     background-size: auto 100%;
-    padding-top: 5rem;
+    padding: 4rem 0;
   }
 
   .section9Wrapper {
@@ -482,7 +496,7 @@
   }
 
   @media screen and (min-width: 1000px) {
-    padding: 3rem var(--container-padding);
+    padding: 4rem var(--container-padding);
   }
 
   .section10Wrapper {
@@ -510,7 +524,7 @@
     }
   
     @media screen and (min-width: 1000px) {
-      bottom: -7.3rem;
+      bottom: -20.7%;
       background-position: right -5rem top;
       width: 65vw;
     }
@@ -561,6 +575,10 @@
       max-width: none;
       padding-right: 13vw;
       padding-left: 5vw;
+      font-size: 2.3rem;
+    }
+
+    @media screen and (min-width: 1400px) {
       font-size: 2.8rem;
     }
   }
@@ -579,16 +597,11 @@
     position: absolute;
     transform: rotate(-20deg);
     width: 32vw;
+    display: none;
 
-    @media screen and (min-width: 500px) {
-      bottom: -8vw;
-      height: 30vw;
-      left: -2vw;
-      width: 30vw;
-    }
-
-    @media screen and (min-width: 1000px) {
+    @media screen and (min-width: 1400px) {
       bottom: -2vw;
+      display: inherit;
       height: 22vw;
       left: -1vw;
       width: 22vw;
@@ -615,9 +628,14 @@
 
     @media screen and (min-width: $section13-cols) {
       display: inline-block;
-      max-width: calc(var(--container-max-width) / 2);
+      max-width: calc(var(--container-max-width) / 2.5);
       margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
       padding: 3rem var(--container-padding);
+    }
+
+    @media screen and (min-width: 1400px) {
+      max-width: calc(var(--container-max-width) / 2);
+      padding: 4rem var(--container-padding);
     }
   }
 
@@ -647,6 +665,10 @@
       z-index: 0;
 
       @media screen and (min-width: $section13-cols) {
+        width: 45vw;
+      }
+
+      @media screen and (min-width: 1400px) {
         width: 35vw;
       }
     }
@@ -662,15 +684,18 @@
   padding-bottom: 1rem;
   padding-top: 85vw;
 
+  @media screen and (min-width: 500px) {
+    background-size: auto 30vw;
+  }
+
   @media screen and (min-width: 1000px) {
-    background-size: auto 60vw;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    background-size: auto 40vw;
+    padding: 2rem 0;
   }
 
   @media screen and (min-width: 1400px) {
     background-size: auto 100%;
-    padding-top: 5rem;
+    padding: 4rem 0;
   }
 
   .section14Wrapper {
@@ -741,6 +766,11 @@
     left: 0;
     position: absolute;
     width: 25vw;
+
+    @media screen and (min-width: 1000px) {
+      height: 70%;
+      width: 15vw;
+    }
   }
 }
 
@@ -763,9 +793,13 @@
 
     @media screen and (min-width: $section16-cols) {
       display: inline-block;
-      max-width: calc(var(--container-max-width) / 2);
+      max-width: calc(var(--container-max-width) / 2.5);
       margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
       padding: 3rem var(--container-padding);
+    }
+
+    @media screen and (min-width: 1400px) {
+      max-width: calc(var(--container-max-width) / 2);
     }
   }
 
