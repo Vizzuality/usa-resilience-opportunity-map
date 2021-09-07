@@ -15,7 +15,7 @@ const STORIES = [
     description:
       'Turning a mixed-income neighbourhood into a model solution for stormwater flooding',
     buttonText: 'Discover',
-    image: '/assets/images/stories/neworleans/no_section_1_image.png',
+    image: '/assets/images/stories/neworleans/no_section_14_bg.png',
     thumb: '/assets/images/stories/neworleans/no_section_1_bg.jpg',
     href: '/stories/neworleans',
   },
