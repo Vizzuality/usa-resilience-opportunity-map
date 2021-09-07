@@ -91,7 +91,6 @@
     @media screen and (min-width: 500px) {
       font-size: 1rem;
       line-height: 1.8;
-      margin: 2rem 0;
     }
 
     @media screen and (min-width: 1200px) {
@@ -105,8 +104,14 @@
       font-family: "Oxygen", sans-serif;
       font-size: 1.1rem;
 
-      @media screen and (min-width: 600px) {
+      @media screen and (min-width: 500px) {
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      @media screen and (min-width: 1200px) {
         font-size: 1.3rem;
+        line-height: 1.5;
       }
     }
   }
@@ -148,20 +153,6 @@
 
   .container {
     position: relative;
-  }
-
-  .treeLeafCollage {
-    bottom: -8.6rem;
-    display: none;
-    height: 70%;
-    left: 56.8%;
-    position: absolute;
-    width: 70%;
-    z-index: 99;
-
-    @media screen and (min-width: 1000px) {
-      display: initial;
-    }
   }
 
   @media screen and (min-width: 900px) {
@@ -751,8 +742,7 @@
 
 // Section16
 .section16 {
-  padding: 6rem var(--padding-quote);
-  padding-bottom: 24vw;
+  padding: 4rem var(--padding-quote);
   position: relative;
   z-index: 1;
 
@@ -789,7 +779,7 @@
     top: 0;
     width: 22vw;
 
-    @media screen and (min-width: 500px) {
+    @media screen and (min-width: 1000px) {
       display: initial;
     }
   }
@@ -808,12 +798,7 @@
     position: absolute;
     width: 22vw;
 
-    @media screen and (min-width: 500px) {
-      bottom: -3.85rem;
-      display: initial;
-    }
-
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1000px) {
       bottom: -4.85rem;
       display: initial;
     }
@@ -822,8 +807,8 @@
   .section16Wrapper {
     text-align: left;
 
-    @media screen and (min-width: 1000px) {
-      margin-left: 3rem;
+    @media screen and (min-width: 500px) {
+      margin-top: 4rem;
     }
     
     @media screen and (min-width: 1000px) {

@@ -9,10 +9,6 @@
   margin: 0 auto;
   padding: 0 var(--container-padding);
   z-index: 5;
-
-  @media screen and (min-width: 900px) {
-    padding: 0;
-  }
 }
 
 .cols {
@@ -113,8 +109,10 @@
 }
 
 // Section1
+// Section1
 .section1 {
   $section1-cols: 1000px;
+  
   background: url("/assets/images/stories/louisville/lv_section_1_image.png");
   background-size: cover;
   background-position: center;
@@ -132,7 +130,7 @@
     z-index: 5;
 
     @media screen and (min-width: $section1-cols) {
-      bottom: -3%;
+      bottom: 0;
       display: initial;
       height: 100%;
       right: 0;
@@ -142,20 +140,6 @@
 
   .container {
     position: relative;
-  }
-
-  .treeLeafCollage {
-    bottom: -8.6rem;
-    display: none;
-    height: 70%;
-    left: 56.8%;
-    position: absolute;
-    width: 70%;
-    z-index: 99;
-
-    @media screen and (min-width: 1000px) {
-      display: initial;
-    }
   }
 
   @media screen and (min-width: 900px) {
@@ -293,11 +277,11 @@
 // Section 6
 .section6 {
   background-image: url("/assets/images/stories/louisville/lv_section_6_bg.png");
-  background-position: bottom -0.7rem left;
-  background-size: 100vw auto;
+  background-position: bottom -0.9rem left;
+  background-size: contain;
   background-repeat: no-repeat;
   padding-top: 2rem;
-  padding-bottom: calc(100vw - 120px);
+  padding-bottom: calc(100vw - 150px);
 
   @media screen and (min-width: 1000px) {
     background-size: 61% auto;
@@ -483,7 +467,7 @@
   }
 
   .colRight {
-    min-height: 45rem;
+    min-height: 38rem;
     overflow: hidden;
     position: relative;
 
@@ -519,7 +503,7 @@
 // Section 11
 .section11 {
   padding-bottom: 1rem;
-  padding-top: 100vw;
+  padding-top: 90vw;
   position: relative;
 
   &::after {
