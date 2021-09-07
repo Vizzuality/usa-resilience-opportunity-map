@@ -84,9 +84,14 @@
     line-height: 1.5;
     margin: 1rem 0;
 
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 500px) {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    @media screen and (min-width: 1200px) {
       font-size: 1.3rem;
-      margin: 2rem 0;
+      line-height: 1.5;
     }
   }
 
@@ -95,8 +100,14 @@
       font-family: "Oxygen", sans-serif;
       font-size: 1.1rem;
 
-      @media screen and (min-width: 600px) {
+      @media screen and (min-width: 500px) {
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      @media screen and (min-width: 1200px) {
         font-size: 1.3rem;
+        line-height: 1.5;
       }
     }
   }
@@ -256,6 +267,11 @@
   padding-top: 1rem;
   padding-bottom: calc(100vw - 70px);
 
+  @media screen and (min-width: 500px) {
+    padding-top: 4rem;
+    padding-bottom: 40rem;
+  }
+
   @media screen and (min-width: 1000px) {
     background-size: 61% auto;
     padding-top: 2rem;
@@ -282,6 +298,10 @@
   background-repeat: no-repeat;
   padding-top: 2rem;
   padding-bottom: calc(100vw - 150px);
+
+  @media screen and (min-width: 500px) {
+    padding-bottom: 40rem;
+  }
 
   @media screen and (min-width: 1000px) {
     background-size: 61% auto;
@@ -519,6 +539,10 @@
     width: 100vw;
     z-index: 3;
 
+    @media screen and (min-width: 500px) {
+      height: 65%;
+    }
+
     @media screen and (min-width: 1000px) {
       bottom: -1.3rem;
       height: 103%;
@@ -570,6 +594,11 @@
       list-style-position: inside;
       list-style-type: initial;
       margin-bottom: 2rem;
+    }
+
+    @media screen and (min-width: 500px) {
+      max-width: 100vw;
+      padding: 4rem var(--container-padding);
     }
 
     @media screen and (min-width: $section3-cols) {
