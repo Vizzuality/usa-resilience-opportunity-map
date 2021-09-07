@@ -47,7 +47,7 @@ const STORIES = [
     image: 'img',
     thumb:
       'https://play-lh.googleusercontent.com/F565AH7FQeC90yy8V1Gykho2GpXRrNO5ruoX86M3LP_1yUqUMRDAZpj1SKGU_AO4mNee=s180',
-    href: '/stories#',
+    href: '/stories/newyork',
   },
   {
     title: 'Charlotte',
