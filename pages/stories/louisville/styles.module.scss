@@ -120,7 +120,6 @@
 }
 
 // Section1
-// Section1
 .section1 {
   $section1-cols: 1000px;
   
@@ -141,11 +140,11 @@
     z-index: 5;
 
     @media screen and (min-width: $section1-cols) {
-      bottom: 0;
+      bottom: -2.7%;
       display: initial;
       height: 100%;
       right: 0;
-      width: 50vw;
+      width: 45vw;
     }
   }
 
