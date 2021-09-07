@@ -162,7 +162,7 @@ const Section6 = () => {
         text="The heat vulnerability index is a data tool grounded in climate equity as a way to make investments."
         image="/assets/images/stories/newyork/ny_people_daphne_lundi.jpeg"
         authorName="Daphne Lundi"
-        authorPosition="Deputy Director of Social Resikience"
+        authorPosition="Deputy Director of Social Resilience"
         authorCompany="New York City Mayor´s Office"
       />
     </div>
@@ -249,6 +249,40 @@ const Section9 = () => {
   );
 };
 
+const Section10 = () => {
+  return (
+    <div className={cx(styles.section10, styles.bgWhite, styles.textGray)}>
+      <div className={styles.container}>
+        <div className={styles.contentRight}>
+          <img
+            src="/assets/images/stories/newyork/ny_section_10_bg.png"
+            className={styles.section10Img}
+            alt=""
+          />
+        </div>
+        <div className={styles.contentLeft}>
+          <p>
+            Buddies are trained on the impact of extreme heat. They also run
+            cooling stations in the neighborhood that operate, not only as
+            places of rest and sanctuary but as outreach opportunities to direct
+            residents to other services they may need to access. The cooling
+            stations have also become hubs for public art and performance.
+          </p>
+          <p>
+            Many of the Be A Buddy systems have reached thousands of New York
+            residents ahead of heatwave events, helping to prepare them for a
+            potential emergency.
+          </p>
+          <p>
+            As a result, the intervention has helped increase social cohesion as
+            well as tackle extreme heat.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Section11 = () => {
   return (
     <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
@@ -265,6 +299,73 @@ const Section11 = () => {
   );
 };
 
+const Section12 = () => {
+  return (
+    <div className={cx(styles.section12, styles.bgWhite, styles.textGray)}>
+      <div className={styles.container}>
+        <div className={styles.contentRight}>
+          <img
+            src="/assets/images/stories/newyork/ny_section_12_bg.png"
+            className={styles.section12Img}
+            alt=""
+          />
+        </div>
+        <div className={styles.contentLeft}>
+          <h5 className={cx(styles.sectionTitle)}>Tree Cover</h5>
+          <p>
+            The heat vulnerability index helps identify neighborhoods in New
+            York that historically lack tree cover – neighborhoods that tend to
+            be low-income and predominantly Black communities. The city
+            allocated $100 million to planting street trees and increasing tree
+            cover in public parks to create more shade that can, in turn, tackle
+            extreme heat. Since 2017, the program has planted 6,000 trees. While
+            it will take several years to see the impact of increasing tree
+            canopy to mitigate extreme heat impacts, the city recognized that
+            investing in tree planting now will reap benefits over time.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Section13 = () => {
+  return (
+    <div className={cx(styles.section13, styles.bgGray, styles.textWhite)}>
+      <div className={styles.contentLeft}>
+        <img
+          src="/assets/images/stories/newyork/ny_section_13_bg.png"
+          className={styles.section13Img}
+          alt=""
+        />
+      </div>
+      <div className={cx(styles.contentRight, styles.container)}>
+        <h5 className={cx(styles.sectionTitle)}>NYC CoolRoofs Program</h5>
+        <p>
+          Using the index to identify heat vulnerable neighborhoods, NYC
+          CoolRoofs offers a service to affordable housing, public housing, and
+          community centers to coat those spaces with white paint. This creates
+          a thermal barrier and lowers a building’s temperature.
+        </p>
+        <p>
+          Because the heat vulnerability index is used to identify spaces for
+          the intervention, the city proactively reaches out to building owners
+          and residents to see if they are interested in the program. As the
+          program is focused on social housing and community properties, tenants
+          do not need to apply for the intervention – the city comes to them.
+        </p>
+        <p>
+          Because the heat vulnerability index is used to identify spaces for
+          the intervention, the city proactively reaches out to building owners
+          and residents to see if they are interested in the program. As the
+          program is focused on social housing and community properties, tenants
+          do not need to apply for the intervention – the city comes to them.
+        </p>
+      </div>
+    </div>
+  );
+};
+
 const Section15 = () => {
   return (
     <div className={cx(styles.bgSecondary, styles.quoteContainer)}>
@@ -275,9 +376,46 @@ const Section15 = () => {
         reach people."
         image="/assets/images/stories/newyork/ny_people_daphne_lundi.jpeg"
         authorName="Daphne Lundi"
-        authorPosition="Deputy Director of Social Resikience"
+        authorPosition="Deputy Director of Social Resilience"
         authorCompany="New York City Mayor´s Office"
       />
+    </div>
+  );
+};
+
+const Section16 = () => {
+  return (
+    <div className={cx(styles.bgWhite, styles.textGray, styles.section16)}>
+      <div className={cx(styles.container)}>
+        <div className={cx(styles.section16Aside)}>
+          &quot;Understand the social infrastructure you are working with.&quot;
+          <div className={cx(styles.quoteAuthor)}>
+            <div className={cx(styles.quoteImage)}>
+              <img
+                src="/assets/images/stories/newyork/ny_people_daphne_lundi.jpeg"
+                alt="Daphne Lundi"
+              />
+            </div>
+            <div className={cx(styles.quoteInfo)}>
+              <div className={styles.quoteAuthorName}>Daphne Lundi</div>
+              <div className={styles.quoteAuthorPosition}>
+                Deputy Director of Social Resilience
+              </div>
+              <div className={styles.quoteAuthorCompany}>
+                New York City Mayor´s Office
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={cx(styles.section16Wrapper)}>
+          <p>
+            Key to Cool Neighborhoods NYC’s success has been working with both
+            physical and social infrastructure in the city to identify
+            individuals in need, and tap into and support existing initiatives
+            that are trusted and recognized by local communities.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
@@ -310,8 +448,12 @@ const NewYork = () => {
       <Section7 />
       <Section8 />
       <Section9 />
+      <Section10 />
       <Section11 />
+      <Section12 />
+      <Section13 />
       <Section15 />
+      <Section16 />
       <Section17 />
     </div>
   );
