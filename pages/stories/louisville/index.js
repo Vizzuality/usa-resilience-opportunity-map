@@ -381,7 +381,7 @@ const Section13 = () => {
     <div className={cx(styles.bgSecondary, styles.quoteContainer)}>
       <Quote
         text="Trees and green infrastructure aren’t a luxury. They’re an invaluable asset to this community."
-        image="/assets/images/stories/louisville/people_cindi_sullivan.jpeg"
+        image="/assets/images/stories/louisville/lv_people_cindi_sullivan.jpeg"
         authorName="Cindi Sullivan"
         authorPosition="Executive Director"
         authorCompany="Trees Louisville"

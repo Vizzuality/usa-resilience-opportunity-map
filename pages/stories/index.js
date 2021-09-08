@@ -15,18 +15,16 @@ const STORIES = [
     description:
       'Turning a mixed-income neighbourhood into a model solution for stormwater flooding',
     buttonText: 'Discover',
-    image: 'img',
-    thumb:
-      'https://play-lh.googleusercontent.com/F565AH7FQeC90yy8V1Gykho2GpXRrNO5ruoX86M3LP_1yUqUMRDAZpj1SKGU_AO4mNee=s180',
+    image: '/assets/images/stories/neworleans/no_section_14_bg.png',
+    thumb: '/assets/images/stories/neworleans/no_section_1_bg.jpg',
     href: '/stories/neworleans',
   },
   {
     title: 'Louisville',
     description: 'Lorem ipsum',
     buttonText: 'Discover',
-    image: 'img',
-    thumb:
-      'https://play-lh.googleusercontent.com/F565AH7FQeC90yy8V1Gykho2GpXRrNO5ruoX86M3LP_1yUqUMRDAZpj1SKGU_AO4mNee=s180',
+    image: '/assets/images/stories/louisville/lv_section_1_collage.png',
+    thumb: '/assets/images/stories/louisville/lv_section_1_image.png',
     href: '/stories/louisville',
   },
   {
@@ -34,25 +32,23 @@ const STORIES = [
     description:
       'Turning a mixed-income neighbourhood into a model solution for stormwater flooding',
     buttonText: 'Discover',
-    image: 'img',
-    thumb:
-      'https://play-lh.googleusercontent.com/F565AH7FQeC90yy8V1Gykho2GpXRrNO5ruoX86M3LP_1yUqUMRDAZpj1SKGU_AO4mNee=s180',
+    image: '/assets/images/stories/boulder/bo_section_1_collage.png',
+    thumb: '/assets/images/stories/boulder/bo_section_1_bg.png',
     href: '/stories/boulder',
   },
   {
     title: 'New York',
     description:
-      'Turning a mixed-income neighbourhood into a model solution for stormwater flooding. Turning a mixed-income neighbourhood into a model solution for stormwater flooding. Turning a mixed-income neighbourhood into a model solution for stormwater flooding. Turning a mixed-income neighbourhood into a model solution for stormwater flooding.',
+      'Turning a mixed-income neighbourhood into a model solution for stormwater flooding.',
     buttonText: 'Discover',
-    image: 'img',
-    thumb:
-      'https://play-lh.googleusercontent.com/F565AH7FQeC90yy8V1Gykho2GpXRrNO5ruoX86M3LP_1yUqUMRDAZpj1SKGU_AO4mNee=s180',
-    href: '/stories#',
+    image: '/assets/images/stories/newyork/ny_section_1_collage.png',
+    thumb: '/assets/images/stories/newyork/ny_section_1_bg.png',
+    href: '/stories/newyork',
   },
   {
     title: 'Charlotte',
     description:
-      'Turning a mixed-income neighbourhood into a model solution for stormwater flooding. Turning a mixed-income neighbourhood into a model solution for stormwater flooding. Turning a mixed-income neighbourhood into a model solution for stormwater flooding. Turning a mixed-income neighbourhood into a model solution for stormwater flooding.',
+      'Turning a mixed-income neighbourhood into a model solution for stormwater flooding.',
     buttonText: 'Discover',
     image: 'img',
     thumb:
@@ -62,7 +58,7 @@ const STORIES = [
   {
     title: 'Norfolk',
     description:
-      'Turning a mixed-income neighbourhood into a model solution for stormwater flooding. Turning a mixed-income neighbourhood into a model solution for stormwater flooding. Turning a mixed-income neighbourhood into a model solution for stormwater flooding. Turning a mixed-income neighbourhood into a model solution for stormwater flooding.',
+      'Turning a mixed-income neighbourhood into a model solution for stormwater flooding.',
     buttonText: 'Discover',
     image: 'img',
     thumb:
@@ -187,6 +183,9 @@ const Stories = () => {
           >
             {STORIES.map((story) => (
               <div className={styles.Story} key={`storypanel-${story.title}`}>
+                <div className={styles.StoryImage}>
+                  <img alt={story.title} src={story.image} />
+                </div>
                 <div className={styles.StoryContent}>
                   <div className={styles.StoryTitle}>{story.title}</div>
                   <div className={styles.StoryDescription}>

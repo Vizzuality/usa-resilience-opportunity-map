@@ -50,6 +50,21 @@
   color: #4c5361;
   background-color: #f3f5fa;
 
+  .StoryImage {
+    display: none;
+    
+    @media screen and (min-width: 600px) {
+      display: block;
+    }
+
+    img {
+      position: absolute;
+      bottom: 15%;
+      right: 0;
+      max-width: 50vw;
+    }
+  }
+  
   .StoryContent {
     position: absolute;
     max-width: 32rem;
@@ -156,6 +171,7 @@
     }
 
     img {
+      height: 90px;
       user-select: none;
     }
   }
