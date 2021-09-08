@@ -154,10 +154,15 @@
     z-index: 5;
 
     @media screen and (min-width: $section1-cols) {
-      bottom: -2rem;
+      bottom: -1.2%;
       display: initial;
       height: 100%;
       right: 0;
+      width: 42vw;
+    }
+
+    @media screen and (min-width: 1200px) {
+      bottom: -2rem;
       width: 45vw;
     }
   }
@@ -320,7 +325,7 @@
     @media screen and (min-width: 900px) {
       position: absolute;
       display: flex;
-      top: 0;
+      bottom: 4.5rem;
       left: 0;
       width: 40%;
       justify-content: flex-end;
@@ -328,8 +333,9 @@
     }
 
     @media screen and (min-width: 1240px) {
-      width: auto;
       height: 100%;
+      top: auto;
+      width: auto;
     }
 
     .section4Img {
@@ -376,6 +382,7 @@
     @media screen and (min-width: 900px) {
       position: absolute;
       display: flex;
+      bottom: 0;
       right: 0;
       width: 40%;
       justify-content: flex-end;
@@ -383,9 +390,8 @@
     }
 
     @media screen and (min-width: 1240px) {
-      bottom: 0;
-      width: 45%;
       height: auto;
+      width: 45%;
     }
 
     .section5Img {
@@ -429,7 +435,7 @@
     @media screen and (min-width: 900px) {
       position: absolute;
       display: flex;
-      top: 0;
+      bottom: 0;
       left: 0;
       width: 40%;
       justify-content: flex-end;
@@ -437,8 +443,9 @@
     }
 
     @media screen and (min-width: 1240px) {
-      width: auto;
       height: 100%;
+      top: 0;
+      width: auto;
     }
 
     .section6Img {
@@ -474,6 +481,13 @@
     z-index: 5;
 
     @media screen and (min-width: $section1-cols) {
+      background-position: top right;
+      height: 102.5%;
+      right: -10%;
+      top: -2.5%;
+    }
+
+    @media screen and (min-width: 1200px) {
       background-position: top right;
       top: -2.5%;
       height: 102.5%;
@@ -560,9 +574,9 @@
     @media screen and (min-width: 900px) {
       position: absolute;
       display: flex;
-      top: 0;
-      left: 0;
-      width: 40%;
+      bottom: 0;
+      left: -15vw;
+      height: 125%;
       justify-content: flex-end;
       margin-left: 0;
     }
