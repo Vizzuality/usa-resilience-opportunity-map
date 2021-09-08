@@ -154,7 +154,7 @@
       display: initial;
       height: 100%;
       right: 0;
-      width: 50vw;
+      width: 60vw;
     }
   }
 
@@ -336,6 +336,7 @@
     width: 100%;
 
     @media screen and (min-width: 900px) {
+      margin-top: 0;
       max-width: 35rem;
       margin-left: 45%;
     }

@@ -154,11 +154,11 @@
     z-index: 5;
 
     @media screen and (min-width: $section1-cols) {
-      bottom: -1.2%;
+      bottom: -1.6%;
       display: initial;
       height: 100%;
       right: 0;
-      width: 42vw;
+      width: 50vw;
     }
 
     @media screen and (min-width: 1200px) {
@@ -361,10 +361,6 @@
   padding: 0 0 4rem 0;
   position: relative;
   overflow: hidden;
-
-  @media screen and (min-width: 900px) {
-    padding: 4rem 0;
-  }
 
   .contentLeft {
     position: relative;

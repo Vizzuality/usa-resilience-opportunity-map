@@ -365,7 +365,7 @@
     @media screen and (min-width: 900px) {
       position: absolute;
       display: flex;
-      top: 0;
+      bottom: 4rem;
       left: 0;
       width: 40%;
       justify-content: flex-end;
@@ -373,8 +373,9 @@
     }
 
     @media screen and (min-width: 1240px) {
-      width: auto;
       height: 100%;
+      top: 0;
+      width: auto;
     }
 
     .section5Img {
@@ -449,7 +450,7 @@
   background-size: auto 80vw;
   background-repeat: no-repeat;
   padding-bottom: 0;
-  padding-top: 80vw;
+  padding-top: 70vw;
 
   @media screen and (min-width: 1000px) {
     background-size: auto 40vw;
@@ -481,10 +482,10 @@
 // Section 10
 .section10 {
   position: relative;
-  padding-bottom: 36rem;
+  padding-bottom: 28rem;
   padding-top: 4rem;
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 600px) {
     padding-bottom: 45rem;
   }
 
@@ -502,16 +503,16 @@
     background-image: url("/assets/images/stories/boulder/bo_section_10_bg.png");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: right -5rem bottom;
-    bottom: -7rem;
+    background-position: right bottom;
+    bottom: -8%;
     content: '';
     height: 120.7%;
-    right: 0;
+    right: -13%;
     position: absolute;
     width: 120vw;
     z-index: 5;
 
-    @media screen and (min-width: 500px) {
+    @media screen and (min-width: 600px) {
       background-position: right -7rem bottom;
       bottom: -8rem;
     }
@@ -527,13 +528,11 @@
 // Section 11
 .section11 {
   position: relative;
-  padding-top: 6rem;
-  padding-bottom: 24vw;
+  padding: 4rem 0;
 
   @media screen and (min-width: 1000px) {
     background-size: 61% auto;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem 0;
   }
 
   @media screen and (min-width: 1400px) {
@@ -671,7 +670,7 @@
   padding-bottom: 1rem;
   padding-top: 85vw;
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 600px) {
     background-size: auto 30vw;
   }
 
@@ -703,7 +702,7 @@
 
 // Section15
 .section15 {
-  padding: 6rem var(--padding-quote);
+  padding: 4rem var(--padding-quote);
   position: relative;
   text-align: center;
   z-index: 1;
@@ -716,15 +715,19 @@
   .text {
     color: var(--text-red);
     font-family: "Big Caslon", serif;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+
+    @media screen and (min-width: 1000px) {
+      font-size: 2.2rem;
+    }
   }
 
   &::before {
     background-image: url("/assets/images/stories/boulder/bo_section_15_image_2.png");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: right -2rem top;
     content: '';
+    display: none;
     height: 36vw;
     max-width: 260px;
     max-height: 260px;
@@ -736,6 +739,7 @@
 
     @media screen and (min-width: 1000px) {
       background-position: right -3rem top;
+      display: initial;
       height: 22vw;
       top: -5vw;
       width: 22vw;
@@ -749,12 +753,19 @@
     background-position: right bottom -3rem;
     bottom: 0;
     content: '';
+    display: none;
     height: 40%;
     left: 0;
     position: absolute;
     width: 25vw;
 
     @media screen and (min-width: 1000px) {
+      display: initial;
+      height: 28%;
+      width: 30vw;
+    }
+
+    @media screen and (min-width: 1400px) {
       height: 70%;
       width: 15vw;
     }
