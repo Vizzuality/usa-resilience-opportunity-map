@@ -465,7 +465,7 @@
     background-size: contain;
     background-position: top auto;
     background-repeat: no-repeat;
-    top: -1rem;
+    top: -2%;
     content: '';
     height: 100%;
     position: absolute;
@@ -474,8 +474,8 @@
     z-index: 5;
 
     @media screen and (min-width: $section1-cols) {
-      background-position: bottom right;
-      bottom: 0;
+      background-position: top right;
+      top: -2.5%;
       height: 102.5%;
       right: 0;
       width: 45vw;
@@ -489,13 +489,12 @@
   .contentLeft {
     max-width: 40rem;
     padding-bottom: 4rem;
-    padding-top: 40rem;
+    padding-top: 52rem;
     position: relative;
     z-index: 2;
 
     @media screen and (min-width: 600px) {
-      margin-bottom: 4rem;
-      margin-top: 0;
+      padding-top: 0;
       width: 50%;
     }
 
@@ -603,7 +602,7 @@
     z-index: 5;
 
     @media screen and (min-width: $section1-cols) {
-      bottom: -6.7%;
+      bottom: -6.8%;
       display: initial;
       height: 106.7%;
       right: 0;
@@ -657,14 +656,12 @@
     z-index: 3;
 
     @media screen and (min-width: 500px) {
-      background-position: bottom left;
-      bottom: 0;
       height: 65%;
     }
 
     @media screen and (min-width: 1000px) {
-      bottom: -3.4%;
-      height: 103%;
+      top: 0;
+      height: 103.4%;
     }
   }
 
