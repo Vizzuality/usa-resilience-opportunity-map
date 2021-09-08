@@ -192,17 +192,17 @@ const Section7 = () => {
             Louisville:
           </p>
           <ul>
-            <li className={cx(styles.listItem)}>
+            <li className={cx(styles.orderedListItem)}>
               1. Worked with the school system – the centrality of schools and
               the size of the properties gave huge opportunity to provide
               natural environments for entire neighborhoods
             </li>
-            <li className={cx(styles.listItem)}>
+            <li className={cx(styles.orderedListItem)}>
               2. Identified local large property owners in industrialized spaces
               lacking tree cover before setting up meetings to invite them to
               grow trees on their sites
             </li>
-            <li className={cx(styles.listItem)}>
+            <li className={cx(styles.orderedListItem)}>
               3. Collaborated with the Kentucky Transportation Cabinet to plant
               trees alongside busy roads – helping tackle extreme heat, noise
               pollution, and air pollution.
@@ -229,26 +229,26 @@ const Section8 = () => {
             metrics:
           </p>
           <ul>
-            <li className={cx(styles.listItem)}>
+            <li className={cx(styles.orderedListItem)}>
               1. It covered a large amount of land in Louisville – over 4,050
               acres.
             </li>
-            <li className={cx(styles.listItem)}>
+            <li className={cx(styles.orderedListItem)}>
               2. Much of that land lacked tree cover but was able to support
               trees.
             </li>
-            <li className={cx(styles.listItem)}>
+            <li className={cx(styles.orderedListItem)}>
               3. Working with schools would promote education about climate
               resilience in the community.
             </li>
           </ul>
           <p>Louisville Grows:</p>
           <ul>
-            <li className={cx(styles.listItem)}>
+            <li className={cx(styles.orderedListItem)}>
               1. Approached homeowners, inviting them to plant a tree in their
               gardens.
             </li>
-            <li className={cx(styles.listItem)}>
+            <li className={cx(styles.orderedListItem)}>
               2. Convened tree planting events, during which volunteers
               collaborated with community members to create greener and
               healthier neighborhoods.

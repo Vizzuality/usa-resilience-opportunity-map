@@ -124,6 +124,12 @@
   text-align: center;
 }
 
+.listItem {
+  list-style-position: inside;
+  list-style-type: initial;
+  margin-bottom: 0.2rem;
+}
+
 // Section1
 .section1 {
   $section1-cols: 1000px;
@@ -345,12 +351,6 @@
     @media screen and (min-width: 1200px) {
       margin-left: 55%;
     }
-
-    .listItem {
-      list-style-position: inside;
-      list-style-type: initial;
-      margin-bottom: 0.8rem;
-    }
   }
 
   .contentLeft {
@@ -389,12 +389,6 @@
   background-repeat: no-repeat;
   padding-top: 1rem;
   padding-bottom: calc(100vw - 70px);
-
-  .listItem {
-    list-style-position: inside;
-    list-style-type: initial;
-    margin-bottom: 0.8rem;
-  }
 
   @media screen and (min-width: 1000px) {
     background-size: 61% auto;
@@ -452,12 +446,6 @@
   background-repeat: no-repeat;
   padding-bottom: 0;
   padding-top: 80vw;
-
-  .listItem {
-    list-style-position: inside;
-    list-style-type: initial;
-    margin-bottom: 0.8rem;
-  }
 
   @media screen and (min-width: 1000px) {
     background-size: auto 40vw;
@@ -621,12 +609,6 @@
   .colLeft {
     padding: 4rem var(--container-padding);
 
-    .listItem {
-      list-style-position: inside;
-      list-style-type: initial;
-      margin-bottom: 0.8rem;
-    }
-
     @media screen and (min-width: $section13-cols) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2.5);
@@ -785,12 +767,6 @@
 
   .colLeft {
     padding: 4rem var(--container-padding);
-
-    .listItem {
-      list-style-position: inside;
-      list-style-type: initial;
-      margin-bottom: 0.8rem;
-    }
 
     @media screen and (min-width: $section16-cols) {
       display: inline-block;

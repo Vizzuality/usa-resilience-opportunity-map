@@ -124,6 +124,12 @@
   text-align: center;
 }
 
+.listItem {
+  list-style-position: inside;
+  list-style-type: initial;
+  margin-bottom: 0.2rem;
+}
+
 // Section1
 .section1 {
   $section1-cols: 1000px;
@@ -281,12 +287,6 @@
       margin-top: 0;
       width: 60%;
     }
-
-    .listItem {
-      list-style-position: inside;
-      list-style-type: initial;
-      margin-bottom: 0.6rem;
-    }
   }
 
   .contentRight {
@@ -395,12 +395,6 @@
       margin-bottom: 4rem;
       width: 60%;
     }
-
-    .listItem {
-      list-style-position: inside;
-      list-style-type: initial;
-      margin-bottom: 0.6rem;
-    }
   }
 
   .contentRight {
@@ -452,12 +446,6 @@
 
     @media screen and (min-width: 1200px) {
       margin-left: 55%;
-    }
-
-    .listItem {
-      list-style-position: inside;
-      list-style-type: initial;
-      margin-bottom: 0.8rem;
     }
   }
 
