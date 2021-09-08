@@ -163,6 +163,10 @@
   }
 
   @media screen and (min-width: 900px) {
+    padding: 4rem 0 12rem;
+  }
+
+  @media screen and (min-width: 1200px) {
     padding: 10rem 0 12rem;
   }
 
@@ -195,7 +199,7 @@
     max-width: 32rem;
 
     @media screen and (min-width: 600px) {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       max-width: 42rem;
     }
   }
@@ -349,7 +353,7 @@
     @media screen and (min-width: 900px) {
       position: absolute;
       display: flex;
-      top: 0;
+      bottom: 0;
       left: 0;
       width: 40%;
       justify-content: flex-end;
@@ -787,9 +791,13 @@
     position: absolute;
     width: 22vw;
 
-    @media screen and (min-width: 1000px) {
-      bottom: -4.85rem;
+    @media screen and (min-width: 900px) {
+      bottom: -3.85rem;
       display: initial;
+    }
+
+    @media screen and (min-width: 1200px) {
+      bottom: -4.85rem;
     }
   }
 
