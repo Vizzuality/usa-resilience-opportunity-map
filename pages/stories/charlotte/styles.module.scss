@@ -230,12 +230,11 @@
 
 // Section 3
 .section3 {
-  padding: 0 0 4rem 0;
   position: relative;
   overflow: hidden;
 
-  @media screen and (min-width: 900px) {
-    padding: 4rem 0 0 0;
+  @media screen and (min-width: 600px) {
+    padding: 4rem 0;
   }
 
   .contentLeft {
@@ -245,12 +244,11 @@
     z-index: 2;
 
     @media screen and (min-width: 600px) {
-      margin-bottom: 4rem;
       margin-top: 0;
-      width: 50%;
+      width: 100%;
     }
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1000px) {
       width: 40%;
     }
 
@@ -264,33 +262,30 @@
     z-index: 1;
     margin-right: -1rem;
 
-    @media screen and (min-width: 600px) {
-      position: absolute;
+    @media screen and (min-width: 1000px) {
       display: flex;
-      top: 0;
-      right: 0;
-      width: 56%;
+      height: auto;
       justify-content: flex-end;
-      margin-right: -6rem;
+      margin-right: 0;
+      position: absolute;
+      top: 0;
+      right: -12%;
+      width: 62%;
     }
 
     @media screen and (min-width: 1200px) {
-      position: absolute;
-      display: flex;
-      top: 0;
-      right: 0;
-      width: 50%;
-      justify-content: flex-end;
       margin-right: 0;
-    }
-
-    @media screen and (min-width: 1240px) {
+      right: 0;
       width: 45%;
-      height: auto;
     }
 
     .section3Img {
-      @media screen and (min-width: 900px) {
+      @media screen and (min-width: 600px) {
+        display: none;
+      }
+
+      @media screen and (min-width: 1000px) {
+        display: initial;
         height: 130%;
       }
     }
@@ -302,7 +297,7 @@
   position: relative;
   overflow: hidden;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1200px) {
     padding: 4rem 0 0 0;
   }
 
@@ -379,6 +374,10 @@
     z-index: 1;
     margin-right: -1rem;
 
+    @media screen and (min-width: 600px) {
+      margin-right: -4rem;
+    }
+
     @media screen and (min-width: 900px) {
       position: absolute;
       display: flex;
@@ -442,7 +441,7 @@
       margin-left: 0;
     }
 
-    @media screen and (min-width: 1240px) {
+    @media screen and (min-width: 1200px) {
       height: 100%;
       top: 0;
       width: auto;
@@ -467,6 +466,14 @@
   $section1-cols: 1000px;
   position: relative;
 
+  @media screen and (min-width: 600px) {
+    padding-top: 78rem;
+  }
+
+  @media screen and (min-width: 1000px) {
+    padding-top: 0;
+  }
+
   &::after {
     background-image: url("/assets/images/stories/charlotte/ch_section_7_bg.png");
     background-size: contain;
@@ -480,10 +487,16 @@
     width: 100vw;
     z-index: 5;
 
+    @media screen and (min-width: 600px) {
+      background-position: top center;
+      height: 130%;
+      top: -3%;
+    }
+
     @media screen and (min-width: $section1-cols) {
       background-position: top right;
       height: 102.5%;
-      right: -10%;
+      right: -15%;
       top: -2.5%;
     }
 
@@ -503,16 +516,16 @@
   .contentLeft {
     max-width: 40rem;
     padding-bottom: 4rem;
-    padding-top: 52rem;
+    padding-top: 40rem;
     position: relative;
     z-index: 2;
 
     @media screen and (min-width: 600px) {
       padding-top: 0;
-      width: 50%;
+      width: 100%;
     }
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1000px) {
       width: 50%;
     }
   }
@@ -620,7 +633,7 @@
       display: initial;
       height: 106.7%;
       right: 0;
-      width: 45vw;
+      width: 50vw;
     }
   }
 
@@ -635,12 +648,11 @@
     z-index: 2;
 
     @media screen and (min-width: 600px) {
-      padding: 0;
-      margin-top: 0;
-      width: 50%;
+      width: 100%;
     }
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1000px) {
+      padding: 0;
       width: 50%;
     }
   }
@@ -656,6 +668,20 @@
   padding-top: 90vw;
   position: relative;
 
+  @media screen and (min-width: 600px) {
+    padding-top: 94vw;
+  }
+
+  @media screen and (min-width: 1000px) {
+    background-size: auto 60vw;
+    padding: 4rem 0;
+  }
+
+  @media screen and (min-width: 1400px) {
+    background-size: auto 100%;
+    padding: 4rem 0;
+  }
+
   &::after {
     background-image: url("/assets/images/stories/charlotte/ch_section_11_bg.png");
     background-size: contain;
@@ -669,25 +695,20 @@
     width: 100vw;
     z-index: 3;
 
-    @media screen and (min-width: 500px) {
+    @media screen and (min-width: 600px) {
       height: 65%;
     }
 
     @media screen and (min-width: 1000px) {
-      top: 0;
-      height: 103.4%;
+      background-position: bottom left;
+      width: 55vw;
+      margin-top: 8rem;
     }
-  }
 
-  @media screen and (min-width: 1000px) {
-    background-size: auto 60vw;
-    padding-top: 0.1rem;
-    padding-bottom: 0;
-  }
-
-  @media screen and (min-width: 1400px) {
-    background-size: auto 100%;
-    padding: 4rem 0;
+    @media screen and (min-width: 1400px) {
+      height: 75%;
+      margin-top: 12.3rem;
+    }
   }
 
   .section11Wrapper {
