@@ -530,7 +530,13 @@
       width: 100vw;
       z-index: 0;
 
+      @media screen and (min-width: 600px) {
+        background-position: bottom;
+        height: 80vh;
+      }
+
       @media screen and (min-width: $section3-cols) {
+        background-position: center;
         height: 100%;
         width: 50vw;
       }
@@ -550,7 +556,7 @@
     background-position: top center;
     background-repeat: no-repeat;
     content: '';
-    top: -11.1rem;
+    top: 0;
     height: 43%;
     left: 0;
     position: absolute;
@@ -559,9 +565,13 @@
 
     @media screen and (min-width: 600px) {
       background-position: bottom left;
+      height: 60%;
+      left: 0;
+    }
+
+    @media screen and (min-width: 1000px) {
       height: 103.5%;
       left: -20vw;
-      top: 0;
     }
 
     @media screen and (min-width: 1200px) {
@@ -649,6 +659,7 @@
       z-index: 0;
 
       @media screen and (min-width: $section3-cols) {
+        right: -10vw;
         width: 50vw;
       }
     }
