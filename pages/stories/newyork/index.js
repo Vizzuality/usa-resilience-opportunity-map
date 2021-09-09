@@ -374,13 +374,13 @@ const Section14 = () => {
         <div className={cx(styles.section14Wrapper)}>
           <div>
             <h5 className={cx(styles.sectionTitle)}>Cooling Centers</h5>
-            <p>
+            <p className={styles.paragraph}>
               Every year, New York operates 100 cooling centers where residents
               struggling with extreme heat can find relief in a cool space. This
               might be in a community center with air-conditioning, or simply a
               shaded area with running water such as a fountain.
             </p>
-            <p>
+            <p className={styles.paragraph}>
               The Mayor’s office has worked to improve signage to the cooling
               centers in partnership with New York City Emergency Management to
               inform community members about places they can cool down during
@@ -388,9 +388,9 @@ const Section14 = () => {
               deliver training on heat preparedness.
             </p>
           </div>
-          <div className={cx(styles.paragraph)}>
+          <div>
             <h5 className={cx(styles.sectionTitle)}>Get Cool NYC</h5>
-            <p>
+            <p className={styles.paragraph}>
               The coronavirus crisis meant more vulnerable people were trapped
               indoors, often in housing not designed for extreme heat. In
               response, the city ran an air conditioning program, providing air

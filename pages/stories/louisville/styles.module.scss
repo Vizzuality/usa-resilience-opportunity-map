@@ -77,6 +77,7 @@
 .stories {
   font-family: "Oxygen", sans-serif;
   font-size: 1.1rem;
+  overflow: hidden;
 
   p {
     font-family: "Oxygen", sans-serif;
@@ -119,6 +120,16 @@
   text-align: center;
 }
 
+.listItem {
+  list-style-position: inside;
+  list-style-type: initial;
+  margin-bottom: 0.2rem;
+}
+
+.orderedListItem {
+  margin-bottom: 0.8rem;
+}
+
 // Section1
 .section1 {
   $section1-cols: 1000px;
@@ -140,11 +151,15 @@
     z-index: 5;
 
     @media screen and (min-width: $section1-cols) {
-      bottom: -2.7%;
+      bottom: -2%;
       display: initial;
       height: 100%;
       right: 0;
       width: 45vw;
+    }
+
+    @media screen and (min-width: 1200px) {
+      bottom: -2.8%;
     }
   }
 
@@ -153,6 +168,10 @@
   }
 
   @media screen and (min-width: 900px) {
+    padding: 4rem 0 12rem;
+  }
+
+  @media screen and (min-width: 1200px) {
     padding: 10rem 0 12rem;
   }
 
@@ -185,7 +204,15 @@
     max-width: 32rem;
 
     @media screen and (min-width: 600px) {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
+      max-width: 38rem;
+      
+      &:last-of-type {
+        max-width: 33rem;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
       max-width: 42rem;
     }
   }
@@ -215,7 +242,7 @@
   position: relative;
 
   .colRight {
-    padding: 5rem var(--container-padding);
+    padding: 4rem var(--container-padding);
 
     @media screen and (min-width: $section3-cols) {
       display: inline-block;
@@ -261,24 +288,25 @@
 .section5 {
   background-image: url("/assets/images/stories/louisville/lv_section_5_bg.png");
   background-position: bottom right;
-  background-size: 100vw auto;
+  background-size: contain;
   background-repeat: no-repeat;
   padding-top: 1rem;
   padding-bottom: calc(100vw - 70px);
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 600px) {
+    background-size: 100vw auto;
     padding-top: 4rem;
     padding-bottom: 40rem;
   }
 
   @media screen and (min-width: 1000px) {
-    background-size: 61% auto;
+    background-size: 50% auto;
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
 
   @media screen and (min-width: 1400px) {
-    background-size: auto 100%;
+    background-size: auto 85%;
     padding-top: 4rem;
   }
 
@@ -298,18 +326,18 @@
   padding-top: 2rem;
   padding-bottom: calc(100vw - 150px);
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 600px) {
     padding-bottom: 40rem;
   }
 
   @media screen and (min-width: 1000px) {
-    background-size: 61% auto;
-    background-position: bottom -1.7rem left;
+    background-size: 55% auto;
+    background-position: bottom -1rem left;
     padding-bottom: 2rem;
   }
 
   @media screen and (min-width: 1400px) {
-    background-size: auto 105%;
+    background-size: auto 90%;
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
@@ -332,17 +360,18 @@
   position: relative;
  
   .colLeft {
-    padding: 5rem var(--container-padding);
+    padding: 4rem var(--container-padding);
 
     @media screen and (min-width: $section3-cols) {
       display: inline-block;
-      max-width: calc(var(--container-max-width) / 2);
+      max-width: calc(var(--container-max-width) / 2.5);
       margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
-      padding: 10rem var(--container-padding);
+      padding: 4rem var(--container-padding);
     }
 
-    .listItem {
-      margin-bottom: 2rem;
+    @media screen and (min-width: 1200px) {
+      max-width: calc(var(--container-max-width) / 2);
+      padding: 10rem var(--container-padding);
     }
   }
 
@@ -388,22 +417,19 @@
   padding-top: 85vw;
 
   @media screen and (min-width: 1000px) {
-    background-size: auto 60vw;
+    background-size: auto 72vw;
+    background-position: bottom left -15vw;
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
 
   @media screen and (min-width: 1400px) {
-    background-size: auto 100%;
-    padding-top: 5rem;
-  }
-
-  .listItem {
-    margin-bottom: 2rem;
+    background-size: auto 101%;
+    padding-top: 4rem;
   }
 
   .section8Wrapper {
-    padding: 6rem 0;
+    padding: 4rem 0;
 
     @media screen and (min-width: 1000px) {
       left: 57%;
@@ -468,20 +494,13 @@
   overflow: hidden;
 
   .colLeft {
-    padding: 1rem var(--container-padding);
-
-    .listItem {
-      list-style-position: inside;
-      list-style-type: initial;
-      margin-bottom: 2rem;
-    }
+    padding: 4rem var(--container-padding);
 
     @media screen and (min-width: $section3-cols) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
       margin-right: 50%;
       margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
-      padding: 10rem 0;
     }
   }
 
@@ -511,7 +530,13 @@
       width: 100vw;
       z-index: 0;
 
+      @media screen and (min-width: 600px) {
+        background-position: bottom;
+        height: 80vh;
+      }
+
       @media screen and (min-width: $section3-cols) {
+        background-position: center;
         height: 100%;
         width: 50vw;
       }
@@ -528,30 +553,40 @@
   &::after {
     background-image: url("/assets/images/stories/louisville/lv_section_11_bg.png");
     background-size: contain;
-    background-position: bottom left;
+    background-position: top center;
     background-repeat: no-repeat;
-    top: 0;
     content: '';
+    top: 0;
     height: 43%;
     left: 0;
     position: absolute;
     width: 100vw;
     z-index: 3;
 
-    @media screen and (min-width: 500px) {
-      height: 65%;
+    @media screen and (min-width: 600px) {
+      background-position: bottom left;
+      height: 60%;
+      left: 0;
     }
 
     @media screen and (min-width: 1000px) {
-      bottom: -1.3rem;
-      height: 103%;
+      height: 103.5%;
+      left: -20vw;
+    }
+
+    @media screen and (min-width: 1200px) {
+      background-size: auto 100%;
+      bottom: 0;
+      left: -12vw;
+    }
+    
+    @media screen and (min-width: 1400px) {
+      left: -2vw;
     }
   }
 
   @media screen and (min-width: 1000px) {
-    background-size: auto 60vw;
-    padding-top: 0.1rem;
-    padding-bottom: 0;
+    padding: 4rem var(--container-padding);
   }
 
   @media screen and (min-width: 1400px) {
@@ -559,12 +594,8 @@
     padding-bottom: 4rem;
   }
 
-  .listItem {
-    margin-bottom: 2rem;
-  }
-
   .section11Wrapper {
-    padding: 1rem 0;
+    padding: 4rem 0;
 
     @media screen and (min-width: 1000px) {
       left: 57%;
@@ -588,12 +619,6 @@
 
   .colLeft {
     padding: 1rem var(--container-padding);
-
-    .listItem {
-      list-style-position: inside;
-      list-style-type: initial;
-      margin-bottom: 2rem;
-    }
 
     @media screen and (min-width: 500px) {
       max-width: 100vw;
@@ -634,6 +659,7 @@
       z-index: 0;
 
       @media screen and (min-width: $section3-cols) {
+        right: -10vw;
         width: 50vw;
       }
     }

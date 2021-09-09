@@ -81,6 +81,7 @@
 .stories {
   font-family: "Oxygen", sans-serif;
   font-size: 1.1rem;
+  overflow: hidden;
 
   p {
     font-family: "Oxygen", sans-serif;
@@ -88,7 +89,7 @@
     line-height: 1.5;
     margin: 1rem 0;
 
-    @media screen and (min-width: 500px) {
+    @media screen and (min-width: 600px) {
       font-size: 1rem;
       line-height: 1.8;
     }
@@ -123,6 +124,12 @@
   text-align: center;
 }
 
+.listItem {
+  list-style-position: inside;
+  list-style-type: initial;
+  margin-bottom: 0.2rem;
+}
+
 // Section1
 .section1 {
   $section1-cols: 1000px;
@@ -147,7 +154,7 @@
       display: initial;
       height: 100%;
       right: 0;
-      width: 50vw;
+      width: 60vw;
     }
   }
 
@@ -156,6 +163,10 @@
   }
 
   @media screen and (min-width: 900px) {
+    padding: 4rem 0 12rem;
+  }
+
+  @media screen and (min-width: 1200px) {
     padding: 10rem 0 12rem;
   }
 
@@ -188,7 +199,7 @@
     max-width: 32rem;
 
     @media screen and (min-width: 600px) {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       max-width: 42rem;
     }
   }
@@ -280,12 +291,6 @@
       margin-top: 0;
       width: 60%;
     }
-
-    .listItem {
-      list-style-position: inside;
-      list-style-type: initial;
-      margin-bottom: 0.6rem;
-    }
   }
 
   .contentRight {
@@ -331,6 +336,7 @@
     width: 100%;
 
     @media screen and (min-width: 900px) {
+      margin-top: 0;
       max-width: 35rem;
       margin-left: 45%;
     }
@@ -348,16 +354,16 @@
     @media screen and (min-width: 900px) {
       position: absolute;
       display: flex;
-      top: 0;
+      bottom: 0;
       left: 0;
       width: 40%;
       justify-content: flex-end;
       margin-left: 0;
     }
 
-    @media screen and (min-width: 1240px) {
-      width: auto;
-      height: 100%;
+    @media screen and (min-width: 1200px) {
+      height: auto;
+      width: 40%;
     }
 
     .section5Img {
@@ -393,12 +399,6 @@
     @media screen and (min-width: 900px) {
       margin-bottom: 4rem;
       width: 60%;
-    }
-
-    .listItem {
-      list-style-position: inside;
-      list-style-type: initial;
-      margin-bottom: 0.6rem;
     }
   }
 
@@ -452,12 +452,6 @@
     @media screen and (min-width: 1200px) {
       margin-left: 55%;
     }
-
-    .listItem {
-      list-style-position: inside;
-      list-style-type: initial;
-      margin-bottom: 0.8rem;
-    }
   }
 
   .contentLeft {
@@ -474,15 +468,17 @@
       justify-content: flex-end;
     }
 
-    @media screen and (min-width: 1240px) {
-      width: auto;
-      height: 100%;
+    @media screen and (min-width: 1200px) {
+      width: 50%;
     }
 
     .section8Img {
+      height: 40vh;
+
       @media screen and (min-width: 900px) {
         align-self: flex-end;
-        height: 40vh;
+        height: auto;
+        width: 60vw;
       }
 
       @media screen and (min-width: 1200px) {
@@ -499,7 +495,7 @@
   position: relative;
   overflow: hidden;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 600px) {
     padding: 4rem 0 0 0;
   }
 
@@ -529,9 +525,14 @@
       position: absolute;
       display: flex;
       top: 0;
+      right: -35%;
+      width: 80%;
+      justify-content: flex-end;
+    }
+
+    @media screen and (min-width: 1000px) {
       right: 0;
       width: 60%;
-      justify-content: flex-end;
       margin-right: -8rem;
     }
 
@@ -564,7 +565,7 @@
   position: relative;
   overflow: hidden;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 600px) {
     padding: 4rem 0 0 0;
   }
 
@@ -594,9 +595,14 @@
       position: absolute;
       display: flex;
       top: 0;
+      right: -43%;
+      width: 90%;
+      justify-content: flex-end;
+    }
+
+    @media screen and (min-width: 1000px) {
       right: 0;
       width: 56%;
-      justify-content: flex-end;
       margin-right: -6rem;
     }
 
@@ -628,18 +634,20 @@
   position: relative;
   overflow: hidden;
 
-  @media screen and (min-width: 900px) {
-    padding: 4rem 0 0 0;
-  }
-
   .contentRight {
     margin: 4rem 0;
     position: relative;
     width: 100%;
 
+    @media screen and (min-width: 600px) {
+      max-width: 70rem;
+      padding-top: 18rem;
+    }
+    
     @media screen and (min-width: 900px) {
       max-width: 35rem;
       margin-left: 45%;
+      padding-top: 0;
     }
 
     @media screen and (min-width: 1200px) {
@@ -662,7 +670,12 @@
       margin-left: 0;
     }
 
-    @media screen and (min-width: 1240px) {
+    @media screen and (min-width: 900px) {
+      bottom: 0;
+      width: 50vw;
+    }
+
+    @media screen and (min-width: 1200px) {
       width: auto;
       height: 100%;
     }
@@ -670,8 +683,7 @@
     .section13Img {
       @media screen and (min-width: 600px) {
         align-self: flex-end;
-        height: 70vh;
-        margin-top: 35vh;
+        height: auto;
       }
 
       @media screen and (min-width: 1200px) {
@@ -685,25 +697,32 @@
 // Section 14
 .section14 {
   position: relative;
-  padding-bottom: 28rem;
+  padding-bottom: 36rem;
   padding-top: 4rem;
 
-  @media screen and (min-width: 500px) {
-    padding-bottom: 45rem;
+  @media screen and (min-width: 600px) {
+    padding-bottom: 64rem;
   }
 
   @media screen and (min-width: 1000px) {
     padding: 3rem var(--container-padding);
+    padding-bottom: 4rem;
+  }
+
+  .paragraph {
+    @media screen and (min-width: 600px) {
+      font-size: 12px;
+    }
+
+    @media screen and (min-width: 1000px) {
+      font-size: 16px;
+    }
   }
 
   .section14Wrapper {
     padding-top: 1rem;
     @media screen and (min-width: 1000px) {
       max-width: 50%;
-    }
-
-    .paragraph {
-      padding-top: 2rem;
     }
   }
   
@@ -712,7 +731,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right bottom 0;
-    bottom: -0.8rem;
+    bottom: -1rem;
     content: '';
     height: 110vh;
     right: 0;
@@ -720,22 +739,22 @@
     width: 100vw;
     z-index: 5;
 
-    @media screen and (min-width: 500px) {
-      background-position: right bottom 0;
-      bottom: 0;
-      width: 120vw;
+    @media screen and (min-width: 600px) {
+      bottom: -2%;
     }
   
     @media screen and (min-width: 1000px) {
       background-position: right bottom;
-      bottom: -3vh;
-      height: 75%;
+      bottom: -3%;
+      height: 103%;
+      right: -12%;
     }
 
     @media screen and (min-width: 1400px) {
       background-position: right bottom;
-      bottom: -3.5vh;
-      height: 103.2%;
+      bottom: -3.5%;
+      height: 103.5%;
+      right: 0;
     }
   }
 }
@@ -788,19 +807,23 @@
     background-image: url("/assets/images/stories/newyork/ny_section_16_image_1.png");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: left -3vh bottom 0;
+    background-position: left -5vh bottom 0;
     content: '';
     display: none;
-    height: 80vh;
+    height: 70vh;
     left: 0;
     max-height: 360px;
     max-width: 360px;
     position: absolute;
     width: 22vw;
 
-    @media screen and (min-width: 1000px) {
-      bottom: -4.85rem;
+    @media screen and (min-width: 900px) {
+      bottom: -3.85rem;
       display: initial;
+    }
+
+    @media screen and (min-width: 1200px) {
+      bottom: -4.85rem;
     }
   }
 
