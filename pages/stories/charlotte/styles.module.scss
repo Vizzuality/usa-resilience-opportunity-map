@@ -331,10 +331,9 @@
       margin-left: 0;
     }
 
-    @media screen and (min-width: 1240px) {
-      height: 100%;
+    @media screen and (min-width: 1200px) {
       top: auto;
-      width: auto;
+      width: 50vw;
     }
 
     .section4Img {
@@ -442,9 +441,8 @@
     }
 
     @media screen and (min-width: 1200px) {
-      height: 100%;
       top: 0;
-      width: auto;
+      width: 42vw;
     }
 
     .section6Img {
@@ -590,13 +588,12 @@
       bottom: 0;
       left: -15vw;
       height: 125%;
-      justify-content: flex-end;
       margin-left: 0;
     }
 
-    @media screen and (min-width: 1240px) {
-      width: auto;
+    @media screen and (min-width: 1200px) {
       height: 100%;
+      width: 60vw;
     }
 
     .section9Img {
@@ -629,11 +626,11 @@
     z-index: 5;
 
     @media screen and (min-width: $section1-cols) {
-      bottom: -6.8%;
+      bottom: -7.2%;
       display: initial;
       height: 106.7%;
       right: 0;
-      width: 50vw;
+      width: 55vw;
     }
   }
 
@@ -702,12 +699,12 @@
     @media screen and (min-width: 1000px) {
       background-position: bottom left;
       width: 55vw;
-      margin-top: 8rem;
+      margin-top: 15.2rem;
     }
 
     @media screen and (min-width: 1400px) {
-      height: 75%;
-      margin-top: 12.3rem;
+      height: 90%;
+      margin-top: 5.8rem;
     }
   }
 
