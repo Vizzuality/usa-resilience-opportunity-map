@@ -452,6 +452,10 @@
   padding-bottom: 0;
   padding-top: 70vw;
 
+  @media screen and (min-width: 600px) {
+    padding-top: 74vw;
+  }
+
   @media screen and (min-width: 1000px) {
     background-size: auto 40vw;
     background-position: bottom left;
@@ -486,7 +490,7 @@
   padding-top: 4rem;
 
   @media screen and (min-width: 600px) {
-    padding-bottom: 45rem;
+    padding-bottom: 53rem;
   }
 
   @media screen and (min-width: 1000px) {
@@ -513,8 +517,8 @@
     z-index: 5;
 
     @media screen and (min-width: 600px) {
-      background-position: right -7rem bottom;
-      bottom: -8rem;
+      background-position: right bottom;
+      bottom: -10rem;
     }
   
     @media screen and (min-width: 1000px) {
@@ -667,11 +671,11 @@
   background-position: top left;
   background-size: auto 90vw;
   background-repeat: no-repeat;
-  padding-bottom: 1rem;
-  padding-top: 85vw;
+  padding-top: 80vw;
 
   @media screen and (min-width: 600px) {
-    background-size: auto 30vw;
+    background-size: auto 50vw;
+    padding-top: 50vw;
   }
 
   @media screen and (min-width: 1000px) {
