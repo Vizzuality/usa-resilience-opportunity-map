@@ -60,7 +60,7 @@ const Section3 = () => {
             crisis, sinking land, and changing ocean currents all play their
             part in increasing Norfolk’s vulnerability.
           </p>
-          <p className={cx(styles.textSecondary)}>
+          <p className={cx(styles.textSecondary, styles.bold)}>
             {' '}
             The impacts of floods in Norfolk include:
           </p>
@@ -187,7 +187,7 @@ const Section7 = () => {
             National Disaster Competition awarded to the city after Hurricane
             Sandy.
           </p>
-          <p className={cx(styles.textSecondary)}>
+          <p className={cx(styles.textSecondary, styles.bold)}>
             The project integrates a range of interventions, including:
           </p>
           <ul>
@@ -225,7 +225,7 @@ const Section8 = () => {
       <div className={styles.contentRight}>
         <img
           src="/assets/images/stories/norfolk/nf_section_8_bg.png"
-          className={styles.section10Img}
+          className={styles.section8Img}
           alt=""
         />
       </div>

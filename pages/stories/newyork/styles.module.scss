@@ -221,16 +221,14 @@
 
 // Section 3
 .section3 {
-  $section3-cols: 1000px;
-
   color: var(--color-white);
   overflow: hidden;
   position: relative;
 
   .colRight {
-    padding: 4rem var(--container-padding);
+    padding: 2rem var(--container-padding);
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
       margin-left: 50%;
@@ -244,7 +242,7 @@
     overflow: hidden;
     position: relative;
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
       position: absolute;
@@ -263,7 +261,7 @@
       width: 100vw;
       z-index: 0;
 
-      @media screen and (min-width: $section3-cols) {
+      @media screen and (min-width: 1000px) {
         width: 50vw;
       }
     }
@@ -697,7 +695,7 @@
 // Section 14
 .section14 {
   position: relative;
-  padding-bottom: 36rem;
+  padding-bottom: 136%;
   padding-top: 4rem;
 
   @media screen and (min-width: 600px) {
@@ -735,7 +733,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right bottom 0;
-    bottom: -1rem;
+    bottom: -1.3rem;
     content: '';
     height: 110vh;
     right: 0;

@@ -277,7 +277,7 @@
   .contentLeft {
     max-width: 40rem;
     padding-bottom: 4rem;
-    padding-top: 40rem;
+    padding-top: 95%;
     position: relative;
     z-index: 2;
 
@@ -298,8 +298,6 @@
 
 // Section 4
 .section4 {
-  $section3-cols: 1000px;
-
   color: var(--color-white);
   overflow: hidden;
   position: relative;
@@ -307,7 +305,7 @@
   .colRight {
     padding: 4rem var(--container-padding);
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
       margin-left: 50%;
@@ -321,7 +319,7 @@
     overflow: hidden;
     position: relative;
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
       position: absolute;
@@ -340,7 +338,7 @@
       width: 100vw;
       z-index: 0;
 
-      @media screen and (min-width: $section3-cols) {
+      @media screen and (min-width: 1000px) {
         width: 100%;
       }
     }
@@ -405,7 +403,7 @@
   .contentLeft {
     max-width: 40rem;
     padding-bottom: 4rem;
-    padding-top: 40rem;
+    padding-top: 130%;
     position: relative;
     z-index: 2;
 
@@ -543,10 +541,12 @@
     z-index: 2;
     margin-top: 4rem;
     max-width: 40rem;
+    padding-top: 130%;
 
     @media screen and (min-width: 900px) {
       margin-bottom: 4rem;
       margin-top: 0;
+      padding-top: 0;
       width: 60%;
     }
   }
@@ -581,7 +581,6 @@
 
 // Section13
 .section13 {
-  padding: 4rem var(--padding-quote);
   position: relative;
   z-index: 6;
 
@@ -663,11 +662,12 @@
     font-family: "Big Caslon", serif;
     font-size: 2rem;
     line-height: 1.2;
-    margin-bottom: 4rem;
+    padding: 4rem var(--padding-quote);
     position: relative;
     text-align: left;
 
     @media screen and (min-width: 500px) {
+      padding: 0;
       margin-bottom: 0;
       max-width: 80vw;
     }
