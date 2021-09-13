@@ -87,7 +87,10 @@ export const indicators = createSelector(
         children: indicatorsFromCategory.filter(
           (child) => +child.parentId === +parent.id
         ),
-      }));
+      }))
+      // Hide layers temporarily
+      .filter((ind) => ind.id !== '36' && ind.id !== '37' && ind.id !== '38');
+
     return parentIndicators;
   }
 );

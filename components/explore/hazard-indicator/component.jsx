@@ -29,7 +29,7 @@ export default function HazardIndicator({ hazardLevel, dark, className }) {
   return (
     <div className={cx('c-hazard-indicator', className, { '--dark': dark })}>
       <div className="c-hazard--text">
-        <span className="c-hazard--title">Hazard level</span>
+        <span className="c-hazard--title">Risk Level</span>
         <span className="c-hazard--value">{hazards[hazardLevel]}</span>
       </div>
       <svg

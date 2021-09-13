@@ -19,7 +19,7 @@ function Menu({ open, setOpen, isDesktop }) {
       href: '/stories',
     },
     {
-      name: 'About the Data',
+      name: 'About the Map',
       href: '/about',
     },
   ];
@@ -77,8 +77,9 @@ function Menu({ open, setOpen, isDesktop }) {
             <img
               className="header--logo-image"
               src="/assets/logos/logo_dark.svg"
-              alt="USA Resilience Map"
+              alt="US Climate Resilience Map"
             />
+            <p className="header--logo-title">US Climate Resilience Map</p>
           </a>
         </Link>
       </div>
@@ -165,8 +166,9 @@ export default function Header() {
                   src={`/assets/logos/logo_${
                     isDarkHeader.mobile ? 'white' : 'dark'
                   }.svg`}
-                  alt="USA Resilience Map"
+                  alt="US Climate Resilience Map"
                 />
+                <p className="header--logo-title">US Climate Resilience Map</p>
               </a>
             </Link>
             <BurgerMenu open={isMenuOpen} setOpen={openMenu} />
@@ -185,8 +187,9 @@ export default function Header() {
                   src={`/assets/logos/logo_${
                     isDarkHeader.desktop ? 'white' : 'dark'
                   }.svg`}
-                  alt="USA Resilience Map"
+                  alt="US Climate Resilience Map"
                 />
+                <p className="header--logo-title">US Climate Resilience Map</p>
               </a>
             </Link>
             <Menu open={isMenuOpen} setOpen={openMenu} isDesktop />

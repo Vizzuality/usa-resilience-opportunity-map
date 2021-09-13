@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { useDebouncedCallback } from 'use-debounce';
+
 // Utils
 import isEmpty from 'lodash.isempty';
 import { getParams } from 'utils/timeline';
@@ -166,9 +168,9 @@ export default function ExploreMap({
     }
   };
 
-  const onViewportChange = (vp) => {
+  const onViewportChange = useDebouncedCallback((vp) => {
     setViewport(vp);
-  };
+  }, []);
 
   const onZoomChange = (zoom) => {
     setViewport({
@@ -189,7 +191,8 @@ export default function ExploreMap({
         bounds={bbox}
         mapboxApiAccessToken={MAPBOX_TOKEN}
         viewport={viewport}
-        onViewportChange={onViewportChange}
+        // onViewportChange={onViewportChange}
+        onMapViewportChange={onViewportChange}
         interactiveLayerIds={layersInteractiveIds}
         onClick={(e) => {
           if (e && e.features) {

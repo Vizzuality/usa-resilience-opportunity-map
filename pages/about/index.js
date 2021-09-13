@@ -29,7 +29,7 @@ const About = () => {
     <AboutWrapper>
       <div className="about-title">
         <div className="about-line" />
-        <h1>About the data.</h1>
+        <h1>About the US Climate Resilience Map</h1>
       </div>
       <div className="about-text wrapper">
         <div className="about-shadow" />
