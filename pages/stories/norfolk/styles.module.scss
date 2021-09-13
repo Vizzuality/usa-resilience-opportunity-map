@@ -302,7 +302,7 @@
   position: relative;
 
   .colRight {
-    padding: 4rem var(--container-padding);
+    padding: 2rem var(--container-padding);
 
     @media screen and (min-width: 1000px) {
       display: inline-block;
@@ -423,7 +423,7 @@
 
 // Section 8
 .section8 {
-  padding: 0 0 4rem 0;
+  padding: 0 0 2rem 0;
   position: relative;
   overflow: hidden;
 
@@ -649,13 +649,11 @@
   }
 
   .section13Wrapper {
+    margin-bottom: 4rem;
     text-align: left;
-
-    @media screen and (min-width: 500px) {
-      margin-bottom: 4rem;
-    }
     
     @media screen and (min-width: 1000px) {
+      margin-bottom: 0;
       margin-top: 4rem;
       margin-left: 6rem;
       max-width: 50%;
