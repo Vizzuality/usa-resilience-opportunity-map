@@ -55,7 +55,7 @@ function Home({ locations }) {
               <h2>Welcome to</h2>
             </Media>
           </MediaContextProvider>
-          <h1>USA Resilience Map</h1>
+          <h1>US Climate Resilience Map</h1>
           <div className="break-line" />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

@@ -19,7 +19,7 @@ function Autocomplete({
 }) {
   const buildInputProps = (getInputProps) => {
     return getInputProps({
-      placeholder: 'Enter a state, county name or ZIP code',
+      placeholder: 'Enter a state or county name',
     });
   };
   const { pathname } = useRouter();
