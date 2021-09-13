@@ -223,6 +223,79 @@
   }
 }
 
+// Section 3
+.section3 {
+  position: relative;
+
+  @media screen and (min-width: 600px) {
+    padding-top: 78rem;
+  }
+
+  @media screen and (min-width: 1000px) {
+    padding-top: 0;
+  }
+
+  &::after {
+    background-image: url("/assets/images/stories/norfolk/nf_section_3_bg.png");
+    background-size: contain;
+    background-position: top auto;
+    background-repeat: no-repeat;
+    top: -2%;
+    content: '';
+    height: 100%;
+    position: absolute;
+    right: 0;
+    width: 100vw;
+    z-index: 5;
+
+    @media screen and (min-width: 600px) {
+      background-position: top center;
+      height: 130%;
+      top: -3%;
+    }
+
+    @media screen and (min-width: 1000px) {
+      background-position: top right;
+      height: 102.5%;
+      right: -15%;
+      top: -2.5%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      background-position: top right;
+      top: 10.3%;
+      height: 102.5%;
+      right: 0;
+      width: 45vw;
+    }
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .contentLeft {
+    max-width: 40rem;
+    padding-bottom: 4rem;
+    padding-top: 40rem;
+    position: relative;
+    z-index: 2;
+
+    @media screen and (min-width: 600px) {
+      padding-top: 0;
+      width: 100%;
+    }
+
+    @media screen and (min-width: 1000px) {
+      width: 50%;
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    padding: 4rem 0;
+  }
+}
+
 // Section 4
 .section4 {
   $section3-cols: 1000px;
@@ -271,6 +344,83 @@
         width: 100%;
       }
     }
+  }
+}
+
+// Section 6
+.section6 {
+  position: relative;
+
+  @media screen and (min-width: 600px) {
+    padding-top: 78rem;
+  }
+
+  @media screen and (min-width: 1000px) {
+    padding-top: 0;
+  }
+
+  &::after {
+    background-image: url("/assets/images/stories/norfolk/nf_section_6_bg.png");
+    background-size: contain;
+    background-position: top auto;
+    background-repeat: no-repeat;
+    top: -2%;
+    content: '';
+    height: 100%;
+    position: absolute;
+    right: 0;
+    width: 100vw;
+    z-index: 5;
+
+    @media screen and (min-width: 600px) {
+      background-position: top center;
+      height: 130%;
+      top: -3%;
+    }
+
+    @media screen and (min-width: 1000px) {
+      background-position: top right;
+      height: 102.5%;
+      right: -15%;
+      top: -2.5%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      background-position: top right;
+      top: 3.5%;
+      height: 102.5%;
+      right: 0;
+      width: 45vw;
+    }
+
+    @media screen and (min-width: 1600px) {
+      top: 0;
+    }
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .contentLeft {
+    max-width: 40rem;
+    padding-bottom: 4rem;
+    padding-top: 40rem;
+    position: relative;
+    z-index: 2;
+
+    @media screen and (min-width: 600px) {
+      padding-top: 0;
+      width: 100%;
+    }
+
+    @media screen and (min-width: 1000px) {
+      width: 50%;
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    padding: 4rem 0;
   }
 }
 
@@ -433,7 +583,7 @@
 .section13 {
   padding: 4rem var(--padding-quote);
   position: relative;
-  z-index: 1;
+  z-index: 6;
 
   @media screen and (min-width: 1000px) {
     background-size: 61% auto;
@@ -456,16 +606,16 @@
     background-image: url("/assets/images/stories/boulder/bo_section_15_image_2.png");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: right top -3vw;
+    background-position: right -4rem top;
     content: '';
     display: none;
-    height: 22vw;
-    max-height: 360px;
-    max-width: 360px;
+    height: 15vw;
+    max-height: 260px;
+    max-width: 260px;
     position: absolute;
     right: 0;
-    top: 0;
-    width: 22vw;
+    top: -4vw;
+    width: 20vw;
 
     @media screen and (min-width: 1000px) {
       display: initial;

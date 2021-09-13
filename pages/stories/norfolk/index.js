@@ -49,6 +49,45 @@ const Section2 = () => {
   );
 };
 
+const Section3 = () => {
+  return (
+    <div className={cx(styles.section3, styles.bgGray, styles.textWhite)}>
+      <div className={styles.container}>
+        <div className={styles.contentLeft}>
+          <p>
+            The city has one of the largest sea-level rises in the country –
+            half a foot since 1992. That’s twice the global average. The climate
+            crisis, sinking land, and changing ocean currents all play their
+            part in increasing Norfolk’s vulnerability.
+          </p>
+          <p className={cx(styles.textSecondary)}>
+            {' '}
+            The impacts of floods in Norfolk include:
+          </p>
+          <ul>
+            <li className={cx(styles.listItem)}>
+              Property damage to homes and cars.
+            </li>
+            <li className={cx(styles.listItem)}>
+              Disruption of transport infrastructure.
+            </li>
+            <li className={cx(styles.listItem)}>
+              Road flooding, cutting off vulnerable communities from the city.
+            </li>
+            <li className={cx(styles.listItem)}>
+              Disrupted education due to safety concerns for children, which has
+              long term social and economic consequences.
+            </li>
+            <li className={cx(styles.listItem)}>
+              Heightened stress and anxiety.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Section4 = () => {
   return (
     <div className={cx(styles.section4, styles.bgWhite)}>
@@ -88,6 +127,47 @@ const Section5 = () => {
         authorPosition="Director of Communications"
         authorCompany="City of Norfolk"
       />
+    </div>
+  );
+};
+
+const Section6 = () => {
+  return (
+    <div className={cx(styles.section6, styles.bgLightBlue, styles.textGray)}>
+      <div className={styles.container}>
+        <div className={styles.contentLeft}>
+          <p>
+            Before planning the resilience initiatives, Norfolk’s Resilience
+            Office, Planning Department, and Housing and Community Development
+            organized the Dutch Virginia Dialogue. The Dialogue brought in
+            experts from the Netherlands to discuss how best to manage coastal
+            flooding – a climate change impact the Netherlands is familiar with
+            due to its geography.
+          </p>
+          <p>
+            Following the 2013 Dialogue, Norfolk set out a plan to test various
+            resilience solutions to tackle coastal flooding as part of a wider
+            Norfolk 2100 vision.
+          </p>
+          <p className={cx(styles.textPrimary, styles.bold)}>These include:</p>
+          <ul>
+            <li className={cx(styles.listItem)}>Flood.</li>
+            <li className={cx(styles.listItem)}>Tide gates.</li>
+            <li className={cx(styles.listItem)}>Pumps.</li>
+            <li className={cx(styles.listItem)}>Community education.</li>
+            <li className={cx(styles.listItem)}>
+              Building and development ordinances.
+            </li>
+            <li className={cx(styles.listItem)}>
+              Rainwater retention initiatives.
+            </li>
+            <li className={cx(styles.listItem)}>
+              &quot;Resilience parks &quot; green spaces with climate resilient
+              infrastructure.
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
@@ -353,9 +433,10 @@ const Norfolk = () => {
     <div className={styles.stories}>
       <Section1 />
       <Section2 />
-
+      <Section3 />
       <Section4 />
       <Section5 />
+      <Section6 />
       <Section7 />
       <Section8 />
       <Section9 />
