@@ -61,6 +61,7 @@
     "reselect": "^4.0.0",
     "sass": "^1.26.10",
     "svg-sprite-loader": "^5.0.0",
+    "use-debounce": "^7.0.0",
     "viewport-mercator-project": "6.1.1",
     "vizzuality-components": "^3.0.0-beta.9",
     "webpack-filter-warnings-plugin": "^1.2.1"
