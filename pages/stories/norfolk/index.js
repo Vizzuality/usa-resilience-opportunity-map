@@ -2,7 +2,7 @@ import React from 'react';
 
 import cx from 'classnames';
 
-// import Quote from 'layouts/stories/quote';
+import Quote from 'layouts/stories/quote';
 
 import VideoPlayer from 'layouts/stories/video-player';
 
@@ -14,24 +14,26 @@ const Section1 = () => {
       <div className={styles.container}>
         <div className={styles.section1Title}>
           <span>
-            Community mobilization
+            A petri dish for
             <br />
-            for 
-            {' '}
-            <span className={styles.underline}>cool neighborhoods</span>
+            <span className={styles.underline}> resilience solutions</span>
           </span>
         </div>
         <div className={styles.section1Text}>
           <p>
-            New York City has become increasingly vulnerable to events linked to
-            the climate crisis, including hurricanes like Superstorm Sandy in
-            2012, coastal flooding, and extreme heat.
+            As a result of climate change, the US East Coast is increasingly at
+            risk of coastal flooding, with the number of high-tide days rising
+            significantly in more than 40 coastal communities. By 2050, high
+            tide flooding in the US is likely to range between 25-75 days a
+            year, compared to a record 20 days in 2020.
           </p>
           <p>
-            The city is adjacent to 120,000 acres of undeveloped land that
-            represents a clear wildfire risk. In 2010 the Fourmile Fire
-            destroyed 169 homes, 6181 acres and led to $217 million in insured
-            losses.
+            Norfolk, Virginia, has one of the highest rates of relative sea
+            level rise in the country. It has gone up by half a foot by 1992,
+            which is twice the global average. At the same time, climate change
+            is also causing an increase in the intensity, duration and frequency
+            of rain events. These compounding events all play a part in
+            increasing Norfolk&apos;s vulnerability.
           </p>
         </div>
       </div>
@@ -49,23 +51,45 @@ const Section2 = () => {
 
 const Section3 = () => {
   return (
-    <div className={cx(styles.section3, styles.bgSecondary)}>
-      <div>
-        <div className={cx(styles.col, styles.colLeft)} />
-        <div className={cx(styles.col, styles.colRight)}>
+    <div className={cx(styles.section3, styles.bgGray, styles.textWhite)}>
+      <div className={styles.container}>
+        <div className={styles.contentRight}>
+          <img
+            src="/assets/images/stories/norfolk/nf_section_3_bg.png"
+            className={styles.section4Img}
+            alt=""
+          />
+        </div>
+        <div className={styles.contentLeft}>
           <p>
-            Residents most impacted by extreme heat are located in former
-            redlined zones – primarily Black neighborhoods, including Harlem and
-            the Bronx. Air pollution is around 20 times more severe in some
-            parts of the Bronx than in the rest of the city, leading to higher
-            than average temperatures.
+            The city has one of the largest sea-level rises in the country –
+            half a foot since 1992. That’s twice the global average. The climate
+            crisis, sinking land, and changing ocean currents all play their
+            part in increasing Norfolk’s vulnerability.
           </p>
-          <p>
-            These are neighborhoods where there is significantly less tree
-            canopy, higher levels of air pollution, a history of disinvestment,
-            and where residents sometimes struggle to afford amenities like air
-            conditioning.
+          <br />
+          <p className={cx(styles.textSecondary, styles.bold)}>
+            The impacts of floods in Norfolk include:
           </p>
+          <br />
+          <ul>
+            <li className={cx(styles.listItem)}>
+              Property damage to homes and cars.
+            </li>
+            <li className={cx(styles.listItem)}>
+              Disruption of transport infrastructure.
+            </li>
+            <li className={cx(styles.listItem)}>
+              Road flooding, cutting off vulnerable communities from the city.
+            </li>
+            <li className={cx(styles.listItem)}>
+              Disrupted education due to safety concerns for children, which has
+              long term social and economic consequences.
+            </li>
+            <li className={cx(styles.listItem)}>
+              Heightened stress and anxiety.
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -74,49 +98,90 @@ const Section3 = () => {
 
 const Section4 = () => {
   return (
-    <div className={cx(styles.section4, styles.bgLightBlue, styles.textGray)}>
-      <div className={styles.container}>
-        <div className={styles.contentRight}>
-          <img
-            src="/assets/images/stories/norfolk/nf_section_4_bg.png"
-            className={styles.section4Img}
-            alt=""
-          />
-        </div>
-        <div className={styles.contentLeft}>
-          <h5 className={cx(styles.sectionTitle)}>Cool Neighborhoods NYC</h5>
+    <div className={cx(styles.section4, styles.bgWhite)}>
+      <div>
+        <div className={cx(styles.col, styles.colLeft)} />
+        <div className={cx(styles.col, styles.colRight, styles.textGray)}>
           <p>
-            To address extreme heat, the New York City Mayor’s Office worked
-            with numerous partners including community groups, the New York City
-            Panel on Climate Change, Columbia University, New York City
-            Emergency Management Agency, New York City Small Business Service,
-            and the Department of Public Health to initiate a number of heat
-            mitigation programs and tools as part of Cool Neighborhoods NYC.
+            A combination of disinvestment and historic decisions to build
+            public housing in flood-prone areas means the poorest and most
+            vulnerable city residents endure the biggest impact of the floods.
           </p>
           <p>
-            The program is New York City’s first heat mitigation project.
-            Launched in 2017 the plan is a comprehensive resilience strategy
-            that is informed by health and climate data. The plan focuses
-            investments and programming in the most vulnerable and underserved
-            communities in NYC.
+            Since 2015, Norfolk&apos;s city government has implemented a range
+            of resilience through international consultation, private and public
+            sector collaboration, and community-led engagement to tackle its
+            flooding crisis. The city aims to be a hub of experimentation and
+            climate innovation. It hopes that by trying a range of new ideas, it
+            can invite city leaders across the US to see what works in tackling
+            flooding and inspire others to follow its lead.
           </p>
-          <p>Examples of initiatives within the project are:</p>
-          <ul>
-            <li className={cx(styles.listItem)}>
-              Creating a heat vulnerability index
-            </li>
-            <li className={cx(styles.listItem)}>
-              Developing an air conditioning program
-            </li>
-            <li className={cx(styles.listItem)}>Increasing the tree canopy</li>
-            <li className={cx(styles.listItem)}>Building cooling centers</li>
-            <li className={cx(styles.listItem)}>NYC CoolRoofs Program</li>
-            <li className={cx(styles.listItem)}>
-              Be A Buddy – a community collaboration
-            </li>
-          </ul>
         </div>
       </div>
+    </div>
+  );
+};
+
+const Section5 = () => {
+  return (
+    <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
+      <Quote
+        text="We’re building big infrastructure and a bigger vision. We’ve talked
+        about Norfolk being a petri dish to come and test resilience
+        solutions. All our projects on flooding are so interconnected. We’re
+        working with people around community and coastal resilience."
+        image="/assets/images/stories/norfolk/nf_people_crouch_lori.jpg"
+        authorName="Lori Crouch"
+        authorPosition="Director of Communications"
+        authorCompany="City of Norfolk"
+      />
+    </div>
+  );
+};
+
+const Section9 = () => {
+  return (
+    <div className={cx(styles.bgSecondary, styles.quoteContainer)}>
+      <Quote
+        text="Coastal flooding is a long-term issue and we need to design
+        for the future."
+        image="/assets/images/stories/norfolk/nf_people_douglas_beaver.jpg"
+        authorName="Doug Beaver"
+        authorPosition="Chief Resilience officer"
+        authorCompany="City of Norfolk"
+      />
+    </div>
+  );
+};
+
+const Section11 = () => {
+  return (
+    <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
+      <Quote
+        text="We’re creating a beautiful landscape neighborhood that will
+        connect communities, while addressing issues that arise out of the
+        flood plain."
+        image="/assets/images/stories/norfolk/nf_people_susan_perry.jpg"
+        authorName="Susan Perry"
+        authorPosition="Director Department of housing and community"
+        authorCompany="City of Norfolk"
+      />
+    </div>
+  );
+};
+
+const Section14 = () => {
+  return (
+    <div className={cx(styles.bgGray, styles.quoteContainer)}>
+      <Quote
+        text="We’ve been successful because we have had buy-in from the
+        community from the start. You have to think innovatively and then
+        you have to engage the community at the forefront."
+        image="/assets/images/stories/norfolk/nf_people_douglas_beaver.jpg"
+        authorName="Doug Beaver"
+        authorPosition="Chief Resilience officer"
+        authorCompany="City of Norfolk"
+      />
     </div>
   );
 };
@@ -128,6 +193,10 @@ const Norfolk = () => {
       <Section2 />
       <Section3 />
       <Section4 />
+      <Section5 />
+      <Section9 />
+      <Section11 />
+      <Section14 />
     </div>
   );
 };
