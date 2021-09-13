@@ -87,7 +87,7 @@
     font-family: "Oxygen", sans-serif;
     font-size: 1.1rem;
     line-height: 1.5;
-    margin: 1rem 0;
+    margin: 2rem 0;
 
     @media screen and (min-width: 500px) {
       font-size: 1rem;
@@ -679,8 +679,9 @@
   }
 
   @media screen and (min-width: 1000px) {
-    background-size: auto 40vw;
-    padding: 2rem 0;
+    background-size: auto 35vw;
+    padding: 4rem 0;
+    background-position: bottom left;
   }
 
   @media screen and (min-width: 1400px) {

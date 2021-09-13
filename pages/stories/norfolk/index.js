@@ -49,53 +49,6 @@ const Section2 = () => {
   );
 };
 
-const Section3 = () => {
-  return (
-    <div className={cx(styles.section3, styles.bgGray, styles.textWhite)}>
-      <div className={styles.container}>
-        <div className={styles.contentRight}>
-          <img
-            src="/assets/images/stories/norfolk/nf_section_3_bg.png"
-            className={styles.section4Img}
-            alt=""
-          />
-        </div>
-        <div className={styles.contentLeft}>
-          <p>
-            The city has one of the largest sea-level rises in the country –
-            half a foot since 1992. That’s twice the global average. The climate
-            crisis, sinking land, and changing ocean currents all play their
-            part in increasing Norfolk’s vulnerability.
-          </p>
-          <br />
-          <p className={cx(styles.textSecondary, styles.bold)}>
-            The impacts of floods in Norfolk include:
-          </p>
-          <br />
-          <ul>
-            <li className={cx(styles.listItem)}>
-              Property damage to homes and cars.
-            </li>
-            <li className={cx(styles.listItem)}>
-              Disruption of transport infrastructure.
-            </li>
-            <li className={cx(styles.listItem)}>
-              Road flooding, cutting off vulnerable communities from the city.
-            </li>
-            <li className={cx(styles.listItem)}>
-              Disrupted education due to safety concerns for children, which has
-              long term social and economic consequences.
-            </li>
-            <li className={cx(styles.listItem)}>
-              Heightened stress and anxiety.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const Section4 = () => {
   return (
     <div className={cx(styles.section4, styles.bgWhite)}>
@@ -139,6 +92,93 @@ const Section5 = () => {
   );
 };
 
+const Section7 = () => {
+  return (
+    <div className={cx(styles.section10, styles.bgGray, styles.textWhite)}>
+      <div>
+        <div className={cx(styles.col, styles.colLeft)} />
+        <div className={cx(styles.col, styles.colRight)}>
+          <h5 className={cx(styles.sectionTitle)}>
+            Ohio Creek Watershed Project
+          </h5>
+          <p>
+            Central to the flood resilience solutions is the Ohio Creek
+            Watershed, a project funded by a $112 million grant from the
+            National Disaster Competition awarded to the city after Hurricane
+            Sandy.
+          </p>
+          <p className={cx(styles.textSecondary)}>
+            The project integrates a range of interventions, including:
+          </p>
+          <ul>
+            <li className={cx(styles.listItem)}>
+              A resilience park with native plants to absorb stormwater and
+              underground pipes that collect and pump out stormwater.
+            </li>
+            <li className={cx(styles.listItem)}>
+              Two stormwater pump stations to pump rainfall to the Elizabeth
+              River.
+            </li>
+            <li className={cx(styles.listItem)}>
+              Elevating roads to prevent future flooding.
+            </li>
+            <li className={cx(styles.listItem)}>
+              Construction of a berm and rock jetty.
+            </li>
+            <li className={cx(styles.listItem)}>
+              Construction of flood and tidal gates.
+            </li>
+            <li className={cx(styles.listItem)}>
+              A living shoreline and wetlands that absorb water and increase
+              biodiversity
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Section8 = () => {
+  return (
+    <div className={cx(styles.section8, styles.bgWhite, styles.textGray)}>
+      <div className={styles.contentRight}>
+        <img
+          src="/assets/images/stories/norfolk/nf_section_8_bg.png"
+          className={styles.section10Img}
+          alt=""
+        />
+      </div>
+      <div className={styles.container}>
+        <div className={styles.contentLeft}>
+          <p>
+            The resilience park design has been created with community
+            consultation across 13 different meetings over a period of two
+            years. It includes basketball courts, a children’s play area and a
+            fishing pier.
+          </p>
+          <p>
+            The berm is a sea wall that protects the community from coastal
+            flooding. It will be a total of 11 feet tall to meet the worst-case
+            scenario of a 100-year coastal storm and a simultaneous 10-year rain
+            event. By 2065, when sea levels are expected to rise by 2.5 feet,
+            the berm will still effectively hold back floods and protect the
+            community.
+          </p>
+          <p>
+            The entire project is borne from collaboration with local
+            universities to design the best flood resilience strategies, private
+            contractors to build the resilience features, city government
+            partners to integrate the solutions with housing and parks, and
+            local NGOs and the community to ensure the park, in particular, is
+            designed around local people’s needs.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Section9 = () => {
   return (
     <div className={cx(styles.bgSecondary, styles.quoteContainer)}>
@@ -150,6 +190,36 @@ const Section9 = () => {
         authorPosition="Chief Resilience officer"
         authorCompany="City of Norfolk"
       />
+    </div>
+  );
+};
+
+const Section10 = () => {
+  return (
+    <div className={cx(styles.section10, styles.bgWhite, styles.textGray)}>
+      <div>
+        <div className={cx(styles.col, styles.colLeft)} />
+        <div className={cx(styles.col, styles.colRight)}>
+          <h5 className={cx(styles.sectionTitle)}>Tidewater Gardens</h5>
+          <p>
+            The Tidewater Gardens public housing complex in St. Pauls is home to
+            3,200 residents, half of which are children. The neighborhood is
+            built on a low-lying area, making it vulnerable to floods. Alongside
+            it is 26 acres of unused land that will become a resilience park to
+            mitigate flood risk while improving community health and wellbeing.
+          </p>
+          <p>
+            The project is funded by a $12 million grant from the Department of
+            Housing and Urban Development, as part of a $30 million investment
+            to transform the St. Paul’s area.
+          </p>
+          <p>
+            To start, the Department of Housing and Community studied the Land’s
+            hydrology, revealing an old creek bed that could be daylighted to
+            hold water and slow down floodwaters.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
@@ -166,6 +236,98 @@ const Section11 = () => {
         authorPosition="Director Department of housing and community"
         authorCompany="City of Norfolk"
       />
+    </div>
+  );
+};
+
+const Section12 = () => {
+  return (
+    <div className={cx(styles.section12, styles.bgLightBlue, styles.textGray)}>
+      <div className={styles.container}>
+        <div className={styles.contentRight}>
+          <img
+            src="/assets/images/stories/norfolk/nf_section_12_bg.png"
+            className={styles.section12Img}
+            alt=""
+          />
+        </div>
+        <div className={styles.contentLeft}>
+          <p>
+            The Department worked with private consultants and a coalition of
+            engineers, landscape gardeners, the Department of Works, and the
+            Resilience Office to decide on the following flood-mitigation
+            measures:
+          </p>
+          <ul>
+            <li className={cx(styles.listItem)}>
+              Daylight the creek bed, creating a waterway through the park.
+            </li>
+            <li className={cx(styles.listItem)}>
+              Construction of retention ponds and bioswales.
+            </li>
+            <li className={cx(styles.listItem)}>
+              Planting of native trees and shrubs to absorb flood water.
+            </li>
+          </ul>
+          <p>
+            The Department rallied residents around the program through public
+            meetings, leafleting, online surveys, door-knocking, a website and
+            socially-distanced meetings, as well as engagement with the tenant
+            management council.
+          </p>
+          <p>
+            These conversations helped ensure the park development would match
+            the residents’ needs by including fitness and meditation spaces, a
+            cultural history trail, and an amphitheater.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Section13 = () => {
+  return (
+    <div className={cx(styles.bgWhite, styles.textGray, styles.section13)}>
+      <div className={cx(styles.container)}>
+        <div className={cx(styles.section13Aside)}>
+          &quot;You can never communicate enough – so always over-communicate.
+          Make sure you’re working with folks from all levels, from residents to
+          elected officials.&quot;
+          <div className={cx(styles.quoteAuthor)}>
+            <div className={cx(styles.quoteImage)}>
+              <img
+                src="/assets/images/stories/norfolk/nf_people_susan_perry.jpg"
+                alt="Susan Perry"
+              />
+            </div>
+            <div className={cx(styles.quoteInfo)}>
+              <div className={styles.quoteAuthorName}>Susan Perry</div>
+              <div className={styles.quoteAuthorPosition}>
+                Director Department of housing and community
+              </div>
+              <div className={styles.quoteAuthorCompany}>City of Norfolk</div>
+            </div>
+          </div>
+        </div>
+        <div className={cx(styles.section13Wrapper)}>
+          <h5 className={cx(styles.sectionTitle)}>
+            Communication and Collaboration
+          </h5>
+          <p>
+            In both Tidewater Gardens and the wider Ohio Creek Watershed
+            project, the city government worked collaboratively with public and
+            private entities to innovate and develop solutions that meet the
+            city’s needs.
+          </p>
+          <p>
+            Central to all efforts is communication with the community, from
+            involving them in the planning phase through public meetings and
+            surveys to keeping them informed on progress with meetings, postal
+            newsletters, and videos online.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
@@ -191,11 +353,16 @@ const Norfolk = () => {
     <div className={styles.stories}>
       <Section1 />
       <Section2 />
-      <Section3 />
+
       <Section4 />
       <Section5 />
+      <Section7 />
+      <Section8 />
       <Section9 />
+      <Section10 />
       <Section11 />
+      <Section12 />
+      <Section13 />
       <Section14 />
     </div>
   );

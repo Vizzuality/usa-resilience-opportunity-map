@@ -155,9 +155,7 @@ const Section5 = () => {
             That assessment then measures the property’s flood-risk by looking
             at 13 factors. These include, but are not limited to:
           </h5>
-          <br />
           <p>Examples of initiatives within the project are:</p>
-          <br />
           <ul>
             <li className={cx(styles.listItem)}>Building code.</li>
             <li className={cx(styles.listItem)}>
@@ -168,7 +166,6 @@ const Section5 = () => {
               The probability of water reaching other property (e.g., cars).
             </li>
           </ul>
-          <br />
           <p>
             The assessment also considers the long-term benefits of buying the
             flood-prone property and compares it to the total cost to buy that
@@ -216,7 +213,6 @@ const Section6 = () => {
             Program.
           </li>
         </ul>
-        <br />
         <p>
           This assessment delivers a flood risk score that then determines the
           next phase of the intervention.

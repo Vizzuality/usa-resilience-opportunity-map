@@ -87,7 +87,7 @@
     font-family: "Oxygen", sans-serif;
     font-size: 1.1rem;
     line-height: 1.5;
-    margin: 1rem 0;
+    margin: 2rem 0;
 
     @media screen and (min-width: 600px) {
       font-size: 1rem;
@@ -717,6 +717,10 @@
     @media screen and (min-width: 1000px) {
       font-size: 16px;
     }
+
+    @media screen and (min-width: 1200px) {
+      font-size: 20px;
+    }
   }
 
   .section14Wrapper {
@@ -767,13 +771,10 @@
 
   @media screen and (min-width: 1000px) {
     background-size: 61% auto;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
   }
 
   @media screen and (min-width: 1400px) {
     background-size: auto 100%;
-    padding-top: 4rem;
   }
 
   .container {
@@ -784,7 +785,7 @@
   }
   
   &::before {
-    background-image: url("/assets/images/stories/newyork/ny_section_16_image_2.png");
+    background-image: url("/assets/images/stories/map_cordage_2.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right top -3vw;
@@ -804,7 +805,7 @@
   }
 
   &::after {
-    background-image: url("/assets/images/stories/newyork/ny_section_16_image_1.png");
+    background-image: url("/assets/images/stories/map_corsage_1.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left -5vh bottom 0;
@@ -836,6 +837,7 @@
     
     @media screen and (min-width: 1000px) {
       margin-left: 6rem;
+      margin-top: 0;
       max-width: 50%;
     }
   }

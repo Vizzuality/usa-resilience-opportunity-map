@@ -91,7 +91,7 @@
     font-family: "Oxygen", sans-serif;
     font-size: 1.1rem;
     line-height: 1.5;
-    margin: 1rem 0;
+    margin: 2rem 0;
 
     @media screen and (min-width: 500px) {
       font-size: 1rem;
@@ -264,19 +264,18 @@
 
     @media screen and (min-width: 1000px) {
       display: flex;
-      height: auto;
+      height: 90%;
       justify-content: flex-end;
       margin-right: 0;
       position: absolute;
       top: 0;
-      right: -12%;
-      width: 62%;
+      right: -25%;
     }
 
     @media screen and (min-width: 1200px) {
+      height: 90%;
       margin-right: 0;
-      right: 0;
-      width: 45%;
+      right: -10vw;
     }
 
     .section3Img {
