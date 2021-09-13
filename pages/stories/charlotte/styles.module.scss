@@ -460,7 +460,6 @@
 
 // Section 7
 .section7 {
-  $section1-cols: 1000px;
   position: relative;
 
   @media screen and (min-width: 600px) {
@@ -490,7 +489,7 @@
       top: -3%;
     }
 
-    @media screen and (min-width: $section1-cols) {
+    @media screen and (min-width: 1000px) {
       background-position: top right;
       height: 102.5%;
       right: -15%;
@@ -513,7 +512,7 @@
   .contentLeft {
     max-width: 40rem;
     padding-bottom: 4rem;
-    padding-top: 40rem;
+    padding-top: 180%;
     position: relative;
     z-index: 2;
 
@@ -562,9 +561,13 @@
   }
 
   .contentRight {
-    padding: 4rem var(--container-padding);
+    padding: 2rem var(--container-padding);
     position: relative;
     width: 100%;
+
+    @media screen and (min-width: 600px) {
+      padding: 4rem var(--container-padding);
+    }
 
     @media screen and (min-width: 900px) {
       max-width: 37rem;
