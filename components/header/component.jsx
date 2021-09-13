@@ -79,6 +79,7 @@ function Menu({ open, setOpen, isDesktop }) {
               src="/assets/logos/logo_dark.svg"
               alt="US Climate Resilience Map"
             />
+            <p className="header--logo-title">US Climate Resilience Map</p>
           </a>
         </Link>
       </div>
@@ -167,6 +168,7 @@ export default function Header() {
                   }.svg`}
                   alt="US Climate Resilience Map"
                 />
+                <p className="header--logo-title">US Climate Resilience Map</p>
               </a>
             </Link>
             <BurgerMenu open={isMenuOpen} setOpen={openMenu} />
@@ -187,6 +189,7 @@ export default function Header() {
                   }.svg`}
                   alt="US Climate Resilience Map"
                 />
+                <p className="header--logo-title">US Climate Resilience Map</p>
               </a>
             </Link>
             <Menu open={isMenuOpen} setOpen={openMenu} isDesktop />
