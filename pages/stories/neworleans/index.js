@@ -272,7 +272,7 @@ const Section9 = () => {
           <p>The Community Adaptation Program interventions included:</p>
           <ul className={styles.section9List}>
             <li>
-              <span className={cx(styles.textRed, styles.bold)}>
+              <span className={cx(styles.textPrimary, styles.bold)}>
                 Impermeable surface demolition
               </span>
               {' '}
@@ -282,7 +282,7 @@ const Section9 = () => {
               needs to be pumped out
             </li>
             <li>
-              <span className={cx(styles.textRed, styles.bold)}>
+              <span className={cx(styles.textPrimary, styles.bold)}>
                 Permeable pavements
               </span>
               {' '}
@@ -306,7 +306,7 @@ const Section10 = () => {
         <div className={styles.contentRight}>
           <ul className={styles.section10List}>
             <li>
-              <span className={cx(styles.textRed, styles.bold)}>
+              <span className={cx(styles.textPrimary, styles.bold)}>
                 Tree planting, planter boxes and rain gardens
               </span>
               {' '}
@@ -314,7 +314,7 @@ const Section10 = () => {
               risks as the plants soak up the water into their roots
             </li>
             <li>
-              <span className={cx(styles.textRed, styles.bold)}>
+              <span className={cx(styles.textPrimary, styles.bold)}>
                 Rain barrels
               </span>
               {' '}
@@ -322,7 +322,7 @@ const Section10 = () => {
               water can be used to care for plants
             </li>
             <li>
-              <span className={cx(styles.textRed, styles.bold)}>
+              <span className={cx(styles.textPrimary, styles.bold)}>
                 French drains
               </span>
               {' '}

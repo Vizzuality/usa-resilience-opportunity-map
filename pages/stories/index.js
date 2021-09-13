@@ -59,10 +59,9 @@ const STORIES = [
     description:
       'Turning a mixed-income neighbourhood into a model solution for stormwater flooding.',
     buttonText: 'Discover',
-    image: 'img',
-    thumb:
-      'https://play-lh.googleusercontent.com/F565AH7FQeC90yy8V1Gykho2GpXRrNO5ruoX86M3LP_1yUqUMRDAZpj1SKGU_AO4mNee=s180',
-    href: '/stories#',
+    image: '/assets/images/stories/norfolk/nf_section_1_collage.png',
+    thumb: '/assets/images/stories/norfolk/nf_section_1_bg.png',
+    href: '/stories/norfolk',
   },
 ];
 

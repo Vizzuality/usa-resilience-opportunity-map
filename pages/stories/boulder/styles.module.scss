@@ -38,7 +38,7 @@
   color: var(--brand-gray);
 }
 
-.textRed {
+.textPrimary {
   color: var(--brand-primary);
 }
 
@@ -87,7 +87,7 @@
     font-family: "Oxygen", sans-serif;
     font-size: 1.1rem;
     line-height: 1.5;
-    margin: 1rem 0;
+    margin: 2rem 0;
 
     @media screen and (min-width: 500px) {
       font-size: 1rem;
@@ -235,17 +235,15 @@
 
 // Section 3
 .section3 {
-  $section3-cols: 1000px;
-
   background: var(--brand-primary);
   color: white;
   overflow: hidden;
   position: relative;
 
   .colRight {
-    padding: 4rem var(--container-padding);
+    padding: 2rem var(--container-padding);
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
       margin-left: 50%;
@@ -259,7 +257,7 @@
     overflow: hidden;
     position: relative;
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
       position: absolute;
@@ -278,7 +276,7 @@
       width: 100vw;
       z-index: 0;
 
-      @media screen and (min-width: $section3-cols) {
+      @media screen and (min-width: 1000px) {
         width: 50vw;
       }
     }
@@ -468,7 +466,7 @@
   }
 
   .section9Wrapper {
-    padding: 6rem 0;
+    padding: 4rem 0;
 
     @media screen and (min-width: 1000px) {
       left: 57%;
@@ -486,8 +484,8 @@
 // Section 10
 .section10 {
   position: relative;
-  padding-bottom: 28rem;
-  padding-top: 4rem;
+  padding-bottom: 110%;
+  padding-top: 2rem;
 
   @media screen and (min-width: 600px) {
     padding-bottom: 53rem;
@@ -679,8 +677,9 @@
   }
 
   @media screen and (min-width: 1000px) {
-    background-size: auto 40vw;
-    padding: 2rem 0;
+    background-size: auto 35vw;
+    padding: 4rem 0;
+    background-position: bottom left;
   }
 
   @media screen and (min-width: 1400px) {
@@ -778,16 +777,14 @@
 
 // Section 16
 .section16 {
-  $section16-cols: 1000px;
-
   color: var(--text-gray);
   overflow: hidden;
   position: relative;
 
   .colLeft {
-    padding: 4rem var(--container-padding);
+    padding: 2rem var(--container-padding);
 
-    @media screen and (min-width: $section16-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2.5);
       margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
@@ -804,7 +801,7 @@
     overflow: hidden;
     position: relative;
 
-    @media screen and (min-width: $section16-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
       margin-left: 55%;
@@ -824,7 +821,7 @@
       width: 100vw;
       z-index: 0;
 
-      @media screen and (min-width: $section16-cols) {
+      @media screen and (min-width: 1000px) {
         width: 50vw;
       }
     }
@@ -837,7 +834,6 @@
   background-position: top center;
   background-size: auto 40%;
   background-repeat: no-repeat;
-  padding-bottom: 1rem;
 
   @media screen and (min-width: 500px) {
     background-size: auto 60%;
@@ -857,7 +853,7 @@
   }
 
   .section17Wrapper {
-    padding: 3rem var(--container-padding);
+    padding: 3rem 0;
 
     @media screen and (min-width: 1000px) {
       left: 57%;
@@ -871,7 +867,7 @@
     }
 
     .text {
-      margin-top: 16rem;
+      margin-top: 90%;
 
       @media screen and (min-width: 1000px) {
         margin-top: 0;
