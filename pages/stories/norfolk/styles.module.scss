@@ -228,7 +228,7 @@
   position: relative;
 
   @media screen and (min-width: 600px) {
-    padding-top: 78rem;
+    padding-top: 86%;
   }
 
   @media screen and (min-width: 1000px) {
@@ -350,7 +350,7 @@
   position: relative;
 
   @media screen and (min-width: 600px) {
-    padding-top: 78rem;
+    padding-top: 118%;
   }
 
   @media screen and (min-width: 1000px) {
@@ -457,10 +457,9 @@
     @media screen and (min-width: 600px) {
       position: absolute;
       display: flex;
-      top: 0;
+      bottom: 0;
       right: 0;
-      width: 50%;
-      justify-content: flex-end;
+      width: 45%;
     }
 
     @media screen and (min-width: 1200px) {
@@ -649,7 +648,7 @@
     text-align: left;
 
     @media screen and (min-width: 500px) {
-      margin-top: 4rem;
+      margin-bottom: 4rem;
     }
     
     @media screen and (min-width: 1000px) {
@@ -667,7 +666,6 @@
     text-align: left;
 
     @media screen and (min-width: 500px) {
-      padding: 0;
       margin-bottom: 0;
       max-width: 80vw;
     }
