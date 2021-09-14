@@ -54,12 +54,6 @@ const Section3 = () => {
     <div className={cx(styles.section3, styles.bgGray, styles.textWhite)}>
       <div className={styles.container}>
         <div className={styles.contentLeft}>
-          <p>
-            The city has one of the largest sea-level rises in the country –
-            half a foot since 1992. That’s twice the global average. The climate
-            crisis, sinking land, and changing ocean currents all play their
-            part in increasing Norfolk’s vulnerability.
-          </p>
           <p className={cx(styles.textSecondary, styles.bold)}>
             {' '}
             The impacts of floods in Norfolk include:
@@ -136,6 +130,9 @@ const Section6 = () => {
     <div className={cx(styles.section6, styles.bgLightBlue, styles.textGray)}>
       <div className={styles.container}>
         <div className={styles.contentLeft}>
+          <h5 className={cx(styles.sectionTitle)}>
+            Two Resilience Parks. Generations of Change.
+          </h5>
           <p>
             Before planning the resilience initiatives, Norfolk’s Resilience
             Office, Planning Department, and Housing and Community Development
