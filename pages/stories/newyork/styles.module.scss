@@ -270,7 +270,7 @@
 
 // Section 4
 .section4 {
-  padding: 0 0 4rem 0;
+  padding: 0 0 4em 0;
   position: relative;
   overflow: hidden;
 
@@ -281,7 +281,7 @@
   .contentLeft {
     position: relative;
     z-index: 2;
-    margin-top: 4rem;
+    margin-top: 2rem;
     max-width: 40rem;
 
     @media screen and (min-width: 900px) {
@@ -292,23 +292,34 @@
   }
 
   .contentRight {
+    margin-right: -1rem;
     position: relative;
     z-index: 1;
-    margin-right: -1rem;
 
-    @media screen and (min-width: 900px) {
-      position: absolute;
+    @media screen and (min-width: 600px) {
       display: flex;
-      top: 0;
-      right: 0;
-      width: 40%;
       justify-content: flex-end;
       margin-right: 0;
+      position: absolute;
+      right: 0;
+      top: 55%;
+      width: 35%;
     }
 
-    @media screen and (min-width: 1240px) {
-      width: auto;
+    @media screen and (min-width: 1000px) {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 0;
+      position: absolute;
+      right: -15%;
+      top: 0;
+      width: 60%;
+    }
+
+    @media screen and (min-width: 1200px) {
       height: 100%;
+      right: 0;
+      width: auto;
     }
 
     .section4Img {
@@ -329,12 +340,12 @@
   }
 
   .contentRight {
-    margin: 4rem 0;
+    margin: 3rem 0;
     position: relative;
     width: 100%;
 
     @media screen and (min-width: 900px) {
-      margin-top: 0;
+      margin: 0 0 4rem 0;
       max-width: 35rem;
       margin-left: 45%;
     }
@@ -354,14 +365,13 @@
       display: flex;
       bottom: 0;
       left: 0;
-      width: 40%;
+      width: 45%;
       justify-content: flex-end;
       margin-left: 0;
     }
 
     @media screen and (min-width: 1200px) {
       height: auto;
-      width: 40%;
     }
 
     .section5Img {
@@ -390,7 +400,7 @@
 
   .contentLeft {
     position: relative;
-    margin-top: 4rem;
+    margin-top: 2rem;
     max-width: 40rem;
     z-index: 2;
    
@@ -409,7 +419,7 @@
       position: absolute;
       display: flex;
       top: 0;
-      right: 0;
+      right: -5%;
       width: 40%;
       justify-content: flex-end;
       margin-right: 0;
@@ -494,7 +504,7 @@
   overflow: hidden;
 
   @media screen and (min-width: 600px) {
-    padding: 4rem 0 0 0;
+    padding: 2rem 0 0 0;
   }
 
   .contentLeft {
@@ -506,10 +516,14 @@
     @media screen and (min-width: 600px) {
       margin-bottom: 4rem;
       margin-top: 0;
-      width: 50%;
+      width: 45%;
     }
 
     @media screen and (min-width: 1200px) {
+      width: 55%;
+    }
+
+    @media screen and (min-width: 1500px) {
       width: 60%;
     }
   }
@@ -522,9 +536,9 @@
     @media screen and (min-width: 600px) {
       position: absolute;
       display: flex;
+      height: 100%;
       top: 0;
-      right: -35%;
-      width: 80%;
+      right: -40%;
       justify-content: flex-end;
     }
 
@@ -559,7 +573,7 @@
 
 // Section 12
 .section12 {
-  padding: 0 0 4rem 0;
+  padding: 0 0 2rem 0;
   position: relative;
   overflow: hidden;
 
@@ -568,7 +582,7 @@
   }
 
   .contentLeft {
-    margin-top: 4rem;
+    margin-top: 2rem;
     max-width: 40rem;
     position: relative;
     z-index: 2;
@@ -576,11 +590,11 @@
     @media screen and (min-width: 600px) {
       margin-bottom: 4rem;
       margin-top: 0;
-      width: 50%;
+      width: 45%;
     }
 
     @media screen and (min-width: 1200px) {
-      width: 60%;
+      width: 55%;
     }
   }
 
@@ -592,9 +606,9 @@
     @media screen and (min-width: 600px) {
       position: absolute;
       display: flex;
-      top: 0;
+      bottom: 0;
+      height: 100%;
       right: -43%;
-      width: 90%;
       justify-content: flex-end;
     }
 
@@ -695,11 +709,12 @@
 // Section 14
 .section14 {
   position: relative;
-  padding-bottom: 136%;
-  padding-top: 4rem;
+  padding-bottom: 130%;
+  padding-top: 2rem;
 
   @media screen and (min-width: 600px) {
     padding-bottom: 64rem;
+    padding-top: 3rem;
   }
 
   @media screen and (min-width: 1000px) {
@@ -709,7 +724,7 @@
 
   .paragraph {
     @media screen and (min-width: 600px) {
-      font-size: 12px;
+      font-size: 16px;
     }
 
     @media screen and (min-width: 1000px) {
@@ -763,7 +778,7 @@
 
 // Section16
 .section16 {
-  padding: 4rem var(--padding-quote);
+  padding: 4rem var(--padding-quote) 2rem var(--padding-quote);
   position: relative;
   z-index: 1;
 

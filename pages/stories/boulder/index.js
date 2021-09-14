@@ -118,9 +118,9 @@ const Section5 = () => {
         <p>The impact of wildfires on Boulder’s residents ranges from:</p>
         <ul>
           <li className={cx(styles.listItem)}>
-            Millions of dollars worth of property damage.
+            Millions of dollars worth of property damage
           </li>
-          <li className={cx(styles.listItem)}>Destruction of homes.</li>
+          <li className={cx(styles.listItem)}>Destruction of homes</li>
           <li className={cx(styles.listItem)}>
             Resourcing issues – firefighters deployed to fight wildfires away
             from their own districts
@@ -224,19 +224,19 @@ const Section9 = () => {
           </p>
           <ul>
             <li className={cx(styles.listItem)}>
-              Upgrading from a shake shingle roof to a metal or tiled roof.
+              Upgrading from a shake shingle roof to a metal or tiled roof
             </li>
             <li className={cx(styles.listItem)}>
-              Screening vents to prevent embers from entering the home.
+              Screening vents to prevent embers from entering the home
             </li>
             <li className={cx(styles.listItem)}>
-              Removing combustible materials, including from under decking.
+              Removing combustible materials, including from under decking
             </li>
             <li className={cx(styles.listItem)}>
-              Cleaning gutters of pine needles and other debris.
+              Cleaning gutters of pine needles and other debris
             </li>
             <li className={cx(styles.listItem)}>
-              Installing screens and flashing with flame-resistant materials.
+              Installing screens and flashing with flame-resistant materials
             </li>
           </ul>
         </div>
@@ -410,11 +410,11 @@ const Section16 = () => {
           </p>
           <ul>
             <li className={cx(styles.listItem)}>
-              Removing debris in the garden/driveway.
+              Removing debris in the garden/driveway
             </li>
-            <li className={cx(styles.listItem)}>Removing flammable fuels.</li>
-            <li className={cx(styles.listItem)}>Cleaning up guttering.</li>
-            <li className={cx(styles.listItem)}>Keeping lawns watered.</li>
+            <li className={cx(styles.listItem)}>Removing flammable fuels</li>
+            <li className={cx(styles.listItem)}>Cleaning up guttering</li>
+            <li className={cx(styles.listItem)}>Keeping lawns watered</li>
           </ul>
           <p>
             On occasion, larger interventions are required, such as tree removal

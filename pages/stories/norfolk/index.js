@@ -54,32 +54,26 @@ const Section3 = () => {
     <div className={cx(styles.section3, styles.bgGray, styles.textWhite)}>
       <div className={styles.container}>
         <div className={styles.contentLeft}>
-          <p>
-            The city has one of the largest sea-level rises in the country –
-            half a foot since 1992. That’s twice the global average. The climate
-            crisis, sinking land, and changing ocean currents all play their
-            part in increasing Norfolk’s vulnerability.
-          </p>
           <p className={cx(styles.textSecondary, styles.bold)}>
             {' '}
             The impacts of floods in Norfolk include:
           </p>
           <ul>
             <li className={cx(styles.listItem)}>
-              Property damage to homes and cars.
+              Property damage to homes and cars
             </li>
             <li className={cx(styles.listItem)}>
-              Disruption of transport infrastructure.
+              Disruption of transport infrastructure
             </li>
             <li className={cx(styles.listItem)}>
-              Road flooding, cutting off vulnerable communities from the city.
+              Road flooding, cutting off vulnerable communities from the city
             </li>
             <li className={cx(styles.listItem)}>
               Disrupted education due to safety concerns for children, which has
-              long term social and economic consequences.
+              long term social and economic consequences
             </li>
             <li className={cx(styles.listItem)}>
-              Heightened stress and anxiety.
+              Heightened stress and anxiety
             </li>
           </ul>
         </div>
@@ -136,6 +130,9 @@ const Section6 = () => {
     <div className={cx(styles.section6, styles.bgLightBlue, styles.textGray)}>
       <div className={styles.container}>
         <div className={styles.contentLeft}>
+          <h5 className={cx(styles.sectionTitle)}>
+            Two Resilience Parks. Generations of Change.
+          </h5>
           <p>
             Before planning the resilience initiatives, Norfolk’s Resilience
             Office, Planning Department, and Housing and Community Development
@@ -151,19 +148,19 @@ const Section6 = () => {
           </p>
           <p className={cx(styles.textPrimary, styles.bold)}>These include:</p>
           <ul>
-            <li className={cx(styles.listItem)}>Flood.</li>
-            <li className={cx(styles.listItem)}>Tide gates.</li>
-            <li className={cx(styles.listItem)}>Pumps.</li>
-            <li className={cx(styles.listItem)}>Community education.</li>
+            <li className={cx(styles.listItem)}>Flood</li>
+            <li className={cx(styles.listItem)}>Tide gates</li>
+            <li className={cx(styles.listItem)}>Pumps</li>
+            <li className={cx(styles.listItem)}>Community education</li>
             <li className={cx(styles.listItem)}>
-              Building and development ordinances.
+              Building and development ordinances
             </li>
             <li className={cx(styles.listItem)}>
-              Rainwater retention initiatives.
+              Rainwater retention initiatives
             </li>
             <li className={cx(styles.listItem)}>
               &quot;Resilience parks &quot; green spaces with climate resilient
-              infrastructure.
+              infrastructure
             </li>
           </ul>
         </div>
@@ -193,20 +190,20 @@ const Section7 = () => {
           <ul>
             <li className={cx(styles.listItem)}>
               A resilience park with native plants to absorb stormwater and
-              underground pipes that collect and pump out stormwater.
+              underground pipes that collect and pump out stormwater
             </li>
             <li className={cx(styles.listItem)}>
               Two stormwater pump stations to pump rainfall to the Elizabeth
-              River.
+              River
             </li>
             <li className={cx(styles.listItem)}>
-              Elevating roads to prevent future flooding.
+              Elevating roads to prevent future flooding
             </li>
             <li className={cx(styles.listItem)}>
-              Construction of a berm and rock jetty.
+              Construction of a berm and rock jetty
             </li>
             <li className={cx(styles.listItem)}>
-              Construction of flood and tidal gates.
+              Construction of flood and tidal gates
             </li>
             <li className={cx(styles.listItem)}>
               A living shoreline and wetlands that absorb water and increase
@@ -340,13 +337,13 @@ const Section12 = () => {
           </p>
           <ul>
             <li className={cx(styles.listItem)}>
-              Daylight the creek bed, creating a waterway through the park.
+              Daylight the creek bed, creating a waterway through the park
             </li>
             <li className={cx(styles.listItem)}>
-              Construction of retention ponds and bioswales.
+              Construction of retention ponds and bioswales
             </li>
             <li className={cx(styles.listItem)}>
-              Planting of native trees and shrubs to absorb flood water.
+              Planting of native trees and shrubs to absorb flood water
             </li>
           </ul>
           <p>
