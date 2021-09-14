@@ -63,6 +63,15 @@ const STORIES = [
     thumb: '/assets/images/stories/norfolk/nf_section_1_bg.png',
     href: '/stories/norfolk',
   },
+  {
+    title: 'Los Ángeles',
+    description:
+      'Turning a mixed-income neighbourhood into a model solution for stormwater flooding.',
+    buttonText: 'Discover',
+    image: '/assets/images/stories/losangeles/la_section_1_collage.png',
+    thumb: '/assets/images/stories/losangeles/la_section_1_bg.png',
+    href: '/stories/losangeles',
+  },
 ];
 
 const ScrollToNavigate = () => (
