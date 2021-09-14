@@ -262,10 +262,10 @@
 
     @media screen and (min-width: 1200px) {
       background-position: top right;
-      top: 10.3%;
-      height: 102.5%;
+      top: 0;
+      height: 114.2%;
       right: 0;
-      width: 45vw;
+      width: 50vw;
     }
   }
 
@@ -383,15 +383,14 @@
     }
 
     @media screen and (min-width: 1200px) {
-      background-position: top right;
-      top: 3.5%;
-      height: 102.5%;
+      background-position: bottom right;
+      top: 12%;
+      height: 90%;
       right: 0;
-      width: 45vw;
     }
 
     @media screen and (min-width: 1600px) {
-      top: 0;
+      bottom: 0;
     }
   }
 
@@ -464,8 +463,11 @@
     }
 
     @media screen and (min-width: 1200px) {
-      width: 50vw;
-      height: 120%;
+      height: 110%;
+    }
+
+    @media screen and (min-width: 1500px) {
+      height: auto;
     }
 
     .section8Img {
@@ -525,7 +527,7 @@
 
       @media screen and (min-width: $section10-cols) {
         height: 130%;
-        width: 45vw;
+        width: 48vw;
       }
     }
   }
@@ -666,7 +668,7 @@
     }
      
     @media screen and (min-width: 1200px) {
-      margin-top: 0;
+      margin-top: 2rem;
     }
   }
 
@@ -684,9 +686,9 @@
     }
 
     @media screen and (min-width: 1000px) {
-      max-width: none;
-      padding-right: 2vw;
       font-size: 2rem;
+      max-width: none;
+      padding: 2rem;
     }
 
     .quoteAuthor {
@@ -700,7 +702,7 @@
 
       @media screen and (min-width: 800px) {
         margin: 4rem 0 0 0;
-        width: 100%;
+        width: 80%;
         max-width: none;
         left: 20%;
       }
