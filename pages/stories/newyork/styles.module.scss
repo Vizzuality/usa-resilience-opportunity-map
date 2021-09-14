@@ -569,7 +569,7 @@
 
 // Section 12
 .section12 {
-  padding: 0 0 4rem 0;
+  padding: 0 0 2rem 0;
   position: relative;
   overflow: hidden;
 
@@ -586,11 +586,11 @@
     @media screen and (min-width: 600px) {
       margin-bottom: 4rem;
       margin-top: 0;
-      width: 50%;
+      width: 45%;
     }
 
     @media screen and (min-width: 1200px) {
-      width: 60%;
+      width: 55%;
     }
   }
 
@@ -602,9 +602,9 @@
     @media screen and (min-width: 600px) {
       position: absolute;
       display: flex;
-      top: 0;
+      bottom: 0;
+      height: 100%;
       right: -43%;
-      width: 90%;
       justify-content: flex-end;
     }
 
