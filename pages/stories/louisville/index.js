@@ -205,7 +205,7 @@ const Section7 = () => {
             <li className={cx(styles.orderedListItem)}>
               3. Collaborated with the Kentucky Transportation Cabinet to plant
               trees alongside busy roads – helping tackle extreme heat, noise
-              pollution, and air pollution.
+              pollution, and air pollution
             </li>
           </ul>
         </div>
@@ -231,27 +231,27 @@ const Section8 = () => {
           <ul>
             <li className={cx(styles.orderedListItem)}>
               1. It covered a large amount of land in Louisville – over 4,050
-              acres.
+              acres
             </li>
             <li className={cx(styles.orderedListItem)}>
               2. Much of that land lacked tree cover but was able to support
-              trees.
+              trees
             </li>
             <li className={cx(styles.orderedListItem)}>
               3. Working with schools would promote education about climate
-              resilience in the community.
+              resilience in the community
             </li>
           </ul>
           <p>Louisville Grows:</p>
           <ul>
             <li className={cx(styles.orderedListItem)}>
               1. Approached homeowners, inviting them to plant a tree in their
-              gardens.
+              gardens
             </li>
             <li className={cx(styles.orderedListItem)}>
               2. Convened tree planting events, during which volunteers
               collaborated with community members to create greener and
-              healthier neighborhoods.
+              healthier neighborhoods
             </li>
           </ul>
         </div>
@@ -301,13 +301,13 @@ const Section10 = () => {
           <ul>
             <li className={cx(styles.listItem)}>
               Increase the tree canopy in the park – including by planting trees
-              to shade a community garden that already exists onsite.
+              to shade a community garden that already exists onsite
             </li>
             <li className={cx(styles.listItem)}>
-              Develop a parking lot using cool pavements.
+              Develop a parking lot using cool pavements
             </li>
             <li className={cx(styles.listItem)}>
-              Ensure any building is completed with natural materials.
+              Ensure any building is completed with natural materials
             </li>
           </ul>
           <p>

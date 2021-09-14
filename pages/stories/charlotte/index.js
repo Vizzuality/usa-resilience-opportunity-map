@@ -157,19 +157,19 @@ const Section5 = () => {
           </h5>
           <p>Examples of initiatives within the project are:</p>
           <ul>
-            <li className={cx(styles.listItem)}>Building code.</li>
+            <li className={cx(styles.listItem)}>Building code</li>
             <li className={cx(styles.listItem)}>
               The probability of water being on the property or reaching the
-              building.
+              building
             </li>
             <li className={cx(styles.listItem)}>
-              The probability of water reaching other property (e.g., cars).
+              The probability of water reaching other property (e.g., cars)
             </li>
           </ul>
           <p>
             The assessment also considers the long-term benefits of buying the
             flood-prone property and compares it to the total cost to buy that
-            property.
+            property
           </p>
         </div>
       </div>
@@ -195,22 +195,22 @@ const Section6 = () => {
         <ul>
           <li className={cx(styles.listItem)}>
             Restoration of the natural floodplain to enhance water quality and
-            the ecosystem.
+            the ecosystem
           </li>
-          <li className={cx(styles.listItem)}>Safer housing stock.</li>
+          <li className={cx(styles.listItem)}>Safer housing stock</li>
           <li className={cx(styles.listItem)}>
             Increased opportunities for recreation and greenspaces (e.g.,
-            creek-side greenways).
+            creek-side greenways)
           </li>
           <li className={cx(styles.listItem)}>
-            Less tax money spent on emergency rescues.
+            Less tax money spent on emergency rescues
           </li>
           <li className={cx(styles.listItem)}>
-            Less tax money spent on disaster relief.
+            Less tax money spent on disaster relief
           </li>
           <li className={cx(styles.listItem)}>
             Less tax money spent to replenish the National Flood Insurance
-            Program.
+            Program
           </li>
         </ul>
         <p>
