@@ -110,6 +110,7 @@ function SidebarCard({
             {geometryValues.length > 0 && (
               <HazardIndicator
                 hazardLevel={indicatorValues ? indicatorValues.hazardValue : 5}
+                category={item.category.name}
                 className={styles.hazard}
               />
             )}

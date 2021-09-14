@@ -1,12 +1,20 @@
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-export default function HazardIndicator({ hazardLevel, dark, className }) {
+export default function HazardIndicator({
+  hazardLevel,
+  dark,
+  className,
+  category,
+}) {
   HazardIndicator.propTypes = {
     className: PropTypes.string,
     dark: PropTypes.bool,
     hazardLevel: PropTypes.number,
+    category: PropTypes.string,
   };
+
+  console.log('CATEGORY', category);
 
   const hazards = [
     'Low',
@@ -29,7 +37,9 @@ export default function HazardIndicator({ hazardLevel, dark, className }) {
   return (
     <div className={cx('c-hazard-indicator', className, { '--dark': dark })}>
       <div className="c-hazard--text">
-        <span className="c-hazard--title">Risk Level</span>
+        <span className="c-hazard--title">
+          {category === 'vulnerability' ? 'Vulnerability Level' : 'Risk Level'}
+        </span>
         <span className="c-hazard--value">{hazards[hazardLevel]}</span>
       </div>
       <svg
