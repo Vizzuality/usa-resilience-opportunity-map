@@ -58,8 +58,11 @@ function Home({ locations }) {
           <h1>US Climate Resilience Map</h1>
           <div className="break-line" />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            The US Climate Resilience Map: Pathways for City Solutions is a
+            publicly available, interactive map that strives to build the
+            resilience of people and communities across the United States
+            through the clear identification of climate risks and social
+            vulnerabilities and the corresponding solutions to address them.
           </p>
           <MediaContextProvider>
             <Media greaterThanOrEqual="small">
