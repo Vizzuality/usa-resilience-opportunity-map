@@ -191,8 +191,7 @@ export default function ExploreMap({
         bounds={bbox}
         mapboxApiAccessToken={MAPBOX_TOKEN}
         viewport={viewport}
-        // onViewportChange={onViewportChange}
-        onMapViewportChange={onViewportChange}
+        onViewportChange={onViewportChange}
         interactiveLayerIds={layersInteractiveIds}
         onClick={(e) => {
           if (e && e.features) {

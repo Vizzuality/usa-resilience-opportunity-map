@@ -14,8 +14,6 @@ export default function HazardIndicator({
     category: PropTypes.string,
   };
 
-  console.log('CATEGORY', category);
-
   const hazards = [
     'Low',
     'Low-medium',
