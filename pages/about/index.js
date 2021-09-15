@@ -75,9 +75,6 @@ const About = () => {
             housing type and transportation.
           </p>
         </div>
-        <div className="about-section">
-          <h2>Citations</h2>
-        </div>
       </div>
     </AboutWrapper>
   );
