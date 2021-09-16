@@ -13,7 +13,7 @@ const STORIES = [
   {
     title: 'New Orleans',
     description:
-      'Turning a mixed-income neighbourhood into a model solution for stormwater flooding',
+      'Turning a mixed-income neighbourhood into a model solution for stormwater flooding.',
     buttonText: 'Discover',
     image: '/assets/images/stories/neworleans/no_section_14_bg.png',
     thumb: '/assets/images/stories/neworleans/no_section_1_bg.jpg',
@@ -21,7 +21,8 @@ const STORIES = [
   },
   {
     title: 'Louisville',
-    description: 'Lorem ipsum',
+    description:
+      'In Louisville, trees provide a green solution to health inequality.',
     buttonText: 'Discover',
     image: '/assets/images/stories/louisville/lv_section_1_collage.png',
     thumb: '/assets/images/stories/louisville/lv_section_1_image.png',
@@ -30,7 +31,7 @@ const STORIES = [
   {
     title: 'Boulder',
     description:
-      'Turning a mixed-income neighbourhood into a model solution for stormwater flooding',
+      'Helping homeowners help themselves in the face of wildfire risk.',
     buttonText: 'Discover',
     image: '/assets/images/stories/boulder/bo_section_1_collage.png',
     thumb: '/assets/images/stories/boulder/bo_section_1_bg.png',
@@ -38,8 +39,7 @@ const STORIES = [
   },
   {
     title: 'New York',
-    description:
-      'Turning a mixed-income neighbourhood into a model solution for stormwater flooding.',
+    description: 'Community mobilization for cool neighborhoods.',
     buttonText: 'Discover',
     image: '/assets/images/stories/newyork/ny_section_1_collage.png',
     thumb: '/assets/images/stories/newyork/ny_section_1_bg.png',
@@ -47,8 +47,7 @@ const STORIES = [
   },
   {
     title: 'Charlotte',
-    description:
-      'Turning a mixed-income neighbourhood into a model solution for stormwater flooding.',
+    description: 'Taking preemptive action to protect homes and lives.',
     buttonText: 'Discover',
     image: '/assets/images/stories/charlotte/ch_home.png',
     thumb: '/assets/images/stories/charlotte/ch_section_1_bg.png',
@@ -56,8 +55,7 @@ const STORIES = [
   },
   {
     title: 'Norfolk',
-    description:
-      'Turning a mixed-income neighbourhood into a model solution for stormwater flooding.',
+    description: 'A petri dish for resilience solutions.',
     buttonText: 'Discover',
     image: '/assets/images/stories/norfolk/nf_section_1_collage.png',
     thumb: '/assets/images/stories/norfolk/nf_section_1_bg.png',
