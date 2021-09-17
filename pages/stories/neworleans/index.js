@@ -13,7 +13,7 @@ const Section1 = () => {
       <div className={styles.container}>
         <div className={styles.section1Title}>
           <span>
-            Turning a mixed-income neighbourhood into a model solution for
+            Turning a mixed-income neighborhood into a model solution for
             {' '}
             <span className={styles.underlineRed}>stormwater</span>
             {' '}
@@ -173,10 +173,10 @@ const Section6 = () => {
             city.
           </p>
           <p>
-            The grant was offered to the city to build more resiliently
-            following Hurricane Isaac. Its purpose was to fund a program that
-            would allow New Orleans to withstand future disasters and address
-            ongoing ‘stresses’ such as poverty, homelessness, and public health
+            The grant was offered to the city to build more resiliency following
+            Hurricane Isaac. Its purpose was to fund a program that would allow
+            New Orleans to withstand future disasters and address ongoing
+            ‘stresses’ such as poverty, homelessness, and public health
             disparities.
           </p>
           <p>
@@ -383,7 +383,7 @@ const Section12 = () => {
           <p>
             The New Orleans Redevelopment Authority built upon the community
             work that had begun in the grant writing process by arranging public
-            meetings, neighbourhood association meetings and a media campaign to
+            meetings, neighborhood association meetings and a media campaign to
             promote participation.
           </p>
           <p>
