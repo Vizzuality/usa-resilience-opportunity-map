@@ -35,6 +35,7 @@ export default function ExploreMap({
   setGeometryId,
 }) {
   const { layers } = indicators;
+
   const { bbox } = geometries;
   const [layersSettings, setLayersSettings] = useState({});
   const [layersInteractiveIds, setLayersInteractiveIds] = useState([]);
@@ -290,7 +291,6 @@ export default function ExploreMap({
           </>
         )}
       </Map>
-
       <MapControls>
         <ZoomControl viewport={viewport} onZoomChange={onZoomChange} />
       </MapControls>

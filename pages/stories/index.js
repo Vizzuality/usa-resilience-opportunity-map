@@ -13,7 +13,7 @@ const STORIES = [
   {
     title: 'New Orleans',
     description:
-      'Turning a mixed-income neighbourhood into a model solution for stormwater flooding.',
+      'Turning a mixed-income neighborhood into a model solution for stormwater flooding.',
     buttonText: 'Discover',
     image: '/assets/images/stories/neworleans/no_section_14_bg.png',
     thumb: '/assets/images/stories/neworleans/no_section_1_bg.jpg',
