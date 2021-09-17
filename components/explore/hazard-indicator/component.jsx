@@ -58,37 +58,37 @@ export default function HazardIndicator({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect y="16" width="7" height="4" fill={hazardColors[hazardMeasure]} />
+        <rect y="16" width="7" height="4" fill={hazardColors[hazardLevel]} />
         <rect
           x="8"
           y="12"
           width="7"
           height="8"
-          fill={hazardColors[hazardMeasure]}
-          fillOpacity={hazardMeasure < 1 ? '30%' : '100%'}
+          fill={hazardColors[hazardLevel]}
+          fillOpacity={hazardLevel < 1 ? '30%' : '100%'}
         />
         <rect
           x="16"
           y="8"
           width="7"
           height="12"
-          fill={hazardColors[hazardMeasure]}
-          fillOpacity={hazardMeasure < 2 ? '30%' : '100%'}
+          fill={hazardColors[hazardLevel]}
+          fillOpacity={hazardLevel < 2 ? '30%' : '100%'}
         />
         <rect
           x="24"
           y="4"
           width="7"
           height="16"
-          fill={hazardColors[hazardMeasure]}
-          fillOpacity={hazardMeasure < 3 ? '30%' : '100%'}
+          fill={hazardColors[hazardLevel]}
+          fillOpacity={hazardLevel < 3 ? '30%' : '100%'}
         />
         <rect
           x="32"
           width="7"
           height="20"
-          fill={hazardColors[hazardMeasure]}
-          fillOpacity={hazardMeasure < 4 ? '30%' : '100%'}
+          fill={hazardColors[hazardLevel]}
+          fillOpacity={hazardLevel < 4 ? '30%' : '100%'}
         />
       </svg>
     </div>
