@@ -24,7 +24,7 @@ const VideoPlayer = ({ thumbnail, url }) => {
         config={{
           youtube: {
             playerVars: {
-              controls: 0,
+              controls: true,
               showinfo: 0,
               rel: 0,
             },
