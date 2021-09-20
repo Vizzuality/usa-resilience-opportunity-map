@@ -49,23 +49,27 @@ export const mostRelevantIndicators = createSelector(
     const valuesPerIndicator = _values
       .map((val) => ({ ...val, rel: val.indicator.id }))
       .reduce((acc, val) => ({ ...acc, [val.rel]: val }), {});
-
     const indicatorsPerCategory = _categories.map((c) =>
       _data.filter((d) => d.category.id === c.id)
     );
     const relevantIndicators = indicatorsPerCategory
       .map((c) => {
         const indicatorsWithValue = c
-          .filter((ind) => !!valuesPerIndicator[ind.id]) // removing indicators with no data
+          .filter(
+            (ind) =>
+              !!valuesPerIndicator[ind.id] &&
+              ind.id !== '36' &&
+              ind.id !== '37' &&
+              ind.id !== '38'
+          ) // removing indicators with no data
           .map((ind) => ({
             ...ind,
             sortValue: valuesPerIndicator[ind.id]?.normalizedValue,
           }));
-        const sorted = sortBy(indicatorsWithValue, 'sortValue');
+        const sorted = sortBy(indicatorsWithValue, 'sortValue').reverse();
         return sorted.slice(0, 2); // top 2 indicators per category
       })
       .flat();
-
     return relevantIndicators;
   }
 );
