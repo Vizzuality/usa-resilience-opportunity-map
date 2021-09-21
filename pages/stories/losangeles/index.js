@@ -88,6 +88,34 @@ const Section4 = () => {
   );
 };
 
+const Section5 = () => {
+  return (
+    <div className={cx(styles.section5, styles.textGray, styles.bgLightBlue)}>
+      <div className={cx(styles.container)}>
+        <div className={cx(styles.section5Wrapper)}>
+          <div>
+            <h5 className={cx(styles.sectionTitle)}>Changing the Law</h5>
+            <p className={styles.paragraph}>
+              Global climate modeling completed by teams at the University of
+              California shows that, no matter what, extreme heat is set to rise
+              in Los Angeles. How much it will rise depends on what strategies
+              the region can immediately take to mitigate its impact.
+            </p>
+            <p className={styles.paragraph}>
+              Los Angeles County recognized that the impact of climate change
+              and extreme heat could not be the responsibility of a single
+              office. In response, the Public Health Department, Chief Security
+              Officer, Building and Safety Department, Animal Care and Control
+              Department, and the Sustainability Office worked as a coalition to
+              devise solutions to the growing threat of extreme heat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Section8 = () => {
   return (
     <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
@@ -131,6 +159,7 @@ const LosAngeles = () => {
       <Section2 />
       <Section3 />
       <Section4 />
+      <Section5 />
       <Section8 />
       <Section12 />
     </div>
