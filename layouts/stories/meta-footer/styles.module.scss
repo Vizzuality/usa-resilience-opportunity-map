@@ -9,7 +9,7 @@
     justify-content: flex-end;
     height: 100%;
   }
-  
+
   .wrapper {
     box-sizing: border-box;
     max-width: var(--flexboxgrid-max-width);
@@ -26,11 +26,32 @@
     transition: background-color 0.2s var(--ease-in-out-cubic);
 
     &:hover {
-      background-color: var(--blue-hover);
+      background-color: var(--color-white);
+      color: var(--color-dark-bg);
     }
 
     &:active {
-      background-color: var(--select-blue);
+      background-color: var(--color-white);
+      color: var(--color-dark-bg);
+    }
+  }
+
+  .storiesBtn {
+    background-color: var(--color-white);
+    border-color: var(--color-white);
+    color: var(--color-dark-bg);
+    margin-left: 22px;
+    min-width: 200px;
+    transition: background-color 0.2s var(--ease-in-out-cubic);
+
+    &:hover {
+      background-color: var(--color-dark-bg);
+      color: var(--color-white);
+    }
+
+    &:active {
+      background-color: var(--color-dark-bg);
+      color: var(--color-white);
     }
   }
 }

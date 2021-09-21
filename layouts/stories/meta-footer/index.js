@@ -11,7 +11,7 @@ const MetaFooter = () => {
     <div className={cx(styles.metaFooter)}>
       <div className={cx(styles.metaFooterContent, styles.wrapper)}>
         <Button
-          className={cx(styles.exploreBtn)}
+          className={cx(styles.storiesBtn)}
           link="/stories"
           aria-label="go to stories menu"
         >
