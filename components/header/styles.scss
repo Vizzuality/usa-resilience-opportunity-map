@@ -18,11 +18,19 @@
       height: 60%;
 
       .arsht {
-        width: 250px;
+        width: 200px;
+
+        &.--desktop {
+          width: 250px;
+        }
       }
 
       .jpmc {
-        width: 200px;
+        width: 150px;
+        
+        &.--desktop {
+          width: 200px;
+        }
       }
     }
   }

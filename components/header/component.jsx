@@ -146,7 +146,7 @@ BurgerMenu.propTypes = {
   setOpen: PropTypes.func,
 };
 
-function Partners() {
+function Partners({ isDesktop }) {
   return (
     <div className="header-partners">
       <div className="wrapper header-partners-content">
@@ -156,7 +156,9 @@ function Partners() {
         >
           <img
             alt="Arsht Rock Logo"
-            className="header--logo-image arsht"
+            className={cx('header--logo-image arsht', {
+              'arsht--desktop': isDesktop,
+            })}
             rel="noreferrer"
             src="/assets/logos/arshtRock_white.png"
             target="_blank"
@@ -168,7 +170,9 @@ function Partners() {
         >
           <img
             alt="JPMorgan Chase and Company Logo"
-            className="header--logo-image jpmc"
+            className={cx('header--logo-image jpmc', {
+              'jpmc--desktop': isDesktop,
+            })}
             rel="noreferrer"
             src="/assets/logos/JPMC_white.png"
             target="_blank"
@@ -178,6 +182,10 @@ function Partners() {
     </div>
   );
 }
+
+Partners.propTypes = {
+  isDesktop: PropTypes.bool,
+};
 
 export default function Header() {
   const [isMenuOpen, openMenu] = useState(false);
@@ -191,6 +199,7 @@ export default function Header() {
     <MediaContextProvider>
       <Media lessThan="small">
         <header className={cx('c-header', { '--dark': isDarkHeader.mobile })}>
+          <Partners isDesktop={false} />
           <div className="wrapper header--list">
             <Link href="/">
               <a className="header-logo header--list-item">
@@ -212,7 +221,7 @@ export default function Header() {
 
       <Media greaterThanOrEqual="small">
         <header className={cx('c-header', { '--dark': isDarkHeader.desktop })}>
-          <Partners />
+          <Partners isDesktop />
           <div className="wrapper header--list">
             <Link href="/">
               <a className="header-logo header--list-item">
