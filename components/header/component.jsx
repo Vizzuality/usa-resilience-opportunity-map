@@ -164,10 +164,7 @@ function Partners({ isDesktop }) {
             target="_blank"
           />
         </a>
-        <a
-          className="header-logo image-container"
-          href="https://www.jpmorganchase.com"
-        >
+        <a className="header-logo" href="https://www.jpmorganchase.com">
           <img
             alt="JPMorgan Chase and Company Logo"
             className={cx('header--logo-image jpmc', {

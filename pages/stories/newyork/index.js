@@ -2,8 +2,8 @@ import React from 'react';
 
 import cx from 'classnames';
 
+import MetaFooter from 'layouts/stories/meta-footer';
 import Quote from 'layouts/stories/quote';
-
 import VideoPlayer from 'layouts/stories/video-player';
 
 import styles from './styles.module.scss';
@@ -495,6 +495,7 @@ const NewYork = () => {
       <Section15 />
       <Section16 />
       <Section17 />
+      <MetaFooter />
     </div>
   );
 };

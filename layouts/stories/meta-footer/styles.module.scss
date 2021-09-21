@@ -1,0 +1,36 @@
+.metaFooter {
+  background-color: var(--color-dark-bg);
+  height: var(--meta-footer-size);
+  width: 100%;
+    
+  .metaFooterContent {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+  }
+  
+  .wrapper {
+    box-sizing: border-box;
+    max-width: var(--flexboxgrid-max-width);
+    margin: 0 auto;
+    padding: 0  var(--flexboxgrid-max-width)/2;
+    width: 100%;
+  }
+
+  .exploreBtn {
+    border-color: var(--color-white);
+    color: var(--color-white);
+    margin-left: 22px;
+    min-width: 200px;
+    transition: background-color 0.2s var(--ease-in-out-cubic);
+
+    &:hover {
+      background-color: var(--blue-hover);
+    }
+
+    &:active {
+      background-color: var(--select-blue);
+    }
+  }
+}

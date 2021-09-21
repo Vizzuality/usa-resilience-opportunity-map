@@ -19,18 +19,18 @@
 
       .arsht {
         width: 200px;
+      }
 
-        &.--desktop {
-          width: 250px;
-        }
+      .arsht--desktop {
+        width: 250px;
       }
 
       .jpmc {
         width: 150px;
-        
-        &.--desktop {
-          width: 200px;
-        }
+      }
+
+      .jpmc--desktop {
+        width: 200px;
       }
     }
   }
