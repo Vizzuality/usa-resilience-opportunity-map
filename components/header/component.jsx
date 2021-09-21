@@ -179,6 +179,36 @@ export default function Header() {
 
       <Media greaterThanOrEqual="small">
         <header className={cx('c-header', { '--dark': isDarkHeader.desktop })}>
+          <div className="wrapper header-partners">
+            <a
+              className="header-logo"
+              href="https://www.atlanticcouncil.org/programs/adrienne-arsht-rockefeller-foundation-resilience-center"
+            >
+              <img
+                alt="Arsht Rock Logo"
+                className="header--logo-image arsht"
+                rel="noreferrer"
+                src={`/assets/logos/arshtRock_${
+                  isDarkHeader.desktop ? 'white' : 'dark'
+                }.png`}
+                target="_blank"
+              />
+            </a>
+            <a
+              className="header-logo image-container"
+              href="https://www.jpmorganchase.com"
+            >
+              <img
+                alt="JPMorgan Chase and Company Logo"
+                className="header--logo-image jpmc"
+                rel="noreferrer"
+                src={`/assets/logos/JPMC_${
+                  isDarkHeader.desktop ? 'white.png' : 'dark.svg'
+                }`}
+                target="_blank"
+              />
+            </a>
+          </div>
           <div className="wrapper header--list">
             <Link href="/">
               <a className="header-logo header--list-item">
