@@ -2,6 +2,7 @@ import React from 'react';
 
 import cx from 'classnames';
 
+import MetaFooter from 'layouts/stories/meta-footer';
 import Quote from 'layouts/stories/quote';
 import VideoPlayer from 'layouts/stories/video-player';
 
@@ -494,6 +495,7 @@ const Boulder = () => {
       <Section16 />
       <Section17 />
       <Section18 />
+      <MetaFooter exploreLink="/explore?id=224850" />
     </div>
   );
 };

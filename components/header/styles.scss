@@ -4,8 +4,39 @@
   height: $header-size;
   width: 100%;
 
+  .header-partners {
+    background-color: $color-dark-bg;
+
+    .header-partners-content {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      width: 100%;
+      height: 60%;
+
+      .arsht {
+        width: 200px;
+      }
+
+      .arsht--desktop {
+        width: 250px;
+      }
+
+      .jpmc {
+        width: 150px;
+      }
+
+      .jpmc--desktop {
+        width: 200px;
+      }
+    }
+  }
+
   .header--list {
-    height: 100%;
+    height: 40%;
     display: flex;
     justify-content: space-between;
 

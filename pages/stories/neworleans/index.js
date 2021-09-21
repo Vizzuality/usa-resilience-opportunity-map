@@ -2,6 +2,7 @@ import React from 'react';
 
 import cx from 'classnames';
 
+import MetaFooter from 'layouts/stories/meta-footer';
 import Quote from 'layouts/stories/quote';
 import VideoPlayer from 'layouts/stories/video-player';
 
@@ -506,6 +507,7 @@ const NewOrleans = () => {
       <Section13 />
       <Section14 />
       <Section15 />
+      <MetaFooter exploreLink="/explore?id=225748" />
     </div>
   );
 };

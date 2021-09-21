@@ -1,6 +1,6 @@
 .c-home {
   margin-top: -$header-size;
-  background-color: $color-dark-bg;
+  background-color: $color-main-blue;
   height: 100%;
   overflow: auto;
 
@@ -8,7 +8,7 @@
     position: relative;
     margin-top: calc(#{$header-size} + #{rem(30px)});
     overflow: auto;
-    background-color: $color-dark-bg;
+    background-color: $color-main-blue;
     background-image: url('../public/assets/images/home-map-bg.webp');
     background-blend-mode: multiply;
     background-position: center;
@@ -55,7 +55,7 @@
 
       .home-cta {
         margin: rem(52px) auto rem(130px);
-        border-color: $color-secondary;
+        border-color: $color-white;
         color: $color-white;
         background-color: transparent;
         transition: background-color 0.2s $ease-in-out-cubic;

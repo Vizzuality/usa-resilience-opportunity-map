@@ -1,0 +1,71 @@
+.metaFooter {
+  background-color: var(--color-dark-bg);
+  display: none;
+  height: var(--meta-footer-size);
+  width: 100%;
+
+  @media screen and (min-width: 500px) {
+    display: block;
+  }
+    
+  .metaFooterContent {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+
+    @media screen and (min-width: 1200px) {
+      justify-content: flex-end;
+    }
+  }
+
+  .wrapper {
+    box-sizing: border-box;
+    max-width: var(--flexboxgrid-max-width);
+    margin: 0 auto;
+    padding: 0  var(--flexboxgrid-max-width)/2;
+    width: 100%;
+  }
+
+  .exploreBtn {
+    border-color: var(--color-white);
+    color: var(--color-white);
+    margin-left: 22px;
+    margin-right: 22px;
+    min-width: 200px;
+    transition: background-color 0.2s var(--ease-in-out-cubic);
+
+    @media screen and (min-width: 1200px) {
+      margin-right: 0;
+    }
+    
+    &:hover {
+      background-color: var(--color-white);
+      color: var(--color-dark-bg);
+    }
+
+    &:active {
+      background-color: var(--color-white);
+      color: var(--color-dark-bg);
+    }
+  }
+
+  .storiesBtn {
+    background-color: var(--color-white);
+    border-color: var(--color-white);
+    color: var(--color-dark-bg);
+    margin-left: 22px;
+    min-width: 200px;
+    transition: background-color 0.2s var(--ease-in-out-cubic);
+
+    &:hover {
+      background-color: var(--color-dark-bg);
+      color: var(--color-white);
+    }
+
+    &:active {
+      background-color: var(--color-dark-bg);
+      color: var(--color-white);
+    }
+  }
+}

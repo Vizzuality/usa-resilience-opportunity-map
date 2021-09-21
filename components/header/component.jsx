@@ -146,6 +146,44 @@ BurgerMenu.propTypes = {
   setOpen: PropTypes.func,
 };
 
+function Partners({ isDesktop }) {
+  return (
+    <div className="header-partners">
+      <div className="wrapper header-partners-content">
+        <a
+          className="header-logo"
+          href="https://www.atlanticcouncil.org/programs/adrienne-arsht-rockefeller-foundation-resilience-center"
+        >
+          <img
+            alt="Arsht Rock Logo"
+            className={cx('header--logo-image arsht', {
+              'arsht--desktop': isDesktop,
+            })}
+            rel="noreferrer"
+            src="/assets/logos/arshtRock_white.png"
+            target="_blank"
+          />
+        </a>
+        {/* <a className="header-logo" href="https://www.jpmorganchase.com">
+          <img
+            alt="JPMorgan Chase and Company Logo"
+            className={cx('header--logo-image jpmc', {
+              'jpmc--desktop': isDesktop,
+            })}
+            rel="noreferrer"
+            src="/assets/logos/JPMC_white.png"
+            target="_blank"
+          />
+        </a> */}
+      </div>
+    </div>
+  );
+}
+
+Partners.propTypes = {
+  isDesktop: PropTypes.bool,
+};
+
 export default function Header() {
   const [isMenuOpen, openMenu] = useState(false);
   const { pathname } = useRouter();
@@ -158,6 +196,7 @@ export default function Header() {
     <MediaContextProvider>
       <Media lessThan="small">
         <header className={cx('c-header', { '--dark': isDarkHeader.mobile })}>
+          <Partners isDesktop={false} />
           <div className="wrapper header--list">
             <Link href="/">
               <a className="header-logo header--list-item">
@@ -179,6 +218,7 @@ export default function Header() {
 
       <Media greaterThanOrEqual="small">
         <header className={cx('c-header', { '--dark': isDarkHeader.desktop })}>
+          <Partners isDesktop />
           <div className="wrapper header--list">
             <Link href="/">
               <a className="header-logo header--list-item">
