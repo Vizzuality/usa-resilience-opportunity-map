@@ -1,11 +1,19 @@
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-export default function HazardIndicator({ hazardLevel, dark, className }) {
+export default function HazardIndicator({
+  hazardLevel,
+  dark,
+  className,
+  category,
+  slug,
+}) {
   HazardIndicator.propTypes = {
     className: PropTypes.string,
     dark: PropTypes.bool,
     hazardLevel: PropTypes.number,
+    category: PropTypes.string,
+    slug: PropTypes.string,
   };
 
   const hazards = [
@@ -16,6 +24,7 @@ export default function HazardIndicator({ hazardLevel, dark, className }) {
     'High',
     'No data',
   ];
+
   const hazardColors = [
     '#F3C64E',
     '#FDAE61',
@@ -24,13 +33,22 @@ export default function HazardIndicator({ hazardLevel, dark, className }) {
     '#BF2826',
     '#F1F1F1',
   ];
-  // Opacity 30% on inactive bars
 
+  // TO DO - fix this in the data and remove this fix
+  const hazardLevelReverse = [6, 5, 4, 3, 2, 1];
+  const hazardMeasure =
+    slug === 'ses' || slug === 'pci'
+      ? hazardLevelReverse[hazardLevel]
+      : hazardLevel;
+
+  // Opacity 30% on inactive bars
   return (
     <div className={cx('c-hazard-indicator', className, { '--dark': dark })}>
       <div className="c-hazard--text">
-        <span className="c-hazard--title">Risk Level</span>
-        <span className="c-hazard--value">{hazards[hazardLevel]}</span>
+        <span className="c-hazard--title">
+          {category === 'vulnerability' ? 'Vulnerability Level' : 'Risk Level'}
+        </span>
+        <span className="c-hazard--value">{hazards[hazardMeasure]}</span>
       </div>
       <svg
         className="c-hazard--chart"

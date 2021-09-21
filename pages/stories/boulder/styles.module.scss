@@ -277,7 +277,7 @@
       z-index: 0;
 
       @media screen and (min-width: 1000px) {
-        width: 50vw;
+        width: 45vw;
       }
     }
   }
@@ -506,7 +506,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right bottom;
-    bottom: -8%;
+    bottom: -12%;
     content: '';
     height: 120.7%;
     right: -13%;
@@ -524,13 +524,17 @@
       background-position: right -5rem top;
       width: 65vw;
     }
+
+    @media screen and (min-width: 1200px) {
+      background-position: right 8rem top;
+    }
   }
 }
 
 // Section 11
 .section11 {
   position: relative;
-  padding: 4rem 0;
+  padding: 4rem 0 2rem 0;
 
   @media screen and (min-width: 1000px) {
     background-size: 61% auto;
@@ -654,10 +658,6 @@
 
       @media screen and (min-width: $section13-cols) {
         width: 45vw;
-      }
-
-      @media screen and (min-width: 1400px) {
-        width: 35vw;
       }
     }
   }
@@ -853,7 +853,7 @@
   }
 
   .section17Wrapper {
-    padding: 3rem 0;
+    padding: 0 0 3rem 0;
 
     @media screen and (min-width: 1000px) {
       left: 57%;
@@ -867,7 +867,11 @@
     }
 
     .text {
-      margin-top: 90%;
+      margin-top: 75%;
+
+      @media screen and (min-width: 600px) {
+        margin-top: 30%;
+      }
 
       @media screen and (min-width: 1000px) {
         margin-top: 0;

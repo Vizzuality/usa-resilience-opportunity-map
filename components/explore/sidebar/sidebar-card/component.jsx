@@ -74,6 +74,9 @@ function SidebarCard({
     high: hazardLevels ? hazards[hazardLevels[hazardLevels.length - 1]] : null,
   };
 
+  // hide charts with no data
+  if (hazardLevels?.length === 1) return null;
+
   return (
     <li className={styles.sidebarCard}>
       <div
@@ -107,9 +110,10 @@ function SidebarCard({
                 <Icon icon={ArrowUp} />
               </button>
             )}
-            {geometryValues.length > 0 && (
+            {geometryValues.length > 0 && indicatorValues.hazardValue > 0 && (
               <HazardIndicator
                 hazardLevel={indicatorValues ? indicatorValues.hazardValue : 5}
+                category={item.category.name}
                 className={styles.hazard}
               />
             )}

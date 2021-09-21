@@ -55,11 +55,13 @@ function Home({ locations }) {
               <h2>Welcome to</h2>
             </Media>
           </MediaContextProvider>
-          <h1>US Climate Resilience Map</h1>
+          <h1>US Climate Resilience Map: Pathways for City Solutions</h1>
           <div className="break-line" />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            A publicly available, interactive map that strives to build the
+            resilience of people and communities across the United States
+            through the clear identification of climate risks and social
+            vulnerabilities and the corresponding solutions to address them.
           </p>
           <MediaContextProvider>
             <Media greaterThanOrEqual="small">

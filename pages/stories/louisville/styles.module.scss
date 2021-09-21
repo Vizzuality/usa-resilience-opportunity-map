@@ -278,7 +278,7 @@
       z-index: 0;
 
       @media screen and (min-width: $section3-cols) {
-        width: 50vw;
+        width: 48vw;
       }
     }
   }
@@ -327,7 +327,8 @@
   padding-bottom: calc(100vw - 150px);
 
   @media screen and (min-width: 600px) {
-    padding-bottom: 40rem;
+    background-position: bottom -1.2rem left;
+    padding-bottom: 30rem;
   }
 
   @media screen and (min-width: 1000px) {
@@ -426,6 +427,7 @@
   @media screen and (min-width: 1400px) {
     background-size: auto 101%;
     padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .section8Wrapper {
@@ -546,14 +548,13 @@
 
 // Section 11
 .section11 {
-  padding-bottom: 1rem;
-  padding-top: 90vw;
+  padding-top: 90%;
   position: relative;
 
   &::after {
     background-image: url("/assets/images/stories/louisville/lv_section_11_bg.png");
     background-size: contain;
-    background-position: top center;
+    background-position: top left;
     background-repeat: no-repeat;
     content: '';
     top: 0;
@@ -618,11 +619,11 @@
   position: relative;
 
   .colLeft {
-    padding: 1rem var(--container-padding);
+    padding: 2rem var(--container-padding);
 
     @media screen and (min-width: 500px) {
       max-width: 100vw;
-      padding: 4rem var(--container-padding);
+      padding: 3rem var(--container-padding);
     }
 
     @media screen and (min-width: $section3-cols) {

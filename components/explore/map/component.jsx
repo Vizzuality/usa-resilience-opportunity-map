@@ -35,6 +35,7 @@ export default function ExploreMap({
   setGeometryId,
 }) {
   const { layers } = indicators;
+
   const { bbox } = geometries;
   const [layersSettings, setLayersSettings] = useState({});
   const [layersInteractiveIds, setLayersInteractiveIds] = useState([]);
@@ -191,8 +192,7 @@ export default function ExploreMap({
         bounds={bbox}
         mapboxApiAccessToken={MAPBOX_TOKEN}
         viewport={viewport}
-        // onViewportChange={onViewportChange}
-        onMapViewportChange={onViewportChange}
+        onViewportChange={onViewportChange}
         interactiveLayerIds={layersInteractiveIds}
         onClick={(e) => {
           if (e && e.features) {
@@ -291,7 +291,6 @@ export default function ExploreMap({
           </>
         )}
       </Map>
-
       <MapControls>
         <ZoomControl viewport={viewport} onZoomChange={onZoomChange} />
       </MapControls>

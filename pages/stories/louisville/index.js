@@ -51,7 +51,10 @@ const Section1 = () => {
 const Section2 = () => {
   return (
     <div className={styles.section2}>
-      <VideoPlayer url="https://www.youtube.com/embed/Iwd_ei8e150" />
+      <VideoPlayer
+        thumbnail="/assets/images/stories/louisville/lv_video_thumb.png"
+        url="https://www.youtube.com/watch?v=m_gNwj1O6hg&ab_channel=AtlanticCouncil"
+      />
     </div>
   );
 };

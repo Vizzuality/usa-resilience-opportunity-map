@@ -1,0 +1,30 @@
+.reactVideoPlayer {
+  div[class=react-player__preview] {
+    padding: 24%;
+
+    @media screen and (min-width: 600px) {
+      padding: 25%;
+    }
+    
+    @media screen and (min-width: 1200px) {
+      padding: 30%;
+    }
+  }
+
+  div[class=react-player__shadow] {
+    background: rgba(93, 177, 183, 1) !important;
+
+    @media screen and (min-width: 1000px) {
+      height: 100px !important;
+      width: 100px !important;
+    }
+  }
+
+  div[class=react-player__play-icon] {
+    border-width: 10px 0 10px 20px !important;
+
+    @media screen and (min-width: 1000px) {
+      border-width: 16px 0 16px 26px !important;
+    }
+  }
+}
