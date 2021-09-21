@@ -137,14 +137,14 @@
 // Section1
 .section1 {
   $section1-cols: 1000px;
-  background: url("/assets/images/stories/norfolk/nf_section_1_bg.png");
+  background: url("/assets/images/stories/losangeles/la_section_1_bg.png");
   background-size: cover;
   background-position: center;
   padding-bottom: 4rem;
   position: relative;
 
   &::after {
-    background-image: url("/assets/images/stories/norfolk/nf_section_1_collage.png");
+    background-image: url("/assets/images/stories/losangeles/la_section_1_collage.png");
     background-size: contain;
     background-position: bottom right;
     background-repeat: no-repeat;
@@ -225,78 +225,6 @@
 
 // Section 3
 .section3 {
-  position: relative;
-
-  @media screen and (min-width: 600px) {
-    padding-top: 86%;
-  }
-
-  @media screen and (min-width: 1000px) {
-    padding-top: 0;
-  }
-
-  &::after {
-    background-image: url("/assets/images/stories/norfolk/nf_section_3_bg.png");
-    background-size: contain;
-    background-position: top auto;
-    background-repeat: no-repeat;
-    top: -2%;
-    content: '';
-    height: 100%;
-    position: absolute;
-    right: 0;
-    width: 100vw;
-    z-index: 5;
-
-    @media screen and (min-width: 600px) {
-      background-position: top center;
-      height: 130%;
-      top: -3%;
-    }
-
-    @media screen and (min-width: 1000px) {
-      height: 100.5%;
-      right: -35%;
-      top: 12%;
-    }
-
-    @media screen and (min-width: 1200px) {
-      background-position: top right;
-      top: 0;
-      height: 114.2%;
-      right: 0;
-      width: 50vw;
-    }
-  }
-
-  .container {
-    position: relative;
-  }
-
-  .contentLeft {
-    max-width: 40rem;
-    padding-bottom: 4rem;
-    padding-top: 95%;
-    position: relative;
-    z-index: 2;
-
-    @media screen and (min-width: 600px) {
-      padding-top: 0;
-      width: 100%;
-    }
-
-    @media screen and (min-width: 1000px) {
-      width: 50%;
-    }
-  }
-
-  @media screen and (min-width: 900px) {
-    padding: 4rem 0;
-  }
-}
-
-// Section 4
-.section4 {
   color: var(--color-white);
   overflow: hidden;
   position: relative;
@@ -326,7 +254,7 @@
     }
 
     &::after {
-      background-image: url("/assets/images/stories/norfolk/nf_section_4_bg.png");
+      background-image: url("/assets/images/stories/losangeles/la_section_4_bg.png");
       background-size: cover;
       background-position: center;
       content: '';
