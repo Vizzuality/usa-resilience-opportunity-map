@@ -410,7 +410,7 @@ const Louisville = () => {
       <Section11 />
       <Section12 />
       <Section13 />
-      <MetaFooter />
+      <MetaFooter exploreLink="/explore?id=224566" />
     </div>
   );
 };

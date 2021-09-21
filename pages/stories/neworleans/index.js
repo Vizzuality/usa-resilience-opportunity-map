@@ -507,7 +507,7 @@ const NewOrleans = () => {
       <Section13 />
       <Section14 />
       <Section15 />
-      <MetaFooter />
+      <MetaFooter exploreLink="/explore?id=225748" />
     </div>
   );
 };

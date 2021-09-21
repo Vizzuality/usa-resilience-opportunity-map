@@ -442,7 +442,7 @@ const Norfolk = () => {
       <Section12 />
       <Section13 />
       <Section14 />
-      <MetaFooter />
+      <MetaFooter exploreLink="/explore?id=227538" />
     </div>
   );
 };

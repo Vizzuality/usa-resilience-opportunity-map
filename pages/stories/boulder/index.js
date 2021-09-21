@@ -495,7 +495,7 @@ const Boulder = () => {
       <Section16 />
       <Section17 />
       <Section18 />
-      <MetaFooter />
+      <MetaFooter exploreLink="/explore?id=224850" />
     </div>
   );
 };
