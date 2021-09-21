@@ -1,6 +1,6 @@
 .c-home {
   margin-top: -$header-size;
-  background-color: $color-dark-bg;
+  background-color: $color-main-blue;
   height: 100%;
   overflow: auto;
 
@@ -8,7 +8,7 @@
     position: relative;
     margin-top: calc(#{$header-size} + #{rem(30px)});
     overflow: auto;
-    background-color: $color-dark-bg;
+    background-color: $color-main-blue;
     background-image: url('../public/assets/images/home-map-bg.webp');
     background-blend-mode: multiply;
     background-position: center;
