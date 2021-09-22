@@ -274,70 +274,63 @@
 
 // Section 5
 .section5 {
+  padding: 0 0 2em 0;
   position: relative;
-  padding-bottom: 130%;
-  padding-top: 2rem;
+  overflow: hidden;
 
   @media screen and (min-width: 600px) {
-    padding-bottom: 64rem;
-    padding-top: 3rem;
+    padding: 4rem 0;
   }
 
-  @media screen and (min-width: 1000px) {
-    padding: 3rem var(--container-padding);
-    padding-bottom: 4rem;
+  @media screen and (min-width: 900px) {
+    padding: 4rem 0 0 0;
   }
 
-  .paragraph {
+  .contentLeft {
+    position: relative;
+    z-index: 2;
+    margin-top: 3rem;
+    max-width: 40rem;
+
     @media screen and (min-width: 600px) {
-      font-size: 16px;
+      margin-top: 0;
+    }
+
+    @media screen and (min-width: 900px) {
+      margin-bottom: 4rem;
+      margin-top: 0;
+      width: 60%;
+    }
+  }
+
+  .contentRight {
+    margin-right: -1rem;
+    position: relative;
+    z-index: 1;
+
+    @media screen and (min-width: 600px) {
+      display: none;
     }
 
     @media screen and (min-width: 1000px) {
-      font-size: 16px;
+      bottom: 0;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 0;
+      position: absolute;
+      right: -15%;
+      width: 50%;
     }
 
     @media screen and (min-width: 1200px) {
-      font-size: 20px;
-    }
-  }
-
-  .section5Wrapper {
-    padding-top: 1rem;
-    @media screen and (min-width: 1000px) {
-      max-width: 50%;
-    }
-  }
-  
-  &::before {
-    background-image: url("/assets/images/stories/losangeles/la_section_5_bg.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right bottom 0;
-    bottom: -1.3rem;
-    content: '';
-    height: 110vh;
-    right: 0;
-    position: absolute;
-    width: 100vw;
-    z-index: 5;
-
-    @media screen and (min-width: 600px) {
-      bottom: -2%;
-    }
-  
-    @media screen and (min-width: 1000px) {
-      background-position: right bottom;
-      bottom: -3%;
-      height: 103%;
-      right: -12%;
-    }
-
-    @media screen and (min-width: 1400px) {
-      background-position: right bottom;
-      bottom: 0;
-      height: 100%;
+      height: 120%;
       right: 0;
+    }
+
+    .section5Img {
+      @media screen and (min-width: 900px) {
+        height: 100%;
+      }
     }
   }
 }
@@ -348,7 +341,7 @@
   overflow: hidden;
 
   @media screen and (min-width: 900px) {
-    padding: 4rem 0 0 0;
+    padding: 3rem 0 0 0;
   }
 
   .contentRight {
@@ -358,12 +351,17 @@
 
     @media screen and (min-width: 900px) {
       margin: 0 0 4rem 0;
-      max-width: 35rem;
-      margin-left: 45%;
+      max-width: 30rem;
+      margin-left: 50%;
     }
 
     @media screen and (min-width: 1200px) {
       margin-left: 55%;
+    }
+
+    @media screen and (min-width: 1500px) {
+      max-width: 40rem;
+      padding: 8rem 0;
     }
   }
 
@@ -372,12 +370,16 @@
     z-index: 1;
     margin-left: -1rem;
 
+    @media screen and (min-width: 600px) {
+      right: -1rem;
+    }
+
     @media screen and (min-width: 900px) {
       position: absolute;
       display: flex;
       bottom: 0;
       left: 0;
-      width: 45%;
+      width: 50%;
       justify-content: flex-end;
       margin-left: 0;
     }
@@ -389,11 +391,6 @@
 
     .section6Img {
       @media screen and (min-width: 900px) {
-        align-self: flex-end;
-        height: 80%;
-      }
-
-      @media screen and (min-width: 1400px) {
         align-self: flex-end;
       }
     }
@@ -416,12 +413,22 @@
       margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
       padding: 3rem var(--container-padding);
     }
+
+    @media screen and (min-width: 1500px) {
+      max-width: 50rem;
+      margin-right: 0;
+      padding: 10rem var(--container-padding);
+    }
   }
 
   .colLeft {
     min-height: 20rem;
     overflow: hidden;
     position: relative;
+
+    @media screen and (min-width: 600px) {
+      min-height: 60rem;
+    }
 
     @media screen and (min-width: 1000px) {
       display: inline-block;
@@ -451,9 +458,13 @@
 
 // Section 9
 .section9 {
-  padding: 0 0 4em 0;
+  padding: 0 0 2em 0;
   position: relative;
   overflow: hidden;
+
+  @media screen and (min-width: 600px) {
+    padding: 2rem 0 10rem 0;
+  }
 
   @media screen and (min-width: 900px) {
     padding: 4rem 0 0 0;
@@ -462,7 +473,7 @@
   .contentLeft {
     position: relative;
     z-index: 2;
-    margin-top: 2rem;
+    margin-top: 3rem;
     max-width: 40rem;
 
     @media screen and (min-width: 900px) {
@@ -483,7 +494,7 @@
       margin-right: 0;
       position: absolute;
       right: 0;
-      top: 55%;
+      bottom: 0;
       width: 35%;
     }
 
@@ -513,7 +524,7 @@
 
 // Section 10
 .section10 {
-  padding-top: 90%;
+  padding-top: 82%;
   position: relative;
 
   &::after {
@@ -533,11 +544,13 @@
       background-position: bottom left;
       height: 60%;
       left: 0;
+      width: 110vw;
     }
 
     @media screen and (min-width: 1000px) {
+      background-position: bottom -0.5rem left;
       height: 103.5%;
-      left: -25vw;
+      left: -20vw;
     }
 
     @media screen and (min-width: 1200px) {
@@ -552,7 +565,7 @@
   }
 
   @media screen and (min-width: 1000px) {
-    padding: 4rem var(--container-padding);
+    padding: 0 var(--container-padding);
   }
 
   @media screen and (min-width: 1400px) {
@@ -578,11 +591,12 @@
 // Section 11
 .section11 {
   position: relative;
-  padding-bottom: 110%;
+  padding-bottom: 90%;
   padding-top: 2rem;
 
   @media screen and (min-width: 600px) {
-    padding-bottom: 53rem;
+    padding-top: 4rem;
+    padding-bottom: 40rem;
   }
 
   @media screen and (min-width: 1000px) {
@@ -593,6 +607,10 @@
     @media screen and (min-width: 1000px) {
       max-width: 50%;
     }
+
+    @media screen and (min-width: 1600px) {
+      padding: 4rem 0;
+    }
   }
   
   &::before {
@@ -600,27 +618,32 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right bottom;
-    bottom: -12%;
+    bottom: -2.5%;
     content: '';
-    height: 120.7%;
+    height: 130%;
     right: -13%;
     position: absolute;
-    width: 120vw;
+    width: 110vw;
     z-index: 5;
 
     @media screen and (min-width: 600px) {
       background-position: right bottom;
-      bottom: -10rem;
+      bottom: -4%;
     }
   
     @media screen and (min-width: 1000px) {
-      bottom: -20.7%;
+      bottom: -6%;
       background-position: right -5rem top;
-      width: 65vw;
+      height: 106%;
     }
 
     @media screen and (min-width: 1200px) {
       background-position: right 8rem top;
+    }
+
+    @media screen and (min-width: 1600px) {
+      background-position: right 14rem top;
+      height: 100%;
     }
   }
 }
