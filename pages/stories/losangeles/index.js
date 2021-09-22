@@ -90,7 +90,7 @@ const Section4 = () => {
 
 const Section5 = () => {
   return (
-    <div className={cx(styles.section5, styles.textGray, styles.bgLightBlue)}>
+    <div className={cx(styles.section5, styles.textGray, styles.bgWhite)}>
       <div className={cx(styles.container)}>
         <div className={cx(styles.section5Wrapper)}>
           <div>
@@ -116,6 +116,73 @@ const Section5 = () => {
   );
 };
 
+const Section6 = () => {
+  return (
+    <div className={cx(styles.section6, styles.bgLightBlue, styles.textGray)}>
+      <div className={styles.contentLeft}>
+        <img
+          src="/assets/images/stories/losangeles/la_section_6_bg.png"
+          className={styles.section6Img}
+          alt=""
+        />
+      </div>
+      <div className={cx(styles.contentRight, styles.container)}>
+        <p>
+          They focused on reducing heat-trapping surfaces by passing an
+          ordinance mandating that all new buildings in Los Angeles must be
+          built using cool roof technologies to reflect solar radiation.
+        </p>
+        <p>
+          Supporting the project was Climate Resolve, a local NGO working on
+          resilient solutions to the climate crisis. Climate Resolve promoted
+          the Cool Roofs Ordinance to “willing partners” in local government.
+          They recommended materials that would effectively reflect radiation,
+          worked with manufacturers to help them understand what materials to
+          use and assist policymakers to draft the legislation.
+        </p>
+      </div>
+    </div>
+  );
+};
+
+const Section7 = () => {
+  return (
+    <div className={cx(styles.section7, styles.bgWhite)}>
+      <div>
+        <div className={cx(styles.col, styles.colLeft)} />
+        <div className={cx(styles.col, styles.colRight, styles.textGray)}>
+          <p>
+            As with all laws, a legal process was followed to implement the Cool
+            Roofs Ordinance. Firstly, a research study proved the effectiveness
+            of the new law. Then the law was drafted by civil servants in the
+            Sustainability Office with support from Climate Resolve. It was
+            finally approved in 2018 by the Mayor who signed it into the
+            building codes.
+          </p>
+          <p>
+            The ordinance amended the Green Buildings Standard code to turn a
+            voluntary requirement on cool roof technology into a mandatory one –
+            guaranteeing that in the years and decades to come, all new
+            buildings and updated buildings in Los Angeles will use cool roof
+            technology to tackle extreme heat.
+          </p>
+          <p>
+            In its final draft, the Cool Roofs Ordinance “requires utilization
+            of cool roofing for new building constructions, building additions,
+            and major roof replacements in the unincorporated areas of Los
+            Angeles County.”
+          </p>
+          <p>
+            It confirmed the levels of solar reflectiveness and thermal
+            emittance that all roofing materials should have to be compliant
+            with the law.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Section8 = () => {
   return (
     <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
@@ -130,6 +197,102 @@ const Section8 = () => {
         authorPosition="Executive Director"
         authorCompany="Climate Resolve"
       />
+    </div>
+  );
+};
+
+const Section9 = () => {
+  return (
+    <div className={cx(styles.section9, styles.bgLightBlue, styles.textGray)}>
+      <div className={styles.container}>
+        <div className={styles.contentRight}>
+          <img
+            src="/assets/images/stories/losangeles/la_section_9_bg.png"
+            className={styles.section9Img}
+            alt=""
+          />
+        </div>
+        <div className={styles.contentLeft}>
+          <h5 className={cx(styles.sectionTitle)}>Advocating for Change</h5>
+          <p>
+            The Building and Safety Department worked with the construction
+            industry to explain the new regulations. The department had
+            individual conversations with builders and manufacturers to discuss
+            the ordinance, why it was needed, and how to source the materials
+            required.
+          </p>
+          <p>
+            Going forward, the Building and Safety Department is responsible for
+            enforcing the ordinance and ensuring that all new construction work
+            is completed with cool roof technology.
+          </p>
+          <p>
+            Promoting the new law is also the responsibility of roofing
+            suppliers. Cool roofing materials can be bought by individual
+            homeowners when renovating their own homes, including from local
+            stores. Homeowners can also have a choice about how their new cool
+            roofs would look since 22 different types of roofing meet the
+            ordinance’s requirements.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Section10 = () => {
+  return (
+    <div className={cx(styles.section10, styles.textWhite, styles.bgPrimary)}>
+      <div className={cx(styles.container)}>
+        <div className={cx(styles.section10Wrapper)}>
+          <h5 className={cx(styles.sectionTitle)}>The Housing Crisis</h5>
+          <p>
+            There are numerous co-benefits to the Cool Roofs Ordinance.
+            Crucially, it can help Los Angeles address its ongoing housing
+            crisis.
+          </p>
+          <p>
+            The new ordinance insists that any new public housing projects
+            planned by the local government will be built with cool roofs. Grant
+            money for public housing comes from federal funds – and it is easier
+            to secure this funding when the city can prove its projects are
+            climate resilient.
+          </p>
+          <p>
+            The Cool Roof Ordinance has helped Los Angeles win funding for
+            housing from the Greenhouse Gas Reduction Fund pool as well as the
+            Affordable Housing and Sustainable Communities Program, enabling the
+            county to build more homes and protect residents from extreme heat.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Section11 = () => {
+  return (
+    <div className={cx(styles.section11, styles.textGray, styles.bgWhite)}>
+      <div className={cx(styles.container)}>
+        <div className={cx(styles.section11Wrapper)}>
+          <h5 className={cx(styles.sectionTitle)}>Cool Streets</h5>
+          <p>
+            Climate Resolve is now working with the local government to expand
+            cool roof technology to the streets.
+          </p>
+          <p>
+            It is piloting a variety of technologies – such as applying a thin
+            layer of titanium dioxide to asphalt surfaces to reflect up to 60%
+            of the sun&apos;s radiation – to determine which interventions work
+            best to make Los Angeles streets cooler and safer, with minimal
+            disruptions to the city&apos;s inhabitants.
+          </p>
+          <p>
+            Climate Resolve even hopes to bring cool technology to playgrounds
+            and schools.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
@@ -160,7 +323,12 @@ const LosAngeles = () => {
       <Section3 />
       <Section4 />
       <Section5 />
+      <Section6 />
+      <Section7 />
       <Section8 />
+      <Section9 />
+      <Section10 />
+      <Section11 />
       <Section12 />
     </div>
   );

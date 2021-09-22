@@ -341,3 +341,286 @@
     }
   }
 }
+
+// Section 6
+.section6 {
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (min-width: 900px) {
+    padding: 4rem 0 0 0;
+  }
+
+  .contentRight {
+    margin: 3rem 0;
+    position: relative;
+    width: 100%;
+
+    @media screen and (min-width: 900px) {
+      margin: 0 0 4rem 0;
+      max-width: 35rem;
+      margin-left: 45%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin-left: 55%;
+    }
+  }
+
+  .contentLeft {
+    position: relative;
+    z-index: 1;
+    margin-left: -1rem;
+
+    @media screen and (min-width: 900px) {
+      position: absolute;
+      display: flex;
+      bottom: 0;
+      left: 0;
+      width: 45%;
+      justify-content: flex-end;
+      margin-left: 0;
+    }
+
+    @media screen and (min-width: 1200px) {
+      bottom: -0.3vh;
+      height: 130%;
+    }
+
+    .section6Img {
+      @media screen and (min-width: 900px) {
+        align-self: flex-end;
+        height: 80%;
+      }
+
+      @media screen and (min-width: 1400px) {
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+// Section 7
+.section7 {
+  color: var(--color-white);
+  overflow: hidden;
+  position: relative;
+
+  .colRight {
+    padding: 2rem var(--container-padding);
+
+    @media screen and (min-width: 1000px) {
+      display: inline-block;
+      max-width: calc(var(--container-max-width) / 2);
+      margin-left: 50%;
+      margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
+      padding: 3rem var(--container-padding);
+    }
+  }
+
+  .colLeft {
+    min-height: 20rem;
+    overflow: hidden;
+    position: relative;
+
+    @media screen and (min-width: 1000px) {
+      display: inline-block;
+      height: 100%;
+      position: absolute;
+      width: 48vw;
+    }
+
+    &::after {
+      background-image: url("/assets/images/stories/losangeles/la_section_7_bg.png");
+      background-size: cover;
+      background-position: center;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      z-index: 0;
+
+      @media screen and (min-width: 1000px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Section 9
+.section9 {
+  padding: 0 0 4em 0;
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (min-width: 900px) {
+    padding: 4rem 0 0 0;
+  }
+
+  .contentLeft {
+    position: relative;
+    z-index: 2;
+    margin-top: 2rem;
+    max-width: 40rem;
+
+    @media screen and (min-width: 900px) {
+      margin-bottom: 4rem;
+      margin-top: 0;
+      width: 60%;
+    }
+  }
+
+  .contentRight {
+    margin-right: -1rem;
+    position: relative;
+    z-index: 1;
+
+    @media screen and (min-width: 600px) {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 0;
+      position: absolute;
+      right: 0;
+      top: 55%;
+      width: 35%;
+    }
+
+    @media screen and (min-width: 1000px) {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 0;
+      position: absolute;
+      right: -15%;
+      top: 0;
+      width: 60%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      height: 100%;
+      right: 0;
+      width: auto;
+    }
+
+    .section9Img {
+      @media screen and (min-width: 900px) {
+        height: 100%;
+      }
+    }
+  }
+}
+
+// Section 10
+.section10 {
+  padding-top: 90%;
+  position: relative;
+
+  &::after {
+    background-image: url("/assets/images/stories/losangeles/la_section_10_bg.png");
+    background-size: contain;
+    background-position: top left;
+    background-repeat: no-repeat;
+    content: '';
+    top: 0;
+    height: 43%;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    z-index: 3;
+
+    @media screen and (min-width: 600px) {
+      background-position: bottom left;
+      height: 60%;
+      left: 0;
+    }
+
+    @media screen and (min-width: 1000px) {
+      height: 103.5%;
+      left: -25vw;
+    }
+
+    @media screen and (min-width: 1200px) {
+      background-size: auto 100%;
+      bottom: 0;
+      left: -12vw;
+    }
+    
+    @media screen and (min-width: 1400px) {
+      left: -2vw;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    padding: 4rem var(--container-padding);
+  }
+
+  @media screen and (min-width: 1400px) {
+    background-size: auto 100%;
+    padding-bottom: 4rem;
+  }
+
+  .section10Wrapper {
+    padding: 4rem 0;
+
+    @media screen and (min-width: 1000px) {
+      left: 57%;
+      max-width: 43%;
+      position: relative;
+    }
+
+    @media screen and (min-width: 1400px) {
+      top: 1rem;
+    }
+  }
+}
+
+// Section 11
+.section11 {
+  position: relative;
+  padding-bottom: 110%;
+  padding-top: 2rem;
+
+  @media screen and (min-width: 600px) {
+    padding-bottom: 53rem;
+  }
+
+  @media screen and (min-width: 1000px) {
+    padding: 4rem var(--container-padding);
+  }
+
+  .section11Wrapper {
+    @media screen and (min-width: 1000px) {
+      max-width: 50%;
+    }
+  }
+  
+  &::before {
+    background-image: url("/assets/images/stories/losangeles/la_section_11_bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    bottom: -12%;
+    content: '';
+    height: 120.7%;
+    right: -13%;
+    position: absolute;
+    width: 120vw;
+    z-index: 5;
+
+    @media screen and (min-width: 600px) {
+      background-position: right bottom;
+      bottom: -10rem;
+    }
+  
+    @media screen and (min-width: 1000px) {
+      bottom: -20.7%;
+      background-position: right -5rem top;
+      width: 65vw;
+    }
+
+    @media screen and (min-width: 1200px) {
+      background-position: right 8rem top;
+    }
+  }
+}
