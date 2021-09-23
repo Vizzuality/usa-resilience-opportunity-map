@@ -35,7 +35,7 @@ export default function HazardIndicator({
   ];
 
   // TO DO - fix this in the data and remove this fix
-  const hazardLevelReverse = [6, 5, 4, 3, 2, 1];
+  const hazardLevelReverse = [4, 3, 2, 1, 0, -1];
   const hazardMeasure =
     slug === 'ses' || slug === 'pci'
       ? hazardLevelReverse[hazardLevel]
