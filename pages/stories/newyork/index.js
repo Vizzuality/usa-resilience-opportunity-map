@@ -42,7 +42,10 @@ const Section1 = () => {
 const Section2 = () => {
   return (
     <div className={styles.section2}>
-      <VideoPlayer url="https://www.youtube.com/embed/Iwd_ei8e150" />
+      <VideoPlayer
+        thumbnail="/assets/images/stories/newyork/ny_video_thumb.png"
+        url="https://www.youtube.com/watch?v=e5cPfXygHdk&ab_channel=AtlanticCouncil"
+      />
     </div>
   );
 };
