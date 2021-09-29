@@ -21,7 +21,11 @@ function FooterWrapper({ children }) {
   );
 }
 
-export default function Footer() {
+export default function Footer({ footerLogo }) {
+  Footer.propTypes = {
+    footerLogo: PropTypes.string,
+  };
+
   return (
     <FooterWrapper>
       <div className="wrapper">
@@ -37,7 +41,7 @@ export default function Footer() {
         <a href="https://www.atlanticcouncil.org/">
           <img
             className="footer-logo"
-            src="/assets/logos/atlantic_council_logo.svg"
+            src={footerLogo}
             alt="atlantic council"
           />
         </a>
