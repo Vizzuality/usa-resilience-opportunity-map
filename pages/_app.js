@@ -30,6 +30,8 @@ export default function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState);
   const router = useRouter();
   const isEmbed = router.pathname === '/explore/embed';
+  const isMap = router.pathname === '/explore';
+  const isStories = router.pathname.startsWith('/stories');
 
   return (
     <Provider store={store}>
@@ -37,15 +39,34 @@ export default function App({ Component, pageProps }) {
         <title>US Climate Resilience Map</title>
         <style type="text/css">{mediaStyle}</style>
       </Head>
-      {isEmbed ? (
+
+      {isEmbed && (
         <Page>
           <Component {...pageProps} />
         </Page>
-      ) : (
+      )}
+
+      {!isEmbed && !isMap && !isStories && (
         <Page>
           <Header />
           <Component {...pageProps} />
-          <Footer />
+          <Footer footerLogo="/assets/logos/atlantic_council_logo.svg" />
+        </Page>
+      )}
+
+      {!isEmbed && isMap && (
+        <Page>
+          <Header />
+          <Component {...pageProps} />
+          <Footer footerLogo="/assets/logos/arshtRock_white.png" />
+        </Page>
+      )}
+
+      {!isEmbed && isStories && !isMap && (
+        <Page>
+          <Header />
+          <Component {...pageProps} />
+          <Footer footerLogo="/assets/logos/arshtRock_white.png" />
         </Page>
       )}
     </Provider>
