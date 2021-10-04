@@ -283,11 +283,18 @@ export const countyLayer = createSelector(
       ];
     }
 
-    if (_active.length === 2) {
+    if (_active.length >= 2) {
+      const vulnerabilityIndicator = _indicators.find(
+        (i) => i.category.name === 'vulnerability'
+      );
+      const riskIndicators = _indicators.filter(
+        (i) => i.category.name === 'climate risk'
+      );
+
       const ind1 = _indicators[0];
       const ind2 = _indicators[1];
 
-      const colors = CATEGORIES[`${ind1.category.id}${ind2.category.id}`].ramp;
+      const colors = CATEGORIES[`12`].ramp;
 
       return [
         {
@@ -306,8 +313,21 @@ export const countyLayer = createSelector(
                       'match',
                       [
                         'concat',
-                        ['get', `${ind1.slug}_hazard`],
-                        ['get', `${ind2.slug}_hazard`],
+                        ['get', `${vulnerabilityIndicator.slug}_hazard`],
+                        // ['get', `${ind2.slug}_hazard`],
+                        [
+                          'round',
+                          [
+                            '/',
+                            [
+                              '+',
+                              ...riskIndicators.map((r) => {
+                                return ['get', `${r.slug}_hazard`];
+                              }),
+                            ],
+                            riskIndicators.length,
+                          ],
+                        ],
                       ],
                       ...flatten(
                         colors.map((c, i) => {
@@ -377,6 +397,7 @@ export const censusLayer = createSelector(
   (_data, _active, _geometryId, _geometriesData) => {
     if (!_data || !_data.length || !_geometriesData || !_geometriesData.length)
       return [];
+
     const _indicators = _active
       .map((i) => _data.find((d) => d.id === i))
       .sort((a, b) => (a.category.id > b.category.id ? 1 : -1));
@@ -501,11 +522,13 @@ export const censusLayer = createSelector(
                   paint: {
                     'fill-color': [
                       'match',
+                      // Read hazard 00, 01
                       [
                         'concat',
                         ['get', `${ind1.slug}_hazard`],
                         ['get', `${ind2.slug}_hazard`],
                       ],
+
                       ...flatten(
                         colors.map((c, i) => {
                           return [`${Math.floor((i / 5) % 5)}${i % 5}`, c];

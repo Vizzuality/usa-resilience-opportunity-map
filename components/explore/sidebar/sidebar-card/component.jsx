@@ -191,7 +191,7 @@ function SidebarCard({
                 }
                 toggleIndicatorsActive(item.id.toString());
               }}
-              disabled={showBtnDisabled}
+              // disabled={showBtnDisabled}
               title={
                 showBtnDisabled
                   ? 'YOU CAN CHOOSE UP TO TWO LAYERS'
