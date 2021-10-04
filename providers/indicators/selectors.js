@@ -283,7 +283,7 @@ export const countyLayer = createSelector(
       ];
     }
 
-    if (_active.length >= 2) {
+    if (_active.length === 2) {
       const vulnerabilityIndicator = _indicators.find(
         (i) => i.category.name === 'vulnerability'
       );
@@ -294,7 +294,7 @@ export const countyLayer = createSelector(
       const ind1 = _indicators[0];
       const ind2 = _indicators[1];
 
-      const colors = CATEGORIES[`12`].ramp;
+      const colors = CATEGORIES[`${ind1.category.id}${ind2.category.id}`].ramp;
 
       return [
         {
