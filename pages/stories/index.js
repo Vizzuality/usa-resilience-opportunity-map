@@ -62,7 +62,7 @@ const STORIES = [
     href: '/stories/norfolk',
   },
   {
-    title: 'Los Ángeles',
+    title: 'Los Angeles',
     description:
       'Turning a mixed-income neighbourhood into a model solution for stormwater flooding.',
     buttonText: 'Discover',
