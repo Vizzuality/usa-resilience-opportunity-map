@@ -7,70 +7,8 @@ import cx from 'classnames';
 
 import StoriesMain from 'layouts/stories';
 
+import { STORIES } from 'constants/stories';
 import styles from './styles.module.scss';
-
-const STORIES = [
-  {
-    title: 'New Orleans',
-    description:
-      'Turning a mixed-income neighborhood into a model solution for stormwater flooding.',
-    buttonText: 'Discover',
-    image: '/assets/images/stories/neworleans/no_section_14_bg.png',
-    thumb: '/assets/images/stories/neworleans/no_section_1_bg.jpg',
-    href: '/stories/neworleans',
-  },
-  {
-    title: 'Louisville',
-    description:
-      'In Louisville, trees provide a green solution to health inequality.',
-    buttonText: 'Discover',
-    image: '/assets/images/stories/louisville/lv_section_1_collage.png',
-    thumb: '/assets/images/stories/louisville/lv_section_1_image.png',
-    href: '/stories/louisville',
-  },
-  {
-    title: 'Boulder',
-    description:
-      'Helping homeowners help themselves in the face of wildfire risk.',
-    buttonText: 'Discover',
-    image: '/assets/images/stories/boulder/bo_section_1_collage.png',
-    thumb: '/assets/images/stories/boulder/bo_section_1_bg.png',
-    href: '/stories/boulder',
-  },
-  {
-    title: 'New York',
-    description: 'Community mobilization for cool neighborhoods.',
-    buttonText: 'Discover',
-    image: '/assets/images/stories/newyork/ny_section_1_collage.png',
-    thumb: '/assets/images/stories/newyork/ny_section_1_bg.png',
-    href: '/stories/newyork',
-  },
-  {
-    title: 'Charlotte',
-    description: 'Taking preemptive action to protect homes and lives.',
-    buttonText: 'Discover',
-    image: '/assets/images/stories/charlotte/ch_home.png',
-    thumb: '/assets/images/stories/charlotte/ch_section_1_bg.png',
-    href: '/stories/charlotte',
-  },
-  {
-    title: 'Norfolk',
-    description: 'A petri dish for resilience solutions.',
-    buttonText: 'Discover',
-    image: '/assets/images/stories/norfolk/nf_section_1_collage.png',
-    thumb: '/assets/images/stories/norfolk/nf_section_1_bg.png',
-    href: '/stories/norfolk',
-  },
-  {
-    title: 'Los Angeles',
-    description:
-      'Turning a mixed-income neighbourhood into a model solution for stormwater flooding.',
-    buttonText: 'Discover',
-    image: '/assets/images/stories/losangeles/la_section_1_collage.png',
-    thumb: '/assets/images/stories/losangeles/la_section_1_bg.png',
-    href: '/stories/losangeles',
-  },
-];
 
 const ScrollToNavigate = () => (
   <div className={styles.ScrollToNavigate}>

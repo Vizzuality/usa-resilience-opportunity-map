@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useDebouncedCallback } from 'use-debounce';
@@ -27,6 +27,7 @@ import MapControls from 'components/map/controls';
 import ZoomControl from 'components/map/controls/zoom';
 import LegendItemTypeBivariate from 'components/bivariate-legend';
 import MapTooltip from 'components/explore/tooltip';
+import { STORIES } from 'constants/stories';
 
 export default function ExploreMap({
   indicators,
@@ -34,7 +35,7 @@ export default function ExploreMap({
   className,
   setGeometryId,
 }) {
-  const { layers } = indicators;
+  const { layers: indicatorLayers } = indicators;
 
   const { bbox } = geometries;
   const [layersSettings, setLayersSettings] = useState({});
@@ -49,6 +50,57 @@ export default function ExploreMap({
     bearing: 0,
     pitch: 0,
   });
+
+  const layers = useMemo(() => {
+    return [
+      ...indicatorLayers,
+      {
+        id: 'stories',
+        name: 'Stories',
+        config: {
+          type: 'geojson',
+          render: {
+            layers: [
+              {
+                type: 'circle',
+                paint: {
+                  'circle-color': '#ff0000',
+                  'circle-radius': 10,
+                },
+              },
+            ],
+          },
+          source: {
+            type: 'geojson',
+            data: {
+              type: 'FeatureCollection',
+              features: STORIES.map((s) => {
+                return {
+                  type: 'Feature',
+                  properties: s,
+                  geometry: {
+                    type: 'Point',
+                    coordinates: [s.location.long, s.location.lat],
+                  },
+                };
+              }),
+            },
+          },
+          interactionConfig: {
+            enable: true,
+          },
+          // legendConfig: {
+          //   type: 'bivariate',
+          //   items: colors.map((c, i) => ({
+          //     name: `${Math.floor((i / 5) % 5)}${i % 5}`,
+          //     color: c,
+          //   })),
+          //   indicators: [ind1, ind2],
+          // },
+        },
+      },
+    ];
+  }, [indicatorLayers]);
 
   // LEGEND
   const layerGroups = layers
