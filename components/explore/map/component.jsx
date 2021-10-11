@@ -28,6 +28,7 @@ import ZoomControl from 'components/map/controls/zoom';
 import LegendItemTypeBivariate from 'components/bivariate-legend';
 import MapTooltip from 'components/explore/tooltip';
 import { STORIES } from 'constants/stories';
+import { useRouter } from 'next/router';
 
 export default function ExploreMap({
   indicators,
@@ -35,6 +36,7 @@ export default function ExploreMap({
   className,
   setGeometryId,
 }) {
+  const { push } = useRouter();
   const { layers: indicatorLayers } = indicators;
 
   const { bbox } = geometries;
@@ -67,6 +69,14 @@ export default function ExploreMap({
                   'circle-color': '#ff0000',
                   'circle-radius': 10,
                 },
+                metadata: {
+                  position: 'top',
+                },
+                // only works with symbol type layer
+                // layout: {
+                //   'icon-ignore-placement': true,
+                //   'icon-allow-overlap': true,
+                // }
               },
             ],
           },
@@ -248,29 +258,36 @@ export default function ExploreMap({
         interactiveLayerIds={layersInteractiveIds}
         onClick={(e) => {
           if (e && e.features) {
-            const interactions = e.features
-              .filter((int) => ['state', 'counties'].includes(int.source))
-              .reduce((acc, f) => {
-                return {
-                  ...acc,
-                  [f.source]: {
-                    id: f.id,
-                    data: f.properties,
-                  },
-                };
-              }, {});
+            const story = e.features.find((f) => f.source === 'stories');
+            if (story) {
+              push(story.properties.href);
+            }
+            if (!story) {
+              const interactions = e.features
+                .filter((int) => ['state', 'counties'].includes(int.source))
+                .reduce((acc, f) => {
+                  return {
+                    ...acc,
+                    [f.source]: {
+                      id: f.id,
+                      data: f.properties,
+                    },
+                  };
+                }, {});
 
-            if (interactions.counties || interactions.state)
-              setGeometryId(
-                interactions.state
-                  ? interactions.state.id?.toString()
-                  : interactions.counties.id?.toString()
-              );
+              if (interactions.counties || interactions.state)
+                setGeometryId(
+                  interactions.state
+                    ? interactions.state.id?.toString()
+                    : interactions.counties.id?.toString()
+                );
+            }
           }
         }}
         onHover={(e) => {
           if (e && e.features) {
             const { lngLat, features } = e;
+
             const interactions = features.reduce((acc, f) => {
               return {
                 ...acc,
