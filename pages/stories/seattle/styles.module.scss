@@ -1,0 +1,224 @@
+// Global styles
+
+.underline {
+  border-bottom: 8px solid var(--brand-secondary);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  z-index: 5;
+}
+
+.cols {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: var(--columns-mq-medium)) {
+    flex-direction: row;
+  }
+}
+
+.cols2 .col {
+  flex: 1;
+  position: relative;
+  width: 100%;
+
+  @media screen and (min-width: var(--columns-mq-medium)) {
+    width: 50%;
+  }
+}
+
+.textWhite {
+  color: var(--color-white);
+}
+
+.textGray {
+  color: var(--brand-gray);
+}
+
+.textPrimary {
+  color: var(--brand-primary);
+}
+
+.textSecondary {
+  color: var(--brand-secondary);
+}
+
+.bgWhite {
+  background-color: var(--color-white);
+}
+
+.bgGray {
+  background-color: var(--brand-gray);
+}
+
+.bgPrimary {
+  background-color: var(--brand-primary);
+}
+
+.bgSecondary {
+  background-color: var(--brand-secondary);
+}
+
+.bgLightBlue {
+  background-color: var(--color-light-blue);
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.fontUbuntu {
+  font-family: Ubuntu, sans-serif !important;
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+}
+
+.sectionTitle {
+  font-family: "Oxygen", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.stories {
+  font-family: "Oxygen", sans-serif;
+  font-size: 1.1rem;
+  overflow: hidden;
+
+  p {
+    font-family: "Oxygen", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 2rem 0;
+
+    @media screen and (min-width: 600px) {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    @media screen and (min-width: 1200px) {
+      font-size: 1.3rem;
+      line-height: 1.5;
+    }
+  }
+
+  ul {
+    li {
+      font-family: "Oxygen", sans-serif;
+      font-size: 1.1rem;
+
+      @media screen and (min-width: 500px) {
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      @media screen and (min-width: 1200px) {
+        font-size: 1.3rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+.quoteContainer {
+  color: white;
+  padding: 1rem var(--padding-quote);
+  text-align: center;
+}
+
+.listItem {
+  list-style-position: inside;
+  list-style-type: initial;
+  margin-bottom: 0.2rem;
+}
+
+// Section1
+.section1 {
+  $section1-cols: 1000px;
+  background: url("/assets/images/stories/seattle/st_section_1_bg.png");
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 4rem;
+  position: relative;
+
+  &::after {
+    background-image: url("/assets/images/stories/seattle/st_section_1_collage.png");
+    background-size: contain;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    content: '';
+    display: none;
+    position: absolute;
+    z-index: 5;
+
+    @media screen and (min-width: $section1-cols) {
+      bottom: 0;
+      display: initial;
+      height: 100%;
+      right: 0;
+      width: 45vw;
+    }
+  }
+
+  .container {
+    position: relative;
+  }
+
+  @media screen and (min-width: 900px) {
+    padding: 4rem 0 12rem;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding: 10rem 0 12rem;
+  }
+
+  .section1Title {
+    color: white;
+    font-family: "Big Caslon", serif;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 4rem;
+    padding-top: 4rem;
+
+    @media screen and (min-width: 600px) {
+      font-size: 3.6rem;
+      margin-bottom: 5rem;
+    }
+
+    @media screen and (min-width: 900px) {
+      font-size: 5rem;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      max-width: 66rem;
+    }
+  }
+
+  .section1Text p {
+    color: var(--color-white);
+    font-size: 1.2rem;
+    line-height: 1.4;
+    max-width: 32rem;
+
+    @media screen and (min-width: 600px) {
+      font-size: 1.3rem;
+      max-width: 42rem;
+    }
+  }
+}
+
+// Section 2 - video
+.section2 {
+  height: 0;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
