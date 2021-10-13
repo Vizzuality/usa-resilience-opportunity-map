@@ -52,6 +52,72 @@ const Section2 = () => {
   );
 };
 
+const Section3 = () => {
+  return (
+    <div className={cx(styles.section3, styles.bgSecondary)}>
+      <div>
+        <div className={cx(styles.col, styles.colRight)} />
+        <div className={cx(styles.col, styles.colLeft, styles.textWhite)}>
+          <p>
+            But a changing climate means less snow in Colorado – and that means
+            less water in Arizona.
+          </p>
+          <p>
+            This issue extends beyond Arizona. In August 2021, almost half of
+            the U.S. was experiencing some form of drought, the majority in the
+            western US. This “megadrought” began in 2000, and currently impacts
+            the lives of 57 million U.S. citizens. There has been nothing like
+            it for over 1,200 years – and it represents climate change-induced
+            aridification.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Section5 = () => {
+  return (
+    <div className={cx(styles.section5, styles.bgGray)}>
+      <div>
+        <div className={cx(styles.col, styles.colRight)} />
+        <div className={cx(styles.col, styles.colLeft, styles.textWhite)}>
+          <p>
+            Tucson Water raised awareness of the program through notices on
+            water bills, as well as on their website, social media, and
+            community interaction.
+          </p>
+          <p>
+            When households apply for the rebate, they are first invited to a
+            three-hour workshop to learn more about conservation and water
+            efficiency.
+          </p>
+          <p>
+            The workshop provides an opportunity for the homeowner to work with
+            Tucson Water to plan and calculate how much water they can save.
+            They can discuss how much water can be harvested from rooftop
+            run-off after rainfall. If significant, Tucson Water would recommend
+            installing gutters and a cistern to collect rainwater and advise on
+            how to put that water to use. For example, they may suggest
+            homeowners use the excess water to irrigate lawns and gardens.
+          </p>
+          <p>
+            Following the workshop, the homeowner is free to hire their own
+            contractors to complete the fitting of their rainwater harvest
+            system, toilet or washer or make use of Tucson Water referrals for
+            qualified contractors.
+          </p>
+          <p>
+            Once the work is done, the homeowner can redeem the applicable
+            rebates by providing Tucson Water with the receipts as proof of
+            work.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Section6 = () => {
   return (
     <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
@@ -87,6 +153,28 @@ const Section7 = () => {
   );
 };
 
+const Section12 = () => {
+  return (
+    <div className={cx(styles.section12, styles.bgWhite)}>
+      <div>
+        <div className={cx(styles.col, styles.colRight)} />
+        <div className={cx(styles.col, styles.colLeft, styles.textGray)}>
+          <h5 className={cx(styles.sectionTitle)}>A Greener Home</h5>
+          <p>
+            Along with installing the rainwater harvesting system, SERI
+            encourages low-income households to plant drought-resistant gardens
+            which can be tended using the collected rainwater.
+          </p>
+          <p>
+            This increases people’s well-being and helps to tackle extreme heat
+            by increasing the tree canopy.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Section13 = () => {
   return (
     <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
@@ -106,8 +194,11 @@ const Tucson = () => {
     <div className={styles.stories}>
       <Section1 />
       <Section2 />
+      <Section3 />
+      <Section5 />
       <Section6 />
       <Section7 />
+      <Section12 />
       <Section13 />
       <MetaFooter exploreLink="/explore?id=224706" />
     </div>
