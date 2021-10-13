@@ -244,6 +244,39 @@ const Section8 = () => {
   );
 };
 
+const Section9 = () => {
+  return (
+    <div className={cx(styles.section9, styles.bgLightBlue, styles.textGray)}>
+      <div className={styles.contentLeft}>
+        <img
+          src="/assets/images/stories/tucson/tu_section_9_bg.png"
+          className={styles.section9Img}
+          alt=""
+        />
+      </div>
+      <div className={cx(styles.contentRight, styles.container)}>
+        <p>
+          The not-for-profit organization Sonora Environmental Research
+          Institute (SERI) argued that rather than disinclination, low-income
+          households weren’t applying for the rebate because they didn’t have
+          the funds to pay for interventions in advance.
+        </p>
+        <p>
+          SERI applied for a grant from the EPA’s Climate Justice Project and,
+          using a combination of the grant money and its own funds, launched a
+          pilot to bring rainwater harvesting solutions to low-income
+          households. When the pilot proved successful, Tucson Water took over
+          the funding using the Conservation Fee.
+        </p>
+        <p>
+          SERI went door-to-door talking to residents and inviting them to
+          apply.
+        </p>
+      </div>
+    </div>
+  );
+};
+
 const Section10 = () => {
   return (
     <div className={cx(styles.section10, styles.bgWhite, styles.textGray)}>
@@ -381,6 +414,7 @@ const Tucson = () => {
       <Section6 />
       <Section7 />
       <Section8 />
+      <Section9 />
       <Section10 />
       <Section11 />
       <Section12 />
