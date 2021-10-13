@@ -223,6 +223,183 @@
   }
 }
 
+// Section 3
+.section3 {
+  $section3-cols: 1000px;
+
+  color: var(--text-gray);
+  position: relative;
+  overflow: hidden;
+
+  .colLeft {
+    padding: 4rem var(--container-padding);
+
+    @media screen and (min-width: $section3-cols) {
+      display: inline-block;
+      max-width: calc(var(--container-max-width) / 2);
+      margin-right: 50%;
+      margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
+    }
+  }
+
+  .colRight {
+    min-height: 38rem;
+    overflow: hidden;
+    position: relative;
+
+    @media screen and (min-width: $section3-cols) {
+      display: inline-block;
+      height: 100%;
+      margin-left: 55%;
+      min-height: 20rem;
+      position: absolute;
+      width: 45vw;
+    }
+
+    &::after {
+      background-image: url("/assets/images/stories/seattle/st_section_3_bg.png");
+      background-size: cover;
+      background-position: center;
+      content: '';
+      height: 100vh;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100vw;
+      z-index: 0;
+
+      @media screen and (min-width: 600px) {
+        background-position: bottom;
+        height: 80vh;
+      }
+
+      @media screen and (min-width: $section3-cols) {
+        background-position: center;
+        height: 100%;
+        width: 50vw;
+      }
+    }
+  }
+}
+
+// Section 8
+.section8 {
+  $section3-cols: 1000px;
+
+  color: var(--text-gray);
+  position: relative;
+  overflow: hidden;
+
+  .colLeft {
+    padding: 4rem var(--container-padding);
+
+    @media screen and (min-width: $section3-cols) {
+      display: inline-block;
+      max-width: calc(var(--container-max-width) / 2);
+      margin-right: 50%;
+      margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
+    }
+  }
+
+  .colRight {
+    min-height: 38rem;
+    overflow: hidden;
+    position: relative;
+
+    @media screen and (min-width: $section3-cols) {
+      display: inline-block;
+      height: 100%;
+      margin-left: 55%;
+      min-height: 20rem;
+      position: absolute;
+      width: 45vw;
+    }
+
+    &::after {
+      background-image: url("/assets/images/stories/seattle/st_section_8.jpg");
+      background-size: cover;
+      background-position: center;
+      content: '';
+      height: 100vh;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100vw;
+      z-index: 0;
+
+      @media screen and (min-width: 600px) {
+        background-position: bottom;
+        height: 80vh;
+      }
+
+      @media screen and (min-width: $section3-cols) {
+        background-position: center;
+        height: 100%;
+        width: 50vw;
+      }
+    }
+  }
+}
+
+// Section 10
+.section10 {
+  $section3-cols: 1000px;
+
+  color: var(--text-gray);
+  position: relative;
+  overflow: hidden;
+
+  .colLeft {
+    padding: 4rem var(--container-padding);
+
+    @media screen and (min-width: $section3-cols) {
+      display: inline-block;
+      max-width: calc(var(--container-max-width) / 2);
+      margin-right: 50%;
+      margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
+    }
+  }
+
+  .colRight {
+    min-height: 38rem;
+    overflow: hidden;
+    position: relative;
+
+    @media screen and (min-width: $section3-cols) {
+      display: inline-block;
+      height: 100%;
+      margin-left: 55%;
+      min-height: 20rem;
+      position: absolute;
+      width: 45vw;
+    }
+
+    &::after {
+      background-image: url("/assets/images/stories/seattle/st_section_10_bg.png");
+      background-size: cover;
+      background-position: center;
+      content: '';
+      height: 100vh;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100vw;
+      z-index: 0;
+
+      @media screen and (min-width: 600px) {
+        background-position: bottom;
+        height: 80vh;
+      }
+
+      @media screen and (min-width: $section3-cols) {
+        background-position: center;
+        height: 100%;
+        width: 50vw;
+      }
+    }
+  }
+}
+
 // Section 12
 .section12 {
   color: var(--color-white);

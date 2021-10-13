@@ -48,6 +48,33 @@ const Section2 = () => {
   );
 };
 
+const Section3 = () => {
+  return (
+    <div className={cx(styles.section3, styles.bgSecondary)}>
+      <div>
+        <div className={cx(styles.col, styles.colRight)} />
+        <div className={cx(styles.col, styles.colLeft, styles.textWhite)}>
+          <p>
+            This includes flooded homes and blocked roads – preventing people
+            from performing regular daily activities, causing emotional
+            distress, and expensive property damage.
+          </p>
+          <p>
+            Flooding also causes sewer backup, where sewer water pours into
+            bathtubs and toilets. Not only does this cause damage to property,
+            but it poses a serious risk to sanitation and public health safety.
+          </p>
+          <p>
+            The neighborhoods suffering the worst impacts of flooding are often
+            populated by low-income, immigrant families and underserved minority
+            groups.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Section5 = () => {
   return (
     <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
@@ -72,6 +99,60 @@ const Section11 = () => {
         authorPosition=""
         authorCompany="RainWise customer"
       />
+    </div>
+  );
+};
+
+const Section8 = () => {
+  return (
+    <div className={cx(styles.section8, styles.bgGray)}>
+      <div>
+        <div className={cx(styles.col, styles.colRight)} />
+        <div className={cx(styles.col, styles.colLeft, styles.textWhite)}>
+          <p>
+            These resilience-building measures allow stormwater to soak into the
+            ground or be collected, rather than run off roofs and gutters that
+            can lead to further flooding and divert wastewater back into the
+            ocean or waterways.
+          </p>
+          <p>
+            The RainWise program is promoted online, in postal mailings, at
+            public events such as farmers’ markets, and through Be RainWise
+            signage that appears along roadsides throughout Seattle.
+          </p>
+          <p>
+            Seattle Public Utilities, which runs the RainWise program, offers a
+            rebate to residents in targeted sewer basin locales to cover the
+            costs of the two more expensive interventions: installing a cistern
+            and installing a rain garden.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Section10 = () => {
+  return (
+    <div className={cx(styles.section10, styles.bgWhite)}>
+      <div>
+        <div className={cx(styles.col, styles.colRight)} />
+        <div className={cx(styles.col, styles.colLeft, styles.textGray)}>
+          <p>
+            The King County Conservation District provided a $40,000 grant to
+            start the rebate program in 2010. Since then, Seattle Public
+            Utilities has spent $2.5 million on rebates, demonstrating its broad
+            reach and use across the city. The program contributes to Seattle’s
+            goal of managing 700 million gallons of stormwater annually using
+            green stormwater infrastructure by 2025.
+          </p>
+          <p>
+            Over 1,900 RainWise projects have been completed, collectively
+            managing over 25 million gallons (53 acres of roof surface) of
+            stormwater annually.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
@@ -131,7 +212,10 @@ const Seattle = () => {
     <div className={styles.stories}>
       <Section1 />
       <Section2 />
+      <Section3 />
       <Section5 />
+      <Section8 />
+      <Section10 />
       <Section11 />
       <Section12 />
       <Section13 />

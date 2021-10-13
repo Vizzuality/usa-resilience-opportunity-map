@@ -126,6 +126,32 @@ const Section10 = () => {
   );
 };
 
+const Section11 = () => {
+  return (
+    <div className={cx(styles.section11, styles.bgGray)}>
+      <div>
+        <div className={cx(styles.col, styles.colRight)} />
+        <div className={cx(styles.col, styles.colLeft, styles.textWhite)}>
+          <p>
+            The Master Gardeners offer training courses, workshops, a gardening
+            library, and more. The program’s 260 members serve a population of
+            over 2 million residents. They delivered 2,684 continuing education
+            sessions throughout 2020, totaling 9,818 volunteer hours.
+          </p>
+          <p>
+            The Bexar County Master Gardeners recommend fruit and vegetable
+            plants that don’t require significant watering and often remind
+            participants in their workshops that this won’t only help conserve
+            water, but will allow community members to readily grow and access
+            food. When watering is required, they show residents how to reuse
+            water from around the home, rather than running the tap or hose.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Section12 = () => {
   return (
     <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
@@ -182,6 +208,25 @@ const Section14 = () => {
   );
 };
 
+const Section15 = () => {
+  return (
+    <div className={cx(styles.section15, styles.bgWhite)}>
+      <div>
+        <div className={cx(styles.col, styles.colRight)} />
+        <div className={cx(styles.col, styles.colLeft, styles.textGray)}>
+          <p>
+            The Bexar County Master Gardeners provide over 200 workshops and
+            presentations every year. In addition to teaching people how to
+            develop their gardens, they also offer a rewards program where
+            people attending multiple educational events are given a coupon to
+            spend on plants and tools.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Section16 = () => {
   return (
     <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
@@ -207,9 +252,11 @@ const SanAntonio = () => {
       <Section3 />
       <Section5 />
       <Section10 />
+      <Section11 />
       <Section12 />
       <Section13 />
       <Section14 />
+      <Section15 />
       <Section16 />
       <MetaFooter exploreLink="/explore?id=227137" />
     </div>
