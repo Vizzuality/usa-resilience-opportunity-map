@@ -1,7 +1,7 @@
 // Global styles
 
-.underline {
-  border-bottom: 8px solid var(--brand-secondary);
+.underlinePrimary {
+  border-bottom: 8px solid var(--brand-primary);
 }
 
 .container {
@@ -220,5 +220,152 @@
     position: absolute;
     top: 0;
     width: 100%;
+  }
+}
+
+// Section 3
+.section3 {
+  color: var(--color-white);
+  overflow: hidden;
+  position: relative;
+
+  .colRight {
+    padding: 2rem var(--container-padding);
+
+    @media screen and (min-width: 1000px) {
+      display: inline-block;
+      max-width: calc(var(--container-max-width) / 2);
+      margin-left: 50%;
+      margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
+      padding: 3rem var(--container-padding);
+    }
+  }
+
+  .colLeft {
+    min-height: 20rem;
+    overflow: hidden;
+    position: relative;
+
+    @media screen and (min-width: 1000px) {
+      display: inline-block;
+      height: 100%;
+      position: absolute;
+      width: 50vw;
+    }
+
+    &::after {
+      background-image: url("/assets/images/stories/sanantonio/sa_section_3_bg.png");
+      background-size: cover;
+      background-position: center;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      z-index: 0;
+
+      @media screen and (min-width: 1000px) {
+        width: 50vw;
+      }
+    }
+  }
+}
+
+// Section 10
+.section10 {
+  color: var(--color-white);
+  overflow: hidden;
+  position: relative;
+
+  .colRight {
+    padding: 2rem var(--container-padding);
+
+    @media screen and (min-width: 1000px) {
+      display: inline-block;
+      max-width: calc(var(--container-max-width) / 2);
+      margin-left: 50%;
+      margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
+      padding: 3rem var(--container-padding);
+    }
+  }
+
+  .colLeft {
+    min-height: 20rem;
+    overflow: hidden;
+    position: relative;
+
+    @media screen and (min-width: 1000px) {
+      display: inline-block;
+      height: 100%;
+      position: absolute;
+      width: 50vw;
+    }
+
+    &::after {
+      background-image: url("/assets/images/stories/sanantonio/sa_section_10_bg.png");
+      background-size: cover;
+      background-position: center;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      z-index: 0;
+
+      @media screen and (min-width: 1000px) {
+        width: 50vw;
+      }
+    }
+  }
+}
+
+// Section 13
+.section13 {
+  color: var(--color-white);
+  overflow: hidden;
+  position: relative;
+
+  .colRight {
+    padding: 2rem var(--container-padding);
+
+    @media screen and (min-width: 1000px) {
+      display: inline-block;
+      max-width: calc(var(--container-max-width) / 2);
+      margin-left: 50%;
+      margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
+      padding: 3rem var(--container-padding);
+    }
+  }
+
+  .colLeft {
+    min-height: 20rem;
+    overflow: hidden;
+    position: relative;
+
+    @media screen and (min-width: 1000px) {
+      display: inline-block;
+      height: 100%;
+      position: absolute;
+      width: 50vw;
+    }
+
+    &::after {
+      background-image: url("/assets/images/stories/sanantonio/sa_section_13_bg.png");
+      background-size: cover;
+      background-position: center;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      z-index: 0;
+
+      @media screen and (min-width: 1000px) {
+        width: 50vw;
+      }
+    }
   }
 }

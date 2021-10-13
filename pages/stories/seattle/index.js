@@ -75,6 +75,43 @@ const Section11 = () => {
     </div>
   );
 };
+
+const Section12 = () => {
+  return (
+    <div className={cx(styles.section12, styles.bgWhite)}>
+      <div>
+        <div className={cx(styles.col, styles.colLeft)} />
+        <div className={cx(styles.col, styles.colRight, styles.textGray)}>
+          <h5 className={cx(styles.sectionTitle)}>
+            Green Stormwater Infrastructure
+          </h5>
+          <p>
+            Alongside the RainWise Program, Seattle Public Utilities is
+            investing more broadly in green stormwater infrastructure.
+          </p>
+          <p>
+            This infrastructure is designed to collect, slow, and treat rain
+            once it hits the earth and becomes stormwater to reduce flooding.
+          </p>
+          <p>
+            These include designing sidewalks with rain gardens, a form of
+            vegetation stormwater management.
+          </p>
+          <p>
+            Notably, many of the interventions – whether in a private garden or
+            a public sidewalk – are designed with beautification in mind, making
+            Seattle a greener and more ecologically diverse place to live.
+            Increasing the number of parks in a city and ensuring everyone has
+            access to green spaces is crucial to equity and resilience. The
+            RainWise program is making Seattle greener and positively impacting
+            the surrounding community.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Section13 = () => {
   return (
     <div className={cx(styles.bgSecondary, styles.quoteContainer)}>
@@ -96,6 +133,7 @@ const Seattle = () => {
       <Section2 />
       <Section5 />
       <Section11 />
+      <Section12 />
       <Section13 />
       <MetaFooter exploreLink="/explore?id=227569" />
     </div>

@@ -66,6 +66,27 @@ const Section6 = () => {
   );
 };
 
+const Section7 = () => {
+  return (
+    <div className={cx(styles.section7, styles.bgWhite)}>
+      <div>
+        <div className={cx(styles.col, styles.colLeft)} />
+        <div className={cx(styles.col, styles.colRight, styles.textGray)}>
+          <h5 className={cx(styles.sectionTitle)}>The Conservation Fee</h5>
+          <p>
+            Tucson Water funds the rebate program using a Conservation Fee
+            attached to its water bills. A household pays around 8¢ per centum
+            cubic feet (CCF). This is a unit of measure used on water bills that
+            equals approximately 748 gallons. The sum goes directly to funding
+            water conservation projects. The fee has helped fund 60,690
+            residential rebates.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Section13 = () => {
   return (
     <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
@@ -86,6 +107,7 @@ const Tucson = () => {
       <Section1 />
       <Section2 />
       <Section6 />
+      <Section7 />
       <Section13 />
       <MetaFooter exploreLink="/explore?id=224706" />
     </div>

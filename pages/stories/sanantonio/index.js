@@ -14,9 +14,14 @@ const Section1 = () => {
       <div className={styles.container}>
         <div className={styles.section1Title}>
           <span>
-            Tackling drought and saving water through
+            Tackling drought and
             <br />
-            <span className={styles.underline}> resilient gardening</span>
+            saving water through
+            <br />
+            <span className={styles.underlinePrimary}>
+              {' '}
+              resilient gardening
+            </span>
           </span>
         </div>
         <div className={styles.section1Text}>
@@ -47,6 +52,39 @@ const Section2 = () => {
   );
 };
 
+const Section3 = () => {
+  return (
+    <div className={cx(styles.section3, styles.bgGray)}>
+      <div>
+        <div className={cx(styles.col, styles.colLeft)} />
+        <div className={cx(styles.col, styles.colRight)}>
+          <p>
+            The existing response to dry weather and drought was threatening the
+            long-term economic prospects of San Antonio. Businesses that had
+            planned to set up in the region threatened to pull out, believing it
+            was no longer a safe and productive place of work. The city was
+            getting a reputation for being poor stewards of its water.
+          </p>
+          <p>
+            Things came to a head when the U.S. Fish and Wildlife Department
+            demanded San Antonio become less dependent on the Edwards Aquifer
+            for its local water supply to ensure habitat conservation and the
+            continued reliability of the water source. This had been the city’s
+            primary water supply through heavy rainfall and during drought.
+          </p>
+          <p>
+            Without the Edwards Aquifer offering a reliable water supply, San
+            Antonio was at greater risk of experiencing frequent water
+            shortages. This led to concerns from local residents about how the
+            water limitations would impact their access to clean water for
+            everyday needs.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Section5 = () => {
   return (
     <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
@@ -65,6 +103,29 @@ const Section5 = () => {
   );
 };
 
+const Section10 = () => {
+  return (
+    <div className={cx(styles.section10, styles.bgWhite)}>
+      <div>
+        <div className={cx(styles.col, styles.colLeft)} />
+        <div className={cx(styles.col, styles.colRight, styles.textGray)}>
+          <h5 className={cx(styles.sectionTitle)}>A City of Gardeners</h5>
+          <p>
+            Fundamental to SAWS’ approach is empowering people to plant gardens
+            that can save water while promoting urban horticulture. Homeowners
+            can receive training in how to create a resilient garden that
+            doesn’t require watering. SAWS works in partnership with the Bexar
+            County Master Gardeners, a nonprofit dedicated to educating people
+            about urban horticulture. Alongside decorative plants, the Bexar
+            County Master Gardeners support homeowners to grow their own fruit
+            and vegetables, promoting food sustainability.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Section12 = () => {
   return (
     <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
@@ -79,6 +140,27 @@ const Section12 = () => {
         authorPosition="WATER CONSERVATION COORDINATOR"
         authorCompany="Master Gardeners"
       />
+    </div>
+  );
+};
+
+const Section13 = () => {
+  return (
+    <div className={cx(styles.section13, styles.bgWhite)}>
+      <div>
+        <div className={cx(styles.col, styles.colLeft)} />
+        <div className={cx(styles.col, styles.colRight, styles.textGray)}>
+          <p>
+            Since the Master Gardeners work in partnership with the rebate
+            program, low-income residents can benefit from their support. They
+            make sure to teach urban horticulture skills that range from the
+            rudimentary to the more sophisticated to make it more accessible for
+            everyone. Teaching people how to grow their own food sustainably can
+            also help low-income families access fresh vegetables while saving
+            money on their monthly utility bill.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
@@ -122,8 +204,11 @@ const SanAntonio = () => {
     <div className={styles.stories}>
       <Section1 />
       <Section2 />
+      <Section3 />
       <Section5 />
+      <Section10 />
       <Section12 />
+      <Section13 />
       <Section14 />
       <Section16 />
       <MetaFooter exploreLink="/explore?id=227137" />
