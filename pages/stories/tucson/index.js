@@ -306,7 +306,7 @@ const Section11 = () => {
       <div className={styles.contentLeft}>
         <img
           src="/assets/images/stories/tucson/tu_section_11_bg.png"
-          className={styles.section4Img}
+          className={styles.section11Img}
           alt=""
         />
       </div>

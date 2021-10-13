@@ -131,7 +131,7 @@
 .listItem {
   list-style-position: inside;
   list-style-type: initial;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.8rem;
 }
 
 // Section1
@@ -282,6 +282,186 @@
   }
 }
 
+// Section 4
+.section4 {
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (min-width: 900px) {
+    padding: 3rem 0 0 0;
+  }
+
+  .contentRight {
+    margin: 3rem 0;
+    position: relative;
+    width: 100%;
+
+    @media screen and (min-width: 900px) {
+      margin: 0 0 4rem 0;
+      max-width: 30rem;
+      margin-left: 50%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin-left: 55%;
+    }
+
+    @media screen and (min-width: 1500px) {
+      max-width: 40rem;
+      padding: 4rem 0;
+    }
+  }
+
+  .contentLeft {
+    position: relative;
+    z-index: 1;
+    margin-left: -1rem;
+
+    @media screen and (min-width: 600px) {
+      right: -1rem;
+    }
+
+    @media screen and (min-width: 900px) {
+      position: absolute;
+      display: flex;
+      bottom: 0;
+      left: 0;
+      width: 45%;
+      justify-content: flex-end;
+      margin-left: 0;
+      margin-bottom: -3px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      bottom: 0;
+      height: 100%;
+    }
+
+    .section4Img {
+      @media screen and (min-width: 900px) {
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+// Section 36
+.section6 {
+  color: var(--text-gray);
+  position: relative;
+  overflow: hidden;
+
+  .colLeft {
+    padding: 4rem var(--container-padding);
+
+    @media screen and (min-width: 1000px) {
+      display: inline-block;
+      max-width: calc(var(--container-max-width) / 2);
+      margin-right: 50%;
+      margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
+    }
+  }
+
+  .colRight {
+    min-height: 38rem;
+    overflow: hidden;
+    position: relative;
+
+    @media screen and (min-width: 1000px) {
+      display: inline-block;
+      height: 100%;
+      margin-left: 55%;
+      min-height: 20rem;
+      position: absolute;
+      width: 45vw;
+    }
+
+    &::after {
+      background-image: url("/assets/images/stories/seattle/st_section_6_bg.png");
+      background-size: cover;
+      background-position: center;
+      content: '';
+      height: 100vh;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100vw;
+      z-index: 0;
+
+      @media screen and (min-width: 600px) {
+        background-position: bottom;
+        height: 80vh;
+      }
+
+      @media screen and (min-width: 1000px) {
+        background-position: center;
+        height: 100%;
+        width: 50vw;
+      }
+    }
+  }
+}
+
+// Section 7
+.section7 {
+  padding-top: 90%;
+  position: relative;
+
+  &::after {
+    background-image: url("/assets/images/stories/seattle/st_section_7_bg.png");
+    background-size: contain;
+    background-position: top left;
+    background-repeat: no-repeat;
+    content: '';
+    bottom: 0;
+    height: 43%;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    z-index: 3;
+
+    @media screen and (min-width: 600px) {
+      background-position: bottom left;
+      height: 60%;
+      left: 0;
+    }
+
+    @media screen and (min-width: 1000px) {
+      height: 106%;
+      left: -25vw;
+    }
+
+    @media screen and (min-width: 1200px) {
+      background-size: auto 100%;
+      bottom: 0;
+      left: -12vw;
+    }
+    
+    @media screen and (min-width: 1400px) {
+      left: -2vw;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    padding: 4rem var(--container-padding);
+  }
+
+  @media screen and (min-width: 1400px) {
+    background-size: auto 100%;
+    padding-bottom: 4rem;
+  }
+
+  .section7Wrapper {
+    padding: 4rem 0;
+
+    @media screen and (min-width: 1000px) {
+      left: 57%;
+      max-width: 43%;
+      position: relative;
+    }
+  }
+}
+
 // Section 8
 .section8 {
   $section3-cols: 1000px;
@@ -337,6 +517,66 @@
         height: 100%;
         width: 50vw;
       }
+    }
+  }
+}
+
+// Section 9
+.section9 {
+  padding-top: 90%;
+  position: relative;
+
+  &::after {
+    background-image: url("/assets/images/stories/seattle/st_section_9_bg.png");
+    background-size: contain;
+    background-position: top left;
+    background-repeat: no-repeat;
+    content: '';
+    bottom: 0;
+    height: 43%;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    z-index: 3;
+
+    @media screen and (min-width: 600px) {
+      background-position: bottom left;
+      height: 60%;
+      left: 0;
+    }
+
+    @media screen and (min-width: 1000px) {
+      height: 90%;
+      left: -25vw;
+    }
+
+    @media screen and (min-width: 1200px) {
+      background-size: auto 100%;
+      bottom: -8%;
+      left: -12vw;
+    }
+    
+    @media screen and (min-width: 1400px) {
+      left: -6vw;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    padding: 4rem var(--container-padding);
+  }
+
+  @media screen and (min-width: 1400px) {
+    background-size: auto 100%;
+    padding-bottom: 4rem;
+  }
+
+  .section9Wrapper {
+    padding: 4rem 0;
+
+    @media screen and (min-width: 1000px) {
+      left: 57%;
+      max-width: 43%;
+      position: relative;
     }
   }
 }
