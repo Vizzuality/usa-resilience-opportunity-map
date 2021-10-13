@@ -528,6 +528,76 @@
   }
 }
 
+// Section 9
+.section9 {
+  position: relative;
+  padding-bottom: 130%;
+  padding-top: 2rem;
+
+  @media screen and (min-width: 600px) {
+    padding-bottom: 64rem;
+    padding-top: 3rem;
+  }
+
+  @media screen and (min-width: 1000px) {
+    padding: 3rem var(--container-padding);
+    padding-bottom: 4rem;
+  }
+
+  .paragraph {
+    @media screen and (min-width: 600px) {
+      font-size: 16px;
+    }
+
+    @media screen and (min-width: 1000px) {
+      font-size: 16px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      font-size: 20px;
+    }
+  }
+
+  .section9Wrapper {
+    padding-top: 1rem;
+    @media screen and (min-width: 1000px) {
+      max-width: 50%;
+    }
+  }
+  
+  &::before {
+    background-image: url("/assets/images/stories/sanantonio/sa_section_9_bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right bottom 0;
+    bottom: -1.3rem;
+    content: '';
+    height: 110vh;
+    right: 0;
+    position: absolute;
+    width: 100vw;
+    z-index: 5;
+
+    @media screen and (min-width: 600px) {
+      bottom: -2%;
+    }
+  
+    @media screen and (min-width: 1000px) {
+      background-position: right bottom;
+      bottom: -3%;
+      height: 103%;
+      right: -12%;
+    }
+
+    @media screen and (min-width: 1400px) {
+      background-position: right bottom;
+      bottom: -4%;
+      height: 103.5%;
+      right: 0;
+    }
+  }
+}
+
 // Section 10
 .section10 {
   color: var(--color-white);

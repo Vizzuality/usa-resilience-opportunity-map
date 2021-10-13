@@ -240,6 +240,50 @@ const Section8 = () => {
   );
 };
 
+const Section9 = () => {
+  return (
+    <div className={cx(styles.section9, styles.textWhite, styles.bgSecondary)}>
+      <div className={cx(styles.container)}>
+        <div className={cx(styles.section9Wrapper)}>
+          <div>
+            <p className={styles.paragraph}>
+              However, as prices continued to rise with extended drought
+              periods, the city’s lowest-income families simply couldn’t afford
+              the rising cost of water. To help those struggling families, SAWS
+              implemented an affordability discount that ranges between $2 to
+              $20, depending on where a household sits on the Federal Poverty
+              scale. Today, 34,000 households qualify for the discount, which is
+              paid for by the water conservation fund.
+            </p>
+            <p className={styles.paragraph}>
+              The decision to implement the discount and the rebate system means
+              that no household is excluded from taking steps towards improved
+              water sustainability.
+            </p>
+            <p className={styles.paragraph}>
+              Despite the 2020 Covid-19 restrictions, San Antonio was still able
+              to achieve incredible results with its program:
+            </p>
+            <ul>
+              <li className={styles.listItem}>
+                2,774 no-contact irrigation consultations
+              </li>
+              <li className={styles.listItem}>
+                120,748 people engaging with educational resources
+              </li>
+              <li className={styles.listItem}>1,554 coupons used</li>
+            </ul>
+            <p>
+              As a result of the combined programs, the city saved 1.7 billion
+              gallons of water in 2020 – well above its target.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Section10 = () => {
   return (
     <div className={cx(styles.section10, styles.bgWhite)}>
@@ -392,6 +436,7 @@ const SanAntonio = () => {
       <Section6 />
       <Section7 />
       <Section8 />
+      <Section9 />
       <Section10 />
       <Section11 />
       <Section12 />
