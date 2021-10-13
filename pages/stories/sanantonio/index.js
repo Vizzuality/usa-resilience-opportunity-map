@@ -85,6 +85,46 @@ const Section3 = () => {
   );
 };
 
+const Section4 = () => {
+  return (
+    <div className={cx(styles.section4, styles.bgWhite, styles.textGray)}>
+      <div className={styles.container}>
+        <div className={styles.contentRight}>
+          <img
+            src="/assets/images/stories/sanantonio/sa_section_4_bg.png"
+            className={styles.section4Img}
+            alt=""
+          />
+        </div>
+        <div className={styles.contentLeft}>
+          <p>
+            The city government was forced to devise a solution to protect San
+            Antonio residents during months of drought, with particular
+            consideration for low-income individuals that would experience
+            heightened impacts.
+          </p>
+          <p>
+            It decided to promote greater sustainability through proactive
+            initiatives that would help residents save water while getting
+            involved in urban horticulture. This encouraged safe, reliable
+            produce options; increased engagement with the natural world; and
+            put support in place so low-income residents would not struggle to
+            meet the rising costs of water.
+          </p>
+          <p>
+            Not all U.S. cities struggling with drought will have an aquifer as
+            a primary water source. However, with the growing threat of a
+            warming climate and more frequent bouts of drought, cities can
+            become more aware of the impacts of drought on water supply and the
+            importance of water conservation and water resource diversification
+            as a resilience-building measure.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Section5 = () => {
   return (
     <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
@@ -99,6 +139,103 @@ const Section5 = () => {
         authorPosition="CONSERVATION DIRECTOR"
         authorCompany="San Antonio Water System (SAWS)"
       />
+    </div>
+  );
+};
+
+const Section6 = () => {
+  return (
+    <div className={cx(styles.section6, styles.bgWhite, styles.textGray)}>
+      <div className={styles.contentLeft}>
+        <img
+          src="/assets/images/stories/sanantonio/sa_section_6_bg.png"
+          className={styles.section6Img}
+          alt=""
+        />
+      </div>
+      <div className={cx(styles.contentRight, styles.container)}>
+        <p>
+          San Antonio Water System (SAWS) set an ambitious target: to
+          proactively secure 1 billion gallons of water annually. To do this, it
+          needed to work with the community to encourage residents to save water
+          through various educational, rebate, and financial support programs.
+        </p>
+        <p>
+          Working with the Conservation Department and non-profits such as Bexar
+          County Master Gardeners, San Antonio Water Systems launched a rebate
+          program that included:
+        </p>
+        <ul>
+          <li className={styles.orderListItem}>
+            A WaterSaver irrigation rebate and consultation
+          </li>
+          <li className={styles.orderListItem}>
+            A WaterSaver landscape coupon
+          </li>
+          <li className={styles.orderListItem}>
+            A WaterSaver patioscape coupon
+          </li>
+          <li className={styles.orderListItem}>A swimming pool rebate</li>
+          <li className={styles.orderListItem}>A water flow sensor rebate</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+const Section7 = () => {
+  return (
+    <div className={cx(styles.section7, styles.textWhite, styles.bgGray)}>
+      <div className={cx(styles.container)}>
+        <div className={cx(styles.section7Wrapper)}>
+          <p>
+            To participate in the irrigation, swimming pool, or water flow
+            sensor rebate program, homeowners followed a simple process that
+            involves a property inspection by a SAWS representative to determine
+            whether a rebate is available, and hire contractors to carry out the
+            work.
+          </p>
+          <p>
+            The rebate provides the financial support necessary for low-income
+            households to participate in the water conservation initiatives,
+            which would otherwise be an economic barrier for these groups. The
+            rebate program gives San Antonio residents the ability to implement
+            sustainability measures in their home to ensure future water supply,
+            even during times of severe shortage.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Section8 = () => {
+  return (
+    <div className={cx(styles.section8, styles.bgWhite, styles.textGray)}>
+      <div className={styles.contentLeft}>
+        <img
+          src="/assets/images/stories/sanantonio/sa_section_8_bg.png"
+          className={styles.section8Img}
+          alt=""
+        />
+      </div>
+      <div className={cx(styles.contentRight, styles.container)}>
+        <p>
+          Along with the rebates, SAWS offers a coupon program that helps
+          homeowners create beautiful gardens using plants that are drought
+          resistant. To apply for a WaterSaver landscape coupon, homeowners must
+          commit to removing grass from their gardens and replacing it with a
+          water-saving landscape. The coupons incentivize homeowners to take
+          action to save water and support local horticultural businesses.
+        </p>
+        <p>
+          The rebate program is funded through water bills paid by city
+          residents. SAWS structured its rates so that a portion of the top-tier
+          water bills goes into a restricted water conservation fund. This means
+          that those businesses and residents who use the most water are
+          responsible for funding city-wide long-term water saving efforts.
+        </p>
+      </div>
     </div>
   );
 };
@@ -250,7 +387,11 @@ const SanAntonio = () => {
       <Section1 />
       <Section2 />
       <Section3 />
+      <Section4 />
       <Section5 />
+      <Section6 />
+      <Section7 />
+      <Section8 />
       <Section10 />
       <Section11 />
       <Section12 />

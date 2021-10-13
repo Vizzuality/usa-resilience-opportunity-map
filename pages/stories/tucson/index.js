@@ -76,6 +76,59 @@ const Section3 = () => {
   );
 };
 
+const Section4 = () => {
+  return (
+    <div className={cx(styles.section4, styles.bgLightBlue, styles.textGray)}>
+      <div className={styles.contentLeft}>
+        <img
+          src="/assets/images/stories/tucson/tu_section_4_bg.png"
+          className={styles.section4Img}
+          alt=""
+        />
+      </div>
+      <div className={cx(styles.contentRight, styles.container)}>
+        <h5 className={cx(styles.sectionTitle)}>
+          Helping Households Help Themselves
+        </h5>
+        <p>
+          Tucson Water recognized that a changing climate needed a new response
+          to water shortages. In 2011, it established a rebate program designed
+          to support households in making simple adaptations to their homes that
+          would help them harvest rainwater, as well as installing
+          water-efficient toilets and washers.
+        </p>
+        <p>The program offers Tucson Water customers the following rebates:</p>
+        <ul>
+          <li className={styles.orderListItem}>
+            <span className={cx(styles.textPrimary, styles.bold)}>
+              {' '}
+              Rainwater harvesting rebate:
+            </span>
+            {' '}
+            up to $2,000
+          </li>
+          <li className={styles.orderListItem}>
+            <span className={cx(styles.textPrimary, styles.bold)}>
+              Gray water rebate:
+            </span>
+            {' '}
+            50% of the costs up to $1,000
+          </li>
+          <li className={styles.orderListItem}>
+            <span className={cx(styles.textPrimary, styles.bold)}>
+              {' '}
+              Rainwater Harvesting Grant (Low-Income Program):
+            </span>
+            {' '}
+            a grant of up to $750 for families with an income equal to or less
+            than 100% of the Federal Poverty Level
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
 const Section5 = () => {
   return (
     <div className={cx(styles.section5, styles.bgGray)}>
@@ -153,6 +206,134 @@ const Section7 = () => {
   );
 };
 
+const Section8 = () => {
+  return (
+    <div className={cx(styles.section8, styles.bgSecondary, styles.textWhite)}>
+      <div className={styles.contentLeft}>
+        <img
+          src="/assets/images/stories/tucson/tu_section_8_bg.png"
+          className={styles.section8Img}
+          alt=""
+        />
+      </div>
+      <div className={cx(styles.contentRight, styles.container)}>
+        <h5 className={cx(styles.sectionTitle)}>
+          Reaching Low-Income Households
+        </h5>
+        <p>
+          Water shortages and droughts disproportionately impact lower-income
+          households that have less expendable income to finance a rainwater
+          harvest system and participate in Tucson Water’s water conservation
+          programs.
+        </p>
+        <p>
+          Analysis of rebate program users revealed the majority resided in the
+          wealthier northern enclave of the city, meaning that the recipients of
+          the rebate program were better positioned to afford the upfront cost
+          for water-saving measures before being reimbursed.
+        </p>
+        <p>
+          In low-income, majority-Hispanic areas, in which many people do not
+          speak English as a first language, fewer families were applying for
+          rebates. Initially, a lack of interest was assumed, particularly as
+          they were less likely to have gardens that could benefit from
+          harvested rainwater.
+        </p>
+      </div>
+    </div>
+  );
+};
+
+const Section10 = () => {
+  return (
+    <div className={cx(styles.section10, styles.bgWhite, styles.textGray)}>
+      <div className={styles.container}>
+        <div className={styles.contentRight}>
+          <img
+            src="/assets/images/stories/tucson/tu_section_10_bg.png"
+            className={styles.section10Img}
+            alt=""
+          />
+        </div>
+        <div className={styles.contentLeft}>
+          <p>
+            To qualify for the program, a household has to demonstrate that
+            they:
+          </p>
+          <ul>
+            <li className={cx(styles.listItem)}>
+              Fall under the federal poverty limit
+            </li>
+            <li className={cx(styles.listItem)}>
+              Pay for their water utilities through Tucson Water
+            </li>
+            <li className={cx(styles.listItem)}>Paid property taxes</li>
+            <li className={cx(styles.listItem)}>
+              Own or rent a property in good condition
+            </li>
+            <li className={cx(styles.listItem)}>
+              Maintain the system when it is installed
+            </li>
+            <li className={cx(styles.listItem)}>
+              Can provide their water records for the year previous, and year
+              after, the installation
+            </li>
+            <li className={cx(styles.listItem)}>Paid property taxes</li>
+            <li className={cx(styles.listItem)}>
+              Can attend a three-hour educational workshop
+            </li>
+          </ul>
+          <p>
+            If their application is successful and these requirements are met,
+            SERI works with a private contractor to assess the property and
+            collaborates with the homeowner to understand which rainwater
+            harvesting solutions can be implemented. This might be a passive or
+            active cistern, or groundworks system.
+          </p>
+          <p>
+            SERI, the contractor and the homeowner agree on the scope of work
+            and the costs.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Section11 = () => {
+  return (
+    <div className={cx(styles.section11, styles.bgGray, styles.textWhite)}>
+      <div className={styles.contentLeft}>
+        <img
+          src="/assets/images/stories/tucson/tu_section_11_bg.png"
+          className={styles.section4Img}
+          alt=""
+        />
+      </div>
+      <div className={cx(styles.contentRight, styles.container)}>
+        <p>
+          If the homeowner gives the go-ahead, they can choose whether to use
+          SERI’s contractor or hire their own. The vast majority choose to go
+          with SERI’s recommendation.
+        </p>
+        <p>
+          SERI provides a grant to cover the majority of the costs, and can
+          offer a no-interest loan to cover the full costs of the installation.
+          The homeowner does not have to apply for the rebate as SERI submits
+          all the paperwork to Tucson Water directly.
+        </p>
+        <p>
+          Tucson and SERI measure the success of the intervention by the number
+          of installations they complete. Since launching the low-income rebate
+          program, SERI has worked with over 400 households, installing $460,000
+          worth of rainwater harvesting systems and giving out $73,000 in
+          grants.
+        </p>
+      </div>
+    </div>
+  );
+};
+
 const Section12 = () => {
   return (
     <div className={cx(styles.section12, styles.bgWhite)}>
@@ -195,9 +376,13 @@ const Tucson = () => {
       <Section1 />
       <Section2 />
       <Section3 />
+      <Section4 />
       <Section5 />
       <Section6 />
       <Section7 />
+      <Section8 />
+      <Section10 />
+      <Section11 />
       <Section12 />
       <Section13 />
       <MetaFooter exploreLink="/explore?id=224706" />
