@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import startCase from 'lodash.startcase';
 
+import Icon from 'components/icon';
+import Modal from 'components/modal';
+
+import infoIcon from 'svgs/info.svg?sprite';
+
 export default function LegendTypeBivariate(props) {
+  const [isModalOpen, openModal] = useState(false);
+
   const { activeLayer } = props;
   const { legendConfig } = activeLayer;
 
@@ -97,6 +104,22 @@ export default function LegendTypeBivariate(props) {
         <p>{`Low ${variables[0]}`}</p>
         <p>{`Low ${variables[1]}`}</p>
       </div>
+      <button className="info-button" onClick={() => openModal(true)}>
+        <Icon className="info-icon" icon={infoIcon} />
+      </button>
+
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={() => openModal(false)}
+        title="Flood Risk + Median Household Income."
+      >
+        <p className="modal-description">
+          Info on the legend about how the two layers selected interact seems
+          important in addition to the info about each unique data layer Text
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </Modal>
     </div>
   );
 }
