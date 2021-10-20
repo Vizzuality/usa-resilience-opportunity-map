@@ -8,6 +8,7 @@ import cx from 'classnames';
 import StoriesMain from 'layouts/stories';
 
 import { STORIES } from 'constants/stories';
+
 import styles from './styles.module.scss';
 
 const ScrollToNavigate = () => (

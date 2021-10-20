@@ -87,4 +87,41 @@ export const STORIES = [
       long: -118.243683,
     },
   },
+  {
+    title: 'Seattle',
+    description: 'Getting RainWise in Seattle.',
+    buttonText: 'Discover',
+    image: '/assets/images/stories/seattle/st_section_1_collage.png',
+    thumb: '/assets/images/stories/seattle/st_section_1_bg.png',
+    href: '/stories/seattle',
+    location: {
+      lat: 47.608013,
+      long: -122.335167,
+    },
+  },
+  {
+    title: 'Tucson',
+    description: 'Rebates for rainwater.',
+    buttonText: 'Discover',
+    image: '/assets/images/stories/tucson/tu_section_1_collage.png',
+    thumb: '/assets/images/stories/tucson/tu_section_1_bg.png',
+    href: '/stories/tucson',
+    location: {
+      lat: 32.25346,
+      long: -110.911789,
+    },
+  },
+  {
+    title: 'San Antonio',
+    description:
+      'Tackling drought and saving water through resilient gardening.',
+    buttonText: 'Discover',
+    image: '/assets/images/stories/sanantonio/sa_section_1_collage.png',
+    thumb: '/assets/images/stories/sanantonio/sa_section_1_bg.png',
+    href: '/stories/sanantonio',
+    location: {
+      lat: 29.424349,
+      long: -98.491142,
+    },
+  },
 ];
