@@ -1,4 +1,6 @@
 import React, { useMemo, useState } from 'react';
+import { useRouter } from 'next/router';
+
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useDebouncedCallback } from 'use-debounce';
@@ -22,13 +24,15 @@ import {
 } from 'vizzuality-components';
 
 // Local imports
+import Icon from 'components/icon';
 import Map from 'components/map';
 import MapControls from 'components/map/controls';
 import ZoomControl from 'components/map/controls/zoom';
 import LegendItemTypeBivariate from 'components/bivariate-legend';
 import MapTooltip from 'components/explore/tooltip';
 import { STORIES } from 'constants/stories';
-import { useRouter } from 'next/router';
+
+import storiesVisibility from 'svgs/stories-visibility.svg?sprite';
 
 export default function ExploreMap({
   indicators,
@@ -43,6 +47,9 @@ export default function ExploreMap({
   const [layersSettings, setLayersSettings] = useState({});
   const [layersInteractiveIds, setLayersInteractiveIds] = useState([]);
   const [layersHover, setLayersHover] = useState({});
+  const [visibilityStories, setVisibilityStories] = useState(false);
+  const handleStoriesVisibility = () =>
+    setVisibilityStories(!visibilityStories);
   const [viewport, setViewport] = useState({
     longitude: 0,
     latitude: 0,
@@ -54,6 +61,7 @@ export default function ExploreMap({
   });
 
   const layers = useMemo(() => {
+    if (!visibilityStories) return indicatorLayers;
     return [
       ...indicatorLayers,
       {
@@ -61,22 +69,30 @@ export default function ExploreMap({
         name: 'Stories',
         config: {
           type: 'geojson',
+          images: STORIES.map((s) => {
+            return {
+              id: `${s.title}`,
+              src: `${s.thumb}`,
+              options: {},
+            };
+          }),
           render: {
             layers: [
               {
-                type: 'circle',
+                type: 'symbol',
                 paint: {
-                  'circle-color': '#ff0000',
-                  'circle-radius': 10,
+                  // 'circle-color': '#ff0000',
+                  // 'circle-radius': 10,
                 },
                 metadata: {
                   position: 'top',
                 },
-                // only works with symbol type layer
-                // layout: {
-                //   'icon-ignore-placement': true,
-                //   'icon-allow-overlap': true,
-                // }
+                layout: {
+                  'icon-ignore-placement': true,
+                  'icon-allow-overlap': true,
+                  'icon-image': 'Norfolk',
+                  'icon-size': 0.15,
+                },
               },
             ],
           },
@@ -110,7 +126,7 @@ export default function ExploreMap({
         },
       },
     ];
-  }, [indicatorLayers]);
+  }, [indicatorLayers, visibilityStories]);
 
   // LEGEND
   const layerGroups = layers
@@ -362,6 +378,12 @@ export default function ExploreMap({
       </Map>
       <MapControls>
         <ZoomControl viewport={viewport} onZoomChange={onZoomChange} />
+        <button
+          className="visibility-stories-button"
+          onClick={handleStoriesVisibility}
+        >
+          <Icon className="icon-visibility" icon={storiesVisibility} />
+        </button>
       </MapControls>
 
       <div className="c-legend">
