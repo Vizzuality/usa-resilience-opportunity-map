@@ -31,7 +31,6 @@ import ZoomControl from 'components/map/controls/zoom';
 import LegendItemTypeBivariate from 'components/bivariate-legend';
 import MapStoryMarker from 'components/explore/marker';
 import MapTooltip from 'components/explore/tooltip';
-// import { STORIES } from 'constants/stories';
 
 import storiesVisibility from 'svgs/stories-visibility.svg?sprite';
 
@@ -49,6 +48,7 @@ export default function ExploreMap({
   const [layersInteractiveIds, setLayersInteractiveIds] = useState([]);
   const [layersHover, setLayersHover] = useState({});
   const [visibilityStories, setVisibilityStories] = useState(false);
+  const [tooltipVisibility, setTooltipVisibility] = useState(true);
   const handleStoriesVisibility = () =>
     setVisibilityStories(!visibilityStories);
   const [viewport, setViewport] = useState({
@@ -62,62 +62,11 @@ export default function ExploreMap({
   });
 
   const layers = useMemo(() => {
-    if (!visibilityStories) return indicatorLayers;
-    return [
-      ...indicatorLayers,
-      // {
-      //   id: 'stories',
-      //   name: 'Stories',
-      //   config: {
-      //     type: 'geojson',
-      //     render: {
-      //       layers: [
-      //         {
-      //           type: 'circle',
-      //           paint: {
-      //             'circle-color': '#ff0000',
-      //             'circle-radius': 10,
-      //           },
-      //           metadata: {
-      //             position: 'top',
-      //           },
-      //         },
-      //       ],
-      //     },
-      //     source: {
-      //       type: 'geojson',
-      //       data: {
-      //         type: 'FeatureCollection',
-      //         features: STORIES.map((s) => {
-      //           return {
-      //             type: 'Feature',
-      //             properties: s,
-      //             geometry: {
-      //               type: 'Point',
-      //               coordinates: [s.location.long, s.location.lat],
-      //             },
-      //           };
-      //         }),
-      //       },
-      //     },
-      //     interactionConfig: {
-      //       enable: true,
-      //     },
-      //     // legendConfig: {
-      //     //   type: 'bivariate',
-      //     //   items: colors.map((c, i) => ({
-      //     //     name: `${Math.floor((i / 5) % 5)}${i % 5}`,
-      //     //     color: c,
-      //     //   })),
-      //     //   indicators: [ind1, ind2],
-      //     // },
-      //   },
-      // },
-    ];
-  }, [indicatorLayers, visibilityStories]);
+    return [...indicatorLayers];
+  }, [indicatorLayers]);
 
   // LEGEND
-  const layerGroups = layers
+  const layerGroups = indicatorLayers
     .filter((l) => {
       return !!l.legendConfig;
     })
@@ -360,8 +309,14 @@ export default function ExploreMap({
                 );
               })}
             </LayerManager>
-            <MapTooltip layersHover={layersHover} />
-            <MapStoryMarker isVisible={visibilityStories} />
+            <MapTooltip
+              layersHover={layersHover}
+              tooltipVisibility={tooltipVisibility}
+            />
+            <MapStoryMarker
+              isVisible={visibilityStories}
+              setTooltipVisibility={setTooltipVisibility}
+            />
           </>
         )}
       </Map>

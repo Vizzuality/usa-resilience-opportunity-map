@@ -1,10 +1,11 @@
+/* eslint-disable jsx-a11y/mouse-events-have-key-events */
 import { Marker } from 'react-map-gl';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 import { STORIES } from 'constants/stories';
 
-export default function MapStoryMarker({ isVisible }) {
+export default function MapStoryMarker({ isVisible, setTooltipVisibility }) {
   return (
     <>
       {isVisible &&
@@ -23,7 +24,11 @@ export default function MapStoryMarker({ isVisible }) {
               offsetTop={-10}
             >
               <Link href={href}>
-                <div className="marker-container">
+                <div
+                  className="marker-container"
+                  onMouseEnter={() => setTooltipVisibility(false)}
+                  onMouseOut={() => setTooltipVisibility(true)}
+                >
                   <img alt={title} className="image-story" src={thumb} />
                   <p className="title-story">{title}</p>
                 </div>
@@ -37,4 +42,5 @@ export default function MapStoryMarker({ isVisible }) {
 
 MapStoryMarker.propTypes = {
   isVisible: PropTypes.bool.isRequired,
+  setTooltipVisibility: PropTypes.func,
 };
