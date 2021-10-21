@@ -31,6 +31,7 @@ import ZoomControl from 'components/map/controls/zoom';
 import LegendItemTypeBivariate from 'components/bivariate-legend';
 import MapStoryMarker from 'components/explore/marker';
 import MapTooltip from 'components/explore/tooltip';
+import InfoTooltip from 'components/explore/info-tooltip';
 
 import storiesVisibility from 'svgs/stories-visibility.svg?sprite';
 
@@ -320,10 +321,17 @@ export default function ExploreMap({
         <ZoomControl viewport={viewport} onZoomChange={onZoomChange} />
         <button
           className="visibility-stories-button"
+          data-tip
+          data-for="visibilityStories"
           onClick={handleStoriesVisibility}
         >
           <Icon className="icon-visibility" icon={storiesVisibility} />
         </button>
+        <InfoTooltip
+          id="visibilityStories"
+          place="left"
+          description="Show/Hide stories on map"
+        />
       </MapControls>
 
       <div className="c-legend">
