@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import startCase from 'lodash.startcase';
 
+import Icon from 'components/icon';
+import Modal from 'components/modal';
+
+import infoIcon from 'svgs/info.svg?sprite';
+
 export default function LegendTypeBivariate(props) {
+  const [isModalOpen, openModal] = useState(false);
+
   const { activeLayer } = props;
   const { legendConfig } = activeLayer;
 
@@ -97,6 +104,31 @@ export default function LegendTypeBivariate(props) {
         <p>{`Low ${variables[0]}`}</p>
         <p>{`Low ${variables[1]}`}</p>
       </div>
+      <button className="info-button" onClick={() => openModal(true)}>
+        <Icon className="info-icon" icon={infoIcon} />
+      </button>
+
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={() => openModal(false)}
+        title="Flood Risk + Median Household Income."
+      >
+        <p className="modal-description">
+          A bivariate choropleth map is used to represent a sequence of two
+          variables and their combinations on a map at one time. In this
+          particular case a selected combination of two indicators from climate
+          risk and vulnerability layers, respectively.
+          <br />
+          <br />
+          The two distinct color ramps are combined into a 25-square grid color
+          palette. This palette shows where the patterns are high and low, on
+          their own and together. As the colors progress from the bottom to the
+          upper corner of the grid, the values of both variables change from low
+          to high. On the other hand, the left and right corners show negative
+          relationship between the two variables where high values of one
+          variable are associated with low values of the other.
+        </p>
+      </Modal>
     </div>
   );
 }
