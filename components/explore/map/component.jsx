@@ -29,8 +29,9 @@ import Map from 'components/map';
 import MapControls from 'components/map/controls';
 import ZoomControl from 'components/map/controls/zoom';
 import LegendItemTypeBivariate from 'components/bivariate-legend';
+import MapStoryMarker from 'components/explore/marker';
 import MapTooltip from 'components/explore/tooltip';
-import { STORIES } from 'constants/stories';
+// import { STORIES } from 'constants/stories';
 
 import storiesVisibility from 'svgs/stories-visibility.svg?sprite';
 
@@ -64,67 +65,54 @@ export default function ExploreMap({
     if (!visibilityStories) return indicatorLayers;
     return [
       ...indicatorLayers,
-      {
-        id: 'stories',
-        name: 'Stories',
-        config: {
-          type: 'geojson',
-          images: STORIES.map((s) => {
-            return {
-              id: `${s.title}`,
-              src: `${s.thumb}`,
-              options: {},
-            };
-          }),
-          render: {
-            layers: [
-              {
-                type: 'symbol',
-                paint: {
-                  // 'circle-color': '#ff0000',
-                  // 'circle-radius': 10,
-                },
-                metadata: {
-                  position: 'top',
-                },
-                layout: {
-                  'icon-ignore-placement': true,
-                  'icon-allow-overlap': true,
-                  'icon-image': 'Norfolk',
-                  'icon-size': 0.15,
-                },
-              },
-            ],
-          },
-          source: {
-            type: 'geojson',
-            data: {
-              type: 'FeatureCollection',
-              features: STORIES.map((s) => {
-                return {
-                  type: 'Feature',
-                  properties: s,
-                  geometry: {
-                    type: 'Point',
-                    coordinates: [s.location.long, s.location.lat],
-                  },
-                };
-              }),
-            },
-          },
-          interactionConfig: {
-            enable: true,
-          },
-          // legendConfig: {
-          //   type: 'bivariate',
-          //   items: colors.map((c, i) => ({
-          //     name: `${Math.floor((i / 5) % 5)}${i % 5}`,
-          //     color: c,
-          //   })),
-          //   indicators: [ind1, ind2],
-          // },
-        },
-      },
+      // {
+      //   id: 'stories',
+      //   name: 'Stories',
+      //   config: {
+      //     type: 'geojson',
+      //     render: {
+      //       layers: [
+      //         {
+      //           type: 'circle',
+      //           paint: {
+      //             'circle-color': '#ff0000',
+      //             'circle-radius': 10,
+      //           },
+      //           metadata: {
+      //             position: 'top',
+      //           },
+      //         },
+      //       ],
+      //     },
+      //     source: {
+      //       type: 'geojson',
+      //       data: {
+      //         type: 'FeatureCollection',
+      //         features: STORIES.map((s) => {
+      //           return {
+      //             type: 'Feature',
+      //             properties: s,
+      //             geometry: {
+      //               type: 'Point',
+      //               coordinates: [s.location.long, s.location.lat],
+      //             },
+      //           };
+      //         }),
+      //       },
+      //     },
+      //     interactionConfig: {
+      //       enable: true,
+      //     },
+      //     // legendConfig: {
+      //     //   type: 'bivariate',
+      //     //   items: colors.map((c, i) => ({
+      //     //     name: `${Math.floor((i / 5) % 5)}${i % 5}`,
+      //     //     color: c,
+      //     //   })),
+      //     //   indicators: [ind1, ind2],
+      //     // },
+      //   },
+      // },
     ];
   }, [indicatorLayers, visibilityStories]);
 
@@ -373,6 +361,7 @@ export default function ExploreMap({
               })}
             </LayerManager>
             <MapTooltip layersHover={layersHover} />
+            <MapStoryMarker isVisible={visibilityStories} />
           </>
         )}
       </Map>
