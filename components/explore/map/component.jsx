@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 
 import PropTypes from 'prop-types';
@@ -41,7 +41,7 @@ export default function ExploreMap({
   setGeometryId,
 }) {
   const { push } = useRouter();
-  const { layers: indicatorLayers } = indicators;
+  const { layers } = indicators;
 
   const { bbox } = geometries;
   const [layersSettings, setLayersSettings] = useState({});
@@ -61,12 +61,8 @@ export default function ExploreMap({
     pitch: 0,
   });
 
-  const layers = useMemo(() => {
-    return [...indicatorLayers];
-  }, [indicatorLayers]);
-
   // LEGEND
-  const layerGroups = indicatorLayers
+  const layerGroups = layers
     .filter((l) => {
       return !!l.legendConfig;
     })
