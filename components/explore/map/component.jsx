@@ -48,7 +48,7 @@ export default function ExploreMap({
   const [layersSettings, setLayersSettings] = useState({});
   const [layersInteractiveIds, setLayersInteractiveIds] = useState([]);
   const [layersHover, setLayersHover] = useState({});
-  const [visibilityStories, setVisibilityStories] = useState(false);
+  const [visibilityStories, setVisibilityStories] = useState(true);
   const [tooltipVisibility, setTooltipVisibility] = useState(true);
   const handleStoriesVisibility = () =>
     setVisibilityStories(!visibilityStories);
