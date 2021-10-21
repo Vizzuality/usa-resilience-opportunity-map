@@ -20,3 +20,25 @@
     margin: 3px 0;
   }
 }
+
+.visibility-stories-button {
+  align-items: center;
+  background: white;
+  box-shadow: 0 8px 9px 0 rgba(75, 83, 98, 0.12);
+  
+  display: flex;
+  height: 51px;
+  justify-content: center;
+  margin-top: 5px;
+  position: absolute;
+  width: 51px;
+
+  &:hover {
+    background: darken($color-white, 2.5);
+  }
+  
+  .icon-visibility {
+    height: 24px;
+    width: 24px;
+  }
+}

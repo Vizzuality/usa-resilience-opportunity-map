@@ -3,13 +3,22 @@ import PropTypes from 'prop-types';
 import startCase from 'lodash.startcase';
 import HazardIndicator from 'components/explore/hazard-indicator';
 
-export default function MapTooltip({ layersHover, indicators, geometries }) {
+export default function MapTooltip({
+  layersHover,
+  indicators,
+  geometries,
+  tooltipVisibility,
+}) {
   const { lngLat, interactions } = layersHover;
   const countyValues = interactions?.counties?.data;
   const stateValues = interactions?.state?.data;
   const censusValues = interactions?.census?.data;
 
-  if (lngLat && (stateValues || countyValues || censusValues)) {
+  if (
+    lngLat &&
+    tooltipVisibility &&
+    (stateValues || countyValues || censusValues)
+  ) {
     const activeIndicators = indicators.active?.map((id) =>
       indicators.data?.find((i) => i.id === id)
     );
@@ -70,4 +79,5 @@ MapTooltip.propTypes = {
   }),
   indicators: PropTypes.object,
   geometries: PropTypes.object,
+  tooltipVisibility: PropTypes.bool,
 };

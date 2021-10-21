@@ -111,7 +111,7 @@ export default function LegendTypeBivariate(props) {
       <Modal
         isOpen={isModalOpen}
         onRequestClose={() => openModal(false)}
-        title="Flood Risk + Median Household Income."
+        title={`${variables[0]} + ${variables[1]}`}
       >
         <p className="modal-description">
           A bivariate choropleth map is used to represent a sequence of two

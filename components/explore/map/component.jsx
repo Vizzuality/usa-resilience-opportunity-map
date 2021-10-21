@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useDebouncedCallback } from 'use-debounce';
@@ -22,11 +24,16 @@ import {
 } from 'vizzuality-components';
 
 // Local imports
+import Icon from 'components/icon';
 import Map from 'components/map';
 import MapControls from 'components/map/controls';
 import ZoomControl from 'components/map/controls/zoom';
 import LegendItemTypeBivariate from 'components/bivariate-legend';
+import MapStoryMarker from 'components/explore/marker';
 import MapTooltip from 'components/explore/tooltip';
+import InfoTooltip from 'components/explore/info-tooltip';
+
+import storiesVisibility from 'svgs/stories-visibility.svg?sprite';
 
 export default function ExploreMap({
   indicators,
@@ -34,12 +41,17 @@ export default function ExploreMap({
   className,
   setGeometryId,
 }) {
+  const { push } = useRouter();
   const { layers } = indicators;
 
   const { bbox } = geometries;
   const [layersSettings, setLayersSettings] = useState({});
   const [layersInteractiveIds, setLayersInteractiveIds] = useState([]);
   const [layersHover, setLayersHover] = useState({});
+  const [visibilityStories, setVisibilityStories] = useState(true);
+  const [tooltipVisibility, setTooltipVisibility] = useState(true);
+  const handleStoriesVisibility = () =>
+    setVisibilityStories(!visibilityStories);
   const [viewport, setViewport] = useState({
     longitude: 0,
     latitude: 0,
@@ -196,29 +208,36 @@ export default function ExploreMap({
         interactiveLayerIds={layersInteractiveIds}
         onClick={(e) => {
           if (e && e.features) {
-            const interactions = e.features
-              .filter((int) => ['state', 'counties'].includes(int.source))
-              .reduce((acc, f) => {
-                return {
-                  ...acc,
-                  [f.source]: {
-                    id: f.id,
-                    data: f.properties,
-                  },
-                };
-              }, {});
+            const story = e.features.find((f) => f.source === 'stories');
+            if (story) {
+              push(story.properties.href);
+            }
+            if (!story) {
+              const interactions = e.features
+                .filter((int) => ['state', 'counties'].includes(int.source))
+                .reduce((acc, f) => {
+                  return {
+                    ...acc,
+                    [f.source]: {
+                      id: f.id,
+                      data: f.properties,
+                    },
+                  };
+                }, {});
 
-            if (interactions.counties || interactions.state)
-              setGeometryId(
-                interactions.state
-                  ? interactions.state.id?.toString()
-                  : interactions.counties.id?.toString()
-              );
+              if (interactions.counties || interactions.state)
+                setGeometryId(
+                  interactions.state
+                    ? interactions.state.id?.toString()
+                    : interactions.counties.id?.toString()
+                );
+            }
           }
         }}
         onHover={(e) => {
           if (e && e.features) {
             const { lngLat, features } = e;
+
             const interactions = features.reduce((acc, f) => {
               return {
                 ...acc,
@@ -287,12 +306,32 @@ export default function ExploreMap({
                 );
               })}
             </LayerManager>
-            <MapTooltip layersHover={layersHover} />
+            <MapTooltip
+              layersHover={layersHover}
+              tooltipVisibility={tooltipVisibility}
+            />
+            <MapStoryMarker
+              isVisible={visibilityStories}
+              setTooltipVisibility={setTooltipVisibility}
+            />
           </>
         )}
       </Map>
       <MapControls>
         <ZoomControl viewport={viewport} onZoomChange={onZoomChange} />
+        <button
+          className="visibility-stories-button"
+          data-tip
+          data-for="visibilityStories"
+          onClick={handleStoriesVisibility}
+        >
+          <Icon className="icon-visibility" icon={storiesVisibility} />
+        </button>
+        <InfoTooltip
+          id="visibilityStories"
+          place="left"
+          description="Show/Hide stories on map"
+        />
       </MapControls>
 
       <div className="c-legend">
