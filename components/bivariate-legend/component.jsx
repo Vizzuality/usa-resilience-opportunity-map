@@ -114,10 +114,19 @@ export default function LegendTypeBivariate(props) {
         title="Flood Risk + Median Household Income."
       >
         <p className="modal-description">
-          Info on the legend about how the two layers selected interact seems
-          important in addition to the info about each unique data layer Text
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          A bivariate choropleth map is used to represent a sequence of two
+          variables and their combinations on a map at one time. In this
+          particular case a selected combination of two indicators from climate
+          risk and vulnerability layers, respectively.
+          <br />
+          <br />
+          The two distinct color ramps are combined into a 25-square grid color
+          palette. This palette shows where the patterns are high and low, on
+          their own and together. As the colors progress from the bottom to the
+          upper corner of the grid, the values of both variables change from low
+          to high. On the other hand, the left and right corners show negative
+          relationship between the two variables where high values of one
+          variable are associated with low values of the other.
         </p>
       </Modal>
     </div>
