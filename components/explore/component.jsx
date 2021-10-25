@@ -34,6 +34,16 @@ export default function Explore({
             }
           />
           <Button
+            className="download-btn"
+            disabled={!activeLocationId}
+            onClick={() => {
+              // setGeometryId(null);
+              // setGeometryValues([]);
+            }}
+          >
+            Download data
+          </Button>
+          <Button
             className="search-btn"
             onClick={() => {
               setGeometryId(null);
