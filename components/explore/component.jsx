@@ -22,17 +22,27 @@ export default function Explore({
   };
   const [activeState, setActiveState] = useState('');
 
+  const formatUnderscore = (string) => string?.replace(/ /g, '_').toLowerCase();
+
   useEffect(() => {
     const locationSearched = locations.find((l) => l.id === activeLocationId);
     if (!locationSearched?.parentId) {
-      const parsedLocation = locationSearched.label
-        .replace(/ /g, '_')
-        .toLowerCase();
+      const parsedLocation = formatUnderscore(locationSearched?.label);
       setActiveState(parsedLocation);
     } else {
       setActiveState('');
     }
   }, [activeLocationId]);
+
+  const onDownload = () => {
+    const url = `https://api.us-resilience-map.vizzuality.com/api/v1/downloads/${activeState}`;
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', `map-${activeState}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  };
 
   return (
     <div className="c-explore">
@@ -53,10 +63,7 @@ export default function Explore({
               disabled={!activeLocationId || !activeState}
               data-tip
               data-for="download-data"
-              onClick={() => {
-                // setGeometryId(null);
-                // setGeometryValues([]);
-              }}
+              onClick={onDownload}
             >
               Download data
             </Button>

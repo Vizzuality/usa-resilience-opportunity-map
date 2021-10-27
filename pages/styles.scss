@@ -207,11 +207,17 @@
 
     .download-btn {
       background-color: transparent;
+      box-sizing: border-box;
       border-color: $color-1;
       color: $color-1;
       margin-right: 10px;
-      padding: 1.25rem 2rem;
+      padding: 1.15rem 2rem;
 
+      &:hover {
+        background-color: $color-1;
+        color: $color-white;
+      }
+      
       &:disabled {
         opacity: 0.3;
         pointer-events: none;
