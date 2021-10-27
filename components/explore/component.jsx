@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ExploreMap from 'components/explore/map';
 import ExploreSidebar from 'components/explore/sidebar';
@@ -19,6 +19,16 @@ export default function Explore({
     setGeometryId: PropTypes.func,
     setGeometryValues: PropTypes.func,
   };
+  const [isState, setIsState] = useState(false);
+
+  useEffect(() => {
+    const locationSearched = locations.find((l) => l.id === activeLocationId);
+    if (!locationSearched?.parentId) {
+      setIsState(true);
+    } else {
+      setIsState(false);
+    }
+  }, [activeLocationId]);
 
   return (
     <div className="c-explore">
@@ -35,7 +45,7 @@ export default function Explore({
           />
           <Button
             className="download-btn"
-            disabled={!activeLocationId}
+            disabled={!activeLocationId || !isState}
             onClick={() => {
               // setGeometryId(null);
               // setGeometryValues([]);
