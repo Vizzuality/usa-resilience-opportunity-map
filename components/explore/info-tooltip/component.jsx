@@ -7,6 +7,7 @@ export default function InfoTooltip({
   className,
   id,
   description,
+  disabled = false,
   place = 'left',
 }) {
   return (
@@ -16,6 +17,7 @@ export default function InfoTooltip({
         [className]: !!className,
       })}
       id={id}
+      disable={disabled}
       place={place}
       delayHide={200}
       effect="solid"
@@ -31,5 +33,6 @@ InfoTooltip.propTypes = {
   className: PropTypes.string,
   id: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
   place: PropTypes.string,
 };

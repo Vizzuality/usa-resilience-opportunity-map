@@ -72,6 +72,7 @@ export default function Explore({
             className="download-data-tooltip"
             id="download-data"
             place="bottom"
+            disabled={activeState}
             description="Select a state to download its data"
           />
           <Button
