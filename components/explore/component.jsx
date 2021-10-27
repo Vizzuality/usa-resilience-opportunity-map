@@ -20,14 +20,17 @@ export default function Explore({
     setGeometryId: PropTypes.func,
     setGeometryValues: PropTypes.func,
   };
-  const [isState, setIsState] = useState(false);
+  const [activeState, setActiveState] = useState('');
 
   useEffect(() => {
     const locationSearched = locations.find((l) => l.id === activeLocationId);
     if (!locationSearched?.parentId) {
-      setIsState(true);
+      const parsedLocation = locationSearched.label
+        .replace(/ /g, '_')
+        .toLowerCase();
+      setActiveState(parsedLocation);
     } else {
-      setIsState(false);
+      setActiveState('');
     }
   }, [activeLocationId]);
 
@@ -47,7 +50,7 @@ export default function Explore({
           <div data-tip data-for="download-data">
             <Button
               className="download-btn"
-              disabled={!activeLocationId || !isState}
+              disabled={!activeLocationId || !activeState}
               data-tip
               data-for="download-data"
               onClick={() => {
