@@ -35,7 +35,7 @@ export default function Explore({
   }, [activeLocationId]);
 
   const onDownload = () => {
-    const url = `https://api.us-resilience-map.vizzuality.com/api/v1/downloads/${activeState}`;
+    const url = `${process.env.NEXT_PUBLIC_API}/downloads/${activeState}`;
     const link = document.createElement('a');
     link.href = url;
     link.setAttribute('download', `map-${activeState}.csv`);
