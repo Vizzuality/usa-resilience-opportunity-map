@@ -214,7 +214,13 @@
 
       &:disabled {
         opacity: 0.3;
+        pointer-events: none;
       }
+    }
+
+    .download-data-tooltip {
+      width: 180px;
+      text-align: center;
     }
   }
 

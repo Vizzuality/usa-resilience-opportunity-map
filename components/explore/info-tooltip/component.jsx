@@ -1,10 +1,20 @@
 import PropTypes from 'prop-types';
 import ReactTooltip from 'react-tooltip';
 
-export default function InfoTooltip({ id, description, place = 'left' }) {
+import cx from 'classnames';
+
+export default function InfoTooltip({
+  className,
+  id,
+  description,
+  place = 'left',
+}) {
   return (
     <ReactTooltip
-      className="c-info-tooltip"
+      className={cx({
+        'c-info-tooltip': true,
+        [className]: !!className,
+      })}
       id={id}
       place={place}
       delayHide={200}
@@ -18,6 +28,7 @@ export default function InfoTooltip({ id, description, place = 'left' }) {
 }
 
 InfoTooltip.propTypes = {
+  className: PropTypes.string,
   id: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   place: PropTypes.string,

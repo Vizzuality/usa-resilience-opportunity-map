@@ -4,6 +4,7 @@ import ExploreMap from 'components/explore/map';
 import ExploreSidebar from 'components/explore/sidebar';
 import Autocomplete from 'components/autocomplete';
 import Button from 'components/button';
+import InfoTooltip from 'components/explore/info-tooltip';
 
 export default function Explore({
   locations,
@@ -43,16 +44,26 @@ export default function Explore({
                 : null
             }
           />
-          <Button
-            className="download-btn"
-            disabled={!activeLocationId || !isState}
-            onClick={() => {
-              // setGeometryId(null);
-              // setGeometryValues([]);
-            }}
-          >
-            Download data
-          </Button>
+          <div data-tip data-for="download-data">
+            <Button
+              className="download-btn"
+              disabled={!activeLocationId || !isState}
+              data-tip
+              data-for="download-data"
+              onClick={() => {
+                // setGeometryId(null);
+                // setGeometryValues([]);
+              }}
+            >
+              Download data
+            </Button>
+          </div>
+          <InfoTooltip
+            className="download-data-tooltip"
+            id="download-data"
+            place="bottom"
+            description="Select a state to download its data"
+          />
           <Button
             className="search-btn"
             onClick={() => {
