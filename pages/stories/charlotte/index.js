@@ -287,23 +287,20 @@ const Section8 = () => {
 
 const Section9 = () => {
   return (
-    <div className={cx(styles.section9, styles.bgWhite, styles.textGray)}>
-      <div className={styles.contentLeft}>
-        <img
-          src="/assets/images/stories/charlotte/ch_section_9_bg.png"
-          className={styles.section9Img}
-          alt=""
-        />
-      </div>
-      <div className={cx(styles.contentRight, styles.container)}>
-        <p>
-          Floodplain buyouts are voluntary. However, about 85% of owners who go
-          through the appraisal and offer process participate in the buyout.
-        </p>
-        <p>
-          Since the program was launched, 720 families and businesses have moved
-          to a safer location, and 233 acres of land is now open space.
-        </p>
+    <div className={cx(styles.section9, styles.textGray, styles.bgWhite)}>
+      <div>
+        <div className={cx(styles.col, styles.colLeft)} />
+        <div className={cx(styles.col, styles.colRight)}>
+          <p>
+            Floodplain buyouts are voluntary. However, about 85% of owners who
+            go through the appraisal and offer process participate in the
+            buyout.
+          </p>
+          <p>
+            Since the program was launched, 720 families and businesses have
+            moved to a safer location, and 233 acres of land is now open space.
+          </p>
+        </div>
       </div>
     </div>
   );
