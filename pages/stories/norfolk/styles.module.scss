@@ -307,7 +307,7 @@
     @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
-      margin-left: 50%;
+      margin-left: 51%;
       margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
       padding: 3rem var(--container-padding);
     }
@@ -322,7 +322,7 @@
       display: inline-block;
       height: 100%;
       position: absolute;
-      width: 48vw;
+      width: 50vw;
     }
 
     &::after {
@@ -452,8 +452,7 @@
     right: 1rem;
     z-index: 1;
     width: 105vw;
-  
-  
+
     @media screen and (min-width: 600px) {
       position: absolute;
       display: flex;
@@ -495,7 +494,7 @@
     @media screen and (min-width: $section10-cols) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
-      margin-left: 50%;
+      margin-left: 51.5%;
       margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
       padding: 4rem var(--container-padding);
     }
@@ -527,7 +526,7 @@
 
       @media screen and (min-width: $section10-cols) {
         height: 130%;
-        width: 48vw;
+        width: 50vw;
       }
     }
   }
@@ -553,7 +552,7 @@
       margin-bottom: 4rem;
       margin-top: 0;
       padding-top: 0;
-      width: 60%;
+      width: 50%;
     }
   }
 
@@ -573,8 +572,8 @@
     }
 
     @media screen and (min-width: 1000px) {
-      left: 60%;
-      width: 52%;
+      left: 52%;
+      width: 50%;
     }
 
     @media screen and (min-width: 1240px) {
