@@ -235,7 +235,7 @@
     @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
-      margin-left: 50%;
+      margin-left: 52%;
       margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
       padding: 3rem var(--container-padding);
     }
@@ -250,7 +250,7 @@
       display: inline-block;
       height: 100%;
       position: absolute;
-      width: 48vw;
+      width: 50vw;
     }
 
     &::after {
@@ -299,7 +299,7 @@
     @media screen and (min-width: 900px) {
       margin-bottom: 4rem;
       margin-top: 0;
-      width: 60%;
+      width: 44%;
     }
   }
 
@@ -318,12 +318,12 @@
       justify-content: flex-end;
       margin-right: 0;
       position: absolute;
-      right: -15%;
+      right: 0;
       width: 50%;
     }
 
     @media screen and (min-width: 1200px) {
-      height: 120%;
+      height: auto;
       right: 0;
     }
 
@@ -356,10 +356,11 @@
     }
 
     @media screen and (min-width: 1200px) {
-      margin-left: 55%;
+      margin-left: 52%;
     }
 
     @media screen and (min-width: 1500px) {
+      margin-left: 52%;
       max-width: 40rem;
       padding: 8rem 0;
     }
@@ -409,7 +410,7 @@
     @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
-      margin-left: 50%;
+      margin-left: 52%;
       margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
       padding: 3rem var(--container-padding);
     }
@@ -434,7 +435,7 @@
       display: inline-block;
       height: 100%;
       position: absolute;
-      width: 48vw;
+      width: 50vw;
     }
 
     &::after {
@@ -479,7 +480,7 @@
     @media screen and (min-width: 900px) {
       margin-bottom: 4rem;
       margin-top: 0;
-      width: 60%;
+      width: 48%;
     }
   }
 
@@ -505,18 +506,18 @@
       position: absolute;
       right: -15%;
       top: 0;
-      width: 60%;
+      width: 50%;
     }
 
     @media screen and (min-width: 1200px) {
-      height: 100%;
+      height: auto;
       right: 0;
-      width: auto;
     }
 
     .section9Img {
       @media screen and (min-width: 900px) {
         height: 100%;
+        width: 100%;
       }
     }
   }
@@ -577,7 +578,7 @@
     padding: 4rem 0;
 
     @media screen and (min-width: 1000px) {
-      left: 57%;
+      left: 58%;
       max-width: 43%;
       position: relative;
     }

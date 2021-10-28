@@ -307,7 +307,7 @@
     @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
-      margin-left: 51%;
+      margin-left: 52%;
       margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
       padding: 3rem var(--container-padding);
     }
@@ -494,7 +494,7 @@
     @media screen and (min-width: $section10-cols) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
-      margin-left: 51.5%;
+      margin-left: 52%;
       margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
       padding: 4rem var(--container-padding);
     }

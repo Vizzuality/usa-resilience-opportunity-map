@@ -247,7 +247,7 @@
     @media screen and (min-width: $section3-cols) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
-      margin-left: 51%;
+      margin-left: 52%;
       margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
       padding: 5rem var(--container-padding);
     }
