@@ -193,8 +193,6 @@ export default function ExploreMap({
     });
   };
 
-  const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || '';
-
   return (
     <div className={cx('c-explore-map', className)}>
       <Icons />
@@ -202,7 +200,7 @@ export default function ExploreMap({
         width="100%"
         height="100%"
         bounds={bbox}
-        mapboxApiAccessToken={MAPBOX_TOKEN}
+        mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
         viewport={viewport}
         onViewportChange={onViewportChange}
         interactiveLayerIds={layersInteractiveIds}

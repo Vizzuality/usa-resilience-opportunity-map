@@ -306,6 +306,7 @@ class Map extends Component {
       ...mapboxProps
     } = this.props;
     const { viewport, loaded, flying } = this.state;
+    console.log('mapboxProps', mapboxProps);
 
     return (
       <div
@@ -323,7 +324,8 @@ class Map extends Component {
           }}
           // CUSTOM PROPS FROM REACT MAPBOX API
           {...mapboxProps}
-          // mapStyle="mapbox://styles/usaresilience/ckv9ktcuyamt914o8t4tu3h77"
+          mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
+          mapStyle="mapbox://styles/usaresilience/ckv9ktcuyamt914o8t4tu3h77"
           // VIEWPORT
           {...viewport}
           width="100%"
