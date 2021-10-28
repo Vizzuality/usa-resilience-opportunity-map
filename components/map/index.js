@@ -306,7 +306,6 @@ class Map extends Component {
       ...mapboxProps
     } = this.props;
     const { viewport, loaded, flying } = this.state;
-    console.log('mapboxProps', mapboxProps);
 
     return (
       <div
