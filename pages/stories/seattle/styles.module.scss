@@ -154,7 +154,7 @@
     z-index: 5;
 
     @media screen and (min-width: $section1-cols) {
-      bottom: 0;
+      bottom: -0.4vh;
       display: initial;
       height: 100%;
       right: 0;
@@ -225,8 +225,6 @@
 
 // Section 3
 .section3 {
-  $section3-cols: 1000px;
-
   color: var(--text-gray);
   position: relative;
   overflow: hidden;
@@ -234,7 +232,7 @@
   .colLeft {
     padding: 4rem var(--container-padding);
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
       margin-right: 52%;
@@ -247,7 +245,7 @@
     overflow: hidden;
     position: relative;
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
       margin-left: 50%;
@@ -273,7 +271,7 @@
         height: 80vh;
       }
 
-      @media screen and (min-width: $section3-cols) {
+      @media screen and (min-width: 1000px) {
         background-position: center;
         height: 100%;
         width: 50vw;
@@ -444,6 +442,10 @@
       left: -2vw;
       top: -5vh;
     }
+
+    @media screen and (min-width: 1600px) {
+      top: -3.4vh;
+    }
   }
 
   @media screen and (min-width: 600px) {
@@ -451,7 +453,7 @@
   }
 
   @media screen and (min-width: 1000px) {
-    padding: 4rem  var(--container-padding);
+    padding: 4rem var(--container-padding);
   }
 
   @media screen and (min-width: 1400px) {
@@ -477,8 +479,6 @@
 
 // Section 8
 .section8 {
-  $section3-cols: 1000px;
-
   color: var(--text-gray);
   position: relative;
   overflow: hidden;
@@ -486,7 +486,7 @@
   .colLeft {
     padding: 4rem var(--container-padding);
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
       margin-right: 52%;
@@ -499,7 +499,7 @@
     overflow: hidden;
     position: relative;
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
       margin-left: 50%;
@@ -525,7 +525,7 @@
         height: 80vh;
       }
 
-      @media screen and (min-width: $section3-cols) {
+      @media screen and (min-width: 1000px) {
         background-position: center;
         height: 100%;
         width: 50vw;
@@ -603,8 +603,6 @@
 
 // Section 10
 .section10 {
-  $section3-cols: 1000px;
-
   color: var(--text-gray);
   position: relative;
   overflow: hidden;
@@ -612,7 +610,7 @@
   .colLeft {
     padding: 4rem var(--container-padding);
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
       margin-right: 52%;
@@ -625,7 +623,7 @@
     overflow: hidden;
     position: relative;
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
       margin-left: 50%;
@@ -651,7 +649,7 @@
         height: 80vh;
       }
 
-      @media screen and (min-width: $section3-cols) {
+      @media screen and (min-width: 1000px) {
         background-position: center;
         height: 100%;
         width: 50vw;
