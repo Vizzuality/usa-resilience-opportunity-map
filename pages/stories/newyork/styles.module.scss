@@ -132,7 +132,6 @@
 
 // Section1
 .section1 {
-  $section1-cols: 1000px;
   background: url("/assets/images/stories/newyork/ny_section_1_bg.png");
   background-size: cover;
   background-position: center;
@@ -149,7 +148,7 @@
     position: absolute;
     z-index: 5;
 
-    @media screen and (min-width: $section1-cols) {
+    @media screen and (min-width: 1000px) {
       bottom: 0;
       display: initial;
       height: 100%;

@@ -136,7 +136,6 @@
 
 // Section1
 .section1 {
-  $section1-cols: 1000px;
   background: url("/assets/images/stories/norfolk/nf_section_1_bg.png");
   background-size: cover;
   background-position: center;
@@ -153,7 +152,7 @@
     position: absolute;
     z-index: 5;
 
-    @media screen and (min-width: $section1-cols) {
+    @media screen and (min-width: 1000px) {
       bottom: 0;
       display: initial;
       height: 100%;
@@ -479,8 +478,6 @@
 
 // Section 10
 .section10 {
-  $section10-cols: 1000px;
-
   overflow: hidden;
   position: relative;
 
@@ -491,7 +488,7 @@
       padding: 4rem var(--container-padding);
     }
 
-    @media screen and (min-width: $section10-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
       margin-left: 52%;
@@ -505,7 +502,7 @@
     overflow: hidden;
     position: relative;
 
-    @media screen and (min-width: $section10-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
       position: absolute;
@@ -524,7 +521,7 @@
       width: 100vw;
       z-index: 0;
 
-      @media screen and (min-width: $section10-cols) {
+      @media screen and (min-width: 1000px) {
         height: 130%;
         width: 50vw;
       }

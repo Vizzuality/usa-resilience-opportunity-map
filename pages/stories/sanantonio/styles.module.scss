@@ -142,7 +142,6 @@
 
 // Section1
 .section1 {
-  $section1-cols: 1000px;
   background: url("/assets/images/stories/sanantonio/sa_section_1_bg.png");
   background-size: cover;
   background-position: center;
@@ -159,12 +158,16 @@
     position: absolute;
     z-index: 5;
 
-    @media screen and (min-width: $section1-cols) {
-      bottom: 0;
+    @media screen and (min-width: 1000px) {
+      bottom: -0.2%;
       display: initial;
       height: 100%;
       right: 0;
-      width: 45vw;
+      width: 70vw;
+    }
+
+    @media screen and (min-width: 1400px) {
+      bottom: -0.4%;
     }
   }
 
@@ -241,7 +244,7 @@
     @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
-      margin-left: 55%;
+      margin-left: 52%;
       margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
       padding: 3rem var(--container-padding);
     }
@@ -301,7 +304,7 @@
     @media screen and (min-width: 900px) {
       margin-bottom: 4rem;
       margin-top: 0;
-      width: 50%;
+      width: 48%;
     }
   }
 
@@ -325,14 +328,13 @@
       justify-content: flex-end;
       margin-right: 0;
       position: absolute;
-      right: -15%;
+      right: 0;
       top: 0;
       width: 50%;
     }
 
     @media screen and (min-width: 1200px) {
       height: 100%;
-      right: 0;
       width: auto;
     }
 
@@ -361,7 +363,7 @@
 
   .section7Wrapper {
     @media screen and (min-width: 1000px) {
-      max-width: 50%;
+      max-width: 48%;
     }
 
     @media screen and (min-width: 1600px) {
@@ -390,12 +392,14 @@
   
     @media screen and (min-width: 1000px) {
       bottom: 0;
-      background-position: right -5rem top;
-      height: 100%;
+      background-position: right top;
+      right: -4vw;
+      height: 102%;
     }
 
     @media screen and (min-width: 1200px) {
       background-position: right 8rem top;
+      height: 100%;
     }
 
     @media screen and (min-width: 1600px) {
@@ -422,15 +426,16 @@
     @media screen and (min-width: 900px) {
       margin: 0 0 4rem 0;
       max-width: 30rem;
-      margin-left: 50%;
+      margin-left: 52%;
     }
 
     @media screen and (min-width: 1200px) {
-      margin-left: 55%;
+      margin-left: 52%;
     }
 
     @media screen and (min-width: 1500px) {
       max-width: 40rem;
+      margin-left: 54%;
       padding: 4rem 0;
     }
   }
@@ -449,7 +454,7 @@
       display: flex;
       bottom: 0;
       left: 0;
-      width: 45%;
+      width: 50%;
       justify-content: flex-end;
       margin-left: 0;
     }
@@ -484,16 +489,13 @@
     @media screen and (min-width: 900px) {
       margin: 0 0 4rem 0;
       max-width: 30rem;
-      margin-left: 50%;
-    }
-
-    @media screen and (min-width: 1200px) {
-      margin-left: 55%;
+      margin-left: 52%;
     }
 
     @media screen and (min-width: 1500px) {
       max-width: 40rem;
       padding: 4rem 0;
+      margin-left: 54%;
     }
   }
 
@@ -511,7 +513,7 @@
       display: flex;
       bottom: 0;
       left: 0;
-      width: 45%;
+      width: 50%;
       justify-content: flex-end;
       margin-left: 0;
     }
@@ -585,15 +587,16 @@
   
     @media screen and (min-width: 1000px) {
       background-position: right bottom;
-      bottom: -3%;
+      bottom: -2.5%;
       height: 103%;
-      right: -12%;
+      right: 0;
+      width: 50vw;
     }
 
     @media screen and (min-width: 1400px) {
       background-position: right bottom;
       bottom: -4%;
-      height: 103.5%;
+      height: 90%;
       right: 0;
     }
   }
@@ -611,9 +614,9 @@
     @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
-      margin-left: 55%;
+      margin-left: 52%;
       margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
-      padding: 4rem var(--container-padding);
+      padding: 4rem var(--container-padding) 2rem var(--container-padding);
     }
   }
 
@@ -650,8 +653,6 @@
 
 // Section 11
 .section11 {
-  $section3-cols: 1000px;
-
   color: var(--text-gray);
   position: relative;
   overflow: hidden;
@@ -659,10 +660,10 @@
   .colLeft {
     padding: 3rem var(--container-padding);
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
-      margin-right: 50%;
+      margin-right: 52%;
       margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
     }
   }
@@ -679,10 +680,10 @@
     @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
-      margin-left: 55%;
+      margin-left: 50%;
       min-height: 20rem;
       position: absolute;
-      width: 45vw;
+      width: 50vw;
     }
 
     &::after {
@@ -702,7 +703,7 @@
         height: 80vh;
       }
 
-      @media screen and (min-width: $section3-cols) {
+      @media screen and (min-width: 1000px) {
         background-position: center;
         height: 100%;
         width: 50vw;
@@ -723,7 +724,7 @@
     @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
-      margin-left: 55%;
+      margin-left: 52%;
       margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
       padding: 3rem var(--container-padding);
     }
@@ -762,7 +763,6 @@
 
 // Section 15
 .section15 {
-  $section3-cols: 1000px;
   color: var(--text-gray);
   position: relative;
   overflow: hidden;
@@ -770,10 +770,10 @@
   .colLeft {
     padding: 3rem var(--container-padding);
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
-      margin-right: 50%;
+      margin-right: 52%;
       margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
     }
   }
@@ -783,13 +783,13 @@
     overflow: hidden;
     position: relative;
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
-      margin-left: 55%;
+      margin-left: 50%;
       min-height: 20rem;
       position: absolute;
-      width: 45vw;
+      width: 50vw;
     }
 
     &::after {
@@ -809,7 +809,7 @@
         height: 80vh;
       }
 
-      @media screen and (min-width: $section3-cols) {
+      @media screen and (min-width: 1000px) {
         background-position: center;
         height: 100%;
         width: 50vw;

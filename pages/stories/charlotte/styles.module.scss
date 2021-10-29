@@ -136,7 +136,6 @@
 
 // Section1
 .section1 {
-  $section1-cols: 1000px;
   background: url("/assets/images/stories/charlotte/ch_section_1_bg.png");
   background-size: cover;
   background-position: center;
@@ -153,7 +152,7 @@
     position: absolute;
     z-index: 5;
 
-    @media screen and (min-width: $section1-cols) {
+    @media screen and (min-width: 1000px) {
       bottom: -1.6%;
       display: initial;
       height: 100%;
@@ -559,7 +558,6 @@
 
 // Section 9
 .section9 {
-  $section3-cols: 1000px;
   overflow: hidden;
   position: relative;
 
@@ -588,7 +586,7 @@
     padding: 4rem var(--container-padding);
     position: relative;
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
       margin-left: 52%;
@@ -602,7 +600,7 @@
     overflow: hidden;
     position: relative;
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
       position: absolute;
@@ -621,7 +619,7 @@
       width: 100vw;
       z-index: 0;
 
-      @media screen and (min-width: $section3-cols) {
+      @media screen and (min-width: 1000px) {
         width: 49.5vw;
       }
     }

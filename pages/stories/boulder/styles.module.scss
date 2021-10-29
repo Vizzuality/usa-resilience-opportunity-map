@@ -132,7 +132,6 @@
 
 // Section1
 .section1 {
-  $section1-cols: 1000px;
   background: url("/assets/images/stories/boulder/bo_section_1_bg.png");
   background-size: cover;
   background-position: center;
@@ -149,7 +148,7 @@
     position: absolute;
     z-index: 5;
 
-    @media screen and (min-width: $section1-cols) {
+    @media screen and (min-width: 1000px) {
       bottom: 0;
       display: initial;
       height: 100%;
@@ -616,7 +615,6 @@
 
 // Section 13
 .section13 {
-  $section13-cols: 1000px;
   color: var(--text-gray);
   overflow: hidden;
   position: relative;
@@ -624,7 +622,7 @@
   .colLeft {
     padding: 4rem var(--container-padding);
 
-    @media screen and (min-width: $section13-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2.5);
       margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
@@ -642,7 +640,7 @@
     overflow: hidden;
     position: relative;
 
-    @media screen and (min-width: $section13-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
       margin-left: 50%;
@@ -662,7 +660,7 @@
       width: 100vw;
       z-index: 0;
 
-      @media screen and (min-width: $section13-cols) {
+      @media screen and (min-width: 1000px) {
         width: 50vw;
       }
     }

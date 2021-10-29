@@ -132,8 +132,6 @@
 
 // Section1
 .section1 {
-  $section1-cols: 1000px;
-  
   background: url("/assets/images/stories/louisville/lv_section_1_image.png");
   background-size: cover;
   background-position: center;
@@ -150,7 +148,7 @@
     position: absolute;
     z-index: 5;
 
-    @media screen and (min-width: $section1-cols) {
+    @media screen and (min-width: 1000px) {
       bottom: -2%;
       display: initial;
       height: 100%;
@@ -234,8 +232,6 @@
 
 // Section 3
 .section3 {
-  $section3-cols: 1000px;
-
   background: var(--brand-primary);
   color: white;
   overflow: hidden;
@@ -244,7 +240,7 @@
   .colRight {
     padding: 4rem var(--container-padding);
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
       margin-left: 52%;
@@ -258,7 +254,7 @@
     overflow: hidden;
     position: relative;
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
       position: absolute;
@@ -277,7 +273,7 @@
       width: 100vw;
       z-index: 0;
 
-      @media screen and (min-width: $section3-cols) {
+      @media screen and (min-width: 1000px) {
         width: 49.5vw;
       }
     }
@@ -386,8 +382,6 @@
 
 // Section 7
 .section7 {
-  $section3-cols: 1000px;
-
   background: var(--brand-secondary);
   color: white;
   overflow: hidden;
@@ -396,7 +390,7 @@
   .colLeft {
     padding: 4rem var(--container-padding);
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2.5);
       margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
@@ -414,7 +408,7 @@
     overflow: hidden;
     position: relative;
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
       margin-left: 50%;
@@ -434,7 +428,7 @@
       width: 100vw;
       z-index: 0;
 
-      @media screen and (min-width: $section3-cols) {
+      @media screen and (min-width: 1000px) {
         width: 50vw;
       }
     }
@@ -521,8 +515,6 @@
 
 // Section 10
 .section10 {
-  $section3-cols: 1000px;
-
   color: var(--text-gray);
   position: relative;
   overflow: hidden;
@@ -530,7 +522,7 @@
   .colLeft {
     padding: 4rem var(--container-padding);
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
       margin-right: 50%;
@@ -543,7 +535,7 @@
     overflow: hidden;
     position: relative;
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 110%;
       margin-left: 50%;
@@ -569,7 +561,7 @@
         height: 80vh;
       }
 
-      @media screen and (min-width: $section3-cols) {
+      @media screen and (min-width: 1000px) {
         background-position: center;
         height: 100%;
         width: 50vw;
@@ -645,8 +637,6 @@
 
 // Section 12
 .section12 {
-  $section3-cols: 1000px;
-
   color: var(--text-gray);
   overflow: hidden;
   position: relative;
@@ -659,7 +649,7 @@
       padding: 3rem var(--container-padding);
     }
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: 50%;
       margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
@@ -667,7 +657,7 @@
     }
 
     @media screen and (min-width: 1200px) {
-      max-width: 40%;
+      max-width: 48%;
       padding-right: 10%;
     }
     
@@ -681,7 +671,7 @@
     overflow: hidden;
     position: relative;
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
       margin-left: 50%;
@@ -701,7 +691,7 @@
       width: 100vw;
       z-index: 0;
 
-      @media screen and (min-width: $section3-cols) {
+      @media screen and (min-width: 1000px) {
         right: 0;
         width: 50vw;
       }
