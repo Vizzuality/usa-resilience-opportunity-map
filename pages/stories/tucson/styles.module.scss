@@ -142,7 +142,6 @@
 
 // Section1
 .section1 {
-  $section1-cols: 1000px;
   background: url("/assets/images/stories/tucson/tu_section_1_bg.png");
   background-size: cover;
   background-position: center;
@@ -159,12 +158,12 @@
     position: absolute;
     z-index: 5;
 
-    @media screen and (min-width: $section1-cols) {
+    @media screen and (min-width: 1000px) {
       bottom: -2.5%;
       display: initial;
       height: 100%;
       right: 0;
-      width: 45vw;
+      width: 40vw;
     }
 
     @media screen and (min-width: 1400px) {
@@ -172,7 +171,7 @@
     }
 
     @media screen and (min-width: 2000px) {
-      bottom: -4.5%;
+      bottom: -5%;
     }
   }
 
@@ -239,8 +238,6 @@
 
 // Section 3
 .section3 {
-  $section3-cols: 1000px;
-
   color: var(--text-gray);
   position: relative;
   overflow: hidden;
@@ -248,10 +245,10 @@
   .colLeft {
     padding: 3rem var(--container-padding);
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
-      margin-right: 50%;
+      margin-right: 52%;
       margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
     }
   }
@@ -261,13 +258,13 @@
     overflow: hidden;
     position: relative;
 
-    @media screen and (min-width: $section3-cols) {
+    @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
-      margin-left: 55%;
+      margin-left: 50%;
       min-height: 20rem;
       position: absolute;
-      width: 45vw;
+      width: 50vw;
     }
 
     &::after {
@@ -287,7 +284,7 @@
         height: 80vh;
       }
 
-      @media screen and (min-width: $section3-cols) {
+      @media screen and (min-width: 1000px) {
         background-position: center;
         height: 100%;
         width: 50vw;
@@ -317,7 +314,8 @@
     }
 
     @media screen and (min-width: 1200px) {
-      margin-left: 55%;
+      margin: 2rem 0 4rem 0;
+      margin-left: 52%;
     }
 
     @media screen and (min-width: 1500px) {
@@ -340,7 +338,7 @@
       display: flex;
       bottom: 0;
       left: 0;
-      width: 45%;
+      width: 50%;
       justify-content: flex-end;
       margin-left: 0;
       margin-bottom: -3px;
@@ -371,7 +369,7 @@
     @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
-      margin-right: 50%;
+      margin-right: 52%;
       margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
     }
   }
@@ -384,10 +382,10 @@
     @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
-      margin-left: 55%;
+      margin-left: 50%;
       min-height: 20rem;
       position: absolute;
-      width: 45vw;
+      width: 50vw;
     }
 
     &::after {
@@ -408,7 +406,6 @@
       }
 
       @media screen and (min-width: 1000px) {
-        background-position: center;
         height: 100%;
         width: 50vw;
       }
@@ -428,9 +425,9 @@
     @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
-      margin-left: 55%;
+      margin-left: 52%;
       margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
-      padding: 4rem var(--container-padding);
+      padding: 4rem var(--container-padding) 2rem var(--container-padding);
     }
   }
 
@@ -470,23 +467,19 @@
   position: relative;
   overflow: hidden;
 
-  @media screen and (min-width: 900px) {
-    padding: 3rem 0 0 0;
-  }
-
   .contentRight {
     margin: 3rem 0;
     position: relative;
     width: 100%;
 
     @media screen and (min-width: 900px) {
-      margin: 0 0 4rem 0;
+      margin: 4rem 0;
       max-width: 30rem;
       margin-left: 50%;
     }
 
     @media screen and (min-width: 1200px) {
-      margin-left: 55%;
+      margin-left: 52%;
     }
 
     @media screen and (min-width: 1500px) {
@@ -549,7 +542,7 @@
     }
 
     @media screen and (min-width: 1200px) {
-      margin-left: 55%;
+      margin-left: 52%;
     }
 
     @media screen and (min-width: 1500px) {
@@ -571,8 +564,8 @@
       position: absolute;
       display: flex;
       bottom: 0;
-      left: 0;
-      width: 45%;
+      left: -10%;
+      width: 60%;
       justify-content: flex-end;
       margin-left: 0;
       margin-bottom: -3px;
@@ -602,7 +595,7 @@
   }
 
   @media screen and (min-width: 900px) {
-    padding: 4rem 0 0 0;
+    padding: 2rem 0 0 0;
   }
 
   .contentLeft {
@@ -614,7 +607,7 @@
     @media screen and (min-width: 900px) {
       margin-bottom: 4rem;
       margin-top: 0;
-      width: 50%;
+      width: 48%;
     }
   }
 
@@ -638,7 +631,7 @@
       justify-content: flex-end;
       margin-right: 0;
       position: absolute;
-      right: -15%;
+      right: 0;
       top: 0;
       width: 50%;
     }
@@ -679,7 +672,7 @@
     }
 
     @media screen and (min-width: 1200px) {
-      margin-left: 55%;
+      margin-left: 52%;
     }
 
     @media screen and (min-width: 1500px) {
@@ -702,7 +695,7 @@
       display: flex;
       bottom: 0;
       left: 0;
-      width: 45%;
+      width: 50%;
       justify-content: flex-end;
       margin-left: 0;
       margin-bottom: -3px;
@@ -733,23 +726,23 @@
     @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
-      margin-right: 50%;
+      margin-right: 52%;
       margin-left: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
     }
   }
 
   .colRight {
-    min-height: 30rem;
+    min-height: 20rem;
     overflow: hidden;
     position: relative;
 
     @media screen and (min-width: 1000px) {
       display: inline-block;
       height: 100%;
-      margin-left: 55%;
+      margin-left: 50%;
       min-height: 20rem;
       position: absolute;
-      width: 45vw;
+      width: 50vw;
     }
 
     &::after {

@@ -132,7 +132,6 @@
 
 // Section1
 .section1 {
-  $section1-cols: 1000px;
   background: url("/assets/images/stories/newyork/ny_section_1_bg.png");
   background-size: cover;
   background-position: center;
@@ -149,7 +148,7 @@
     position: absolute;
     z-index: 5;
 
-    @media screen and (min-width: $section1-cols) {
+    @media screen and (min-width: 1000px) {
       bottom: 0;
       display: initial;
       height: 100%;
@@ -231,7 +230,7 @@
     @media screen and (min-width: 1000px) {
       display: inline-block;
       max-width: calc(var(--container-max-width) / 2);
-      margin-left: 50%;
+      margin-left: 52%;
       margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
       padding: 3rem var(--container-padding);
     }
@@ -524,7 +523,7 @@
     }
 
     @media screen and (min-width: 1500px) {
-      width: 60%;
+      width: 43%;
     }
   }
 
@@ -559,13 +558,14 @@
     }
 
     @media screen and (min-width: 1240px) {
-      width: auto;
-      height: 100%;
+      width: 50%;
+      top: -8vh;
+      height: 150%;
     }
 
     .section10Img {
       @media screen and (min-width: 900px) {
-        height: 100%;
+        width: 100%;
       }
     }
   }
@@ -594,7 +594,7 @@
     }
 
     @media screen and (min-width: 1200px) {
-      width: 55%;
+      width: 43%;
     }
   }
 
@@ -623,19 +623,20 @@
       display: flex;
       top: 0;
       right: 0;
-      width: 40%;
+      width: 50%;
       justify-content: flex-end;
       margin-right: 0;
     }
 
     @media screen and (min-width: 1240px) {
-      width: auto;
-      height: 100%;
+      width: 50%;
+      top: -25vh;
+      height: 150%;
     }
 
     .section12Img {
       @media screen and (min-width: 900px) {
-        height: 100%;
+        width: 100%;
       }
     }
   }
