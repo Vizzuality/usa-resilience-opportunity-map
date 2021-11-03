@@ -5,14 +5,13 @@ import PropTypes from 'prop-types';
 
 import { STORIES } from 'constants/stories';
 
-export default function MapStoryMarker({ isVisible, setTooltipVisibility }) {
+export default function MapStoryMarker({ isVisible }) {
   return (
     <>
       {isVisible &&
         STORIES.map((s) => {
           const {
             href,
-            thumb,
             title,
             location: { lat, long },
           } = s;
@@ -24,13 +23,12 @@ export default function MapStoryMarker({ isVisible, setTooltipVisibility }) {
               offsetTop={-10}
             >
               <Link href={href}>
-                <div
-                  className="marker-container"
-                  onMouseEnter={() => setTooltipVisibility(false)}
-                  onMouseOut={() => setTooltipVisibility(true)}
-                >
-                  <img alt={title} className="image-story" src={thumb} />
-                  <p className="title-story">{title}</p>
+                <div className="marker-container">
+                  <img
+                    alt={title}
+                    className="image-story"
+                    src="/assets/images/location-pin.png"
+                  />
                 </div>
               </Link>
             </Marker>
@@ -42,5 +40,4 @@ export default function MapStoryMarker({ isVisible, setTooltipVisibility }) {
 
 MapStoryMarker.propTypes = {
   isVisible: PropTypes.bool.isRequired,
-  setTooltipVisibility: PropTypes.func,
 };

@@ -49,9 +49,10 @@ export default function ExploreMap({
   const [layersInteractiveIds, setLayersInteractiveIds] = useState([]);
   const [layersHover, setLayersHover] = useState({});
   const [visibilityStories, setVisibilityStories] = useState(true);
-  const [tooltipVisibility, setTooltipVisibility] = useState(true);
+
   const handleStoriesVisibility = () =>
     setVisibilityStories(!visibilityStories);
+
   const [viewport, setViewport] = useState({
     longitude: 0,
     latitude: 0,
@@ -204,6 +205,7 @@ export default function ExploreMap({
         viewport={viewport}
         onViewportChange={onViewportChange}
         interactiveLayerIds={layersInteractiveIds}
+        visibilityStories={visibilityStories}
         onClick={(e) => {
           if (e && e.features) {
             const story = e.features.find((f) => f.source === 'stories');
@@ -304,14 +306,9 @@ export default function ExploreMap({
                 );
               })}
             </LayerManager>
-            <MapTooltip
-              layersHover={layersHover}
-              tooltipVisibility={tooltipVisibility}
-            />
-            <MapStoryMarker
-              isVisible={visibilityStories}
-              setTooltipVisibility={setTooltipVisibility}
-            />
+            {!visibilityStories && <MapTooltip layersHover={layersHover} />}
+
+            <MapStoryMarker isVisible={visibilityStories} />
           </>
         )}
       </Map>
