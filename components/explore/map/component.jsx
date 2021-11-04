@@ -330,7 +330,7 @@ export default function ExploreMap({
       </MapControls>
 
       <div className="c-legend">
-        <Legend maxHeight="65vh" collapsable={false} sortable={false}>
+        <Legend maxHeight="65vh" collapsable sortable={false}>
           {layerGroups.map((layerGroup, i) => {
             return (
               <LegendListItem
