@@ -75,6 +75,9 @@ class Map extends Component {
 
     /** A function that exposes the viewport */
     getCursor: PropTypes.func,
+
+    /** A boolean that inform if user stories markers are visible on map */
+    visibilityStories: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -182,7 +185,7 @@ class Map extends Component {
   };
 
   onHover = (e) => {
-    const { onHover } = this.props;
+    const { onHover, visibilityStories } = this.props;
     const { features } = e;
     if (features && features.length) {
       const { id, source, sourceLayer } = features[0];
@@ -196,7 +199,7 @@ class Map extends Component {
         );
       }
 
-      if (id && source) {
+      if (id && source && !visibilityStories) {
         this.HOVER = {
           id,
           source,

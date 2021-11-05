@@ -19,6 +19,20 @@
     letter-spacing: 1px;
     margin: 3px 0;
   }
+
+  .vizzuality__c-legend-map .vizzuality__legend-title {
+    color: $color-gray-6;
+    flex-grow: 1;
+    flex-shrink: 1;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 3px 0;
+
+    .vizzuality__toggle-legend {
+      margin-left: 15px;
+    }
+  }
 }
 
 .visibility-stories-button {

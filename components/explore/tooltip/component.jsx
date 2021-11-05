@@ -7,16 +7,18 @@ export default function MapTooltip({
   layersHover,
   indicators,
   geometries,
-  tooltipVisibility,
+  visibilityStories,
 }) {
   const { lngLat, interactions } = layersHover;
   const countyValues = interactions?.counties?.data;
   const stateValues = interactions?.state?.data;
   const censusValues = interactions?.census?.data;
+  const storyValues = interactions?.stories?.data;
 
   if (
     lngLat &&
-    tooltipVisibility &&
+    !storyValues &&
+    !visibilityStories &&
     (stateValues || countyValues || censusValues)
   ) {
     const activeIndicators = indicators.active?.map((id) =>
@@ -69,6 +71,21 @@ export default function MapTooltip({
       </Popup>
     );
   }
+  if (lngLat && storyValues && visibilityStories) {
+    const locationName = storyValues.title;
+    return (
+      <Popup
+        longitude={lngLat && lngLat[0]}
+        latitude={lngLat && lngLat[1]}
+        anchor="bottom"
+        closeButton={false}
+      >
+        <div className="c-map-tooltip">
+          <h5 className="c-tooltip--location">{locationName}</h5>
+        </div>
+      </Popup>
+    );
+  }
   return null;
 }
 
@@ -79,5 +96,5 @@ MapTooltip.propTypes = {
   }),
   indicators: PropTypes.object,
   geometries: PropTypes.object,
-  tooltipVisibility: PropTypes.bool,
+  visibilityStories: PropTypes.bool,
 };
