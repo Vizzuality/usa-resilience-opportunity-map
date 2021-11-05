@@ -3,13 +3,24 @@ import PropTypes from 'prop-types';
 import startCase from 'lodash.startcase';
 import HazardIndicator from 'components/explore/hazard-indicator';
 
-export default function MapTooltip({ layersHover, indicators, geometries }) {
+export default function MapTooltip({
+  layersHover,
+  indicators,
+  geometries,
+  visibilityStories,
+}) {
   const { lngLat, interactions } = layersHover;
   const countyValues = interactions?.counties?.data;
   const stateValues = interactions?.state?.data;
   const censusValues = interactions?.census?.data;
+  const storyValues = interactions?.stories?.data;
 
-  if (lngLat && (stateValues || countyValues || censusValues)) {
+  if (
+    lngLat &&
+    !storyValues &&
+    !visibilityStories &&
+    (stateValues || countyValues || censusValues)
+  ) {
     const activeIndicators = indicators.active?.map((id) =>
       indicators.data?.find((i) => i.id === id)
     );
@@ -60,6 +71,21 @@ export default function MapTooltip({ layersHover, indicators, geometries }) {
       </Popup>
     );
   }
+  if (lngLat && storyValues && visibilityStories) {
+    const locationName = storyValues.title;
+    return (
+      <Popup
+        longitude={lngLat && lngLat[0]}
+        latitude={lngLat && lngLat[1]}
+        anchor="bottom"
+        closeButton={false}
+      >
+        <div className="c-map-tooltip">
+          <h5 className="c-tooltip--location">{locationName}</h5>
+        </div>
+      </Popup>
+    );
+  }
   return null;
 }
 
@@ -70,4 +96,5 @@ MapTooltip.propTypes = {
   }),
   indicators: PropTypes.object,
   geometries: PropTypes.object,
+  visibilityStories: PropTypes.bool,
 };
