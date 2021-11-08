@@ -76,6 +76,7 @@ const Section3 = () => {
             sign of the climate emergency in the United States. In 2020, there
             were 58,950 wildfires across the nation, compared with 50,477 in
             2019.
+            <sup>1</sup>
           </p>
         </div>
       </div>
@@ -148,7 +149,7 @@ const Section5 = () => {
 
 const Section6 = () => {
   return (
-    <div className={cx(styles.section6, styles.textGray, styles.bgWhite)}>
+    <div className={cx(styles.section6, styles.textGray, styles.bgLightBlue)}>
       <div className={cx(styles.container)}>
         <div className={cx(styles.section6Wrapper)}>
           <p>
@@ -473,6 +474,25 @@ const Section18 = () => {
   );
 };
 
+const Section19 = () => {
+  return (
+    <div
+      className={cx(
+        styles.bgPrimary,
+        styles.textWhite,
+        styles.footerPageContainer
+      )}
+    >
+      <p>
+        1 “Facts and Statistics: Wildfires,” Insurance Information Institute,
+        <a href="https://www.iii.org/fact-statistic/facts-statistics-wildfires#:~:text=2020%3A%20In%202020%20there%20were,4.7%20million%20acres%20in%202019">
+          https://www.iii.org/fact-statistic/facts-statistics-wildfires#:~:text=2020%3A%20In%202020%20there%20were,4.7%20million%20acres%20in%202019.
+        </a>
+      </p>
+    </div>
+  );
+};
+
 const Boulder = () => {
   return (
     <div className={styles.stories}>
@@ -494,6 +514,7 @@ const Boulder = () => {
       <Section16 />
       <Section17 />
       <Section18 />
+      <Section19 />
       <MetaFooter exploreLink="/explore?id=224850" />
     </div>
   );
