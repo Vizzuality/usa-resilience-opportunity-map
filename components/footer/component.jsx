@@ -34,7 +34,7 @@ export default function Footer({ footerLogo }) {
             <a>Privacy policy</a>
           </Link>
           <div className="footer-links--separator" />
-          <Link href="/privacy">
+          <Link href="/contact">
             <a>Contact us</a>
           </Link>
         </div>

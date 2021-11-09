@@ -49,7 +49,7 @@ const About = () => {
           </p>
           <p>
             The Atlantic Council’s Adrienne Arsht – Rockefeller Foundation
-            Resilience Center, with support from JPMorgan Chace & Co. and the
+            Resilience Center, with support from JPMorgan Chase & Co. and the
             Rockefeller Foundation, have developed and deployed a visualization
             tool that will help make people and communities more resilient by
             offering a path forward for cities by sharing proven examples of
