@@ -130,6 +130,38 @@
   margin-bottom: 0.2rem;
 }
 
+.footerPageContainer {
+  color: white;
+  hyphens: auto;
+  margin-top: 0;
+  padding: 0 var(--container-padding);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+ 
+
+  div {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 20px var(--container-padding);
+  }
+
+  p {
+    font-size: 10px;
+    line-height: 1rem;
+    margin: 0;
+    padding: 1.5px 0;
+
+    @media screen and (min-width: 1000px) {
+      font-size: 11px;
+    }
+  }
+
+  p:first-child {
+    border-top: 1px solid white;
+    padding-top: 20px;
+  }
+}
+
 // Section1
 .section1 {
   background: url("/assets/images/stories/newyork/ny_section_1_bg.png");
@@ -286,7 +318,7 @@
     @media screen and (min-width: 900px) {
       margin-bottom: 4rem;
       margin-top: 0;
-      width: 60%;
+      width: 50%;
     }
   }
 
@@ -312,13 +344,12 @@
       position: absolute;
       right: -15%;
       top: 0;
-      width: 60%;
+      width: 50%;
     }
 
     @media screen and (min-width: 1200px) {
       height: 100%;
       right: 0;
-      width: auto;
     }
 
     .section4Img {
@@ -371,6 +402,7 @@
 
     @media screen and (min-width: 1200px) {
       height: auto;
+      width: 50%;
     }
 
     .section5Img {
@@ -518,10 +550,6 @@
       width: 45%;
     }
 
-    @media screen and (min-width: 1200px) {
-      width: 55%;
-    }
-
     @media screen and (min-width: 1500px) {
       width: 43%;
     }
@@ -543,8 +571,8 @@
 
     @media screen and (min-width: 1000px) {
       right: 0;
-      width: 60%;
-      margin-right: -8rem;
+      width: 50%;
+      margin-right: 0;
     }
 
     @media screen and (min-width: 1200px) {
@@ -552,9 +580,8 @@
       display: flex;
       top: 0;
       right: 0;
-      width: 40%;
+      width: 50%;
       justify-content: flex-end;
-      margin-right: 0;
     }
 
     @media screen and (min-width: 1240px) {
@@ -710,7 +737,7 @@
 // Section 14
 .section14 {
   position: relative;
-  padding-bottom: 130%;
+  padding-bottom: 140%;
   padding-top: 2rem;
 
   @media screen and (min-width: 600px) {
@@ -749,7 +776,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right bottom 0;
-    bottom: -1.3rem;
+    bottom: -1.8%;
     content: '';
     height: 110vh;
     right: 0;
@@ -763,15 +790,13 @@
   
     @media screen and (min-width: 1000px) {
       background-position: right bottom;
-      bottom: -3%;
-      height: 103%;
-      right: -12%;
+      bottom: -3.7%;
+      height: 103.7%;
+      right: -18%;
     }
 
     @media screen and (min-width: 1400px) {
       background-position: right bottom;
-      bottom: -3.5%;
-      height: 103.5%;
       right: 0;
     }
   }
@@ -779,16 +804,18 @@
 
 // Section16
 .section16 {
-  padding: 4rem var(--padding-quote) 2rem var(--padding-quote);
+  padding: 4rem 2rem 2rem 2rem;
   position: relative;
   z-index: 1;
 
   @media screen and (min-width: 1000px) {
     background-size: 61% auto;
+    padding: 4rem 4rem 2rem 4rem;
   }
 
   @media screen and (min-width: 1400px) {
     background-size: auto 100%;
+    padding: 4rem 10rem 2rem 10rem;
   }
 
   .container {
