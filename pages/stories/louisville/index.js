@@ -14,34 +14,34 @@ const Section1 = () => {
       <div className={styles.container}>
         <div className={styles.section1Title}>
           <span>
-            In Louisville, trees
+            In Louisville, Trees
             <br />
-            provide a 
+            Provide a 
             {' '}
-            <span className={styles.underline}>green solution</span>
+            <span className={styles.underline}>Green Solution</span>
             <br />
-            to health inequality
+            to Health Inequality
           </span>
         </div>
         <div className={styles.section1Text}>
           <p>
             A study by Dr. Brian Stone found that Louisville, Kentucky, had the
-            fastest-growing urban heat island in the country exacerbated by a
-            low tree canopy in deprived regions of the city. The impact is
-            deadly: heat-related ailments contribute to the deaths of 86
+            fastest-growing urban heat island in the country. The impact is
+            deadly: heat-related ailments contribute to the deaths of eighty-six
             Louisville residents each year.
+          </p>
+          <p>
+            In response, Louisville Metro took Stone’s data, commissioned an
+            Urban Tree Canopy Assessment study to understand where there was a
+            correlation between extreme heat and tree cover, and collaborated
+            with grassroots organizations, business owners, and citizens to
+            tackle the heat-island effect.
+            <sup>1</sup>
           </p>
           <p>
             This led to a nature-based solution designed to increase the tree
             canopy in the city’s most deprived areas, develop community parks,
             increase wellbeing, and boost health outcomes for its residents.
-          </p>
-          <p>
-            In response, Louisville Metro took Stone’s data, commissioned an
-            Urban Tree Cover Assessment study to understand where there was a
-            correlation between extreme heat and tree cover, and collaborated
-            with grassroots organizations, business owners and citizens to
-            tackle the heat island effect.
           </p>
         </div>
       </div>
@@ -67,32 +67,36 @@ const Section3 = () => {
         <div className={cx(styles.col, styles.colLeft)} />
         <div className={cx(styles.col, styles.colRight)}>
           <h5 className={cx(styles.sectionTitle)}>
-            What is the urban heat island effect?
+            What Is the Urban Heat-Island Effect?
           </h5>
           <p>
-            The “urban heat island effect” is a growing problem in US cities
-            where extreme heat kills 1,300 people every year. Urban heat islands
-            occur when cities replace natural land cover with dense
+            The “urban heat-island effect” is a growing problem in US cities,
+            where extreme heat kills 1,300 people every year. 
+            {' '}
+            <sup>2</sup>
+            {' '}
+            Urban
+            heat islands occur when cities replace natural land cover with dense
             concentrations of pavement, buildings, and other surfaces that
             absorb and retain heat. This effect increases energy costs (e.g.,
-            for air conditioning), air pollution levels, and heat-related
+            for air conditioning), air-pollution levels, and heat-related
             illness and mortality.
           </p>
           <p>
-            Overnight, when temperatures usually drop, the built in structures
+            Overnight, when temperatures usually drop, the built-in structures
             of the city don’t cool down. This makes the following day even
-            hotter and the impact even more deadly.
+            hotter—and the impact even more deadly.
           </p>
           <h5 className={cx(styles.sectionTitle)}>
-            The urban heat island in Louisville
+            The Urban Heat Island in Louisville
           </h5>
           <p>
-            Dr. Stone’s study and the Urban Tree Cover Assessment revealed
-            serious inequities in the city. The most deprived, primarily
-            African-American neighborhoods, had the lowest tree cover and
-            experienced the worst health impacts of extreme heat – including
-            heat stress and heat stroke, as well as cardiac arrest and stroke –
-            particularly in older people with underlying health conditions.
+            Dr. Stone’s study and the Urban Tree Canopy Assessment revealed
+            serious inequities in the city. The most deprived, primarily Black
+            neighborhoods, had the lowest tree cover and experienced the worst
+            health impacts of extreme heat—including heat stress and heatstroke,
+            as well as cardiac arrest and stroke—particularly in older people
+            with underlying health conditions.
           </p>
         </div>
       </div>
@@ -104,9 +108,7 @@ const Section4 = () => {
   return (
     <div className={cx(styles.bgGray, styles.quoteContainer)}>
       <Quote
-        text="Extreme heat is really experienced by more vulnerable populations.
-        The biggest health issue was not the day temperatures, but the night temperatures.
-        When night is terribly hot, that’s when there's major health risks of heat stroke or death."
+        text="Extreme heat is really experienced by more vulnerable populations. The biggest health issue was not the day temperatures, but the night temperatures. When night is terribly hot, that’s when there's major health risks of heat stroke or death."
         image="/assets/images/stories/louisville/lv_people_julie_donna.jpg"
         authorName="Julie Donna"
         authorPosition="Sustainability Coordinator"
@@ -122,24 +124,25 @@ const Section5 = () => {
       <div className={cx(styles.container)}>
         <div className={cx(styles.section5Wrapper)}>
           <p>
-            On an infrastructure level, extreme heat disrupts transport – making
+            On an infrastructure level, extreme heat disrupts transport, making
             rail and buses unusable. This is a particular issue in deprived
             areas where people are more reliant on public transport and less
             likely to own cars. When transport infrastructure is disrupted,
-            people are forced to walk in hot weather – exacerbating the issue of
+            people are forced to walk in hot weather—exacerbating the issue of
             heat and health.
           </p>
           <p>
-            The correlation between low tree canopy, health outcomes and
-            inequality were terrifyingly stark.
+            The correlation between low tree canopy, health outcomes, and
+            inequality was terrifyingly stark.
           </p>
           <p>
             Lower tree canopy was concentrated in Louisville&apos;s poorest,
-            formerly “redlined” neighborhoods where tree cover was around 22%
-            and temperatures were up to 10°F (5.6°C) higher than well-vegetated
-            zones. In contrast, wealthier, “green line” districts had up to 49%
-            tree cover. Life expectancy in low tree canopy neighborhoods was
-            around 70 years, compared to 83 years in the wealthier east of the
+            formerly “redlined” neighborhoods where tree cover was around 22
+            percent and temperatures were up to 10 degrees Fahrenheit (5.6
+            degrees Celsius) higher than well-vegetated zones. In contrast,
+            wealthier, “greenlined” districts had up to 49 percent tree cover.
+            Life expectancy in low-tree-canopy neighborhoods was around seventy
+            years, compared to eighty-three years in the wealthier east of the
             city.
           </p>
         </div>
@@ -154,17 +157,19 @@ const Section6 = () => {
       <div className={cx(styles.container)}>
         <div className={cx(styles.section6Wrapper)}>
           <p>
-            Expansion of tree canopy in Downtown Louisville by 15% to 33 % was
-            associated with reductions in estimated heat-related mortality
-            between 5% and 28%.
+            Studies show that an expansion of tree canopy in downtown Louisville
+            by 15 percent to 33 percent could reduce estimated heat-related
+            mortality between 5 percent and 28 percent. 
+            {' '}
+            <sup>3</sup>
           </p>
           <p>
-            Louisville Metro&apos;s response to becoming the fastest growing
-            urban heat island was to invest in building the tree canopy, a
-            nature-based solution to rising temperatures. In response to the
-            Urban Tree Cover Assessment, they set up a nonprofit organization
-            that would be responsible solely for improving the urban tree
-            canopy: Trees Louisville.
+            The city&apos;s response to becoming the fastest-growing urban heat
+            island was to invest in building the tree canopy, a nature-based
+            solution to rising temperatures. In response to the Urban Tree
+            Canopy Assessment, it set up a nonprofit organization that would be
+            responsible solely for improving the urban tree canopy:
+            TreesLouisville.
           </p>
         </div>
       </div>
@@ -179,37 +184,38 @@ const Section7 = () => {
         <div className={cx(styles.col, styles.colRight)} />
         <div className={cx(styles.col, styles.colLeft)}>
           <h5 className={cx(styles.sectionTitle)}>
-            Working together to transform green space and public health
+            Working Together to Transform Green Space and Public Health
           </h5>
           <p>
             To help determine how and where to increase the tree canopy in
-            Louisville, Dr. Stone’s study assumed a green area ratio policy
-            which sets minimum green cover targets for all residential,
+            Louisville, Dr. Stone’s study assumed a green-area ratio policy,
+            which sets minimum green-cover targets for all residential,
             commercial, and industrial sites.
           </p>
           <p>
-            Meeting those green cover targets was the task of Trees Louisville,
-            as well as a second NGO called Louisville Grows.
+            Meeting those green-cover targets was the task of TreesLouisville,
+            as well as a second nongovernmental organization (NGO) called
+            Louisville Grows.
           </p>
           <p>
-            Using the data from the Urban Tree Canopy Assessment, Trees
-            Louisville:
+            Using the data from the Urban Tree Canopy Assessment,
+            TreesLouisville
           </p>
           <ul>
-            <li className={cx(styles.orderedListItem)}>
-              1. Worked with the school system – the centrality of schools and
-              the size of the properties gave huge opportunity to provide
-              natural environments for entire neighborhoods
+            <li className={cx(styles.listItem)}>
+              worked with the school system (the centrality of schools and the
+              size of the properties offered a huge opportunity to provide
+              natural environments for entire neighborhoods);
             </li>
-            <li className={cx(styles.orderedListItem)}>
-              2. Identified local large property owners in industrialized spaces
-              lacking tree cover before setting up meetings to invite them to
-              grow trees on their sites
+            <li className={cx(styles.listItem)}>
+              identified local large-property owners in industrialized spaces
+              lacking tree cover, then set up meetings to invite them to grow
+              trees on their sites; and
             </li>
-            <li className={cx(styles.orderedListItem)}>
-              3. Collaborated with the Kentucky Transportation Cabinet to plant
-              trees alongside busy roads – helping tackle extreme heat, noise
-              pollution, and air pollution
+            <li className={cx(styles.listItem)}>
+              collaborated with the Kentucky Transportation Cabinet to plant
+              trees alongside busy roads (helping tackle extreme heat, noise
+              pollution, and air pollution).
             </li>
           </ul>
         </div>
@@ -224,38 +230,38 @@ const Section8 = () => {
       <div className={cx(styles.container)}>
         <div className={cx(styles.section8Wrapper)}>
           <p>
-            Having identified the school system as a great target for
-            tree-planting, Trees Louisville approached the Jefferson County
-            Public School System to discuss planting trees on their land.
+            Having identified the school system as a great target for tree
+            planting, TreesLouisville approached the Jefferson County Public
+            School System to discuss planting trees on its land.
           </p>
           <p>
             Jefferson County Public School System was chosen based on three
-            metrics:
+            metrics, including
           </p>
           <ul>
-            <li className={cx(styles.orderedListItem)}>
-              1. It covered a large amount of land in Louisville – over 4,050
-              acres
+            <li className={cx(styles.listItem)}>
+              it covered a large amount of land in Louisville—more than four
+              thousand and fifty acres;
             </li>
-            <li className={cx(styles.orderedListItem)}>
-              2. Much of that land lacked tree cover but was able to support
-              trees
+            <li className={cx(styles.listItem)}>
+              much of that land lacked tree cover, but was able to support
+              trees; and
             </li>
-            <li className={cx(styles.orderedListItem)}>
-              3. Working with schools would promote education about climate
-              resilience in the community
+            <li className={cx(styles.listItem)}>
+              working with schools would promote education about climate
+              resilience in the community.
             </li>
           </ul>
-          <p>Louisville Grows:</p>
+          <p>Louisville Grows</p>
           <ul>
-            <li className={cx(styles.orderedListItem)}>
-              1. Approached homeowners, inviting them to plant a tree in their
-              gardens
+            <li className={cx(styles.listItem)}>
+              approached homeowners, inviting them to plant a tree in their
+              gardens; and
             </li>
-            <li className={cx(styles.orderedListItem)}>
-              2. Convened tree planting events, during which volunteers
+            <li className={cx(styles.listItem)}>
+              convened tree-planting events, during which volunteers
               collaborated with community members to create greener and
-              healthier neighborhoods
+              healthier neighborhoods.
             </li>
           </ul>
         </div>
@@ -274,7 +280,7 @@ const Section9 = () => {
         image="/assets/images/stories/louisville/lv_people_cindi_sullivan.jpeg"
         authorName="Cindi Sullivan"
         authorPosition="Executive Director"
-        authorCompany="Trees Louisville"
+        authorCompany="TreesLouisville"
       />
     </div>
   );
@@ -294,30 +300,30 @@ const Section10 = () => {
           </p>
           <p>
             The city was awarded a $42,000 grant from Partners for Places to
-            transform a historic park in the area.
+            transform a historic part of the area.
           </p>
           <p>
-            Louisville Metro set up a series of public meetings to consult on
-            what a public park could look like while ensuring any plans would
-            also reduce urban heat.
+            Center for Neighborhoods set up a series of public meetings to
+            consult on what a public area could look like while ensuring any
+            plans would also reduce urban heat.
           </p>
-          <p>The ambition is to:</p>
+          <p>The ambition is to</p>
           <ul>
             <li className={cx(styles.listItem)}>
-              Increase the tree canopy in the park – including by planting trees
-              to shade a community garden that already exists onsite
+              increase the tree canopy, including by planting trees to shade a
+              community garden that already exists on-site;
             </li>
             <li className={cx(styles.listItem)}>
-              Develop a parking lot using cool pavements
+              develop a parking lot using cool pavements; and
             </li>
             <li className={cx(styles.listItem)}>
-              Ensure any building is completed with natural materials
+              ensure any building is completed with natural materials.
             </li>
           </ul>
           <p>
-            All three measures – trees, cool pavements and use of natural
-            materials – are designed to eliminate the urban heat island effect
-            to the greatest extent possible.
+            All three measures—trees, cool pavements, and the use of natural
+            materials—are designed to eliminate the urban heat-island effect to
+            the greatest extent possible.
           </p>
         </div>
       </div>
@@ -331,21 +337,27 @@ const Section11 = () => {
       <div className={cx(styles.container)}>
         <div className={cx(styles.section11Wrapper)}>
           <h5 className={cx(styles.sectionTitle)}>
-            “We all know that plant person connection”
+            “We All Know About the People-Plant Connection”
           </h5>
           <p>
-            Two methods ensured the success of Louisville’s extreme heat
+            Two methods ensured the success of Louisville’s extreme-heat
             intervention.
           </p>
           <p>
-            Data: The Urban Tree Canopy Assessment gave the city the data to
-            identify which communities were lacking tree cover, so they could
-            target the solution to those who needed it most. They are now
-            targeting commercial property owners.
+            <span className={cx(styles.textSecondary)}>
+              <b>Data</b>
+            </span>
+            : The Urban Tree Canopy Assessment gave the city the data to
+            identify which communities lacked tree cover, so it could target the
+            solution to those who needed it most. The city is now targeting
+            commercial property owners.
           </p>
           <p>
-            Community engagement: For Parkland Plaza in particular, members of
-            the Parkland Association talk about the initiative with their
+            <span className={cx(styles.textSecondary)}>
+              <b>Community engagement</b>
+            </span>
+            : For Parkland Plaza in particular, members of the Parkland Business
+            Development Association talked about the initiative with their
             customers, neighbors, and friends, encouraging community buy-in and
             participation through word of mouth.
           </p>
@@ -362,11 +374,11 @@ const Section12 = () => {
         <div className={cx(styles.col, styles.colRight)} />
         <div className={cx(styles.col, styles.colLeft)}>
           <p>
-            Since the initiative started, Trees Louisville and Louisville Grows
-            have planted upwards of 13,000 trees. A city ordinance has been
-            passed protecting trees on private land and setting requirements for
-            the minimum percentage of tree canopy cover in certain public
-            spaces.
+            Since the initiative started, TreesLouisville and Louisville Grows
+            have planted upward of fifteen thousand trees. A city ordinance has
+            been passed protecting trees on private land and setting
+            requirements for the minimum percentage of tree-canopy cover in
+            certain public spaces.
           </p>
           <p>
             Each additional square meter of tree canopy or grass added across
@@ -388,8 +400,43 @@ const Section13 = () => {
         image="/assets/images/stories/louisville/lv_people_cindi_sullivan.jpeg"
         authorName="Cindi Sullivan"
         authorPosition="Executive Director"
-        authorCompany="Trees Louisville"
+        authorCompany="TreesLouisville"
       />
+    </div>
+  );
+};
+
+const Section14 = () => {
+  return (
+    <div
+      className={cx(
+        styles.bgSecondary,
+        styles.textWhite,
+        styles.footerPageContainer
+      )}
+    >
+      <div>
+        <p>
+          1 Louisville Metro, ‘Louisville’s Urban Tree Canopy Assessment’, last
+          accessed 3 November 2021,
+          <a href="https://louisvilleky.gov/government/division-community-forestry/louisvilles-urban-tree-canopy-assessment">
+            https://louisvilleky.gov/government/division-community-forestry/louisvilles-urban-tree-canopy-assessment.
+          </a>
+        </p>
+        <p>
+          2 Elinor Aspegren, ‘How hot is too hot? What to know about wet bulb
+          temperatures, an increasing danger in extreme heat’, USA Today, 17
+          July 2021, last accessed 3 November 2021,
+          <a href="https://eu.usatoday.com/story/news/weather/2021/07/17/heat-waves-wet-bulb-temperatures-climate-change/7961086002">
+            https://eu.usatoday.com/story/news/weather/2021/07/17/heat-waves-wet-bulb-temperatures-climate-change/7961086002
+          </a>
+        </p>
+        <p>
+          3 Brian Stone et al., ‘Urban Heat Management in Louisville, Kentucky:
+          A Framework for Climate Adaptation Planning’, Journal of Planning
+          Education and Research, Volume 1 Issue 13, 2019.
+        </p>
+      </div>
     </div>
   );
 };
@@ -410,6 +457,7 @@ const Louisville = () => {
       <Section11 />
       <Section12 />
       <Section13 />
+      <Section14 />
       <MetaFooter exploreLink="/explore?id=224566" />
     </div>
   );

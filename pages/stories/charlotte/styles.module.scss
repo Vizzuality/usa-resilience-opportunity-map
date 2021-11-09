@@ -138,13 +138,15 @@
   color: white;
   hyphens: auto;
   margin-top: 0;
-  padding: 0 var(--padding-quote);
+  padding: 0 var(--container-padding);
   overflow-wrap: break-word;
   word-wrap: break-word;
+ 
 
   div {
-    border-top: 1px solid white;
-    padding: 20px 0 20px 0;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 20px var(--container-padding);
   }
 
   p {
@@ -156,6 +158,11 @@
     @media screen and (min-width: 1000px) {
       font-size: 11px;
     }
+  }
+
+  p:first-child {
+    border-top: 1px solid white;
+    padding-top: 20px;
   }
 }
 
