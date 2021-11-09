@@ -403,6 +403,63 @@ const Section13 = () => {
   );
 };
 
+const Section14 = () => {
+  return (
+    <div
+      className={cx(
+        styles.bgPrimary,
+        styles.textWhite,
+        styles.footerPageContainer
+      )}
+    >
+      <div>
+        <p>
+          1 “Drought,” Arizona Department of Water Resources,
+          {' '}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://new.azwater.gov/drought/drought-status"
+          >
+            https://new.azwater.gov/drought/drought-status.
+          </a>
+        </p>
+        <p>
+          2 “Drought Status Update,” Eye on Drought, June 2011,
+          {' '}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://new.azwater.gov/sites/default/files/media/June%202011.pdf"
+          >
+            https://new.azwater.gov/sites/default/files/media/June%202011.pdf.
+          </a>
+        </p>
+        <p>
+          3 US Drought Monitor, Map Archive, 31 August 2021,
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://droughtmonitor.unl.edu/data/pdf/20210831/20210831_usdm.pdf"
+          >
+            https://droughtmonitor.unl.edu/data/pdf/20210831/20210831_usdm.pdf
+          </a>
+        </p>
+        <p>
+          4 “Apply for Water Conservation Rebates,” City of Tucson,
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.tucsonaz.gov/water/apply-for-rebates"
+          >
+            https://www.tucsonaz.gov/water/apply-for-rebates.
+          </a>
+        </p>
+      </div>
+    </div>
+  );
+};
+
 const Tucson = () => {
   return (
     <div className={styles.stories}>
@@ -419,6 +476,7 @@ const Tucson = () => {
       <Section11 />
       <Section12 />
       <Section13 />
+      <Section14 />
       <MetaFooter exploreLink="/explore?id=224706" />
     </div>
   );

@@ -428,6 +428,80 @@ const Section14 = () => {
   );
 };
 
+const Section15 = () => {
+  return (
+    <div
+      className={cx(
+        styles.bgGray,
+        styles.textWhite,
+        styles.footerPageContainer
+      )}
+    >
+      <div>
+        <p>
+          1 Rebecca Hersher, “High-Tide Flooding on the Rise, Especially Along
+          the East Coast, Forecasters Warn,” NPR, July 10, 2019,
+          {' '}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.npr.org/2019/07/10/739466268/high-tide-flooding-on-the-rise-especially-along-the-east-coast-forecasters-warn?t=1627373425253"
+          >
+            https://www.npr.org/2019/07/10/739466268/high-tide-flooding-on-the-rise-especially-along-the-east-coast-forecasters-warn?t=1627373425253.
+          </a>
+        </p>
+        <p>
+          2 “The State of High Tide Flooding and Annual Outlook,” National
+          Oceanic and Atmospheric Administration,
+          {' '}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://tidesandcurrents.noaa.gov/HighTideFlooding_AnnualOutlook.html"
+          >
+            https://tidesandcurrents.noaa.gov/HighTideFlooding_AnnualOutlook.html;
+          </a>
+          {' '}
+          “U.S. High-Tide Flooding Breaks Records,” National Oceanic and
+          Atmospheric Administration, July 14, 2021,
+          {' '}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.noaa.gov/news-release/us-high-tide-flooding-breaks-records"
+          >
+            https://www.noaa.gov/news-release/us-high-tide-flooding-breaks-records.
+          </a>
+        </p>
+        <p>
+          3 Nicholas Kusnetz, “Norfolk Wants to Remake Itself as Sea Level
+          Rises, But Who Will Be Left Behind?” Inside Climate News, May 21,
+          2018,
+          {' '}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://insideclimatenews.org/news/21052018/norfolk-virginia-navy-sea-level-rise-flooding-urban-planning-poverty-coastal-resilience"
+          >
+            https://insideclimatenews.org/news/21052018/norfolk-virginia-navy-sea-level-rise-flooding-urban-planning-poverty-coastal-resilience/.
+          </a>
+        </p>
+        <p>
+          4 “Ohio Creek Watershed Project,” City of Norfolk,
+          {' '}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.norfolk.gov/3867/Ohio-Creek-Watershed-Project"
+          >
+            https://www.norfolk.gov/3867/Ohio-Creek-Watershed-Project
+          </a>
+        </p>
+      </div>
+    </div>
+  );
+};
+
 const Norfolk = () => {
   return (
     <div className={styles.stories}>
@@ -445,6 +519,7 @@ const Norfolk = () => {
       <Section12 />
       <Section13 />
       <Section14 />
+      <Section15 />
       <MetaFooter exploreLink="/explore?id=227538" />
     </div>
   );

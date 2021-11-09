@@ -487,7 +487,11 @@ const Section19 = () => {
         <p>
           1 “Facts and Statistics: Wildfires,” Insurance Information Institute,
           {' '}
-          <a href="https://www.iii.org/fact-statistic/facts-statistics-wildfires#:~:text=2020%3A%20In%202020%20there%20were,4.7%20million%20acres%20in%202019">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.iii.org/fact-statistic/facts-statistics-wildfires#:~:text=2020%3A%20In%202020%20there%20were,4.7%20million%20acres%20in%202019"
+          >
             https://www.iii.org/fact-statistic/facts-statistics-wildfires#:~:text=2020%3A%20In%202020%20there%20were,4.7%20million%20acres%20in%202019.
           </a>
         </p>

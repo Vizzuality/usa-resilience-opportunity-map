@@ -420,7 +420,11 @@ const Section14 = () => {
           1 Louisville Metro, ‘Louisville’s Urban Tree Canopy Assessment’, last
           accessed 3 November 2021,
           {' '}
-          <a href="https://louisvilleky.gov/government/division-community-forestry/louisvilles-urban-tree-canopy-assessment">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://louisvilleky.gov/government/division-community-forestry/louisvilles-urban-tree-canopy-assessment"
+          >
             https://louisvilleky.gov/government/division-community-forestry/louisvilles-urban-tree-canopy-assessment.
           </a>
         </p>
@@ -429,7 +433,11 @@ const Section14 = () => {
           temperatures, an increasing danger in extreme heat’, USA Today, 17
           July 2021, last accessed 3 November 2021,
           {' '}
-          <a href="https://eu.usatoday.com/story/news/weather/2021/07/17/heat-waves-wet-bulb-temperatures-climate-change/7961086002">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://eu.usatoday.com/story/news/weather/2021/07/17/heat-waves-wet-bulb-temperatures-climate-change/7961086002"
+          >
             https://eu.usatoday.com/story/news/weather/2021/07/17/heat-waves-wet-bulb-temperatures-climate-change/7961086002
           </a>
         </p>

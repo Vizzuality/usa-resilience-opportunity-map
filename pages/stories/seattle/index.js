@@ -373,7 +373,11 @@ const Section14 = () => {
           1 “Does It Always Rain in Seattle?” Seattle Southside Regional Tourism
           Authority, November 5, 2019,
           {' '}
-          <a href="https://www.seattlesouthside.com/blog/post/does-it-always-rain-in-seattle/#:~:text=A%3A%20On%20average%2C%20Seattle%20gets,inches%20of%20rain%20each%20year">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.seattlesouthside.com/blog/post/does-it-always-rain-in-seattle/#:~:text=A%3A%20On%20average%2C%20Seattle%20gets,inches%20of%20rain%20each%20year"
+          >
             https://www.seattlesouthside.com/blog/post/does-it-always-rain-in-seattle/#:~:text=A%3A%20On%20average%2C%20Seattle%20gets,inches%20of%20rain%20each%20year.
           </a>
         </p>
@@ -383,13 +387,21 @@ const Section14 = () => {
           Highlight Innovative City Initiatives to Combat Climate Change,”
           Seattle Office of the Mayor, January 29, 2018,
           {' '}
-          <a href="https://durkan.seattle.gov/2018/01/with-new-study-showing-extreme-rainstorms-in-seattle-area-grew-by-30-percent-since-2003-mayor-durkan-will-highlight-innovative-city-initiatives-to-combat-climate-change">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://durkan.seattle.gov/2018/01/with-new-study-showing-extreme-rainstorms-in-seattle-area-grew-by-30-percent-since-2003-mayor-durkan-will-highlight-innovative-city-initiatives-to-combat-climate-change"
+          >
             https://durkan.seattle.gov/2018/01/with-new-study-showing-extreme-rainstorms-in-seattle-area-grew-by-30-percent-since-2003-mayor-durkan-will-highlight-innovative-city-initiatives-to-combat-climate-change/.
           </a>
         </p>
         <p>
           3 “Projected Climate Changes,” Seattle Public Utilities,
-          <a href="https://www.seattle.gov/utilities/protecting-our-environment/community-programs/climate-change/projected-changes">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.seattle.gov/utilities/protecting-our-environment/community-programs/climate-change/projected-changes"
+          >
             https://www.seattle.gov/utilities/protecting-our-environment/community-programs/climate-change/projected-changes.
           </a>
         </p>

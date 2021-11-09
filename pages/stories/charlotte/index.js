@@ -388,7 +388,11 @@ const Section13 = () => {
           1 Melissa Denchak, “Flooding and Climate Change: Everything You Need
           to Know,” National Resources Defense Council, April 10, 2019,
           {' '}
-          <a href="https://www.nrdc.org/stories/flooding-and-climate-change-everything-you-need-know.">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.nrdc.org/stories/flooding-and-climate-change-everything-you-need-know."
+          >
             https://www.nrdc.org/stories/flooding-and-climate-change-everything-you-need-know..
           </a>
         </p>

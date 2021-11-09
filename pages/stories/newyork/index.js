@@ -497,7 +497,11 @@ const Section18 = () => {
         <p>
           1 “Be A Buddy,” Point,
           {' '}
-          <a href="https://thepoint.org/be-a-buddy-program">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://thepoint.org/be-a-buddy-program"
+          >
             https://thepoint.org/be-a-buddy-program/.
           </a>
         </p>

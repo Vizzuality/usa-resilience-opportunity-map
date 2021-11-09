@@ -338,7 +338,11 @@ const Section13 = () => {
           1 Priyanka Runwal, “Cool Roofs Can Help Shield California’s Cities
           Against Heat Waves,” Berkeley Lab, press release, August 14, 2019,
           {' '}
-          <a href="https://newscenter.lbl.gov/2019/08/14/cool-roofs-can-help-shield-californias-cities-against-heat-waves">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://newscenter.lbl.gov/2019/08/14/cool-roofs-can-help-shield-californias-cities-against-heat-waves"
+          >
             https://newscenter.lbl.gov/2019/08/14/cool-roofs-can-help-shield-californias-cities-against-heat-waves/.
           </a>
         </p>
@@ -346,7 +350,11 @@ const Section13 = () => {
           2 “Climate Change in the Los Angeles Region,” UCLA Institute of the
           Environment and Sustainability, 2015,
           {' '}
-          <a href="https://www.ioes.ucla.edu/project/climate-change-in-the-los-angeles-region">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.ioes.ucla.edu/project/climate-change-in-the-los-angeles-region"
+          >
             https://www.ioes.ucla.edu/project/climate-change-in-the-los-angeles-region/.
           </a>
         </p>
@@ -355,7 +363,11 @@ const Section13 = () => {
           2017 Los Angeles County Green Buildings Standard Code,” City of Los
           Angeles Department of Public Works, October 16, 2018,
           {' '}
-          <a href="http://file.lacounty.gov/SDSInter/bos/supdocs/128102.pdf">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="http://file.lacounty.gov/SDSInter/bos/supdocs/128102.pdf"
+          >
             http://file.lacounty.gov/SDSInter/bos/supdocs/128102.pdf.
           </a>
         </p>
