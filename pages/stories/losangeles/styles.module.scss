@@ -134,6 +134,31 @@
   margin-bottom: 0.2rem;
 }
 
+.footerPageContainer {
+  color: white;
+  hyphens: auto;
+  margin-top: 0;
+  padding: 0 var(--padding-quote);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  div {
+    border-top: 1px solid white;
+    padding: 20px 0 20px 0;
+  }
+
+  p {
+    font-size: 10px;
+    line-height: 1rem;
+    margin: 0;
+    padding: 1.5px 0;
+
+    @media screen and (min-width: 1000px) {
+      font-size: 11px;
+    }
+  }
+}
+
 // Section1
 .section1 {
   background: url("/assets/images/stories/losangeles/la_section_1_bg.png");
@@ -317,12 +342,13 @@
       justify-content: flex-end;
       margin-right: 0;
       position: absolute;
-      right: 0;
-      width: 50%;
+      right: -10%;
+      width: 60%;
+      height: 100%;
     }
 
     @media screen and (min-width: 1200px) {
-      height: auto;
+      height: 100%;
       right: 0;
     }
 
@@ -356,6 +382,7 @@
 
     @media screen and (min-width: 1200px) {
       margin-left: 52%;
+      max-width: 35rem;
     }
 
     @media screen and (min-width: 1500px) {
@@ -503,14 +530,13 @@
       justify-content: flex-end;
       margin-right: 0;
       position: absolute;
-      right: -15%;
+      right: 0;
       top: 0;
       width: 50%;
     }
 
     @media screen and (min-width: 1200px) {
       height: auto;
-      right: 0;
     }
 
     .section9Img {

@@ -138,14 +138,19 @@
   overflow-wrap: break-word;
   word-wrap: break-word;
 
-  p {
+  div {
     border-top: 1px solid white;
-    font-size: 10px;
-    margin: 0;
     padding: 20px 0 20px 0;
+  }
+
+  p {
+    font-size: 10px;
+    line-height: 1rem;
+    margin: 0;
+    padding: 1.5px 0;
 
     @media screen and (min-width: 1000px) {
-      font-size: 12px;
+      font-size: 11px;
     }
   }
 }
