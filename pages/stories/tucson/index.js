@@ -16,24 +16,29 @@ const Section1 = () => {
           <span>
             Rebates for
             <br />
-            <span className={styles.underline}> rainwater</span>
+            <span className={styles.underline}>Rainwater</span>
           </span>
         </div>
         <div className={styles.section1Text}>
           <p>
             In Arizona, the climate crisis has intensified drought and water
             shortages so much that, for the first quarter of 2021, the majority
-            of the state was either in severe, extreme or exceptional drought.
+            of the state was in severe, extreme, or exceptional drought.
+            {' '}
+            <sup>1</sup>
           </p>
           <p>
             Worse, the extent of extreme and exceptional droughts has increased
-            dramatically over the past decade.
+            dramatically over the past decade. 
+            {' '}
+            <sup>2</sup>
           </p>
           <p>
-            In Tucson, the community has long been dependent on groundwater
-            flowing from the snowy north into the dry south. Melted water from
-            the snowpacks in Colorado traditionally flows into Lake Mead,
-            providing a water supply even in the height of summer.
+            Since 1993, with the completion of the Central Arizona Project
+            (CAP), Tucson has been utilizing surface water flowing from the
+            snowy north into the dry south. Melted water from the snowpacks in
+            Colorado traditionally flows into Lake Mead, providing a water
+            supply even in the height of summer.
           </p>
         </div>
       </div>
@@ -59,15 +64,17 @@ const Section3 = () => {
         <div className={cx(styles.col, styles.colRight)} />
         <div className={cx(styles.col, styles.colLeft, styles.textWhite)}>
           <p>
-            But a changing climate means less snow in Colorado – and that means
-            less water in Arizona.
+            But, a changing climate means less snow in Colorado—and that means
+            less water to Arizona and other downstream states receiving Colorado
+            river water.
           </p>
           <p>
             This issue extends beyond Arizona. In August 2021, almost half of
-            the U.S. was experiencing some form of drought, the majority in the
-            western US. This “megadrought” began in 2000, and currently impacts
-            the lives of 57 million U.S. citizens. There has been nothing like
-            it for over 1,200 years – and it represents climate change-induced
+            the United States was experiencing some form of drought, the
+            majority in the western United States.3 This “megadrought” began in
+            2000, and currently impacts the lives of fifty-seven million US
+            citizens. There has been nothing like it for more than twelve
+            hundred years—and it represents climate-change-induced
             aridification.
           </p>
         </div>
@@ -91,25 +98,28 @@ const Section4 = () => {
           Helping Households Help Themselves
         </h5>
         <p>
-          Tucson Water recognized that a changing climate needed a new response
-          to water shortages. In 2011, it established a rebate program designed
-          to support households in making simple adaptations to their homes that
-          would help them harvest rainwater, as well as installing
-          water-efficient toilets and washers.
+          Tucson Water, alongside the surrounding community, recognized that a
+          changing climate needed a new response to water shortages. In 2011, it
+          established a rebate program designed to support households in making
+          simple adaptations to their homes that would help them harvest
+          rainwater, as well as installing water-efficient toilets and washers.
         </p>
-        <p>The program offers Tucson Water customers the following rebates:</p>
+        <p>
+          The program offers Tucson Water customers the following rebates aimed
+          at outdoor water use.
+        </p>
         <ul>
           <li className={styles.orderListItem}>
             <span className={cx(styles.textPrimary, styles.bold)}>
               {' '}
-              Rainwater harvesting rebate:
+              Rainwater Harvesting Rebate:
             </span>
             {' '}
             up to $2,000
           </li>
           <li className={styles.orderListItem}>
             <span className={cx(styles.textPrimary, styles.bold)}>
-              Gray water rebate:
+              Gray Water Rebate:
             </span>
             {' '}
             50% of the costs up to $1,000
@@ -117,11 +127,13 @@ const Section4 = () => {
           <li className={styles.orderListItem}>
             <span className={cx(styles.textPrimary, styles.bold)}>
               {' '}
-              Rainwater Harvesting Grant (Low-Income Program):
+              Rainwater Harvesting Grant
             </span>
             {' '}
-            a grant of up to $750 for families with an income equal to or less
-            than 100% of the Federal Poverty Level
+            (low-income program): a grant of up to $750 for families with an
+            income equal to or less than 100 percent of the federal poverty
+            level.
+            <sup>4</sup>
           </li>
         </ul>
       </div>
@@ -136,32 +148,33 @@ const Section5 = () => {
         <div className={cx(styles.col, styles.colRight)} />
         <div className={cx(styles.col, styles.colLeft, styles.textWhite)}>
           <p>
-            Tucson Water raised awareness of the program through notices on
-            water bills, as well as on their website, social media, and
-            community interaction.
+            Tucson Water raised awareness of the Rainwater Harvesting and Gray
+            Water Rebate programs through notices on water bills, as well as
+            through its website, social media, and community interaction.
           </p>
           <p>
-            When households apply for the rebate, they are first invited to a
-            three-hour workshop to learn more about conservation and water
-            efficiency.
+            When households apply for these rebates, they are first required to
+            attend a three-hour workshop to learn more about conservation and
+            water efficiency, the benefits of rainwater harvesting, and how to
+            calculate, install and maintain the system.
           </p>
           <p>
-            The workshop provides an opportunity for the homeowner to work with
-            Tucson Water to plan and calculate how much water they can save.
-            They can discuss how much water can be harvested from rooftop
-            run-off after rainfall. If significant, Tucson Water would recommend
-            installing gutters and a cistern to collect rainwater and advise on
-            how to put that water to use. For example, they may suggest
-            homeowners use the excess water to irrigate lawns and gardens.
+            The workshop provides an opportunity for the homeowner to better
+            understand how to plan and calculate how much water they can save,
+            as well as how much water can be harvested from rooftop runoff after
+            rainfall. The workshops cover active water harvesting that includes
+            installing gutters and a cistern to collect rainwater and how to put
+            that water to use. For example, homeowners can use collected rain to
+            irrigate trees and gardens.
           </p>
           <p>
             Following the workshop, the homeowner is free to hire their own
-            contractors to complete the fitting of their rainwater harvest
-            system, toilet or washer or make use of Tucson Water referrals for
-            qualified contractors.
+            contractors or to complete the installation of their active and/or
+            passive rainwater harvest system. Tucson Water maintains a list of
+            qualified contractors in case the homeowner requires a referral.
           </p>
           <p>
-            Once the work is done, the homeowner can redeem the applicable
+            Once the work is done, the homeowner can apply for the applicable
             rebates by providing Tucson Water with the receipts as proof of
             work.
           </p>
@@ -193,12 +206,12 @@ const Section7 = () => {
         <div className={cx(styles.col, styles.colRight, styles.textGray)}>
           <h5 className={cx(styles.sectionTitle)}>The Conservation Fee</h5>
           <p>
-            Tucson Water funds the rebate program using a Conservation Fee
-            attached to its water bills. A household pays around 8¢ per centum
-            cubic feet (CCF). This is a unit of measure used on water bills that
-            equals approximately 748 gallons. The sum goes directly to funding
-            water conservation projects. The fee has helped fund 60,690
-            residential rebates.
+            Tucson Water funds the rebate program using a conservation fee
+            attached to its water bills. A household pays around eight cents per
+            centum cubic feet (CCF). CCF is a unit of measure used on water
+            bills that equals approximately 748 gallons. The funding source
+            covers the water-conservation rebates and education/outreach
+            programs. The fee has helped fund 60,690 residential rebates.
           </p>
         </div>
       </div>
@@ -223,21 +236,19 @@ const Section8 = () => {
         <p>
           Water shortages and droughts disproportionately impact lower-income
           households that have less expendable income to finance a rainwater
-          harvest system and participate in Tucson Water’s water conservation
-          programs.
+          harvest system and participate in Tucson Water’s Water Conservation
+          Rebate program.
         </p>
         <p>
-          Analysis of rebate program users revealed the majority resided in the
-          wealthier northern enclave of the city, meaning that the recipients of
-          the rebate program were better positioned to afford the upfront cost
-          for water-saving measures before being reimbursed.
+          Analysis of the Rainwater Harvesting Rebate program revealed the
+          majority of installations were occurring in mid-to upper-income
+          northern areas of the city, where recipients of the rebate program
+          were better positioned to afford the upfront cost for water-saving
+          measures before being reimbursed.
         </p>
         <p>
-          In low-income, majority-Hispanic areas, in which many people do not
-          speak English as a first language, fewer families were applying for
-          rebates. Initially, a lack of interest was assumed, particularly as
-          they were less likely to have gardens that could benefit from
-          harvested rainwater.
+          In low-income, majority-Hispanic areas, where residents may not speak
+          English as a first language, fewer families were applying for rebates.
         </p>
       </div>
     </div>
@@ -256,21 +267,23 @@ const Section9 = () => {
       </div>
       <div className={cx(styles.contentRight, styles.container)}>
         <p>
-          The not-for-profit organization Sonora Environmental Research
-          Institute (SERI) argued that rather than disinclination, low-income
-          households weren’t applying for the rebate because they didn’t have
-          the funds to pay for interventions in advance.
+          The nonprofit organization Sonora Environmental Research Institute
+          (SERI) suspected low-income households weren’t applying for the rebate
+          because they didn’t have the funds to pay for interventions in advance
+          or because of a potential language barrier in understanding access to
+          the rebate programs.
         </p>
         <p>
-          SERI applied for a grant from the EPA’s Climate Justice Project and,
-          using a combination of the grant money and its own funds, launched a
-          pilot to bring rainwater harvesting solutions to low-income
-          households. When the pilot proved successful, Tucson Water took over
-          the funding using the Conservation Fee.
+          SERI utilized a grant from the Environmental Protection Agency’s
+          Climate Justice Project and its own funds to launch a pilot to bring
+          rainwater-harvesting solutions to low-income households. When the
+          pilot affirmed the underlying supposition, Tucson Water reworked the
+          program to provide accessibility to this low-income population of
+          Tucson Water consumers.
         </p>
         <p>
-          SERI went door-to-door talking to residents and inviting them to
-          apply.
+          SERI trains community health workers to visit residents and invite
+          them to apply to Tucson Water’s rebate programs.
         </p>
       </div>
     </div>
@@ -290,41 +303,40 @@ const Section10 = () => {
         </div>
         <div className={styles.contentLeft}>
           <p>
-            To qualify for the program, a household has to demonstrate that
-            they:
+            To qualify for the program, a household has to demonstrate that it
           </p>
           <ul>
             <li className={cx(styles.listItem)}>
-              Fall under the federal poverty limit
+              falls under the federal poverty limit;
             </li>
             <li className={cx(styles.listItem)}>
-              Pay for their water utilities through Tucson Water
+              pays for water utilities through Tucson Water;
             </li>
-            <li className={cx(styles.listItem)}>Paid property taxes</li>
+            <li className={cx(styles.listItem)}>paid property taxes;</li>
             <li className={cx(styles.listItem)}>
-              Own or rent a property in good condition
-            </li>
-            <li className={cx(styles.listItem)}>
-              Maintain the system when it is installed
+              owns or rents a property in good condition;
             </li>
             <li className={cx(styles.listItem)}>
-              Can provide their water records for the year previous, and year
-              after, the installation
+              maintains the system when it is installed;
             </li>
-            <li className={cx(styles.listItem)}>Paid property taxes</li>
             <li className={cx(styles.listItem)}>
-              Can attend a three-hour educational workshop
+              can provide its water records for the year previous, and the year
+              after the installation; and
+            </li>
+            <li className={cx(styles.listItem)}>
+              can attend a three-hour educational workshop.
             </li>
           </ul>
           <p>
-            If their application is successful and these requirements are met,
-            SERI works with a private contractor to assess the property and
-            collaborates with the homeowner to understand which rainwater
-            harvesting solutions can be implemented. This might be a passive or
-            active cistern, or groundworks system.
+            If the application is successful and these requirements are met,
+            SERI works with a private contractor to assess the property, and
+            collaborates with the homeowner to design rainwater-harvesting
+            solutions that best suit their property. This might be a passive
+            system of earthworks, an active system of roof gutters and a
+            cistern.
           </p>
           <p>
-            SERI, the contractor and the homeowner agree on the scope of work
+            SERI, the contractor, and the homeowner agree on the scope of work
             and the costs.
           </p>
         </div>
@@ -346,21 +358,21 @@ const Section11 = () => {
       <div className={cx(styles.contentRight, styles.container)}>
         <p>
           If the homeowner gives the go-ahead, they can choose whether to use
-          SERI’s contractor or hire their own. The vast majority choose to go
-          with SERI’s recommendation.
+          SERI’s contractor or hire their own licensed contractor. The vast
+          majority choose SERI’s recommendation.
         </p>
         <p>
           SERI provides a grant to cover the majority of the costs, and can
-          offer a no-interest loan to cover the full costs of the installation.
-          The homeowner does not have to apply for the rebate as SERI submits
+          offer a no-interest loan to cover the full cost of the installation.
+          The homeowner does not need to apply for the rebate, as SERI submits
           all the paperwork to Tucson Water directly.
         </p>
         <p>
-          Tucson and SERI measure the success of the intervention by the number
-          of installations they complete. Since launching the low-income rebate
-          program, SERI has worked with over 400 households, installing $460,000
-          worth of rainwater harvesting systems and giving out $73,000 in
-          grants.
+          One measure of success of this program has been the accessibility of
+          the rebates and the number of installations they have completed. Since
+          launching the low-income rebate program, SERI has worked with more
+          than four hundred households, installing $460,000 worth of
+          rainwater-harvesting systems and giving out $73,000 in grants.
         </p>
       </div>
     </div>
@@ -375,13 +387,14 @@ const Section12 = () => {
         <div className={cx(styles.col, styles.colLeft, styles.textGray)}>
           <h5 className={cx(styles.sectionTitle)}>A Greener Home</h5>
           <p>
-            Along with installing the rainwater harvesting system, SERI
+            Along with installing the rainwater-harvesting system, SERI
             encourages low-income households to plant drought-resistant gardens
-            which can be tended using the collected rainwater.
+            that can be tended using the collected rainwater.
           </p>
           <p>
-            This increases people’s well-being and helps to tackle extreme heat
-            by increasing the tree canopy.
+            This contributes to people’s wellbeing and helps to tackle other
+            climate impacts, such as extreme heat, by increasing their green
+            space.
           </p>
         </div>
       </div>
@@ -397,7 +410,7 @@ const Section13 = () => {
         image="/assets/images/stories/tucson/tu_people_irene_ogata.jpg"
         authorName="Ann Marie Wolf"
         authorPosition="Director"
-        authorCompany="Sonora Environmental Research Institute (SERI)"
+        authorCompany="SERI"
       />
     </div>
   );
