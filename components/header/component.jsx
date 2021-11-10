@@ -188,7 +188,8 @@ export default function Header() {
   const [isMenuOpen, openMenu] = useState(false);
   const { pathname } = useRouter();
   const isDarkHeader = {
-    desktop: pathname === '/' || pathname === '/about',
+    desktop:
+      pathname === '/' || pathname === '/about' || pathname === '/contact',
     mobile: pathname === '/',
   };
 

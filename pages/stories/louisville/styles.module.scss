@@ -42,6 +42,10 @@
   color: var(--brand-primary);
 }
 
+.textSecondary {
+  color: var(--brand-secondary);
+}
+
 .bgWhite {
   background-color: var(--color-white);
 }
@@ -128,6 +132,38 @@
 
 .orderedListItem {
   margin-bottom: 0.8rem;
+}
+
+.footerPageContainer {
+  color: white;
+  hyphens: auto;
+  margin-top: 0;
+  padding: 0 var(--container-padding);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+ 
+
+  div {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 20px var(--container-padding);
+  }
+
+  p {
+    font-size: 10px;
+    line-height: 1rem;
+    margin: 0;
+    padding: 1.5px 0;
+
+    @media screen and (min-width: 1000px) {
+      font-size: 11px;
+    }
+  }
+
+  p:first-child {
+    border-top: 1px solid white;
+    padding-top: 20px;
+  }
 }
 
 // Section1
@@ -302,7 +338,7 @@
   }
 
   @media screen and (min-width: 1400px) {
-    background-size: auto 80%;
+    background-size: auto 70%;
     padding-top: 4rem;
   }
 
@@ -347,10 +383,6 @@
       background-size: auto 100%;
       top: 1%;
       left: -12vw;
-    }
-    
-    @media screen and (min-width: 1400px) {
-      left: -6vw;
     }
   }
 
@@ -452,6 +484,7 @@
 
   @media screen and (min-width: 1400px) {
     background-size: auto 101%;
+    background-position: bottom left 0;
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
@@ -562,8 +595,8 @@
       }
 
       @media screen and (min-width: 1000px) {
-        background-position: center;
-        height: 100%;
+        background-position: bottom right;
+        height: 101%;
         width: 50vw;
       }
     }

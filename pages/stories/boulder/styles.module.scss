@@ -130,6 +130,38 @@
   margin-bottom: 0.2rem;
 }
 
+.footerPageContainer {
+  color: white;
+  hyphens: auto;
+  margin-top: 0;
+  padding: 0 var(--container-padding);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+ 
+
+  div {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 20px var(--container-padding);
+  }
+
+  p {
+    font-size: 10px;
+    line-height: 1rem;
+    margin: 0;
+    padding: 1.5px 0;
+
+    @media screen and (min-width: 1000px) {
+      font-size: 11px;
+    }
+  }
+
+  p:first-child {
+    border-top: 1px solid white;
+    padding-top: 20px;
+  }
+}
+
 // Section1
 .section1 {
   background: url("/assets/images/stories/boulder/bo_section_1_bg.png");
@@ -346,7 +378,7 @@
 
     @media screen and (min-width: 900px) {
       max-width: 35rem;
-      margin-left: 45%;
+      margin: 0 0 4rem 45%;
     }
 
     @media screen and (min-width: 1200px) {
@@ -362,7 +394,7 @@
     @media screen and (min-width: 900px) {
       position: absolute;
       display: flex;
-      bottom: 4rem;
+      bottom: 0;
       left: 0;
       width: 40%;
       justify-content: flex-end;
@@ -371,7 +403,6 @@
 
     @media screen and (min-width: 1200px) {
       left: -5vw;
-      top: 0;
       width: 50vw;
     }
 
@@ -460,7 +491,7 @@
   }
 
   @media screen and (min-width: 1400px) {
-    background-size: auto 100%;
+    background-size: auto 90%;
     padding: 4rem 0;
   }
 

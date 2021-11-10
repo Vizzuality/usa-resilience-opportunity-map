@@ -14,11 +14,11 @@ const Section1 = () => {
       <div className={styles.container}>
         <div className={styles.section1Title}>
           <span>
-            Community mobilization
+            Community Mobilization
             <br />
             for 
             {' '}
-            <span className={styles.underline}>cool neighborhoods</span>
+            <span className={styles.underline}>Cool Neighborhoods</span>
           </span>
         </div>
         <div className={styles.section1Text}>
@@ -28,10 +28,11 @@ const Section1 = () => {
             2012, coastal flooding, and extreme heat.
           </p>
           <p>
-            The city is adjacent to 120,000 acres of undeveloped land that
-            represents a clear wildfire risk. In 2010 the Fourmile Fire
-            destroyed 169 homes, 6181 acres and led to $217 million in insured
-            losses.
+            Each summer, roughly four hundred New York residents are
+            hospitalized due to heat-related causes, while at least 100–125
+            succumb to their deadly effects. The actual number may be higher, as
+            fatal incidents such as cardiac arrests in high summer may not be
+            recorded as heat related.
           </p>
         </div>
       </div>
@@ -58,16 +59,16 @@ const Section3 = () => {
         <div className={cx(styles.col, styles.colRight)}>
           <p>
             Residents most impacted by extreme heat are located in former
-            redlined zones – primarily Black neighborhoods, including Harlem and
-            the Bronx. Air pollution is around 20 times more severe in some
-            parts of the Bronx than in the rest of the city, leading to higher
-            than average temperatures.
+            redlined zones—primarily Black neighborhoods, including upper
+            Manhattan and the Bronx. Air pollution is around twenty times more
+            severe in some parts of the Bronx than in the rest of the city,
+            leading to higher-than-average temperatures.
           </p>
           <p>
             These are neighborhoods where there is significantly less tree
-            canopy, higher levels of air pollution, a history of disinvestment,
-            and where residents sometimes struggle to afford amenities like air
-            conditioning.
+            canopy, higher levels of air pollution, and a history of
+            disinvestment—and where residents sometimes struggle to afford
+            amenities like air conditioning.
           </p>
         </div>
       </div>
@@ -89,33 +90,39 @@ const Section4 = () => {
         <div className={styles.contentLeft}>
           <h5 className={cx(styles.sectionTitle)}>Cool Neighborhoods NYC</h5>
           <p>
-            To address extreme heat, the New York City Mayor’s Office worked
-            with numerous partners including community groups, the New York City
-            Panel on Climate Change, Columbia University, New York City
-            Emergency Management Agency, New York City Small Business Service,
-            and the Department of Public Health to initiate a number of heat
-            mitigation programs and tools as part of Cool Neighborhoods NYC.
+            To address extreme heat, the New York City Mayor’s Office of Climate
+            Resiliency worked with numerous partners—including community groups,
+            the New York City Panel on Climate Change, Columbia University, the
+            New York City Emergency Management Agency, the New York City Small
+            Business Service, the Department of Parks and Recreation, and the
+            New York City Department of Health to initiate a number of heat
+            adaptation programs and tools as part of Cool Neighborhoods NYC.
           </p>
           <p>
-            The program is New York City’s first heat mitigation project.
-            Launched in 2017 the plan is a comprehensive resilience strategy
-            that is informed by health and climate data. The plan focuses
-            investments and programming in the most vulnerable and underserved
-            communities in NYC.
+            The program is New York City’s first heat adaptation plan. Launched
+            in 2017, it is a comprehensive resilience strategy that is informed
+            by health and climate data. The program focuses investments and
+            programming in the most vulnerable and underserved communities in
+            New York City.
           </p>
-          <p>Examples of initiatives within the project are:</p>
+          <p>Examples of initiatives within the project include</p>
           <ul>
             <li className={cx(styles.listItem)}>
-              Creating a heat vulnerability index
+              creating a Heat Vulnerability Index;
             </li>
             <li className={cx(styles.listItem)}>
-              Developing an air conditioning program
+              reforming the Low Income Home Energy Assistance Program (LIHEAP)
+              {' '}
             </li>
-            <li className={cx(styles.listItem)}>Increasing the tree canopy</li>
-            <li className={cx(styles.listItem)}>Building cooling centers</li>
-            <li className={cx(styles.listItem)}>NYC CoolRoofs Program</li>
+            <li className={cx(styles.listItem)}>increasing the tree canopy;</li>
             <li className={cx(styles.listItem)}>
-              Be A Buddy – a community collaboration
+              investing in cooling centers;
+            </li>
+            <li className={cx(styles.listItem)}>
+              developing the NYC CoolRoofs Program; and
+            </li>
+            <li className={cx(styles.listItem)}>
+              creating Be A Buddy, a community collaboration.
             </li>
           </ul>
         </div>
@@ -137,19 +144,22 @@ const Section5 = () => {
       <div className={cx(styles.contentRight, styles.container)}>
         <h5 className={cx(styles.sectionTitle)}>Heat Vulnerability Index</h5>
         <p>
-          The Department of Public Health and Columbia University partnered to
-          develop Cool Neighborhoods NYC and the heat vulnerability index.
+          The New York City Mayor&apos;s Office of Climate Resiliency and the
+          New York City Department of Health partnered to develop Cool
+          Neighborhoods. The Heat Vulnerability Index was developed by the New
+          York City Department of Health and Columbia University.
         </p>
         <p>
-          It is a tool to understand what neighborhoods face the greatest risk
-          from extreme heat and where to invest in green infrastructure,
-          programing that supports social cohesion, such as the Be A Buddy
-          program, and where to target outreach for cooling services such as
-          cooling centers or the Home Energy Assistance Program.
+          The index is a tool to understand what neighborhoods face the greatest
+          risk from extreme heat, as well as where to invest in green
+          infrastructure and programming that supports social cohesion—such as
+          the Be A Buddy program—and where to target outreach for cooling
+          services such as cooling centers or the Home Energy Assistance
+          Program.
         </p>
         <p>
-          Using data generated by the index, the Mayor’s Office requested
-          funding from the Department of Public Health for a range of cooling
+          Using data, generated by the index, the Mayor&apos;s Office of Climate
+          Resiliency advocated for funding from the City for a range of cooling
           solutions for communities under the umbrella of the Cool Neighborhoods
           NYC project.
         </p>
@@ -162,11 +172,11 @@ const Section6 = () => {
   return (
     <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
       <Quote
-        text="The heat vulnerability index is a data tool grounded in climate equity as a way to make investments."
+        text="The Heat Vulnerability Index is a data tool grounded in climate equity as a way to make investments."
         image="/assets/images/stories/newyork/ny_people_daphne_lundi.jpeg"
         authorName="Daphne Lundi"
         authorPosition="Deputy Director of Social Resilience"
-        authorCompany="New York City Mayor´s Office"
+        authorCompany="New York City Mayor´s Office of Climate Resilience"
       />
     </div>
   );
@@ -188,7 +198,8 @@ const Section7 = () => {
           <p>
             At the heart of Cool Neighborhoods NYC are community partnerships,
             including the Be A Buddy program being implemented throughout
-            various neighborhoods in Harlem, the Bronx, and Brooklyn.
+            various neighborhoods in upper Manhattan, the Bronx, and Brooklyn.
+            <sup>1</sup>
           </p>
           <p>
             Be A Buddy is designed to prepare the community for future climate
@@ -196,9 +207,9 @@ const Section7 = () => {
           </p>
           <p>
             The Hunts Point Section in the South Bronx, for instance, is an
-            under-resourced, low-income neighborhood whose inhabitants often
-            exhibit poor health outcomes, such as high levels of diabetes, heart
-            disease, and obesity.
+            environmental justice community that works to solve local problems
+            that have traditionally led to poor health outcomes, such as high
+            levels of diabetes, heart disease, and obesity.
           </p>
         </div>
       </div>
@@ -218,17 +229,19 @@ const Section8 = () => {
       </div>
       <div className={cx(styles.contentRight, styles.container)}>
         <p>
-          The Be A Buddy program is run out of community center, The Point,
-          located in the Hunts Point Section. This community outreach
-          organization is dedicated to youth development and the cultural and
-          economic revitalization of the neighborhood. The program trains people
-          of all ages in the neighborhood to support vulnerable residents.
+          The Be A Buddy program is run out of a community center, The Point
+          Community Development Corporation (“THE POINT CDC”), located in the
+          Hunts Point Section. This community-outreach organization is dedicated
+          to youth development and the cultural and economic revitalization of
+          the neighborhood. The program trains people of all ages in the
+          neighborhood to support vulnerable residents.
         </p>
         <p>
           The support includes an Emergency Preparedness Program funded by the
-          Department of Public Health as part of a pilot project. The target
-          demographic of the program is vulnerable seniors who are at risk of
-          extreme-heat-related illnesses such as asthma and cardiac arrest.
+          New York City Department of Health as part of a pilot project. The
+          target demographic of the program is vulnerable seniors who are at
+          risk of extreme-heat-related illnesses, such as asthma and cardiac
+          arrest.
         </p>
       </div>
     </div>
@@ -239,14 +252,11 @@ const Section9 = () => {
   return (
     <div className={cx(styles.bgSecondary, styles.quoteContainer)}>
       <Quote
-        text="When there’s trouble, the folks that respond first are our neighbors.
-        Being able to train each other and to be able to create plans around
-        how we work together in the case of an emergency, is a very real
-        and living thing for people at this point."
+        text="When there’s trouble, the folks that respond first are our neighbors. Being able to train each other, and to be able to create plans around how we work together in the case of an emergency, is a very real and living thing for people at this point."
         image="/assets/images/stories/newyork/ny_people_danny_peralta.jpg"
         authorName="Danny Peralta"
         authorPosition="Managing Director"
-        authorCompany="The Point"
+        authorCompany="The Point Community Development Corporation"
       />
     </div>
   );
@@ -266,19 +276,19 @@ const Section10 = () => {
         <div className={styles.contentLeft}>
           <p>
             Buddies are trained on the impact of extreme heat. They also run
-            cooling stations in the neighborhood that operate, not only as
-            places of rest and sanctuary but as outreach opportunities to direct
+            cooling stations in the neighborhood that operate not only as places
+            of rest and sanctuary, but as outreach opportunities to direct
             residents to other services they may need to access. The cooling
             stations have also become hubs for public art and performance.
           </p>
           <p>
-            Many of the Be A Buddy systems have reached thousands of New York
-            residents ahead of heatwave events, helping to prepare them for a
-            potential emergency.
+            Be A Buddy systems have reached thousands of New York residents
+            ahead of heatwave events, helping to prepare them for a potential
+            emergency.
           </p>
           <p>
-            As a result, the intervention has helped increase social cohesion as
-            well as tackle extreme heat.
+            As a result, the intervention has helped increase social cohesion,
+            while also tackling extreme heat.
           </p>
         </div>
       </div>
@@ -290,9 +300,7 @@ const Section11 = () => {
   return (
     <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
       <Quote
-        text="Everybody has their own communities already, that they are part
-        of. How can we bring people in those communities together to
-        form new networks?"
+        text="Everybody has their own communities already, that they are part of. How can we bring people in those communities together to form new networks?"
         image="/assets/images/stories/newyork/ny_people_aryanna_osorio.jpeg"
         authorName="Aryanna Osorio"
         authorPosition="Resilience Coordinator"
@@ -317,14 +325,15 @@ const Section12 = () => {
           <h5 className={cx(styles.sectionTitle)}>Tree Cover</h5>
           <p>
             The heat vulnerability index helps identify neighborhoods in New
-            York that historically lack tree cover – neighborhoods that tend to
-            be low-income and predominantly Black communities. The city
-            allocated $100 million to planting street trees and increasing tree
-            cover in public parks to create more shade that can, in turn, tackle
-            extreme heat. Since 2017, the program has planted 6,000 trees. While
-            it will take several years to see the impact of increasing tree
-            canopy to mitigate extreme heat impacts, the city recognized that
-            investing in tree planting now will reap benefits over time.
+            York where residents are most at risk of heat mortality–
+            neighborhoods that tend to be low-income and predominantly Black
+            communities. The city allocated $100 million to planting street
+            trees and increasing tree cover in public parks to create more shade
+            that can, in turn, tackle extreme heat. Since 2017, the program has
+            planted six thousand trees. While it will take several years to see
+            the impact of increasing tree canopy to adapt to extreme heat
+            impacts, the city recognized that investing in tree planting now
+            will reap benefits over time.
           </p>
         </div>
       </div>
@@ -345,25 +354,26 @@ const Section13 = () => {
       <div className={cx(styles.contentRight, styles.container)}>
         <h5 className={cx(styles.sectionTitle)}>NYC CoolRoofs Program</h5>
         <p>
-          Using the index to identify heat vulnerable neighborhoods, NYC
+          Using the index to identify heat-vulnerable neighborhoods, NYC
           CoolRoofs offers a service to affordable housing, public housing, and
           community centers to coat those spaces with white paint. This creates
           a thermal barrier and lowers a building’s temperature.
         </p>
         <p>
-          Because the heat vulnerability index is used to identify spaces for
+          Because the Heat Vulnerability Index is used to identify spaces for
           the intervention, the city proactively reaches out to building owners
           and residents to see if they are interested in the program. As the
           program is focused on social housing and community properties, tenants
-          do not need to apply for the intervention – the city comes to them.
+          do not need to apply for the intervention—the city comes to them.
         </p>
         <p>
           Critical social infrastructure is prioritized, and the city funds the
           intervention. Working with the New York City Small Business Service,
-          NYC CoolRoofs Program also trains unemployed and under-employed people
-          through the HOPE Program on how to deliver the intervention, providing
-          new green industry job opportunities. The program recruits between
-          50-70 people annually.
+          the NYC CoolRoofs Program also trains unemployed and under-employed
+          people through the Housing Opportunities and Prevention of Evictions
+          (HOPE) Program on how to deliver the intervention, providing new
+          green-industry job opportunities. The program recruits 50–70 people
+          annually.
         </p>
       </div>
     </div>
@@ -378,17 +388,18 @@ const Section14 = () => {
           <div>
             <h5 className={cx(styles.sectionTitle)}>Cooling Centers</h5>
             <p className={styles.paragraph}>
-              Every year, New York operates 100 cooling centers where residents
-              struggling with extreme heat can find relief in a cool space. This
-              might be in a community center with air-conditioning, or simply a
-              shaded area with running water such as a fountain.
+              Every year, New York operates several hundred cooling centers,
+              where residents struggling with extreme heat can find relief in a
+              cool space. This might be in a community center with air
+              conditioning, or simply a shaded area with running water, such as
+              a fountain.
             </p>
             <p className={styles.paragraph}>
-              The Mayor’s office has worked to improve signage to the cooling
-              centers in partnership with New York City Emergency Management to
-              inform community members about places they can cool down during
-              heatwaves. The city is also working with Emergency Management to
-              deliver training on heat preparedness.
+              The mayor’s office has worked to improve signage to the cooling
+              centers, in partnership with New York City Emergency Management,
+              to inform community members about places where they can cool down
+              during heat waves. The city is also working with Emergency
+              Management to deliver training on heat preparedness.
             </p>
           </div>
           <div>
@@ -396,10 +407,10 @@ const Section14 = () => {
             <p className={styles.paragraph}>
               The coronavirus crisis meant more vulnerable people were trapped
               indoors, often in housing not designed for extreme heat. In
-              response, the city ran an air conditioning program, providing air
-              conditioners to 74,000 low-income seniors in 2020. The Mayor’s
-              office worked with local community groups to identify those
-              individuals most in need.
+              response, the city ran an air-conditioning program, providing air
+              conditioners to seventy-four thousand low-income seniors in 2020.
+              The mayor’s office worked with local community groups to identify
+              those individuals most in need.
             </p>
           </div>
         </div>
@@ -412,14 +423,11 @@ const Section15 = () => {
   return (
     <div className={cx(styles.bgSecondary, styles.quoteContainer)}>
       <Quote
-        text="It's critical to understand the work that's being done on the
-        ground. For our work, particularly around preparedness, having
-        those community partners has been really critical in our ability to
-        reach people."
+        text="It's critical to understand the work that's being done on the ground. For our work, particularly around preparedness, having those community partners has been really critical in our ability to reach people."
         image="/assets/images/stories/newyork/ny_people_daphne_lundi.jpeg"
         authorName="Daphne Lundi"
         authorPosition="Deputy Director of Social Resilience"
-        authorCompany="New York City Mayor´s Office"
+        authorCompany="New York City Mayor´s Office of Climate Resiliency"
       />
     </div>
   );
@@ -444,7 +452,7 @@ const Section16 = () => {
                 Deputy Director of Social Resilience
               </div>
               <div className={styles.quoteAuthorCompany}>
-                New York City Mayor´s Office
+                New York City Mayor´s Office of Climate Resiliency
               </div>
             </div>
           </div>
@@ -453,8 +461,8 @@ const Section16 = () => {
           <p>
             Key to Cool Neighborhoods NYC’s success has been working with both
             physical and social infrastructure in the city to identify
-            individuals in need, and tap into and support existing initiatives
-            that are trusted and recognized by local communities.
+            individuals in need, and tapping into and supporting existing
+            initiatives that are trusted and recognized by local communities.
           </p>
         </div>
       </div>
@@ -466,14 +474,38 @@ const Section17 = () => {
   return (
     <div className={cx(styles.bgPrimary, styles.quoteContainer)}>
       <Quote
-        text="We need to invest in programs like Be A Buddy which are
-        preemptive. They serve to prepare people and identify the root
-        causes of problems, rather than wait until after the damage is done."
+        text="We need to invest in programs like Be A Buddy, which are preemptive. They serve to prepare people and identify the root causes of problems, rather than wait until after the damage is done."
         image="/assets/images/stories/newyork/ny_people_danny_peralta.jpg"
         authorName="Danny Peralta"
         authorPosition="Managing Director"
-        authorCompany="The Point"
+        authorCompany="The Point Community Development Corporation"
       />
+    </div>
+  );
+};
+
+const Section18 = () => {
+  return (
+    <div
+      className={cx(
+        styles.bgPrimary,
+        styles.textWhite,
+        styles.footerPageContainer
+      )}
+    >
+      <div>
+        <p>
+          1 “Be A Buddy,” Point,
+          {' '}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://thepoint.org/be-a-buddy-program"
+          >
+            https://thepoint.org/be-a-buddy-program/.
+          </a>
+        </p>
+      </div>
     </div>
   );
 };
@@ -498,6 +530,7 @@ const NewYork = () => {
       <Section15 />
       <Section16 />
       <Section17 />
+      <Section18 />
       <MetaFooter exploreLink="/explore?id=224581" />
     </div>
   );

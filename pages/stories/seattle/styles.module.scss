@@ -134,6 +134,37 @@
   margin-bottom: 0.8rem;
 }
 
+.footerPageContainer {
+  color: white;
+  hyphens: auto;
+  margin-top: 0;
+  padding: 0 var(--container-padding);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  div {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 20px var(--container-padding);
+  }
+
+  p {
+    font-size: 10px;
+    line-height: 1rem;
+    margin: 0;
+    padding: 1.5px 0;
+
+    @media screen and (min-width: 1000px) {
+      font-size: 11px;
+    }
+  }
+
+  p:first-child {
+    border-top: 1px solid white;
+    padding-top: 20px;
+  }
+}
+
 // Section1
 .section1 {
   background: url("/assets/images/stories/seattle/st_section_1_bg.png");
@@ -254,7 +285,7 @@
     }
 
     &::after {
-      background-image: url("/assets/images/stories/seattle/st_section_3_bg.png");
+      background-image: url("/assets/images/stories/seattle/st_section_3_bg.jpg");
       background-size: cover;
       background-position: center;
       content: '';
@@ -426,7 +457,7 @@
     @media screen and (min-width: 1000px) {
       height: 106.5%;
       left: -15vw;
-      top: -5vh;
+      top: -4.8vh;
     }
 
     @media screen and (min-width: 1200px) {
@@ -439,7 +470,7 @@
     @media screen and (min-width: 1400px) {
       height: 106%;
       left: -2vw;
-      top: -5vh;
+      top: -4.2vh;
     }
 
     @media screen and (min-width: 1600px) {
