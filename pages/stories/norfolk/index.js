@@ -12,13 +12,13 @@ const Section1 = () => {
   return (
     <div className={styles.section1}>
       <div className={styles.container}>
-        <div className={styles.section1Title}>
+        <h1 className={styles.section1Title}>
           <span>
             A Petri Dish for
             <br />
             <span className={styles.underline}>Resilience Solutions</span>
           </span>
-        </div>
+        </h1>
         <div className={styles.section1Text}>
           <p>
             As a result of climate change, the US east coast is increasingly at

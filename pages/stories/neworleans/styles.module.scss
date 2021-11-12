@@ -116,11 +116,9 @@
 
   .section1Title {
     position: relative;
-    font-family: "Big Caslon", serif;
     color: white;
     font-size: 3.2rem;
     line-height: 1.2;
-    letter-spacing: -0.5px;
     margin-bottom: 1rem;
 
     @media screen and (min-width: 600px) {
@@ -132,11 +130,6 @@
       line-height: 1.1;
       letter-spacing: -1.5px;
       max-width: 66rem;
-    }
-
-    span {
-      position: relative;
-      z-index: 2;
     }
 
     &::before {
@@ -161,6 +154,14 @@
         top: -4.5rem;
         left: -4.5rem;
       }
+    }
+
+    span {
+      font-family: "Big Caslon", sans-serif;
+      font-weight: normal;
+      letter-spacing: normal;
+      position: relative;
+      z-index: 2;
     }
   }
 
