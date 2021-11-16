@@ -160,7 +160,7 @@ export const stateLayer = createSelector(
           },
           source: {
             tiles: [
-              'https://api.us-resilience-map.vizzuality.com/api/v1/geometries/tiles/{z}/{x}/{y}?level=1',
+              `${process.env.NEXT_PUBLIC_API}/geometries/tiles/{z}/{x}/{y}?level=1`,
             ],
             type: 'vector',
           },
@@ -270,7 +270,7 @@ export const countyLayer = createSelector(
             },
             source: {
               tiles: [
-                'https://api.us-resilience-map.vizzuality.com/api/v1/geometries/tiles/{z}/{x}/{y}?level=2',
+                `${process.env.NEXT_PUBLIC_API}/geometries/tiles/{z}/{x}/{y}?level=2`,
               ],
               type: 'vector',
             },
@@ -351,7 +351,7 @@ export const countyLayer = createSelector(
             },
             source: {
               tiles: [
-                'https://api.us-resilience-map.vizzuality.com/api/v1/geometries/tiles/{z}/{x}/{y}?level=2',
+                `${process.env.NEXT_PUBLIC_API}/geometries/tiles/{z}/{x}/{y}?level=2`,
               ],
               type: 'vector',
             },
@@ -468,7 +468,7 @@ export const censusLayer = createSelector(
                 // level 1: states
                 // level 2: counties
                 // level 3: census
-                `https://api.us-resilience-map.vizzuality.com/api/v1/geometries/tiles/{z}/{x}/{y}?level=3&parent-id=${geo.id}`,
+                `${process.env.NEXT_PUBLIC_API}/geometries/tiles/{z}/{x}/{y}?level=3&parent-id=${geo.id}`,
               ],
               type: 'vector',
             },
@@ -547,7 +547,7 @@ export const censusLayer = createSelector(
             },
             source: {
               tiles: [
-                `https://api.us-resilience-map.vizzuality.com/api/v1/geometries/tiles/{z}/{x}/{y}?level=3&parent-id=${geo.id}`,
+                `${process.env.NEXT_PUBLIC_API}/geometries/tiles/{z}/{x}/{y}?level=3&parent-id=${geo.id}`,
               ],
               type: 'vector',
             },
