@@ -52,7 +52,10 @@ const Section1 = () => {
 const Section2 = () => {
   return (
     <div className={styles.section2}>
-      <VideoPlayer url="https://www.youtube.com/watch?v=visUyBdV6DQ&ab_channel=AtlanticCouncil" />
+      <VideoPlayer
+        thumbnail="/assets/images/stories/neworleans/no_video_thumb.jpg"
+        url="https://www.youtube.com/watch?v=visUyBdV6DQ&ab_channel=AtlanticCouncil"
+      />
     </div>
   );
 };
