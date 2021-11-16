@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Flicking from '@egjs/react-flicking';
 import ReactScrollWheelHandler from 'react-scroll-wheel-handler';
@@ -94,6 +94,15 @@ const Stories = () => {
       flickingThumbs.current.next();
     }
   };
+
+  useEffect(() => {
+    if (currentPanel > 4) {
+      storyThumbsGo('down');
+    }
+    if (currentPanel <= 4 && currentPanel !== 0) {
+      flickingThumbs.current.moveTo(currentPanel - 1);
+    }
+  }, [handleScroll]);
 
   return (
     <MediaContextProvider>
