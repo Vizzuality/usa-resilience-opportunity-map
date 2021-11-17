@@ -188,7 +188,7 @@
     }
 
     @media screen and (min-width: 1000px) {
-      right: 0;
+      right: -10%;
     }
   }
 }
@@ -425,7 +425,13 @@
   background-size: 100vw auto;
   background-repeat: no-repeat;
   padding-top: 1rem;
-  padding-bottom: 70vh;
+  padding-bottom: 60vh;
+
+  @media screen and (min-width: 600px) {
+    background-size: 51% auto;
+    padding-bottom: 60vh;
+    padding-top: 2rem;
+  }
 
   @media screen and (min-width: 1000px) {
     background-size: 61% auto;
