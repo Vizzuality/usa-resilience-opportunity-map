@@ -1,7 +1,11 @@
 .marker-container {
   position: relative;
+  height: 45px;
+  width: 30px;
 
   .image-story {
+    bottom: 30px;
+    position: absolute;
     border: 1px solid $color-white;
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
@@ -10,10 +14,10 @@
     box-sizing: border-box;
     cursor: pointer;
     display: inline-block;
-    height: 35px;
+    height: 30px;
     transition: all 0.2s ease-in-out;
     transform: rotate(135deg);
-    width: 35px;
+    width: 30px;
 
     &:hover {
       transform: scale(3) rotate(135deg);
@@ -37,7 +41,7 @@
     position: absolute;
     text-align: center;
     text-transform: uppercase;
-    top: 50%;
+    top: 10%;
     transform: translate(-50%, -50%);
     white-space: pre;
   }
