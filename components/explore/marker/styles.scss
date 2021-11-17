@@ -2,17 +2,21 @@
   position: relative;
 
   .image-story {
-    border-radius: 50%;
     border: 1px solid $color-white;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
     cursor: pointer;
-    height: 45px;
+    display: inline-block;
+    height: 35px;
     transition: all 0.2s ease-in-out;
-    width: 45px;
+    transform: rotate(135deg);
+    width: 35px;
 
     &:hover {
-      transform: scale(3);
+      transform: scale(3) rotate(135deg);
     }
   }
 
