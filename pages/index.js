@@ -103,8 +103,8 @@ function Home({ locations }) {
               alt="map-icon"
             />
             <h2>
-              Explore the map, and select which state or county would you like
-              to analyze?
+              Explore the map by selecting which state or county you would like
+              to analyze
             </h2>
             <div className="home-search">
               <Autocomplete

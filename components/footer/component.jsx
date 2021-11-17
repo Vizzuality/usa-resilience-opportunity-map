@@ -38,7 +38,11 @@ export default function Footer({ footerLogo }) {
             <a>Contact us</a>
           </Link>
         </div>
-        <a href="https://www.atlanticcouncil.org/">
+        <a
+          href="https://www.onebillionresilient.org"
+          rel="noreferrer"
+          target="_blank"
+        >
           <img
             className="footer-logo"
             src={footerLogo}
