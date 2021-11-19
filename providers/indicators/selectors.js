@@ -248,14 +248,14 @@ export const countyLayer = createSelector(
                       ['boolean', ['feature-state', 'hover'], false],
                       '#000',
                       ...(geo ? [['==', ['get', 'id'], +geo.id], '#000'] : []),
-                      '#999',
+                      '#FFF',
                     ],
                     'line-opacity': [
                       'case',
                       ['boolean', ['feature-state', 'hover'], false],
                       1,
                       ...(geo ? [['==', ['get', 'id'], +geo.id], 1] : []),
-                      0.5,
+                      0.3,
                     ],
                     'line-width': [
                       'case',
