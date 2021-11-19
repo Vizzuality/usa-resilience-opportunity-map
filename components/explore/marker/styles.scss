@@ -4,7 +4,8 @@
   width: 30px;
 
   .image-story {
-    bottom: 30px;
+    bottom: 40px;
+    left: 5px;
     position: absolute;
     border: 1px solid $color-white;
     border-top-left-radius: 50%;
@@ -34,14 +35,14 @@
     font-family: $font-sans;
     font-size: 10px;
     font-weight: 500;
-    left: 50%;
+    left: 65%;
     letter-spacing: 0.71px;
     line-height: 12px;
     pointer-events: none;
     position: absolute;
     text-align: center;
     text-transform: uppercase;
-    top: 10%;
+    bottom: 80%;
     transform: translate(-50%, -50%);
     white-space: pre;
   }
