@@ -150,10 +150,7 @@ function Partners({ isDesktop }) {
   return (
     <div className="header-partners">
       <div className="wrapper header-partners-content">
-        <a
-          className="header-logo"
-          href="https://www.atlanticcouncil.org/programs/adrienne-arsht-rockefeller-foundation-resilience-center"
-        >
+        <a className="header-logo" href="https://www.onebillionresilient.org">
           <img
             alt="Arsht Rock Logo"
             className={cx('header--logo-image arsht', {

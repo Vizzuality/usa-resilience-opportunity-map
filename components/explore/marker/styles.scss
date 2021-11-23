@@ -1,0 +1,49 @@
+.marker-container {
+  position: relative;
+  height: 45px;
+  width: 30px;
+
+  .image-story {
+    bottom: 40px;
+    left: 5px;
+    position: absolute;
+    border: 1px solid $color-white;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    height: 30px;
+    transition: all 0.2s ease-in-out;
+    transform: rotate(135deg);
+    width: 30px;
+
+    &:hover {
+      transform: scale(3) rotate(135deg);
+    }
+  }
+
+  .title-story {
+    display: none;
+  }
+
+  .image-story:hover + .title-story {
+    color: $color-white;
+    display: block;
+    font-family: $font-sans;
+    font-size: 9px;
+    font-weight: 500;
+    left: 65%;
+    letter-spacing: 0.71px;
+    line-height: 12px;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    bottom: 85%;
+    transform: translate(-50%, -50%);
+    white-space: pre;
+  }
+}

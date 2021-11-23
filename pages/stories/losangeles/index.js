@@ -49,7 +49,7 @@ const Section2 = () => {
     <div className={styles.section2}>
       <VideoPlayer
         thumbnail="/assets/images/stories/losangeles/la_video_thumb.png"
-        url="https://www.youtube.com/watch?v=aYTUyxrANmM&ab_channel=AtlanticCouncil"
+        url="https://youtu.be/zADXQBGfyBo"
       />
     </div>
   );
