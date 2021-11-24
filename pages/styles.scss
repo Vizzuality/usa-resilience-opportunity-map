@@ -322,11 +322,30 @@
     font-family: $font-sans;
     padding-bottom: 4rem;
 
+    .citation {
+      padding-bottom: 25px;
+    }
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
     h2 {
       color: $color-1;
       font-size: 20px;
       font-weight: 500;
-      padding-bottom: 1.5rem;
+      padding-bottom: 3rem;
+    }
+
+    h5 {
+      color: $color-1;
+      font-size: 18px;
+      font-weight: 500;
+      padding-bottom: 0.5rem;
     }
 
     p {

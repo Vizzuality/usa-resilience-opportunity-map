@@ -3,6 +3,55 @@ import PropTypes from 'prop-types';
 import Main from 'layouts/main';
 import { MediaContextProvider, Media } from 'components/media';
 
+const CITATIONS = [
+  {
+    indicator: 'Coastal Flood Risk',
+    citation:
+      'Hofste, R., S. Kuzma, S. Walker, E.H. Sutanudjaja, et. al. 2019. “Aqueduct 3.0: Updated DecisionRelevant Global Water Risk Indicators.” Technical Note. Washington, DC: World Resources Institute,',
+    link: 'https://www.wri.org/publication/aqueduct-30',
+  },
+  {
+    indicator: 'Drought Risk',
+    citation:
+      'Hofste, R., S. Kuzma, S. Walker, E.H. Sutanudjaja, et. al. 2019. “Aqueduct 3.0: Updated DecisionRelevant Global Water Risk Indicators.” Technical Note. Washington, DC: World Resources Institute,',
+    link: 'https://www.wri.org/publication/aqueduct-30',
+  },
+  {
+    indicator: 'Extreme Heat Days',
+    citation:
+      'Gassert, F., E. Cornejo, and E. Nilson. 2021. “Making Climate Data Accessible: Methods for Producing NEX-GDDP and LOCA Downscaled Climate Indicators” Technical Note. Washington, DC: World Resources Institute,',
+    link: 'https://doi.org/10.46830/writn.19.00117',
+  },
+  {
+    indicator: 'Extreme Precipitation Days',
+    citation:
+      'Gassert, F., E. Cornejo, and E. Nilson. 2021. “Making Climate Data Accessible: Methods for Producing NEX-GDDP and LOCA Downscaled Climate Indicators” Technical Note. Washington, DC: World Resources Institute,',
+    link: 'https://doi.org/10.46830/writn.19.00117',
+  },
+  {
+    indicator: 'Riverine Flood Risk',
+    citation:
+      'Hofste, R., S. Kuzma, S. Walker, E.H. Sutanudjaja, et. al. 2019. “Aqueduct 3.0: Updated DecisionRelevant Global Water Risk Indicators.” Technical Note. Washington, DC: World Resources Institute,',
+    link: 'https://www.wri.org/publication/aqueduct-30',
+  },
+  {
+    indicator: 'Social Vulnerability Layers',
+    citation:
+      'Centers for Disease Control and Prevention/ Agency for Toxic Substances and Disease Registry/ Geospatial Research, Analysis, and Services Program. CDC Social Vulnerability Index 2018 Database US.',
+    link:
+      'https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html',
+  },
+  {
+    indicator: 'Wildfires',
+    citation:
+      'Artés Vivancos, Tomàs; San-Miguel-Ayanz, Jesús (2018): Global Wildfire Database for GWIS. PANGAEA,',
+    link: 'https://doi.org/10.1594/PANGAEA.895835',
+    supplement:
+      'Supplement to: Artés Vivancos, Tomàs; Oom, Duarte; de Rigo, Daniele; Houston Durrant, Tracy; Maianti, Pieralberto; Libertá, Giorgio; San-Miguel-Ayanz, Jesús (2019): A global wildfire dataset for the analysis of fire regimes and fire behaviour. Scientific Data, 6(1),',
+    supplementLink: 'https://doi.org/10.1038/s41597-019-0312-2',
+  },
+];
+
 function AboutWrapper({ children }) {
   AboutWrapper.propTypes = {
     children: PropTypes.array,
@@ -60,6 +109,7 @@ const About = () => {
             where these interventions can be applied and scaled.
           </p>
         </div>
+
         <div className="about-section">
           <h2>About the Data</h2>
           <p>
@@ -74,6 +124,54 @@ const About = () => {
             composition and disability, minority status and language, and
             housing type and transportation.
           </p>
+          <p>
+            All the climate risk layers have been downscaled to match the
+            original spatial granularity levels of social-vulnerability layers.
+            These levels include the following geographic subdivisions: States,
+            Counties, and Census tracts.
+          </p>
+        </div>
+
+        <div className="about-section">
+          <h2>Rankings</h2>
+          <p>
+            We ranked Census tracts within the entire United States against one
+            another, for mapping and analysis of relative risk/vulnerability in
+            multiple states, or across the U.S. as a whole. Tract rankings are
+            based on quantiles. Quantiles are cut points dividing the range of
+            the data into contiguous intervals with equal probabilities. In this
+            particular case we use quintiles to divide the datasets into 5
+            subsets of (nearly) equal sizes. To each of these subsets we assign
+            a risk/vulnerability category, namely: Low, Low–medium, Medium,
+            Medium–high, High. In the legends we display the corresponding raw
+            indicator value ranges of each category.
+          </p>
+        </div>
+
+        <div className="about-section">
+          <h2>Citations</h2>
+          {CITATIONS.map((c) => {
+            const { indicator, citation, link, supplement, supplementLink } = c;
+            return (
+              <div className="citation">
+                <h5>{indicator}</h5>
+                <p>
+                  {citation}
+                  {' '}
+                  <a href={link} target="_blank" rel="noreferrer">
+                    {link}
+                  </a>
+                  . 
+                  {' '}
+                  {supplement}
+                  {' '}
+                  <a href={supplementLink} target="_blank" rel="noreferrer">
+                    {supplementLink}
+                  </a>
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </AboutWrapper>
