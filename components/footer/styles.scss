@@ -3,12 +3,13 @@
   background-color: $color-dark-bg;
   color: $color-white;
   text-transform: uppercase;
+  padding-bottom: 30px;
 
   .wrapper {
+    align-items: center;
     height: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 
     .footer-links {
       display: flex;
@@ -41,6 +42,7 @@
 
   &.--mobile {
     height: $footer-size-mobile;
+    padding-bottom: 0;
 
     .wrapper {
       flex-direction: column;
