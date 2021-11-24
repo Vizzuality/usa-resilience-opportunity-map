@@ -182,7 +182,7 @@ const Stories = () => {
                 top: '8%',
                 left: 'calc(20vw - 160px - 40px)',
                 width: '160px',
-                height: '70vh',
+                height: '59vh',
                 padding: '1rem 0',
                 zIndex: '5',
               }}

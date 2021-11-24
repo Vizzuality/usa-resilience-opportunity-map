@@ -50,6 +50,10 @@
   color: #4c5361;
   background-color: #f3f5fa;
 
+  .flicking-camera {
+    height: 80%;
+  }
+
   .StoryImage {
     display: none;
 
@@ -163,7 +167,7 @@
   & + & {
     margin-top: 1.5rem;
   }
-
+  
   .StoryThumbImage {
     transition: all 300ms ease-in;
     width: 90px;
@@ -202,7 +206,7 @@
 
 .StoryThumbArrowNext {
   position: absolute;
-  top: calc(65vh + 8% + 3rem);
+  top: calc(54vh + 8% + 3rem);
   left: calc(20vw - 80px - 40px);
   width: 24px;
   height: 24px;

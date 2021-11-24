@@ -45,6 +45,7 @@
   &.--mobile {
     height: $footer-size-mobile;
     padding-bottom: 0;
+    padding-top: 0;
 
     .wrapper {
       flex-direction: column;
