@@ -10,7 +10,6 @@ const VideoPlayer = ({ thumbnail, url }) => {
         className="react-player"
         url={url}
         loop
-        muted
         width="auto"
         height="auto"
         light={thumbnail}
