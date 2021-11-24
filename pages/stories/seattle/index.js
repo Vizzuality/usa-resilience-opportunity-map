@@ -428,7 +428,7 @@ const Seattle = () => {
       <Section12 />
       <Section13 />
       <Section14 />
-      <MetaFooter exploreLink="/explore?id=227569" />
+      <MetaFooter exploreLink="/explore?id=227569" story="seattle" />
     </div>
   );
 };

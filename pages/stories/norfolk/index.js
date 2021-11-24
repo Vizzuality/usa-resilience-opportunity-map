@@ -527,7 +527,7 @@ const Norfolk = () => {
       <Section13 />
       <Section14 />
       <Section15 />
-      <MetaFooter exploreLink="/explore?id=227538" />
+      <MetaFooter exploreLink="/explore?id=227538" story="norfolk" />
     </div>
   );
 };

@@ -14,8 +14,8 @@
     justify-content: space-between;
     height: 100%;
 
-    @media screen and (min-width: 1200px) {
-      justify-content: flex-end;
+    .rightBtns {
+      display: flex;
     }
   }
 
@@ -25,6 +25,25 @@
     margin: 0 auto;
     padding: 0  var(--flexboxgrid-max-width)/2;
     width: 100%;
+  }
+
+  .downloadBtn {
+    border-color: var(--color-white);
+    color: var(--color-white);
+    margin-left: 10px;
+    margin-right: 22px;
+    min-width: 200px;
+    transition: background-color 0.2s var(--ease-in-out-cubic);
+    
+    &:hover {
+      background-color: var(--color-white);
+      color: var(--color-dark-bg);
+    }
+
+    &:active {
+      background-color: var(--color-white);
+      color: var(--color-dark-bg);
+    }
   }
 
   .exploreBtn {

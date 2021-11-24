@@ -513,7 +513,7 @@ const NewOrleans = () => {
       <Section13 />
       <Section14 />
       <Section15 />
-      <MetaFooter exploreLink="/explore?id=225748" />
+      <MetaFooter exploreLink="/explore?id=225748" story="new_orleans" />
     </div>
   );
 };
