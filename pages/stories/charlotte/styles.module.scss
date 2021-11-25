@@ -308,18 +308,16 @@
       margin-right: 0;
       position: absolute;
       top: 0;
-      right: -25%;
+      right: 0;
+      width: 50%;
     }
 
     @media screen and (min-width: 1200px) {
       height: 90%;
-      margin-right: 0;
-      right: -10vw;
     }
 
     @media screen and (min-width: 1400px) {
       right: 0;
-      width: 50%;
     }
 
     .section3Img {
@@ -373,16 +371,26 @@
     @media screen and (min-width: 900px) {
       position: absolute;
       display: flex;
-      bottom: 4.5rem;
-      left: 0;
-      width: 40%;
+      bottom: 2.5rem;
+      left: -5%;
+      width: 45%;
+      height: 100%;
       justify-content: flex-end;
       margin-left: 0;
     }
 
     @media screen and (min-width: 1200px) {
+      left: -7%;
       top: auto;
       width: 50vw;
+    }
+
+    @media screen and (min-width: 1400px) {
+      left: -15%;
+    }
+
+    @media screen and (min-width: 2000px) {
+      left: -20%;
     }
 
     .section4Img {
@@ -435,13 +443,14 @@
       display: flex;
       bottom: 0;
       right: 0;
-      width: 40%;
+      height: 100%;
       justify-content: flex-end;
       margin-right: 0;
+      width: 40%;
     }
 
     @media screen and (min-width: 1240px) {
-      height: auto;
+      
       width: 45%;
     }
 
