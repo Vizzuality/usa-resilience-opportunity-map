@@ -78,13 +78,13 @@ const Stories = () => {
   };
 
   const storyThumbsGo = (dir) => {
-    if (flickingThumbs.current.animating) return;
+    if (flickingThumbs.current?.animating) return;
 
-    if (dir === 'up') {
+    if (dir === 'up' && flickingThumbs.current) {
       if (flickingThumbs.current.currentPanel.index === 0) return;
 
       flickingThumbs.current.prev();
-    } else if (dir === 'down') {
+    } else if (dir === 'down' && flickingThumbs.current) {
       if (
         flickingThumbs.current.currentPanel.index ===
         flickingThumbs.current.panels.length - 1
@@ -99,7 +99,7 @@ const Stories = () => {
     if (currentPanel > 4) {
       storyThumbsGo('down');
     }
-    if (currentPanel <= 4 && currentPanel !== 0) {
+    if (currentPanel <= 4 && currentPanel !== 0 && flickingThumbs.current) {
       flickingThumbs.current.moveTo(currentPanel - 1);
     }
   }, [handleScroll]);
@@ -182,7 +182,7 @@ const Stories = () => {
                 top: '8%',
                 left: 'calc(20vw - 160px - 40px)',
                 width: '160px',
-                height: '70vh',
+                height: '59vh',
                 padding: '1rem 0',
                 zIndex: '5',
               }}

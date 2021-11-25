@@ -490,7 +490,7 @@ const Tucson = () => {
       <Section12 />
       <Section13 />
       <Section14 />
-      <MetaFooter exploreLink="/explore?id=224706" />
+      <MetaFooter exploreLink="/explore?id=224706" story="tucson" />
     </div>
   );
 };

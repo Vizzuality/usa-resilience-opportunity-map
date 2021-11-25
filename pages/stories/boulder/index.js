@@ -522,7 +522,7 @@ const Boulder = () => {
       <Section17 />
       <Section18 />
       <Section19 />
-      <MetaFooter exploreLink="/explore?id=224850" />
+      <MetaFooter exploreLink="/explore?id=224850" story="boulder" />
     </div>
   );
 };

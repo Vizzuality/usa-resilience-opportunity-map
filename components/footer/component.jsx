@@ -30,9 +30,14 @@ export default function Footer({ footerLogo }) {
     <FooterWrapper>
       <div className="wrapper">
         <div className="footer-links">
-          <Link href="/privacy">
-            <a>Privacy policy</a>
-          </Link>
+          <a
+            href="https://www.atlanticcouncil.org/privacy-policy"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Privacy policy
+          </a>
+
           <div className="footer-links--separator" />
           <Link href="/contact">
             <a>Contact us</a>

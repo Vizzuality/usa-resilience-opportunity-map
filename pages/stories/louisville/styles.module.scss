@@ -375,18 +375,32 @@
     @media screen and (min-width: 600px) {
       background-position: bottom left;
       height: 60%;
-      left: 0;
     }
 
     @media screen and (min-width: 1000px) {
+      background-position: bottom left -2rem;
+      background-size: auto 70%;
       height: 103.5%;
-      left: -25vw;
+      left: -12vw;
     }
 
     @media screen and (min-width: 1200px) {
-      background-size: auto 100%;
+      background-position: bottom 0.5rem left 10rem;
+      background-size: auto 65%;
+      left: -20vw;
       top: 1%;
-      left: -12vw;
+    }
+
+    @media screen and (min-width: 1400px) {
+      background-position: bottom 0.2rem left 12rem;
+      background-size: auto 80%;
+      top: 1%;
+      left: -15vw;
+    }
+
+    @media screen and (min-width: 1600px) {
+      background-position: bottom 0 left 12rem;
+      background-size: auto 100%;
     }
   }
 

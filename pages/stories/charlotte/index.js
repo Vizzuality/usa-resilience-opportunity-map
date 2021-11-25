@@ -417,7 +417,7 @@ const Charlotte = () => {
       <Section11 />
       <Section12 />
       <Section13 />
-      <MetaFooter exploreLink="/explore?id=226549" />
+      <MetaFooter exploreLink="/explore?id=226549" story="charlotte" />
     </div>
   );
 };

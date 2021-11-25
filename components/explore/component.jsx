@@ -24,8 +24,9 @@ export default function Explore({
 
   const formatUnderscore = (string) => string?.replace(/ /g, '_').toLowerCase();
 
+  const locationSearched = locations.find((l) => l.id === activeLocationId);
+
   useEffect(() => {
-    const locationSearched = locations.find((l) => l.id === activeLocationId);
     if (!locationSearched?.parentId) {
       const parsedLocation = formatUnderscore(locationSearched?.label);
       setActiveState(parsedLocation);
@@ -84,6 +85,19 @@ export default function Explore({
           >
             All states view
           </Button>
+          {locationSearched?.parentId && (
+            <Button
+              className="search-btn"
+              onClick={() => {
+                if (locationSearched?.parentId) {
+                  setGeometryId(locationSearched?.parentId);
+                  setGeometryValues([]);
+                }
+              }}
+            >
+              State view
+            </Button>
+          )}
         </div>
       )}
       <div className="map-wrapper">

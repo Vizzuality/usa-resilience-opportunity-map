@@ -46,6 +46,7 @@
   margin-top: 5px;
   position: absolute;
   width: 51px;
+  z-index: 99;
 
   &:hover {
     background: darken($color-white, 2.5);
