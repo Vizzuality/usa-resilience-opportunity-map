@@ -20,13 +20,15 @@ const MetaFooter = ({ exploreLink /* , story */ }) => {
   return (
     <div className={cx(styles.metaFooter)}>
       <div className={cx(styles.metaFooterContent, styles.wrapper)}>
-        <Button
-          className={cx(styles.downloadBtn)}
-          aria-label="download infographic"
-          // onClick={() => onDownload(story)}
-        >
-          Download infographic
-        </Button>
+        <div style={{ visibility: 'hidden' }}>
+          <Button
+            className={cx(styles.downloadBtn)}
+            aria-label="download infographic"
+          >
+            Download infographic
+          </Button>
+        </div>
+
         <div className={cx(styles.rightBtns)}>
           <Button
             className={cx(styles.storiesBtn)}
