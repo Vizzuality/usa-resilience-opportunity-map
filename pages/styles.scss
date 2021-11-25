@@ -203,6 +203,10 @@
       border-color: $color-1;
       color: $color-white;
       padding: 1.25rem 2rem;
+
+      &:last-of-type {
+        margin-left: 10px;
+      }
     }
 
     .download-btn {
