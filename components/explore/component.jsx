@@ -52,12 +52,6 @@ export default function Explore({
             }
           />
           <div data-tip data-for="download-data">
-            {console.log(
-              'activeLocationId',
-              activeLocationId,
-              'activeState',
-              activeState
-            )}
             <Button
               className="download-btn"
               data-tip

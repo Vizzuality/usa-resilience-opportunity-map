@@ -53,7 +53,7 @@ const Section2 = () => {
   return (
     <div className={styles.section2}>
       <VideoPlayer
-        thumbnail="/assets/images/stories/neworleans/no_video_thumb.jpg"
+        thumbnail="/assets/images/stories/neworleans/no_video_thumb.png"
         url="https://youtu.be/KiTW9LVd7_4"
       />
     </div>
