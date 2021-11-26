@@ -18,6 +18,7 @@ export default function MapStoryMarker({ isVisible, setTooltipVisibility }) {
           } = s;
           return (
             <Marker
+              id={title}
               latitude={lat}
               longitude={long}
               offsetLeft={-20}

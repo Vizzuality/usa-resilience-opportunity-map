@@ -6,28 +6,25 @@ import cx from 'classnames';
 import Button from 'components/button';
 import styles from './styles.module.scss';
 
-const MetaFooter = ({ exploreLink /* , story */ }) => {
-  // const onDownload = (name) => {
-  //   const url = `${process.env.NEXT_PUBLIC_API}/downloads/${name}?format=pdf`;
-  //   const link = document.createElement('a');
-  //   link.href = url;
-  //   link.setAttribute('download', `map-${name}.pdf`);
-  //   document.body.appendChild(link);
-  //   link.click();
-  //   link.remove();
-  // };
+const DIGITAL_OCEAN_URL =
+  'https://us-resilience-space.nyc3.digitaloceanspaces.com';
 
+const MetaFooter = ({ exploreLink, story }) => {
   return (
     <div className={cx(styles.metaFooter)}>
       <div className={cx(styles.metaFooterContent, styles.wrapper)}>
-        <div style={{ visibility: 'hidden' }}>
-          <Button
-            className={cx(styles.downloadBtn)}
-            aria-label="download infographic"
+        <Button
+          className={cx(styles.downloadBtn)}
+          aria-label="download infographic"
+        >
+          <a
+            href={`${DIGITAL_OCEAN_URL}/narratives/${story}.pdf`}
+            rel="noreferrer"
+            target="_blank"
           >
             Download infographic
-          </Button>
-        </div>
+          </a>
+        </Button>
 
         <div className={cx(styles.rightBtns)}>
           <Button
@@ -52,7 +49,7 @@ const MetaFooter = ({ exploreLink /* , story */ }) => {
 
 MetaFooter.propTypes = {
   exploreLink: PropTypes.string,
-  // story: PropTypes.string,
+  story: PropTypes.string,
 };
 
 export default MetaFooter;
