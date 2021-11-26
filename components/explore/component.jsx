@@ -59,20 +59,12 @@ export default function Explore({
               disabled={activeLocationId && !activeState}
             >
               {!activeLocationId && !activeState && (
-                <a
-                  href={`${DIGITAL_OCEAN_URL}/states/all.csv`}
-                  rel="noreferrer"
-                  target="_blank"
-                >
+                <a href={`${DIGITAL_OCEAN_URL}/states/all.csv`}>
                   Download data
                 </a>
               )}
               {activeLocationId && activeState && (
-                <a
-                  href={`${DIGITAL_OCEAN_URL}/states/${activeState}.csv`}
-                  rel="noreferrer"
-                  target="_blank"
-                >
+                <a href={`${DIGITAL_OCEAN_URL}/states/${activeState}.csv`}>
                   Download data
                 </a>
               )}
