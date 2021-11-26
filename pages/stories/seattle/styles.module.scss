@@ -452,21 +452,24 @@
     width: 100vw;
     z-index: 3;
 
-    @media screen and (min-width: 600px) {
-      background-position: bottom left;
-      height: 60%;
-      left: 0;
+    @media screen and (min-width: 500px) {
+      height: 55%;
+    }
+
+    @media screen and (min-width: 700px) {
+      height: 65%;
     }
 
     @media screen and (min-width: 1000px) {
+      background-position: bottom left;
+      bottom: 0;
       height: 106.5%;
       left: -15vw;
-      top: -4.8vh;
+      top: auto;
     }
 
     @media screen and (min-width: 1200px) {
       background-size: auto 100%;
-      top: -4vh;
       height: 100%;
       left: -12vw;
     }
@@ -474,11 +477,11 @@
     @media screen and (min-width: 1400px) {
       height: 106%;
       left: -2vw;
-      top: -4.2vh;
+      top: -4vh;
     }
 
     @media screen and (min-width: 1600px) {
-      top: -3.4vh;
+      top: -3.7vh;
     }
   }
 
@@ -589,16 +592,17 @@
     @media screen and (min-width: 600px) {
       background-position: bottom left;
       height: 60%;
+      left: -9vw;
     }
 
     @media screen and (min-width: 1000px) {
       height: 79%;
       top: 28.2%;
-      left: -19vw;
+      left: -5vw;
     }
 
     @media screen and (min-width: 1200px) {
-      left: -12vw;
+      left: -5vw;
     }
     
     @media screen and (min-width: 1400px) {
