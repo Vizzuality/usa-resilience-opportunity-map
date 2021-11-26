@@ -52,19 +52,37 @@ export default function Explore({
             }
           />
           <div data-tip data-for="download-data">
+            {console.log(
+              'activeLocationId',
+              activeLocationId,
+              'activeState',
+              activeState
+            )}
             <Button
               className="download-btn"
-              disabled={!activeLocationId || !activeState}
               data-tip
               data-for="download-data"
+              disabled={activeLocationId && !activeState}
             >
-              <a
-                href={`${DIGITAL_OCEAN_URL}/states/${activeState}.csv`}
-                rel="noreferrer"
-                target="_blank"
-              >
-                Download data
-              </a>
+              {!activeLocationId && !activeState && (
+                <a
+                  href={`${DIGITAL_OCEAN_URL}/states/all.csv`}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Download data
+                </a>
+              )}
+              {activeLocationId && activeState && (
+                <a
+                  href={`${DIGITAL_OCEAN_URL}/states/${activeState}.csv`}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Download data
+                </a>
+              )}
+              {activeLocationId && !activeState && 'Download data'}
             </Button>
           </div>
           <InfoTooltip
