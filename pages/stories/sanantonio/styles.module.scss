@@ -323,7 +323,7 @@
   overflow: hidden;
 
   @media screen and (min-width: 600px) {
-    padding: 2rem 0 10rem 0;
+    padding: 2rem 0 20rem 0;
   }
 
   @media screen and (min-width: 900px) {
@@ -355,7 +355,7 @@
       position: absolute;
       right: 0;
       bottom: 0;
-      width: 35%;
+      max-width: 50%;
     }
 
     @media screen and (min-width: 1000px) {
@@ -365,12 +365,10 @@
       position: absolute;
       right: 0;
       top: 0;
-      width: 50%;
     }
 
     @media screen and (min-width: 1200px) {
       height: 100%;
-      width: auto;
     }
 
     .section4Img {
@@ -384,7 +382,7 @@
 // Section 7
 .section7 {
   position: relative;
-  padding-bottom: 90%;
+  padding-bottom: 100%;
   padding-top: 2rem;
 
   @media screen and (min-width: 600px) {
@@ -420,26 +418,22 @@
     z-index: 5;
 
     @media screen and (min-width: 600px) {
-      background-position: right bottom;
       bottom: 0;
+      left: auto;
+      height: 70%;
+      right: 0;
       width: 110vw;
     }
   
     @media screen and (min-width: 1000px) {
       bottom: 0;
-      background-position: right top;
-      right: -4vw;
+      left: auto;
+      right: -5%;
       height: 102%;
     }
 
     @media screen and (min-width: 1200px) {
-      background-position: right 8rem top;
-      height: 100%;
-    }
-
-    @media screen and (min-width: 1600px) {
-      background-position: right 14rem top;
-      height: 102.5%;
+      height: 102.8%;
     }
   }
 }
