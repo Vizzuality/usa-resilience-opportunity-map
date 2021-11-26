@@ -460,12 +460,13 @@
 
     @media screen and (min-width: 900px) {
       margin: 0 0 4rem 0;
-      max-width: 40rem;
+      max-width: 30rem;
       margin-left: 52%;
     }
 
     @media screen and (min-width: 1200px) {
       margin-left: 52%;
+      max-width: 35rem;
     }
 
     @media screen and (min-width: 1500px) {
@@ -523,8 +524,12 @@
 
     @media screen and (min-width: 900px) {
       margin: 0 0 4rem 0;
-      max-width: 40rem;
+      max-width: 30rem;
       margin-left: 52%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      max-width: 35rem;
     }
 
     @media screen and (min-width: 1500px) {
