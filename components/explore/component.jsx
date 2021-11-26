@@ -6,6 +6,9 @@ import Autocomplete from 'components/autocomplete';
 import Button from 'components/button';
 import InfoTooltip from 'components/explore/info-tooltip';
 
+const DIGITAL_OCEAN_URL =
+  'https://us-resilience-space.nyc3.digitaloceanspaces.com';
+
 export default function Explore({
   locations,
   activeLocationId,
@@ -35,16 +38,6 @@ export default function Explore({
     }
   }, [activeLocationId]);
 
-  const onDownload = () => {
-    const url = `${process.env.NEXT_PUBLIC_API}/downloads/${activeState}`;
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', `map-${activeState}.csv`);
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-  };
-
   return (
     <div className="c-explore">
       {!embed && (
@@ -61,12 +54,21 @@ export default function Explore({
           <div data-tip data-for="download-data">
             <Button
               className="download-btn"
-              disabled={!activeLocationId || !activeState}
               data-tip
               data-for="download-data"
-              onClick={onDownload}
+              disabled={activeLocationId && !activeState}
             >
-              Download data
+              {!activeLocationId && !activeState && (
+                <a href={`${DIGITAL_OCEAN_URL}/states/all.csv`}>
+                  Download data
+                </a>
+              )}
+              {activeLocationId && activeState && (
+                <a href={`${DIGITAL_OCEAN_URL}/states/${activeState}.csv`}>
+                  Download data
+                </a>
+              )}
+              {activeLocationId && !activeState && 'Download data'}
             </Button>
           </div>
           <InfoTooltip

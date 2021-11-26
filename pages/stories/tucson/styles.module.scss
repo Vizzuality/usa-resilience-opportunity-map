@@ -344,13 +344,14 @@
 
     @media screen and (min-width: 900px) {
       margin: 0 0 4rem 0;
-      max-width: 40rem;
+      max-width: 30rem;
       margin-left: 50%;
     }
 
     @media screen and (min-width: 1200px) {
       margin: 2rem 0 4rem 0;
       margin-left: 52%;
+      max-width: 35rem;
     }
 
     @media screen and (min-width: 1500px) {
@@ -467,7 +468,7 @@
   }
 
   .colLeft {
-    min-height: 20rem;
+    min-height: 35rem;
     overflow: hidden;
     position: relative;
 
@@ -509,12 +510,13 @@
 
     @media screen and (min-width: 900px) {
       margin: 4rem 0;
-      max-width: 40rem;
       margin-left: 50%;
+      max-width: 30rem;
     }
 
     @media screen and (min-width: 1200px) {
       margin-left: 52%;
+      max-width: 35rem;
     }
 
     @media screen and (min-width: 1500px) {
@@ -572,12 +574,13 @@
 
     @media screen and (min-width: 900px) {
       margin: 0 0 4rem 0;
-      max-width: 40rem;
+      max-width: 30rem;
       margin-left: 50%;
     }
 
     @media screen and (min-width: 1200px) {
       margin-left: 52%;
+      max-width: 35rem;
     }
 
     @media screen and (min-width: 1500px) {
@@ -596,24 +599,39 @@
     }
 
     @media screen and (min-width: 900px) {
-      position: absolute;
-      display: flex;
       bottom: 0;
-      left: -10%;
-      width: 60%;
-      justify-content: flex-end;
+      display: flex;
+      height: 100%;
+      left: -18%;
       margin-left: 0;
       margin-bottom: -3px;
+      position: absolute;
+      right: auto;
+      width: 70%;
     }
 
     @media screen and (min-width: 1200px) {
       bottom: 0;
-      height: 100%;
+      height: 102%;
+      left: -18%;
+    }
+
+    @media screen and (min-width: 1400px) {
+      left: -8%;
+    }
+
+    @media screen and (min-width: 1600px) {
+      left: -6%;
+    }
+
+    @media screen and (min-width: 1800px) {
+      left: 0;
     }
 
     .section9Img {
       @media screen and (min-width: 900px) {
         align-self: flex-end;
+        height: 100%;
       }
     }
   }
@@ -702,12 +720,13 @@
 
     @media screen and (min-width: 900px) {
       margin: 0 0 4rem 0;
-      max-width: 40rem;
+      max-width: 30rem;
       margin-left: 50%;
     }
 
     @media screen and (min-width: 1200px) {
       margin-left: 52%;
+      max-width: 35rem;
     }
 
     @media screen and (min-width: 1500px) {
