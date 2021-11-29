@@ -6,9 +6,6 @@ import cx from 'classnames';
 import Button from 'components/button';
 import styles from './styles.module.scss';
 
-const DIGITAL_OCEAN_URL =
-  'https://us-resilience-space.nyc3.digitaloceanspaces.com';
-
 const MetaFooter = ({ exploreLink, story }) => {
   return (
     <div className={cx(styles.metaFooter)}>
@@ -18,7 +15,7 @@ const MetaFooter = ({ exploreLink, story }) => {
           aria-label="download infographic"
         >
           <a
-            href={`${DIGITAL_OCEAN_URL}/narratives/${story}.pdf`}
+            href={`${process.env.NEXT_PUBLIC_DIGITAL_OCEAN}/narratives/${story}.pdf`}
             rel="noreferrer"
             target="_blank"
           >

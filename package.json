@@ -103,5 +103,7 @@
       "eslint --ext .js --ext .jsx --fix"
     ]
   },
-  "cacheDirectories": [".next/cache"]
+  "cacheDirectories": [
+    ".next/cache"
+  ]
 }

@@ -6,9 +6,6 @@ import Autocomplete from 'components/autocomplete';
 import Button from 'components/button';
 import InfoTooltip from 'components/explore/info-tooltip';
 
-const DIGITAL_OCEAN_URL =
-  'https://us-resilience-space.nyc3.digitaloceanspaces.com';
-
 export default function Explore({
   locations,
   activeLocationId,
@@ -59,12 +56,16 @@ export default function Explore({
               disabled={activeLocationId && !activeState}
             >
               {!activeLocationId && !activeState && (
-                <a href={`${DIGITAL_OCEAN_URL}/states/all.csv`}>
+                <a
+                  href={`${process.env.NEXT_PUBLIC_DIGITAL_OCEAN}/states/all.csv`}
+                >
                   Download data
                 </a>
               )}
               {activeLocationId && activeState && (
-                <a href={`${DIGITAL_OCEAN_URL}/states/${activeState}.csv`}>
+                <a
+                  href={`${process.env.NEXT_PUBLIC_DIGITAL_OCEAN}/states/${activeState}.csv`}
+                >
                   Download data
                 </a>
               )}
