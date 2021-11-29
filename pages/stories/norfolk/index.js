@@ -286,8 +286,8 @@ const Section10 = () => {
         <div className={cx(styles.col, styles.colRight)}>
           <h5 className={cx(styles.sectionTitle)}>Tidewater Gardens</h5>
           <p>
-            he Tidewater Gardens public-housing community in the St. Paul’s area
-            of the City is home to 1,600 residents, nine hundred of those
+            The Tidewater Gardens public-housing community in the St. Paul’s
+            area of the City is home to 1,600 residents, nine hundred of those
             residents are children. The neighborhood is built on top of a creek
             and in low-lying areas, making it vulnerable to floods. The
             community is being rebuilt, lifting all of the housing out of the
