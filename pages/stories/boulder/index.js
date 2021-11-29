@@ -140,7 +140,7 @@ const Section5 = () => {
           <li className={cx(styles.listItem)}>
             anxiety, depression, and emotional distress; and
           </li>
-          <li className={cx(styles.listItem)}>death</li>
+          <li className={cx(styles.listItem)}>death.</li>
         </ul>
       </div>
     </div>
