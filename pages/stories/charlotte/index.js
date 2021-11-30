@@ -74,13 +74,17 @@ const Section3 = () => {
         <div className={styles.contentLeft}>
           <p>
             Across the United States, floods kill more than one hundred people
-            annually and cause vast property damage.1 The Federal Emergency
-            Management Agency (FEMA) estimates that repairing and replacing
-            flood-damaged roads, bridges, utilities, and other public
+            annually and cause vast property damage. 
+            {' '}
+            <sup>1</sup>
+            {' '}
+            The Federal
+            Emergency Management Agency (FEMA) estimates that repairing and
+            replacing flood-damaged roads, bridges, utilities, and other public
             infrastructure cost an estimated $48.6 billion between 1998 and
             2014. 
             {' '}
-            <sup>1</sup>
+            <sup>2</sup>
           </p>
           <p>
             In response, Charlotte-Mecklenburg Storm Water Services implemented
@@ -396,6 +400,7 @@ const Section13 = () => {
             https://www.nrdc.org/stories/flooding-and-climate-change-everything-you-need-know..
           </a>
         </p>
+        <p>2 Ibid.</p>
       </div>
     </div>
   );

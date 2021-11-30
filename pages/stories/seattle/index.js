@@ -32,9 +32,10 @@ const Section1 = () => {
             However, Seattle’s rain is changing. Extreme rainstorms have
             increased by 30 percent in Seattle since 2003.
             <sup>2</sup>
-            The growing climate crisis has intensified the levels of rain,
-            which—combined with rising sea levels—is contributing to flooding
-            that causes disruption and disturbances across the city.
+            {' '}
+            The growing climate crisis has intensified the levels
+            of rain, which—combined with rising sea levels—is contributing to
+            flooding that causes disruption and disturbances across the city.
           </p>
         </div>
       </div>

@@ -83,7 +83,7 @@ const Section3 = () => {
               long-term social and economic consequences; and
             </li>
             <li className={cx(styles.listItem)}>
-              heightened stress and anxiety;
+              heightened stress and anxiety.
             </li>
           </ul>
         </div>
