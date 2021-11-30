@@ -50,6 +50,10 @@
   background-color: var(--color-white);
 }
 
+.bgLightBlue {
+  background-color: var(--color-light-blue);
+}
+
 .bgGray {
   background-color: var(--brand-gray);
 }
@@ -483,6 +487,10 @@
       }
     }
   }
+
+  .listItem {
+    margin-bottom: 1.8rem;
+  }
 }
 
 // Section 8
@@ -520,6 +528,10 @@
       padding: 0;
       top: 1rem;
     }
+  }
+
+  .listItem {
+    margin-bottom: 1.8rem;
   }
 }
 

@@ -226,7 +226,7 @@ const Section7 = () => {
 
 const Section8 = () => {
   return (
-    <div className={cx(styles.section8, styles.textGray, styles.bgWhite)}>
+    <div className={cx(styles.section8, styles.textGray, styles.bgLightBlue)}>
       <div className={cx(styles.container)}>
         <div className={cx(styles.section8Wrapper)}>
           <p>

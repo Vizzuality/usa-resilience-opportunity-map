@@ -107,9 +107,11 @@ const Section5 = () => {
           <p className={styles.paragraph}>
             Global climate modeling completed by teams at the University of
             California, Los Angeles (UCLA) shows that, no matter what, extreme
-            heat is set to rise in Los Angeles.2 How much it will rise depends
-            on what strategies the region can immediately take to mitigate its
-            impact.
+            heat is set to rise in Los Angeles. 
+            {' '}
+            <sup>2</sup>
+            How much it will rise depends on what strategies the region can
+            immediately take to mitigate its impact.
           </p>
           <p className={styles.paragraph}>
             Los Angeles County recognized that the impact of climate change and
@@ -118,7 +120,6 @@ const Section5 = () => {
             Building and Safety Department, and the Sustainability Office worked
             as a coalition to devise solutions to the growing threat of extreme
             heat.
-            <sup>2</sup>
           </p>
           <p>
             They focused on reducing heat-trapping surfaces by passing an
@@ -186,7 +187,7 @@ const Section7 = () => {
             In its final draft, the Cool Roofs Ordinance “requires utilization
             of cool roofing for new building constructions, building additions,
             and major roof replacements in the unincorporated areas of Los
-            Angeles County.
+            Angeles County“.
             <sup>3</sup>
           </p>
           <p>
