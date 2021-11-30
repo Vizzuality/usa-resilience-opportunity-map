@@ -4,6 +4,6 @@ export default {
   error: false,
   data: [],
   category: '1',
-  active: [],
+  active: ['31'],
   activeCategories: [],
 };

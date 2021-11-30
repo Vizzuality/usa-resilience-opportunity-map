@@ -78,7 +78,7 @@ const About = () => {
     <AboutWrapper>
       <div className="about-title">
         <div className="about-line" />
-        <h1>About the data.</h1>
+        <h1>About the Map.</h1>
       </div>
       <div className="about-text wrapper">
         <div className="about-shadow" />
@@ -98,14 +98,14 @@ const About = () => {
           </p>
           <p>
             The Atlantic Council’s Adrienne Arsht – Rockefeller Foundation
-            Resilience Center, with support from JPMorgan Chase & Co. and the
-            Rockefeller Foundation, have developed and deployed a visualization
-            tool that will help make people and communities more resilient by
-            offering a path forward for cities by sharing proven examples of
-            successful interventions to address their climate risks and social
-            vulnerabilities. Unlike other climate-oriented maps, this map will
-            highlight best practices that are helping reduce climate risks in
-            cities and will help cities identify their own opportunity areas
+            Resilience Center has developed and deployed a visualization tool
+            that will help make people and communities more resilient by
+            offering a path forward for cities by sharing proven solutions to
+            address their climate risks and social vulnerabilities. The icons on
+            the interactive map feature ten cities across the United States that
+            successfully implemented resilience-building interventions. This map
+            uniquely highlights best practices that are helping reduce climate
+            risks in cities and can help cities identify their opportunity areas
             where these interventions can be applied and scaled.
           </p>
         </div>
