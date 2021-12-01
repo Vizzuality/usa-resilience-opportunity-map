@@ -33,16 +33,18 @@ function HomeWrapper({ children }) {
 
 function Home({ locations }) {
   const [supported, useSupport] = useState(false);
+  const isServer = typeof window === 'undefined';
 
   useEffect(() => {
-    const ua = window?.navigator.userAgent;
-    const msie = ua.indexOf('MSIE ');
-
-    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv:11\./)) {
-      // eslint-disable-next-line no-console
-      console.log('Your browser is not supported');
-    } else {
-      useSupport(true);
+    if (!isServer) {
+      const ua = window?.navigator.userAgent;
+      const msie = ua.indexOf('MSIE ');
+      if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv:11\./)) {
+        // eslint-disable-next-line no-console
+        console.log('Your browser is not supported');
+      } else {
+        useSupport(true);
+      }
     }
   }, []);
 
