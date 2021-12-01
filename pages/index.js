@@ -46,6 +46,7 @@ function Home({ locations }) {
         useSupport(true);
       }
     }
+    useSupport(true);
   }, []);
 
   return supported ? (
