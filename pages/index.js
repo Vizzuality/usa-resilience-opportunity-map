@@ -32,7 +32,7 @@ function HomeWrapper({ children }) {
 }
 
 function Home({ locations }) {
-  const [supported, useSupport] = useState(false);
+  const [supported, useSupport] = useState(true);
   const isServer = typeof window === 'undefined';
 
   useEffect(() => {
@@ -40,14 +40,10 @@ function Home({ locations }) {
       const ua = window?.navigator.userAgent;
       const msie = ua.indexOf('MSIE ');
       if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv:11\./)) {
-        // eslint-disable-next-line no-console
-        console.log('Your browser is not supported');
-      } else {
-        useSupport(true);
+        useSupport(false);
       }
     }
-    useSupport(true);
-  }, []);
+  }, [isServer]);
 
   return supported ? (
     <HomeWrapper>
