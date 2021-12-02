@@ -3,9 +3,6 @@ export const CATEGORIES = {
     ramp: ['#C6F3FF', '#72D3EE', '#6BA1F7', '#587EE9', '#3361E4'],
   },
   '2': {
-    income: {
-      ramp: ['#B24365', '#F0685B', '#FF8A5E', '#FAC771', '#FFE690'],
-    },
     ramp: ['#FFE690', '#FAC771', '#FF8A5E', '#F0685B', '#B24365'],
   },
   '3': {
