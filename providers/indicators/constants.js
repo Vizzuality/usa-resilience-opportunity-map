@@ -4,11 +4,13 @@ export const CATEGORIES = {
   },
   '2': {
     ramp: ['#FFE690', '#FAC771', '#FF8A5E', '#F0685B', '#B24365'],
+    income: {
+      ramp: ['#B24365', '#F0685B', '#FF8A5E', '#FAC771', '#FFE690'],
+    },
   },
   '3': {
     ramp: ['#B6BEFF', '#AD9AFF', '#967EFF', '#7354F9', '#6438E5'],
   },
-
   '12': {
     ramp: [
       '#ffefab',
