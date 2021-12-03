@@ -16,14 +16,10 @@ export default function HazardIndicator({
     slug: PropTypes.string,
   };
 
-  const hazards = [
-    'Low',
-    'Low-medium',
-    'Medium',
-    'Medium-high',
-    'High',
-    'No data',
-  ];
+  const hazards =
+    slug === 'ses'
+      ? ['High', 'Medium-high', 'Medium', 'Low-medium', 'Low', 'No data']
+      : ['Low', 'Low-medium', 'Medium', 'Medium-high', 'High', 'No data'];
 
   const hazardColors = [
     '#F3C64E',
