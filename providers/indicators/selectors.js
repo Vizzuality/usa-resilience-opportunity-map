@@ -228,9 +228,11 @@ export const countyLayer = createSelector(
                       'match',
                       ['get', `${ind.slug}_hazard`],
                       ...flatten(
-                        colors.reverse().map((c, i) => {
-                          return [i, c];
-                        })
+                        (+ind.id === 40 ? colors.reverse() : colors).map(
+                          (c, i) => {
+                            return [i, c];
+                          }
+                        )
                       ),
                       '#F1F1F1', // no data
                     ],
