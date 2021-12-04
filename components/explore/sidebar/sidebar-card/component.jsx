@@ -129,7 +129,10 @@ function SidebarCard({
             </p>
             <div className={styles.chartWrapper}>
               {chartData &&
-                Object.entries(chartData).map(([hazardLevel, count]) => (
+                (item.id === '43'
+                  ? Object.entries(chartData).reverse()
+                  : Object.entries(chartData)
+                ).map(([hazardLevel, count]) => (
                   <div
                     style={{
                       height: '100%',

@@ -74,7 +74,14 @@ export default function ExploreMap({
       return !!l.legendConfig;
     })
     .map((l) => {
-      const { id, paramsConfig, sqlConfig, decodeConfig, timelineConfig } = l;
+      const {
+        id,
+        paramsConfig,
+        sqlConfig,
+        decodeConfig,
+        timelineConfig,
+        legendConfig,
+      } = l;
       const lSettings = layersSettings[id] || {};
 
       const params =
@@ -109,6 +116,7 @@ export default function ExploreMap({
           },
         ],
         ...lSettings,
+        legendConfig,
       };
     });
 
