@@ -17,7 +17,7 @@ export default function HazardIndicator({
   };
 
   const hazards =
-    slug === 'ses'
+    slug === 'ses' || slug === 'pci'
       ? ['High', 'Medium-high', 'Medium', 'Low-medium', 'Low', 'No data']
       : ['Low', 'Low-medium', 'Medium', 'Medium-high', 'High', 'No data'];
 
