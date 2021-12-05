@@ -389,7 +389,10 @@ export const censusLayer = createSelector(
 
     if (_active.length === 1) {
       const ind = _indicators[0];
-      const colors = CATEGORIES[ind.category.id].ramp;
+      const colors =
+        ind.id === '43'
+          ? [...CATEGORIES[ind.category.id].ramp].reverse()
+          : [...CATEGORIES[ind.category.id].ramp];
       const legends =
         geo && geo.parentId ? ind.legendCountries : ind.legendStates;
       // Sometimes the legend will include 'Data not available' as an option.
@@ -502,6 +505,7 @@ export const censusLayer = createSelector(
                   'source-layer': 'layer0',
                   type: 'fill',
                   paint: {
+                    // 'fill-color': 'green',
                     'fill-color': [
                       'match',
                       [

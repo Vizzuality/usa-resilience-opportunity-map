@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { useRouter } from 'next/router';
 
 import PropTypes from 'prop-types';
@@ -51,8 +51,10 @@ export default function ExploreMap({
   const [visibilityStories, setVisibilityStories] = useState(true);
   const [tooltipVisibility, setTooltipVisibility] = useState(true);
 
-  const handleStoriesVisibility = () =>
-    setVisibilityStories(!visibilityStories);
+  const handleStoriesVisibility = useCallback(
+    () => setVisibilityStories(!visibilityStories),
+    [visibilityStories]
+  );
 
   const [viewport, setViewport] = useState({
     longitude: 0,
@@ -68,71 +70,128 @@ export default function ExploreMap({
     return [...indicatorLayers];
   }, [indicatorLayers]);
 
+  const layersParsed = useMemo(
+    () =>
+      layers.map((layer) => {
+        const {
+          id,
+          paramsConfig,
+          sqlConfig,
+          decodeConfig,
+          timelineConfig,
+          decodeFunction,
+        } = layer;
+
+        const lSettings = layersSettings[id] || {};
+
+        const l = {
+          ...layer,
+          ...layer.config,
+          ...lSettings,
+          ...(!!paramsConfig && {
+            params: getParams(paramsConfig, { ...lSettings.params }),
+          }),
+
+          ...(!!sqlConfig && {
+            sqlParams: getParams(sqlConfig, { ...lSettings.sqlParams }),
+          }),
+
+          ...(!!decodeConfig && {
+            decodeParams: getParams(decodeConfig, {
+              ...timelineConfig,
+              ...lSettings.decodeParams,
+            }),
+            decodeFunction,
+          }),
+        };
+        return l;
+      }),
+    [layers]
+  );
+
   // LEGEND
-  const layerGroups = layers
-    .filter((l) => {
-      return !!l.legendConfig;
-    })
-    .map((l) => {
-      const { id, paramsConfig, sqlConfig, decodeConfig, timelineConfig } = l;
-      const lSettings = layersSettings[id] || {};
+  const layerGroups = useMemo(
+    () =>
+      layers
+        .filter((l) => {
+          return !!l.legendConfig;
+        })
+        .map((l) => {
+          const {
+            id,
+            paramsConfig,
+            sqlConfig,
+            decodeConfig,
+            timelineConfig,
+            legendConfig,
+          } = l;
+          const lSettings = layersSettings[id] || {};
 
-      const params =
-        !!paramsConfig && getParams(paramsConfig, lSettings.params);
-      const sqlParams =
-        !!sqlConfig && getParams(sqlConfig, lSettings.sqlParams);
-      const decodeParams =
-        !!decodeConfig &&
-        getParams(decodeConfig, {
-          ...timelineConfig,
-          ...lSettings.decodeParams,
-        });
-      const timelineParams = !!timelineConfig && {
-        ...timelineConfig,
-        ...getParams(paramsConfig, lSettings.params),
-        ...getParams(decodeConfig, lSettings.decodeParams),
-      };
+          const params =
+            !!paramsConfig && getParams(paramsConfig, lSettings.params);
+          const sqlParams =
+            !!sqlConfig && getParams(sqlConfig, lSettings.sqlParams);
+          const decodeParams =
+            !!decodeConfig &&
+            getParams(decodeConfig, {
+              ...timelineConfig,
+              ...lSettings.decodeParams,
+            });
+          const timelineParams = !!timelineConfig && {
+            ...timelineConfig,
+            ...getParams(paramsConfig, lSettings.params),
+            ...getParams(decodeConfig, lSettings.decodeParams),
+          };
 
-      return {
-        id,
-        slug: id,
-        dataset: id,
-        layers: [
-          {
-            active: true,
-            ...l,
+          return {
+            id,
+            slug: id,
+            dataset: id,
+            layers: [
+              {
+                active: true,
+                ...l,
+                ...lSettings,
+                params,
+                sqlParams,
+                decodeParams,
+                timelineParams,
+              },
+            ],
             ...lSettings,
-            params,
-            sqlParams,
-            decodeParams,
-            timelineParams,
-          },
-        ],
-        ...lSettings,
-      };
-    });
+            legendConfig,
+          };
+        }),
+    [layers]
+  );
 
-  const onChangeVisibility = (l, visibility) => {
-    setLayersSettings({
-      ...layersSettings,
-      [l.id]: {
-        ...layersSettings[l.id],
-        visibility,
-      },
-    });
-  };
+  const onChangeVisibility = useCallback(
+    (l, visibility) => {
+      setLayersSettings({
+        ...layersSettings,
+        [l.id]: {
+          ...layersSettings[l.id],
+          visibility,
+        },
+      });
+    },
+    [layersSettings]
+  );
 
-  const onChangeOpacity = (l, opacity) => {
-    setLayersSettings({
-      ...layersSettings,
-      [l.id]: {
-        ...layersSettings[l.id],
-        opacity,
-      },
-    });
-  };
+  const onChangeOpacity = useCallback(
+    (l, opacity) => {
+      setLayersSettings({
+        ...layersSettings,
+        [l.id]: {
+          ...layersSettings[l.id],
+          opacity,
+        },
+      });
+    },
+    [layersSettings]
+  );
 
-  const onChangeLayerDate = (dates, layer) => {
+  const onChangeLayerDate = useCallback((dates, layer) => {
     const { id, decodeConfig } = layer;
 
     setLayersSettings({
@@ -154,50 +213,116 @@ export default function ExploreMap({
         }),
       },
     });
-  };
+  }, []);
 
-  const onAfterAdd = (layerModel) => {
-    if (!isEmpty(layerModel.interactionConfig)) {
-      layerModel.mapLayer.layers.forEach((l) => {
-        const { id } = l;
+  const onAfterAdd = useCallback(
+    (layerModel) => {
+      if (!isEmpty(layerModel.interactionConfig)) {
+        layerModel.mapLayer.layers.forEach((l) => {
+          const { id } = l;
 
-        if (!layersInteractiveIds.includes(id)) {
-          setLayersInteractiveIds((prevLayersInteractiveIds) => [
-            ...prevLayersInteractiveIds,
-            id,
-          ]);
-        }
-      });
-    }
-  };
+          if (!layersInteractiveIds.includes(id)) {
+            setLayersInteractiveIds((prevLayersInteractiveIds) => [
+              ...prevLayersInteractiveIds,
+              id,
+            ]);
+          }
+        });
+      }
+    },
+    [layersInteractiveIds]
+  );
 
-  const onAfterRemove = (layerModel) => {
-    if (!isEmpty(layerModel.interactionConfig)) {
-      layerModel.mapLayer.layers.forEach((l) => {
-        const { id } = l;
+  const onAfterRemove = useCallback(
+    (layerModel) => {
+      if (!isEmpty(layerModel.interactionConfig)) {
+        layerModel.mapLayer.layers.forEach((l) => {
+          const { id } = l;
 
-        if (layersInteractiveIds.includes(id)) {
-          setLayersInteractiveIds((prevLayersInteractiveIds) => {
-            const arr = prevLayersInteractiveIds.filter((e) => e !== id);
+          if (layersInteractiveIds.includes(id)) {
+            setLayersInteractiveIds((prevLayersInteractiveIds) => {
+              const arr = prevLayersInteractiveIds.filter((e) => e !== id);
 
-            return arr;
-          });
-        }
-      });
-    }
-  };
+              return arr;
+            });
+          }
+        });
+      }
+    },
+    [layersInteractiveIds]
+  );
 
   const onViewportChange = useDebouncedCallback((vp) => {
     setViewport(vp);
   }, []);
 
-  const onZoomChange = (zoom) => {
-    setViewport({
-      ...viewport,
-      zoom,
-      transitionDuration: 250,
+  const onZoomChange = useCallback(
+    (zoom) => {
+      setViewport({
+        ...viewport,
+        zoom,
+        transitionDuration: 250,
+      });
+    },
+    [viewport]
+  );
+
+  const handleClick = useCallback((e) => {
+    if (e && e.features) {
+      const story = e.features.find((f) => f.source === 'stories');
+      if (story) {
+        push(story.properties.href);
+      }
+      if (!story) {
+        const interactions = e.features
+          .filter((int) => ['state', 'counties'].includes(int.source))
+          .reduce((acc, f) => {
+            return {
+              ...acc,
+              [f.source]: {
+                id: f.id,
+                data: f.properties,
+              },
+            };
+          }, {});
+
+        if (interactions.counties || interactions.state)
+          setGeometryId(
+            interactions.state
+              ? interactions.state.id?.toString()
+              : interactions.counties.id?.toString()
+          );
+      }
+    }
+  }, []);
+
+  const handleHover = useDebouncedCallback((e) => {
+    if (e && e.features) {
+      const { lngLat, features } = e;
+
+      const interactions = features.reduce((acc, f) => {
+        return {
+          ...acc,
+          [f.source]: {
+            id: f.id,
+            data: f.properties,
+          },
+        };
+      }, {});
+
+      setLayersHover({
+        lngLat,
+        interactions,
+      });
+    }
+  }, []);
+
+  const handleMouseOut = useDebouncedCallback(() => {
+    setLayersHover({
+      lngLat: null,
+      interactions: {},
     });
-  };
+  }, []);
 
   return (
     <div className={cx('c-explore-map', className)}>
@@ -211,105 +336,21 @@ export default function ExploreMap({
         onViewportChange={onViewportChange}
         interactiveLayerIds={layersInteractiveIds}
         visibilityStories={visibilityStories}
-        onClick={(e) => {
-          if (e && e.features) {
-            const story = e.features.find((f) => f.source === 'stories');
-            if (story) {
-              push(story.properties.href);
-            }
-            if (!story) {
-              const interactions = e.features
-                .filter((int) => ['state', 'counties'].includes(int.source))
-                .reduce((acc, f) => {
-                  return {
-                    ...acc,
-                    [f.source]: {
-                      id: f.id,
-                      data: f.properties,
-                    },
-                  };
-                }, {});
-
-              if (interactions.counties || interactions.state)
-                setGeometryId(
-                  interactions.state
-                    ? interactions.state.id?.toString()
-                    : interactions.counties.id?.toString()
-                );
-            }
-          }
-        }}
-        onHover={(e) => {
-          if (e && e.features) {
-            const { lngLat, features } = e;
-
-            const interactions = features.reduce((acc, f) => {
-              return {
-                ...acc,
-                [f.source]: {
-                  id: f.id,
-                  data: f.properties,
-                },
-              };
-            }, {});
-
-            setLayersHover({
-              lngLat,
-              interactions,
-            });
-          }
-        }}
-        onMouseOut={() => {
-          setLayersHover({
-            lngLat: null,
-            interactions: {},
-          });
-        }}
+        onClick={handleClick}
+        onHover={handleHover}
+        onMouseOut={handleMouseOut}
       >
         {(map) => (
           <>
             <LayerManager map={map} plugin={PluginMapboxGl}>
-              {layers.map((layer) => {
-                const {
-                  id,
-                  paramsConfig,
-                  sqlConfig,
-                  decodeConfig,
-                  timelineConfig,
-                  decodeFunction,
-                } = layer;
-
-                const lSettings = layersSettings[id] || {};
-
-                const l = {
-                  ...layer,
-                  ...layer.config,
-                  ...lSettings,
-                  ...(!!paramsConfig && {
-                    params: getParams(paramsConfig, { ...lSettings.params }),
-                  }),
-
-                  ...(!!sqlConfig && {
-                    sqlParams: getParams(sqlConfig, { ...lSettings.sqlParams }),
-                  }),
-
-                  ...(!!decodeConfig && {
-                    decodeParams: getParams(decodeConfig, {
-                      ...timelineConfig,
-                      ...lSettings.decodeParams,
-                    }),
-                    decodeFunction,
-                  }),
-                };
-                return (
-                  <Layer
-                    key={l.id}
-                    {...l}
-                    onAfterAdd={onAfterAdd}
-                    onAfterRemove={onAfterRemove}
-                  />
-                );
-              })}
+              {layersParsed.map((layer) => (
+                <Layer
+                  key={layer.id}
+                  {...layer}
+                  onAfterAdd={onAfterAdd}
+                  onAfterRemove={onAfterRemove}
+                />
+              ))}
             </LayerManager>
             <MapTooltip
               layersHover={layersHover}

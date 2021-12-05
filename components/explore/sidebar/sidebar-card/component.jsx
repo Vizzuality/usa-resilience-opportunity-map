@@ -129,7 +129,10 @@ function SidebarCard({
             </p>
             <div className={styles.chartWrapper}>
               {chartData &&
-                Object.entries(chartData).map(([hazardLevel, count]) => (
+                (item.id === '43'
+                  ? Object.entries(chartData).reverse()
+                  : Object.entries(chartData)
+                ).map(([hazardLevel, count]) => (
                   <div
                     style={{
                       height: '100%',
@@ -139,10 +142,17 @@ function SidebarCard({
                   />
                 ))}
             </div>
-            <div className={styles.chartLegend}>
-              <span>{chartLegendValues.low}</span>
-              <span>{chartLegendValues.high}</span>
-            </div>
+            {item.id === '43' ? (
+              <div className={styles.chartLegend}>
+                <span>{chartLegendValues.high}</span>
+                <span>{chartLegendValues.low}</span>
+              </div>
+            ) : (
+              <div className={styles.chartLegend}>
+                <span>{chartLegendValues.low}</span>
+                <span>{chartLegendValues.high}</span>
+              </div>
+            )}
           </div>
         )}
 
