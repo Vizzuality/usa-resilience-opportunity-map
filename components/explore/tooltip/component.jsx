@@ -2,6 +2,7 @@ import { Popup } from 'react-map-gl';
 import PropTypes from 'prop-types';
 import startCase from 'lodash.startcase';
 import HazardIndicator from 'components/explore/hazard-indicator';
+import { useMemo } from 'react';
 
 export default function MapTooltip({
   layersHover,
@@ -14,14 +15,17 @@ export default function MapTooltip({
   const stateValues = interactions?.state?.data;
   const censusValues = interactions?.census?.data;
 
+  const activeIndicators = useMemo(
+    () =>
+      indicators.active?.map((id) => indicators.data?.find((i) => i.id === id)),
+    [indicators]
+  );
+
   if (
     lngLat &&
     tooltipVisibility &&
     (stateValues || countyValues || censusValues)
   ) {
-    const activeIndicators = indicators.active?.map((id) =>
-      indicators.data?.find((i) => i.id === id)
-    );
     let values;
     let locationName;
 

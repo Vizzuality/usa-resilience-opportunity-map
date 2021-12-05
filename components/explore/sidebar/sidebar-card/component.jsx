@@ -142,10 +142,17 @@ function SidebarCard({
                   />
                 ))}
             </div>
-            <div className={styles.chartLegend}>
-              <span>{chartLegendValues.low}</span>
-              <span>{chartLegendValues.high}</span>
-            </div>
+            {item.id === '43' ? (
+              <div className={styles.chartLegend}>
+                <span>{chartLegendValues.high}</span>
+                <span>{chartLegendValues.low}</span>
+              </div>
+            ) : (
+              <div className={styles.chartLegend}>
+                <span>{chartLegendValues.low}</span>
+                <span>{chartLegendValues.high}</span>
+              </div>
+            )}
           </div>
         )}
 

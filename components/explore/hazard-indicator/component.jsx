@@ -1,5 +1,10 @@
+import { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+
+const COLORS = ['#F3C64E', '#FDAE61', '#F46D43', '#F44543', '#BF2826'];
+
+const NO_VALUE_COLOR = '#F1F1F1';
 
 export default function HazardIndicator({
   hazardLevel,
@@ -16,26 +21,22 @@ export default function HazardIndicator({
     slug: PropTypes.string,
   };
 
-  const hazards =
+  const hazards = useMemo(() =>
     slug === 'ses' || slug === 'pci'
       ? ['High', 'Medium-high', 'Medium', 'Low-medium', 'Low', 'No data']
-      : ['Low', 'Low-medium', 'Medium', 'Medium-high', 'High', 'No data'];
+      : ['Low', 'Low-medium', 'Medium', 'Medium-high', 'High', 'No data']
+  );
 
-  const hazardColors = [
-    '#F3C64E',
-    '#FDAE61',
-    '#F46D43',
-    '#F44543',
-    '#BF2826',
-    '#F1F1F1',
-  ];
+  const hazardColors = useMemo(() =>
+    slug === 'pci'
+      ? [...[...COLORS].reverse(), NO_VALUE_COLOR]
+      : [...COLORS, NO_VALUE_COLOR]
+  );
 
   // TO DO - fix this in the data and remove this fix
   const hazardLevelReverse = [4, 3, 2, 1, 0, -1];
   const hazardMeasure =
-    slug === 'ses' || slug === 'pci'
-      ? hazardLevelReverse[hazardLevel]
-      : hazardLevel;
+    slug === 'ses' ? hazardLevelReverse[hazardLevel] : hazardLevel;
 
   // Opacity 30% on inactive bars
   return (
