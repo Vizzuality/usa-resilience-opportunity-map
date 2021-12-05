@@ -32,9 +32,9 @@ export const STORIES = [
     description:
       'Helping homeowners help themselves in the face of wildfire risk.',
     buttonText: 'Discover',
-    image: '/assets/images/stories/boulder/bo_section_1_collage.png',
-    thumb: '/assets/images/stories/boulder/bo_section_1_bg.png',
-    href: 'https://mappingresilience.onebillionresilient.org/stories/boulder',
+    image: '/assets/images/stories/boulder/bo_section_1_collage.webp',
+    thumb: '/assets/images/stories/boulder/bo_section_1_bg.jpg',
+    href: '/boulder',
     location: {
       lat: 40.04705,
       long: -105.272148,

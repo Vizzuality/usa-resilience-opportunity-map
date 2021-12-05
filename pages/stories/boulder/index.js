@@ -52,7 +52,7 @@ const Section2 = () => {
   return (
     <div className={styles.section2}>
       <VideoPlayer
-        thumbnail="/assets/images/stories/boulder/bo_video_thumb.png"
+        thumbnail="/assets/images/stories/boulder/bo_video_thumb.jpg"
         url="https://youtu.be/6PGyRolwFVo"
       />
     </div>
@@ -117,7 +117,7 @@ const Section5 = () => {
     <div className={cx(styles.section5, styles.bgWhite, styles.textGray)}>
       <div className={styles.contentLeft}>
         <img
-          src="/assets/images/stories/boulder/bo_section_5_image.png"
+          src="/assets/images/stories/boulder/bo_section_5_image.webp"
           className={styles.section5Img}
           alt=""
         />
