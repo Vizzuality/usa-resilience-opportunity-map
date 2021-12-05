@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "PORT=$PORT next start",
+    "start": "next start -p 8080",
     "test": "eslint --ext .jsx --ext .js --fix . && stylelint --config .stylelintrc.json ."
   },
   "dependencies": {
