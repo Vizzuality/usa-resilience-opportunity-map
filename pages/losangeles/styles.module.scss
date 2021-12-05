@@ -1,0 +1,688 @@
+// Global styles
+
+.underline {
+  border-bottom: 8px solid var(--brand-secondary);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  z-index: 5;
+}
+
+.cols {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: var(--columns-mq-medium)) {
+    flex-direction: row;
+  }
+}
+
+.cols2 .col {
+  flex: 1;
+  position: relative;
+  width: 100%;
+
+  @media screen and (min-width: var(--columns-mq-medium)) {
+    width: 50%;
+  }
+}
+
+.textWhite {
+  color: var(--color-white);
+}
+
+.textGray {
+  color: var(--brand-gray);
+}
+
+.textPrimary {
+  color: var(--brand-primary);
+}
+
+.textSecondary {
+  color: var(--brand-secondary);
+}
+
+.bgWhite {
+  background-color: var(--color-white);
+}
+
+.bgGray {
+  background-color: var(--brand-gray);
+}
+
+.bgPrimary {
+  background-color: var(--brand-primary);
+}
+
+.bgSecondary {
+  background-color: var(--brand-secondary);
+}
+
+.bgLightBlue {
+  background-color: var(--color-light-blue);
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.fontUbuntu {
+  font-family: Ubuntu, sans-serif !important;
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+}
+
+.sectionTitle {
+  font-family: "Oxygen", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.stories {
+  font-family: "Oxygen", sans-serif;
+  font-size: 1.1rem;
+  overflow: hidden;
+
+  p {
+    font-family: "Oxygen", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 2rem 0;
+
+    @media screen and (min-width: 600px) {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    @media screen and (min-width: 1200px) {
+      font-size: 1.3rem;
+      line-height: 1.5;
+    }
+  }
+
+  ul {
+    li {
+      font-family: "Oxygen", sans-serif;
+      font-size: 1.1rem;
+
+      @media screen and (min-width: 500px) {
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      @media screen and (min-width: 1200px) {
+        font-size: 1.3rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+.quoteContainer {
+  color: white;
+  padding: 1rem var(--padding-quote);
+  text-align: center;
+}
+
+.listItem {
+  list-style-position: inside;
+  list-style-type: initial;
+  margin-bottom: 0.2rem;
+}
+
+.footerPageContainer {
+  color: white;
+  hyphens: auto;
+  margin-top: -1px;
+  padding: 0 var(--container-padding);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+
+  div {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 20px var(--container-padding);
+  }
+
+  p {
+    font-size: 10px;
+    line-height: 1rem;
+    margin: 0;
+    padding: 1.5px 0;
+
+    @media screen and (min-width: 1000px) {
+      font-size: 11px;
+    }
+  }
+
+  p:first-child {
+    border-top: 1px solid white;
+    padding-top: 20px;
+  }
+}
+
+// Section1
+.section1 {
+  background: url("/assets/images/stories/losangeles/la_section_1_bg.png");
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 4rem;
+  position: relative;
+
+  &::after {
+    background-image: url("/assets/images/stories/losangeles/la_section_1_collage.png");
+    background-size: contain;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    content: '';
+    display: none;
+    position: absolute;
+    z-index: 5;
+
+    @media screen and (min-width: 1000px) {
+      bottom: 0;
+      display: initial;
+      height: 100%;
+      right: 0;
+      width: 45vw;
+    }
+  }
+
+  .container {
+    position: relative;
+  }
+
+  @media screen and (min-width: 900px) {
+    padding: 4rem 0 12rem;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding: 10rem 0 12rem;
+  }
+
+  .section1Title {
+    color: white;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 4rem;
+    padding-top: 4rem;
+
+    span {
+      font-family: "Big Caslon", sans-serif;
+      font-weight: normal;
+      letter-spacing: normal;
+    }
+
+    @media screen and (min-width: 600px) {
+      font-size: 3.6rem;
+      margin-bottom: 5rem;
+    }
+
+    @media screen and (min-width: 900px) {
+      font-size: 5rem;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      max-width: 66rem;
+    }
+  }
+
+  .section1Text p {
+    color: var(--color-white);
+    font-size: 1.2rem;
+    line-height: 1.4;
+    max-width: 32rem;
+
+    @media screen and (min-width: 600px) {
+      font-size: 1.3rem;
+      max-width: 42rem;
+    }
+  }
+}
+
+// Section 2 - video
+.section2 {
+  height: 0;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+// Section 3
+.section3 {
+  color: var(--color-white);
+  overflow: hidden;
+  position: relative;
+
+  .colRight {
+    padding: 2rem var(--container-padding);
+
+    @media screen and (min-width: 1000px) {
+      display: inline-block;
+      max-width: calc(var(--container-max-width) / 2);
+      margin-left: 52%;
+      margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
+      padding: 3rem var(--container-padding);
+    }
+  }
+
+  .colLeft {
+    min-height: 20rem;
+    overflow: hidden;
+    position: relative;
+
+    @media screen and (min-width: 1000px) {
+      display: inline-block;
+      height: 100%;
+      position: absolute;
+      width: 50vw;
+    }
+
+    &::after {
+      background-image: url("/assets/images/stories/losangeles/la_section_3_bg.png");
+      background-size: cover;
+      background-position: center;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      z-index: 0;
+
+      @media screen and (min-width: 1000px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Section 5
+.section5 {
+  padding: 0 0 2em 0;
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (min-width: 600px) {
+    padding: 4rem 0;
+  }
+
+  @media screen and (min-width: 900px) {
+    padding: 4rem 0 0 0;
+  }
+
+  .contentLeft {
+    position: relative;
+    z-index: 2;
+    margin-top: 3rem;
+    max-width: 40rem;
+
+    @media screen and (min-width: 600px) {
+      margin-top: 0;
+    }
+
+    @media screen and (min-width: 900px) {
+      margin-bottom: 4rem;
+      margin-top: 0;
+      width: 44%;
+    }
+  }
+
+  .contentRight {
+    margin-right: -1rem;
+    position: relative;
+    z-index: 1;
+
+    @media screen and (min-width: 600px) {
+      display: none;
+    }
+
+    @media screen and (min-width: 1000px) {
+      bottom: 0;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 0;
+      position: absolute;
+      right: -10%;
+      width: 60%;
+      height: 100%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      height: 100%;
+      right: 0;
+    }
+
+    .section5Img {
+      @media screen and (min-width: 900px) {
+        height: 100%;
+      }
+    }
+  }
+}
+
+// Section 6
+.section6 {
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (min-width: 900px) {
+    padding: 3rem 0 0 0;
+  }
+
+  .contentRight {
+    margin: 3rem 0;
+    position: relative;
+    width: 100%;
+
+    @media screen and (min-width: 900px) {
+      margin: 0 0 4rem 0;
+      max-width: 30rem;
+      margin-left: 50%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin-left: 52%;
+      max-width: 35rem;
+    }
+
+    @media screen and (min-width: 1500px) {
+      margin-left: 52%;
+      max-width: 40rem;
+      padding: 8rem 0;
+    }
+  }
+
+  .contentLeft {
+    position: relative;
+    z-index: 1;
+    margin-left: -1rem;
+
+    @media screen and (min-width: 600px) {
+      right: -1rem;
+    }
+
+    @media screen and (min-width: 900px) {
+      position: absolute;
+      display: flex;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      justify-content: flex-end;
+      margin-left: 0;
+    }
+
+    @media screen and (min-width: 1200px) {
+      bottom: -0.3vh;
+      height: 130%;
+    }
+
+    .section6Img {
+      @media screen and (min-width: 900px) {
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+// Section 7
+.section7 {
+  color: var(--color-white);
+  overflow: hidden;
+  position: relative;
+
+  .colRight {
+    padding: 2rem var(--container-padding);
+
+    @media screen and (min-width: 1000px) {
+      display: inline-block;
+      max-width: calc(var(--container-max-width) / 2);
+      margin-left: 52%;
+      margin-right: max(calc(calc(100% - var(--container-max-width)) / 2), 1px);
+      padding: 3rem var(--container-padding);
+    }
+
+    @media screen and (min-width: 1500px) {
+      max-width: 50rem;
+      margin-right: 0;
+      padding: 10rem var(--container-padding);
+    }
+  }
+
+  .colLeft {
+    min-height: 20rem;
+    overflow: hidden;
+    position: relative;
+
+    @media screen and (min-width: 600px) {
+      min-height: 60rem;
+    }
+
+    @media screen and (min-width: 1000px) {
+      display: inline-block;
+      height: 100%;
+      position: absolute;
+      width: 50vw;
+    }
+
+    &::after {
+      background-image: url("/assets/images/stories/losangeles/la_section_7_bg.png");
+      background-size: cover;
+      background-position: center;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      z-index: 0;
+
+      @media screen and (min-width: 1000px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Section 9
+.section9 {
+  padding: 0 0 2em 0;
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (min-width: 600px) {
+    padding: 2rem 0 10rem 0;
+  }
+
+  @media screen and (min-width: 900px) {
+    padding: 4rem 0 0 0;
+  }
+
+  .contentLeft {
+    position: relative;
+    z-index: 2;
+    margin-top: 3rem;
+    max-width: 40rem;
+
+    @media screen and (min-width: 900px) {
+      margin-bottom: 4rem;
+      margin-top: 0;
+      width: 48%;
+    }
+  }
+
+  .contentRight {
+    margin-right: -1rem;
+    position: relative;
+    z-index: 1;
+
+    @media screen and (min-width: 600px) {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 0;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 35%;
+    }
+
+    @media screen and (min-width: 1000px) {
+      bottom: 0;
+      display: flex;
+      justify-content: flex-end;
+      height: 80%;
+      margin-right: 0;
+      position: absolute;
+      right: 0;
+      top: auto;
+      width: 50%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      height: 100%;
+    }
+
+    .section9Img {
+      @media screen and (min-width: 900px) {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Section 10
+.section10 {
+  padding-top: 82%;
+  position: relative;
+
+  &::after {
+    background-image: url("/assets/images/stories/losangeles/la_section_10_bg.png");
+    background-size: contain;
+    background-position: top left;
+    background-repeat: no-repeat;
+    content: '';
+    top: 0;
+    height: 43%;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    z-index: 3;
+
+    @media screen and (min-width: 600px) {
+      background-position: bottom left;
+      height: 60%;
+      left: 0;
+      width: 110vw;
+    }
+
+    @media screen and (min-width: 1000px) {
+      background-position: bottom -0.5rem left;
+      height: 103.5%;
+      left: -16vw;
+    }
+
+    @media screen and (min-width: 1200px) {
+      background-size: auto 100%;
+      bottom: 0;
+      left: -12vw;
+    }
+
+    @media screen and (min-width: 1400px) {
+      left: -2vw;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    padding: 0 var(--container-padding);
+  }
+
+  @media screen and (min-width: 1400px) {
+    background-size: auto 100%;
+    padding-bottom: 4rem;
+  }
+
+  .section10Wrapper {
+    padding: 4rem 0;
+
+    @media screen and (min-width: 1000px) {
+      left: 58%;
+      max-width: 43%;
+      position: relative;
+    }
+
+    @media screen and (min-width: 1400px) {
+      top: 1rem;
+    }
+  }
+}
+
+// Section 11
+.section11 {
+  position: relative;
+  padding-bottom: 90%;
+  padding-top: 2rem;
+
+  @media screen and (min-width: 600px) {
+    padding-top: 4rem;
+    padding-bottom: 40rem;
+  }
+
+  @media screen and (min-width: 1000px) {
+    padding: 4rem var(--container-padding);
+  }
+
+  .section11Wrapper {
+    @media screen and (min-width: 1000px) {
+      max-width: 50%;
+    }
+
+    @media screen and (min-width: 1600px) {
+      padding: 4rem 0;
+    }
+  }
+
+  &::before {
+    background-image: url("/assets/images/stories/losangeles/la_section_11_bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    bottom: -2.5%;
+    content: '';
+    height: 130%;
+    right: -13%;
+    position: absolute;
+    width: 110vw;
+    z-index: 5;
+
+    @media screen and (min-width: 600px) {
+      background-position: right bottom;
+      bottom: -4%;
+    }
+
+    @media screen and (min-width: 1000px) {
+      bottom: -6%;
+      background-position: right -5rem top;
+      height: 106%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      background-position: right 8rem top;
+    }
+
+    @media screen and (min-width: 1600px) {
+      background-position: right 14rem top;
+      height: 100%;
+    }
+  }
+}
