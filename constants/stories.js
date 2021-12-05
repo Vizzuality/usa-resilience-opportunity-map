@@ -6,8 +6,7 @@ export const STORIES = [
     buttonText: 'Discover',
     image: '/assets/images/stories/neworleans/no_section_14_bg.png',
     thumb: '/assets/images/stories/neworleans/no_section_1_bg.jpg',
-    href:
-      'https://mappingresilience.onebillionresilient.org/stories/neworleans',
+    href: '/neworleans',
     location: {
       lat: 30.000816,
       long: -90.070712,
@@ -20,8 +19,7 @@ export const STORIES = [
     buttonText: 'Discover',
     image: '/assets/images/stories/louisville/lv_section_1_collage.png',
     thumb: '/assets/images/stories/louisville/lv_section_1_image.png',
-    href:
-      'https://mappingresilience.onebillionresilient.org/stories/louisville',
+    href: '/louisville',
     location: {
       lat: 38.328732,
       long: -85.764771,
@@ -32,9 +30,9 @@ export const STORIES = [
     description:
       'Helping homeowners help themselves in the face of wildfire risk.',
     buttonText: 'Discover',
-    image: '/assets/images/stories/boulder/bo_section_1_collage.png',
-    thumb: '/assets/images/stories/boulder/bo_section_1_bg.png',
-    href: 'https://mappingresilience.onebillionresilient.org/stories/boulder',
+    image: '/assets/images/stories/boulder/bo_section_1_collage.webp',
+    thumb: '/assets/images/stories/boulder/bo_section_1_bg.jpg',
+    href: '/boulder',
     location: {
       lat: 40.04705,
       long: -105.272148,
@@ -46,7 +44,7 @@ export const STORIES = [
     buttonText: 'Discover',
     image: '/assets/images/stories/newyork/ny_section_1_collage.png',
     thumb: '/assets/images/stories/newyork/ny_section_1_bg.png',
-    href: 'https://mappingresilience.onebillionresilient.org/stories/newyork',
+    href: '/newyork',
     location: {
       lat: 40.73061,
       long: -73.935242,
@@ -58,7 +56,7 @@ export const STORIES = [
     buttonText: 'Discover',
     image: '/assets/images/stories/charlotte/ch_home.png',
     thumb: '/assets/images/stories/charlotte/ch_section_1_bg.png',
-    href: 'https://mappingresilience.onebillionresilient.org/stories/charlotte',
+    href: '/charlotte',
     location: {
       lat: 35.227085,
       long: -80.843124,
@@ -70,7 +68,7 @@ export const STORIES = [
     buttonText: 'Discover',
     image: '/assets/images/stories/norfolk/nf_section_1_collage.png',
     thumb: '/assets/images/stories/norfolk/nf_section_1_bg.png',
-    href: 'https://mappingresilience.onebillionresilient.org/stories/norfolk',
+    href: '/norfolk',
     location: {
       lat: 36.850769,
       long: -76.285873,
@@ -83,8 +81,7 @@ export const STORIES = [
     buttonText: 'Discover',
     image: '/assets/images/stories/losangeles/la_section_1_collage.png',
     thumb: '/assets/images/stories/losangeles/la_section_1_bg.png',
-    href:
-      'https://mappingresilience.onebillionresilient.org/stories/losangeles',
+    href: '/losangeles',
     location: {
       lat: 34.052235,
       long: -118.243683,
@@ -96,7 +93,7 @@ export const STORIES = [
     buttonText: 'Discover',
     image: '/assets/images/stories/seattle/st_section_1_collage.png',
     thumb: '/assets/images/stories/seattle/st_section_1_bg.png',
-    href: 'https://mappingresilience.onebillionresilient.org/stories/seattle',
+    href: '/seattle',
     location: {
       lat: 47.608013,
       long: -122.335167,
@@ -108,7 +105,7 @@ export const STORIES = [
     buttonText: 'Discover',
     image: '/assets/images/stories/tucson/tu_section_1_collage.png',
     thumb: '/assets/images/stories/tucson/tu_section_1_bg.png',
-    href: 'https://mappingresilience.onebillionresilient.org/stories/tucson',
+    href: '/tucson',
     location: {
       lat: 32.25346,
       long: -110.911789,
@@ -121,8 +118,7 @@ export const STORIES = [
     buttonText: 'Discover',
     image: '/assets/images/stories/sanantonio/sa_section_1_collage.png',
     thumb: '/assets/images/stories/sanantonio/sa_section_1_bg.png',
-    href:
-      'https://mappingresilience.onebillionresilient.org/stories/sanantonio',
+    href: '/sanantonio',
     location: {
       lat: 29.424349,
       long: -98.491142,
