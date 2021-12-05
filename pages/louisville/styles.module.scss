@@ -145,7 +145,7 @@
   padding: 0 var(--container-padding);
   overflow-wrap: break-word;
   word-wrap: break-word;
- 
+
 
   div {
     max-width: var(--container-max-width);
@@ -248,7 +248,7 @@
     @media screen and (min-width: 600px) {
       font-size: 1.3rem;
       max-width: 38rem;
-      
+
       &:last-of-type {
         max-width: 33rem;
       }
@@ -440,7 +440,7 @@
   color: white;
   overflow: hidden;
   position: relative;
- 
+
   .colLeft {
     padding: 4rem var(--container-padding);
 
@@ -667,7 +667,7 @@
       bottom: 0;
       left: -12vw;
     }
-    
+
     @media screen and (min-width: 1400px) {
       left: -2vw;
     }
@@ -723,7 +723,7 @@
       max-width: 48%;
       padding-right: 10%;
     }
-    
+
     @media screen and (min-width: 1600px) {
       padding-right: 15%;
     }

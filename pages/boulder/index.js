@@ -18,7 +18,7 @@ const Section1 = () => {
             <br />
             Help Themselves in the
             <br />
-            Face of 
+            Face of
             {' '}
             <span className={styles.underline}>Wildfire Risk</span>
           </span>

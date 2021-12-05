@@ -14,7 +14,7 @@ const Section1 = () => {
       <div className={styles.container}>
         <div className={styles.section1Title}>
           <span>
-            Taking 
+            Taking
             {' '}
             <span className={styles.underline}>Preemptive Action</span>
             <br />
@@ -74,7 +74,7 @@ const Section3 = () => {
         <div className={styles.contentLeft}>
           <p>
             Across the United States, floods kill more than one hundred people
-            annually and cause vast property damage. 
+            annually and cause vast property damage.
             {' '}
             <sup>1</sup>
             {' '}
@@ -82,7 +82,7 @@ const Section3 = () => {
             Emergency Management Agency (FEMA) estimates that repairing and
             replacing flood-damaged roads, bridges, utilities, and other public
             infrastructure cost an estimated $48.6 billion between 1998 and
-            2014. 
+            2014.
             {' '}
             <sup>2</sup>
           </p>

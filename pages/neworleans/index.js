@@ -18,7 +18,7 @@ const Section1 = () => {
             <br />
             Neighborhood with a
             <br />
-            Model Solution for 
+            Model Solution for
             {' '}
             <br />
             <span className={styles.underlineRed}>Stormwater</span>

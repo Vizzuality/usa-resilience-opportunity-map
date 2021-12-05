@@ -27,7 +27,7 @@ const Section1 = () => {
         <div className={styles.section1Text}>
           <p>
             According to the US Drought Monitor, San Antonio, Texas, is
-            “abnormally dry.” 
+            “abnormally dry.”
             {' '}
             <sup>1</sup>
             {' '}
@@ -168,7 +168,7 @@ const Section6 = () => {
         <p>
           Working with the Conservation Department and nonprofits such as Bexar
           County Master Gardeners, San Antonio Water Systems launched a rebate
-          program that included 
+          program that included
           {' '}
           <sup>2</sup>
         </p>

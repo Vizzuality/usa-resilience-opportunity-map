@@ -14,7 +14,7 @@ const Section1 = () => {
       <div className={styles.container}>
         <div className={styles.section1Title}>
           <span>
-            Getting 
+            Getting
             {' '}
             <span className={styles.underline}>RainWise</span>
             <br />
@@ -95,13 +95,13 @@ const Section4 = () => {
       <div className={cx(styles.contentRight, styles.container)}>
         <p>
           Alongside heavy rain, the water along Seattle’s Puget shoreline has
-          risen by more than six inches in the past century. 
+          risen by more than six inches in the past century.
           {' '}
           <sup>3</sup>
           {' '}
           As
           global temperatures continue to rise, it’s estimated that Seattle will
-          experience ten inches of sea level rise by 2050. 
+          experience ten inches of sea level rise by 2050.
           {' '}
           <sup>4</sup>
         </p>

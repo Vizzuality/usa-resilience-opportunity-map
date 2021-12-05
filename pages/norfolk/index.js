@@ -23,7 +23,7 @@ const Section1 = () => {
           <p>
             As a result of climate change, the US east coast is increasingly at
             risk of coastal flooding, with the number of high-tide days rising
-            significantly in more than forty coastal communities. 
+            significantly in more than forty coastal communities.
             {' '}
             <sup>1</sup>
             {' '}
@@ -187,7 +187,7 @@ const Section7 = () => {
             Central to the flood-resilience solutions is the Ohio Creek
             Watershed, a project funded by a $112-million grant from the
             National Disaster Competition awarded to the city after Hurricane
-            Sandy. 
+            Sandy.
             {' '}
             <sup>4</sup>
           </p>

@@ -16,7 +16,7 @@ const Section1 = () => {
           <span>
             Community Mobilization
             <br />
-            for 
+            for
             {' '}
             <span className={styles.underline}>Cool Neighborhoods</span>
           </span>

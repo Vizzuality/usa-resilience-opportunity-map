@@ -16,7 +16,7 @@ const Section1 = () => {
           <span>
             In Louisville, Trees
             <br />
-            Provide a 
+            Provide a
             {' '}
             <span className={styles.underline}>Green Solution</span>
             <br />
@@ -71,7 +71,7 @@ const Section3 = () => {
           </h5>
           <p>
             The “urban heat-island effect” is a growing problem in US cities,
-            where extreme heat kills 1,300 people every year. 
+            where extreme heat kills 1,300 people every year.
             {' '}
             <sup>2</sup>
             {' '}
@@ -159,7 +159,7 @@ const Section6 = () => {
           <p>
             Studies show that an expansion of tree canopy in downtown Louisville
             by 15 percent to 33 percent could reduce estimated heat-related
-            mortality between 5 percent and 28 percent. 
+            mortality between 5 percent and 28 percent.
             {' '}
             <sup>3</sup>
           </p>

@@ -29,7 +29,7 @@ const Section1 = () => {
           </p>
           <p>
             Worse, the extent of extreme and exceptional droughts has increased
-            dramatically over the past decade. 
+            dramatically over the past decade.
             {' '}
             <sup>2</sup>
           </p>

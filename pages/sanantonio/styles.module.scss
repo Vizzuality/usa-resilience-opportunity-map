@@ -232,7 +232,7 @@
       letter-spacing: -1.5px;
       max-width: 66rem;
     }
-    
+
     span {
       font-family: "Big Caslon", sans-serif;
       font-weight: normal;
@@ -403,7 +403,7 @@
       padding: 4rem 0;
     }
   }
-  
+
   &::before {
     background-image: url("/assets/images/stories/sanantonio/sa_section_7_bg.png");
     background-size: contain;
@@ -424,7 +424,7 @@
       right: 0;
       width: 110vw;
     }
-  
+
     @media screen and (min-width: 1000px) {
       bottom: 0;
       left: auto;
@@ -601,7 +601,7 @@
       max-width: 50%;
     }
   }
-  
+
   &::before {
     background-image: url("/assets/images/stories/sanantonio/sa_section_9_bg.png");
     background-size: contain;
@@ -618,7 +618,7 @@
     @media screen and (min-width: 600px) {
       bottom: -2%;
     }
-  
+
     @media screen and (min-width: 1000px) {
       background-position: right bottom;
       bottom: -2.5%;
