@@ -7,21 +7,22 @@ import Button from 'components/button';
 import styles from './styles.module.scss';
 
 const MetaFooter = ({ exploreLink, story }) => {
+  console.log(story);
   return (
     <div className={cx(styles.metaFooter)}>
       <div className={cx(styles.metaFooterContent, styles.wrapper)}>
-        <Button
-          className={cx(styles.downloadBtn)}
-          aria-label="download infographic"
+        <a
+          href={`${process.env.NEXT_PUBLIC_DIGITAL_OCEAN}/narratives/${story}.pdf`}
+          rel="noreferrer"
+          target="_blank"
         >
-          <a
-            href={`${process.env.NEXT_PUBLIC_DIGITAL_OCEAN}/narratives/${story}.pdf`}
-            rel="noreferrer"
-            target="_blank"
+          <Button
+            className={cx(styles.downloadBtn)}
+            aria-label="download infographic"
           >
             Download infographic
-          </a>
-        </Button>
+          </Button>
+        </a>
 
         <div className={cx(styles.rightBtns)}>
           <Button
