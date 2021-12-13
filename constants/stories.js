@@ -2,7 +2,7 @@ export const STORIES = [
   {
     title: 'New Orleans',
     description:
-      'Turning a mixed-income neighborhood into a model solution for stormwater flooding.',
+      'Adapting a Mixed-income Neighborhood with a Model Solution for Stormwater Management.',
     buttonText: 'Discover',
     image: '/assets/images/stories/neworleans/no_section_14_bg.png',
     thumb: '/assets/images/stories/neworleans/no_section_1_bg.jpg',
@@ -76,8 +76,7 @@ export const STORIES = [
   },
   {
     title: 'Los Angeles',
-    description:
-      'Turning a mixed-income neighbourhood into a model solution for stormwater flooding.',
+    description: 'Cool roofs for cool streets.',
     buttonText: 'Discover',
     image: '/assets/images/stories/losangeles/la_section_1_collage.png',
     thumb: '/assets/images/stories/losangeles/la_section_1_bg.png',
