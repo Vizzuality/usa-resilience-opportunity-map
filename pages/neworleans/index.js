@@ -18,7 +18,7 @@ const Section1 = () => {
             <br />
             Neighborhood with a
             <br />
-            Model Solution for
+            Model Solution for 
             {' '}
             <br />
             <span className={styles.underlineRed}>Stormwater</span>
@@ -66,7 +66,7 @@ const Section3 = () => {
       <div>
         <div className={cx(styles.col, styles.colLeft)}>
           <p>
-            Since Hurricane Katrina in 2004, which destroyed 850,000 homes and
+            Since Hurricane Katrina in 2005, which destroyed 850,000 homes and
             killed 1,833 people, the city has endured twenty-four hurricanes and
             tropical storms, costing $135 billion in damage.
           </p>

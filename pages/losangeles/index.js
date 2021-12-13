@@ -24,7 +24,7 @@ const Section1 = () => {
         <div className={styles.section1Text}>
           <p>
             Researchers predict that heat waves will become two to ten times
-            more frequent across California by 2050.
+            more frequent across California by 2050. 
             {' '}
             <sup>1</sup>
           </p>
@@ -107,7 +107,7 @@ const Section5 = () => {
           <p className={styles.paragraph}>
             Global climate modeling completed by teams at the University of
             California, Los Angeles (UCLA) shows that, no matter what, extreme
-            heat is set to rise in Los Angeles.
+            heat is set to rise in Los Angeles. 
             {' '}
             <sup>2</sup>
             How much it will rise depends on what strategies the region can
@@ -184,10 +184,10 @@ const Section7 = () => {
             technology to tackle extreme heat.
           </p>
           <p>
-            In its final draft, the Cool Roofs Ordinance “requires utilization
-            of cool roofing for new building constructions, building additions,
-            and major roof replacements in the unincorporated areas of Los
-            Angeles County“.
+            In its final draft, the Cool Roofs Ordinance &quot;requires
+            utilization of cool roofing for new building constructions, building
+            additions, and major roof replacements in the unincorporated areas
+            of Los Angeles County.&quot;
             <sup>3</sup>
           </p>
           <p>
