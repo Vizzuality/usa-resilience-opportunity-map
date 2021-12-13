@@ -7,7 +7,6 @@ import Button from 'components/button';
 import styles from './styles.module.scss';
 
 const MetaFooter = ({ exploreLink, story }) => {
-  console.log(story);
   return (
     <div className={cx(styles.metaFooter)}>
       <div className={cx(styles.metaFooterContent, styles.wrapper)}>
