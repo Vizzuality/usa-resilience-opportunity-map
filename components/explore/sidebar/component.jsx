@@ -160,7 +160,9 @@ export default function ExploreSidebar({
             methodology, please visit our “About the Data” section.
           </p>
           <br />
-          <button onClick={disableDisclaimer}>Don’t show this again</button>
+          <button className="disableDisclaimerBtn" onClick={disableDisclaimer}>
+            Don’t show this again
+          </button>
         </div>
       </Modal>
     </div>
