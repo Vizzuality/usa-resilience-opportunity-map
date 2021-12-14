@@ -60,3 +60,12 @@
     overflow-y: auto;
   }
 }
+
+// DISCLAIMER
+.disableDisclaimerBtn {
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: solid;
+  }
+}

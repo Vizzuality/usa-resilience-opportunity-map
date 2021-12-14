@@ -21,6 +21,7 @@ export default function ExploreSidebar({
 }) {
   const [isModalOpen, openModal] = useState(false);
   const [modalContent, setModalContent] = useState(null);
+  const [initialDisclaimer, setInitialDisclaimer] = useState(true);
   const ref = useRef(null);
 
   const icons = {
@@ -60,6 +61,21 @@ export default function ExploreSidebar({
     setIndicatorsCategory(tab);
     if (ref.current !== tab) ref.current = tab;
   }, [geometryValues, activeCategories]);
+
+  const disableDisclaimer = () => {
+    localStorage.setItem('disclaimerModal', 1);
+    setInitialDisclaimer(false);
+  };
+
+  useEffect(() => {
+    const checkedDisclaimer = localStorage.getItem('disclaimerModal');
+    if (!checkedDisclaimer) {
+      setInitialDisclaimer(true);
+    }
+    if (checkedDisclaimer) {
+      setInitialDisclaimer(false);
+    }
+  }, []);
 
   return (
     <div className="c-explore-sidebar">
@@ -119,6 +135,36 @@ export default function ExploreSidebar({
           </div>
         </Modal>
       )}
+      <Modal
+        isOpen={initialDisclaimer}
+        contentLabel="Metadata"
+        title=" Welcome to the US Climate Resilience Map!"
+        onRequestClose={() => setInitialDisclaimer(false)}
+      >
+        <div className="modal-attributions-content">
+          <p>
+            Before you explore this map, please note this was designed as a
+            public education platform. It is not intended to be a detailed
+            planning tool.
+          </p>
+          <p>
+            The goal was to create a map to better understand the intersection
+            of climate risks and social vulnerabilities in communities, and to
+            share resilience solutions from ten cities across the United States.
+            It is our hope these successful intervention stories will inspire
+            other communities facing similar climate related challenges.
+          </p>
+          <p>
+            Our data models may not comport with other models that have
+            characterized local risks. For more information about our
+            methodology, please visit our “About the Data” section.
+          </p>
+          <br />
+          <button className="disableDisclaimerBtn" onClick={disableDisclaimer}>
+            Don’t show this again
+          </button>
+        </div>
+      </Modal>
     </div>
   );
 }
