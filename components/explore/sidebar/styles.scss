@@ -69,3 +69,11 @@
     text-decoration: solid;
   }
 }
+
+.c-modal {
+  border: 4px solid $color-main-blue !important;
+  
+  .modal-content {
+    padding-top: 30px !important;
+  }
+}
