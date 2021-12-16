@@ -135,13 +135,13 @@ export default function ExploreSidebar({
           </div>
         </Modal>
       )}
-      <Modal
-        isOpen={initialDisclaimer}
-        contentLabel="Metadata"
-        title=" Welcome to the US Climate Resilience Map!"
-        onRequestClose={() => setInitialDisclaimer(false)}
-      >
-        <div className="modal-attributions-content">
+      <div className="initial-disclaimer-modal">
+        <Modal
+          isOpen={initialDisclaimer}
+          contentLabel="Metadata"
+          title=" Welcome to the US Climate Resilience Map!"
+          onRequestClose={() => setInitialDisclaimer(false)}
+        >
           <p>
             Before you explore this map, please note this was designed as a
             public education platform. It is not intended to be a detailed
@@ -163,8 +163,8 @@ export default function ExploreSidebar({
           <button className="disableDisclaimerBtn" onClick={disableDisclaimer}>
             Don’t show this again
           </button>
-        </div>
-      </Modal>
+        </Modal>
+      </div>
     </div>
   );
 }
