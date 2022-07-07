@@ -41,7 +41,7 @@
     "luma.gl": "7.3.2",
     "mapbox-gl": "^1.11.1",
     "math.gl": "^3.2.2",
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "next": "9.4.4",
     "next-compose-plugins": "^2.2.0",
     "next-fonts": "^1.4.0",
